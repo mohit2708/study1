@@ -1,0 +1,44 @@
+NHPC
+IREDA
+REC LIMITED
+SJVN LIMITED
+IRFC LIMITED
+RVNL
+HINDUSTAN AERONAUTICS LIMITED
+BHARAT DYNAMIC
+BHARAT ELECTRONIC
+HOUSING AND URBUN DELOPMENT
+IOCL
+BPCL
+UCO BANK
+BANK OF BARODA
+NBCC
+NTPC
+
+
+Current price < 1000 AND
+Dividend yield > 1 AND
+Market Capitalization > 9000 
+
+
+Mutual Fund
+1. JM large cap fund direct plan growth
+2. Motilal oswal midcap fund direct growth
+3. Quant small cap fund direct plan growth
+4. jm flexi cap fund direct plan growth
+
+1. navi nifty 50 index fund direct growth
+2. jm flexi cap fund direct plan growth
+3. Motilal oswal midcap fund direct growth
+4. Quant small cap fund
+
+hero
+NTPC
+hdfc BANK
+ongc
+bank of BARODA
+canera BANK
+tata
+
+
+

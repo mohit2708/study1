@@ -1,0 +1,7 @@
+print("hello")
+# file1 = open("C:\Users\mohits4\Desktop\mohit\study\python\python\1_python\code\example.txt", "r")
+file1 = open("example.txt", "a")
+file1.write("Now the file has more content!")
+file1.close()
+file1 = open("example.txt", "r")
+print(file1.read())

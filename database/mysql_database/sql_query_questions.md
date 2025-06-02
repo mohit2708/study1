@@ -1,50 +1,3 @@
-### Table of Contents
-
-|  No.  | Questions                                                                                                                                  |
-| :---: | ------------------------------------------------------------------------------------------------------------------------------------------ |
-|       | [How to copy a table in another table?](#ques-how-to-copy-a-table-in-another-table)                                                        |
-|       | [How to copy structure of a table but not data?](#ques-how-to-copy-structure-of-a-table-but-not-data)                                      |
-|       | [Delete Table?](#DELETE-TABLE)                                                                                                             |
-|       | [Delete Duplicate Records?](#delete-duplicate-records)                                                                                     |
-|       | [Add foreign key?](#add-foreign-key)                                                                                                       |
-|       | [Highest Salary Department wise?](#highest-salary-department-wise)                                                                         |
-|       | [Highest Salary Department wise with name?](#ques-find-the-highest-salary-of-each-department-with-name)                                    |
-|       | [How to find Nth highest salary from a table?](#ques-how-to-find-nth-highest-salary-from-a-table)                                          |
-|       | [Ques. Top 5 Salery?](#ques-top-5-salery)                                                                                                  |
-|       | [Replace a Column Values from 'male' to 'female' and 'female' to 'male'?](#replace-a-column-values-from-male-to-female-and-female-to-male) |
-|       | [Find Names of students whose age is greater than 21?](#find-names-of-students-whose-age-is-greater-than-21)                               |
-
-
-|  No.  | [Aggregate function](#aggregate-function)      |
-| :---: | ---------------------------------------------- |
-|       | [SUM()](#aggregate-function)                   |
-|       | [AVG()](#avg)                                  |
-|       | [Max()](#max)                                  |
-|       | [MIN()](#min)                                  |
-|       | [COUNT()](#count)                              |
-|       | [ROUND()](#round)                              |
-|       | [BETWEEN()](#between)                          |
-|       | [AND](#and)                                    |
-|       | [OR](#or)                                      |
-|       | [CASE](#case)                                  |
-|       | [Aliases](#aliases)                            |
-|       | [IS NULL / IS NOT NULL](#is-null--is-not-null) |
-|       | [GROUP BY](#group-by)                          |
-|       | [HAVING](#having)                              |
-|       | [LIMIT](#limit)                                |
-|       | [ORDER BY](#order-by)                          |
-|       | [SELECT DISTINCT](#select-distinct)            |
-|       | [With](#with)                                  |
-|       | [WHERE](#where)                                |
-|       | [UPDATE](#update)                              |
-
-|  No.  | [Questions]()                                                                    |
-| :---: | -------------------------------------------------------------------------------- |
-|       | [Wildcard Characters/Like Characters?](#ques-wildcard-characterslike-characters) |
-
-<div style="page-break-before: always;"></div>
-
-
 ### Demo data for execute the query
 ```sql
 CREATE TABLE employee (
@@ -98,24 +51,6 @@ VALUES
 
 ## Create Query
 
-### Create table
-```sql
-CREATE TABLE table_name ( 
-  id int(11) NOT NULL,
-
-  column_name data_type(2),
-  .......
-);
-```
-
-### Create a table which is already exists?
-```sql
-CREATE TABLE IF NOT EXISTS table_name ( 
-  column_name data_type(2),
-  column_name data_type(2),
-  .......
-);
-```
 
 ### Creaet a table through another table/Duplicate table through another table.
 ```sql
@@ -140,27 +75,6 @@ CREATE TABLE IF NOT EXISTS jobs(
 <div style="page-break-before: always;"></div>
 
 
-
-
-### UPDATE
-* UPDATE statements allow you to edit rows in a table.
-```sql
-UPDATE table_name SET some_column = some_value
-WHERE some_column = some_value;
-
-Update customer set name="mohit" where id =1;
-```
-
-
-### DELETE TABLE?
-* The DELETE statement is used to delete rows from a table. If you want to remove a **specific row** from a table you should use WHERE condition.
-```sql
-DELETE FROM table_name [WHERE condition];  
-```
-* But if you do not specify the WHERE condition it will remove **all the rows** from the table.
-```sql
-DELETE FROM table_name;
-```
 
 ### Delete Duplicate Records?
 ```sql
@@ -223,7 +137,7 @@ Department table:
 ```
 
 
-* List of duplicate data
+* Find the duplicate data of the table
 ```sql
 SELECT a.id, a.name, a.email
 FROM sample_table a

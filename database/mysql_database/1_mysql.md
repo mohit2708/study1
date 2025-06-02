@@ -163,13 +163,6 @@ MySql Interview Questions
 
 
 
-Ques. Difference between inner & self & cross ?
-Ans. 
-Inner:-
-Self:-
-Cross:-
-
-
 
 SQL Queries:-
 -------?

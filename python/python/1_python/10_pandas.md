@@ -17,8 +17,9 @@ jupyter notebook
 ```
 
 ### **What is pandas?**
-* Pandas is a Python library for data manipulation and analysis.
-* The name "Pandas" has a reference to both "Panel Data", and "Python Data Analysis" and was created by Wes McKinney in 2008.
+* Pandas is a Python library used for data manipulation and analysis.
+* It provides data structures and functions to handle numerical tables and time series data efficiently.
+* The name "Pandas" has a reference to both "Panel Data", and "Python Data Analysis" and was created by Wes **McKinney** in **2008**.
 
 ### **Install Pandas**
 ```python
@@ -89,7 +90,7 @@ Index: []
 ```python
 import pandas as pd
 
-lst = ['mohti', 'is', 'good', 'boy']
+lst = ['mohit', 'is', 'good', 'boy']
 
 df = pd.DataFrame(lst)
 print(df)
@@ -243,4 +244,79 @@ min     9.000000  15.000000   3.000000
 50%    10.000000  18.000000   8.000000
 75%    11.500000  19.000000   9.500000
 max    13.000000  20.000000  11.000000
+```
+
+# Pandas Series
+### What is a Series?
+* It is a **one-dimensional** labeled array that can hold data of any type, such as integers, strings, floats, or Python objects. 
+* A Series can be thought of as a single column of a table or a spreadsheet. 
+* Pandas Series is a fundamental data structure in the Python library pandas.
+```python
+import pandas as pd
+
+a = [1, 7, 2]
+
+myvar = pd.Series(a)
+print(myvar)
+
+# Output:
+0    1
+1    7
+2    2
+dtype: int64
+
+# ---------------------
+print(myvar[0])       # Output:- 1
+```
+
+### Create Labels
+```python
+import pandas as pd
+
+a = [1, 7, 2]
+
+myvar = pd.Series(a, index = ["x", "y", "z"])
+
+print(myvar)
+
+# Output:-
+x    1
+y    7
+z    2
+dtype: int64
+
+# ---------------------
+print(myvar["y"])       # Output:- 7
+```
+
+### Key/Value Objects as Series
+```python
+import pandas as pd
+
+calories = {"day1": 420, "day2": 380, "day3": 390}
+
+myvar = pd.Series(calories)
+print(myvar)
+
+
+# Output:-
+day1    420
+day2    380
+day3    390
+dtype: int64
+```
+* To **select** only **some of the items** in the **dictionary**, **use** the **index** argument and specify only the items you want to include in the Series.
+```python
+import pandas as pd
+
+calories = {"day1": 420, "day2": 380, "day3": 390}
+
+myvar = pd.Series(calories, index = ["day1", "day2"])
+
+print(myvar)
+
+# Output:-
+day1    420
+day2    380
+dtype: int64
 ```

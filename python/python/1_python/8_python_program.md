@@ -19,6 +19,7 @@
 |  15   | [list Sorting using bubble sort](#list-sorting-using-bubble-sort)                              |
 |       | [Star Print](#star-printing)                                                                   |
 |  16   | [Sorting multidimensional array by name](#sorting-multidimensional-array-by-name)              |
+|       | [Find the first letter of the string](#find-the-first-latter-of-the-strig)                     |
 
 |  No.  | [Other Program]()                                                                                        |
 | :---: | -------------------------------------------------------------------------------------------------------- |
@@ -558,6 +559,28 @@ print(abc)
 # Print the sorted array
 for person in abc:
     print("Name: {}, Age: {}".format(person["name"], person["age"]))
+```
+
+### **Find the first latter of the strig?**
+```python
+name = "Mohit Saxena"
+words = name.split()
+
+firstw = ""
+for word in words:
+    firstw += word[0]
+print(' '.join(list(firstw)))
+
+----------OR----------
+name = "Mohit Saxena"
+words = name.split()
+
+firstw = ""
+for word in words:
+    firstw += word[0]+" "
+
+firstw = firstw.strip()  # Remove the trailing space
+print(firstw)   # Output:- MS
 ```
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

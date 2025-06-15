@@ -1,33 +1,7 @@
-### Ques. Optimizing SQL Queries for Faster Performance
-1. Minimize the use of wildcard characters
-   * The use of wildcard characters, such as % and _, in SQL queries, can slow down query performance. When using wildcard characters, the database has to scan the entire table to find the relevant data. To optimize SQL queries, it is important to minimize the use of wildcard characters and to use them only when absolutely necessary.
-```sql
-SELECT * FROM customers WHERE last_name_city LIKE 'P%';
-```
-* This query will use the index on the last name column and will be faster than the previous query.
-```sql
-SELECT * FROM customers WHERE last_name_city >= 'P' AND last_name < 'Q';
-```
-
-2. Increase Query Performance with Indexes
-3. Use appropriate data types
-4. Avoid subqueries
-5. Avoid using SELECT *
-```sql
-SELECT * FROM customers WHERE customer_id = 1;
-```
-```sql
-SELECT name, email FROM customers WHERE customer_id = 1;
-```
-6. Use stored procedures
-7. 
-
-
 
 
 ### What is MySQL?
 ### Explain the differences between **SQL** and **MySQL**?In which language has MySQL been written?How to create a database in MySQL?.What is the MySQL server’s default port?  ->3306
-
 ### **Ques. What are Constraints in SQL?**
 Constraints are used to specify the rules concerning data in the table. It can be applied for single or multiple fields in an SQL table during the creation of the table or after creating using the ALTER TABLE command. The constraints are:<br>
 * **NOT NULL** - Restricts NULL value from being inserted into a column.
@@ -42,11 +16,48 @@ Constraints are used to specify the rules concerning data in the table. It can b
 
 **[⬆ Back to Top](#table-of-contents)**
 ### **What is Cursor?**
-* WHEN WE USE SELECT STMT IN DATABASE(ORACLE/SQLSERVER/MYSQL) ,   it allocate memory for that known as cursor.
+* When a SELECT statement is executed, the database(ORACLE/SQL SERVER/MYSQL) allocates a memory area to hold the result set, which is managed internally using a cursor.
 * A cursor is a pointer to this context area. PL/SQL controls the context area through a Cursor.
 * A Cursor can hold more than one row, but can process only one row at a time. The set of rows the cursor hold is called the active set.
 * A cursor is a temporary work area created in the system memory when a SQL statement is executed. A cursor contains information on a select statement and the rows of data accessed by it.
 * This temporary work area is used to store the data retrieved from the database and manipulate this data.
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE process_customers()
+BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE cust_name VARCHAR(100);
+    
+    -- Declare the cursor
+    DECLARE cur CURSOR FOR 
+        SELECT name FROM customers;
+
+    -- Declare continue handler for NOT FOUND condition
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    -- Open the cursor
+    OPEN cur;
+
+    read_loop: LOOP
+        FETCH cur INTO cust_name;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Do something with cust_name
+        SELECT CONCAT('Processing customer: ', cust_name);
+
+    END LOOP;
+
+    -- Close the cursor
+    CLOSE cur;
+END //
+
+DELIMITER ;
+
+```
 
 #### There are two type of cursor in PL/SQL:-
 
@@ -54,43 +65,6 @@ Constraints are used to specify the rules concerning data in the table. It can b
    * These are creating by default when DML statement like, INSERT, UPDATE, and DELETE statement are executed. They are also created when a SELECT statement that returns just one row is executed.
    * Implicit cursors are automatically created by oracle whenever an SQL statement is executed, when there is no explicit cursor for the statement. Programmers cannot control the implicit cursor and the information in it.
 
-
-### Difference between WHERE and HAVING in SQL?
-| Having                                                           | Where                                                                      |
-| :--------------------------------------------------------------- | :------------------------------------------------------------------------- |
-| Having ke sath GROUP BY use hota hai                             |                                                                            |
-| Having post filter hai(data fatch hone ke baad filter lagta hai) | where pre filter hai(isme pahle filter lagta hai phir fatch data hota hai) |
-| having can be used only with select command                      | can be used with select update delete                                      |
-| HAVING is used for column operations.                            | WHERE is used for row operations                                           |
-| having ke aggrigate function sath kar sakte hai                  | where ke sath aggrigate function use nahi kar sakte                        |
-```sql
-a   c1  40
-a   c2  50
-b   c3  30
-c   c1  20
-
-select std, sum(score) as total from record group by std having total>60;
-```
-
-### **List of Mysql storage Engines/Table Type?**
-Mysql ne apni requirment ke according alag-alag table type diye hai.
-1. MyIsam:-
-* Myisam good for select command.
-* it support full text searching.
-* it support table level locking.
-* it support Blob and text column can be indexed.
-2. Innodb
-* it support for referential integrity.
-* it support foreign key constraint.
-* it support Row level locking.
-* it support for transaction. 
-3. CSV
-* The CSV storage engine stores data in text file using comma separated values format.
-4. Archive
-5. memory 
-6. black hole
-7. merge
-8. federated
 
 
 ### **Ques. What is Stored procedure?**
@@ -167,20 +141,7 @@ MySql Interview Questions
 SQL Queries:-
 -------?
 
-Delete table
-Delete table_name; (only table data del)drop table persons;
-drop table persons;
-
-
-
 Insert data in another table
-
-Add column
-ALTER TABLE table_name
-ADD column_name datatype(size), column_name datatype(size));
-ALTER TABLE table_name
-ADD column_name datatype
-
 
 
 Data insert/update in a column
@@ -188,11 +149,6 @@ update emp set city='noida' where lastname='saxena'
 
 Rename Datatype
 ALTER TABLE LALU MODIFY (MOBILE NUMBER(15));
-
-
-
-
-
 
 
 

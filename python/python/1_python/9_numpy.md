@@ -3,10 +3,13 @@
 |       | [What is Numpy?](#ques-what-is-numpy)                   |
 |       | [Installation of NumPy?](#installation-of-numpy)        |
 |       | [Checking NumPy Version?](#ques-checking-numpy-version) |
+|       | [numpy.insert](#numpyinsert)                            |
+
+
 <div style="page-break-before: always;"></div>
 
 ### **Ques. What is Numpy?**
-* NumPy is short for "Numerical Python".
+* NumPy is short for "**Numerical Python**".
 * NumPy is a Python library. it is used for working with arrays.
 * NumPy was created in **2005** by **Travis Oliphant**.
 
@@ -130,7 +133,7 @@ print(arr[0, 1, 2])     # Output:- 6
 #### **NumPy Array Slicing**
 * Slicing in python means taking elements from one given index to another given index.
 * We pass slice instead of index like this: [start:end].
-* We can also define the step, like this: [start:end:step].
+* We can also define the step, like this: [start : end : step].
 * If we don't pass start its considered 0
 * If we don't pass end its considered length of array in that dimension
 * If we don't pass step its considered 1
@@ -198,4 +201,76 @@ y = arr.view()
 
 print(x.base)   # Output:- None
 print(y.base)   # Output:- [1 2 3 4 5]
+```
+<div style="page-break-before: always;"></div>
+
+# **numpy.insert**
+```python
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+# Insert 25 at index 2
+new_arr = np.insert(arr, 2, 25)
+print("After inserting 25 at index 2:", new_arr)    # Output:- [10 20 25 30 40 50]
+
+# # Insert [9, 10] at index 3
+new_arr = np.insert(arr, 3, [9, 10])
+print("After inserting [9,10] at index 3:", new_arr) # Output:- [10 20 30  9 10 40 50]
+```
+#### Explanation:
+* The second argument (2) is the index where you want to insert the value.
+* The third argument (25) is the value you want to insert.
+* The original array remains unchanged; np.insert() returns a new array.
+
+* **Inserting multiple values at different positions:**
+```python
+arr = np.array([10, 20, 30, 40, 50])
+# Insert values 15 and 35 at indices 1 and 3
+new_arr = np.insert(arr, [1, 3], [15, 35])
+print("After inserting [15, 35] at indices [1, 3]:", new_arr)   # Output:- [10 15 20 30 35 40 50]
+```
+
+### **Insert in a 2D array along a specific axis**
+```python
+import numpy as np
+
+arr2d = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+# Insert a new row [9, 9, 9] at index 1 (between rows 0 and 1)
+new_arr2d = np.insert(arr2d, 1, [9, 9, 9], axis=0)              # axis 0 means row
+print("After inserting new row at index 1:\n", new_arr2d)
+
+# Output:-
+After inserting new row at index 1:
+ [[1 2 3]
+ [9 9 9]
+ [4 5 6]]
+```
+```python
+import numpy as np
+
+arr2d = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+# Insert a new column [7, 8] at index 2 (between columns 1 and 2)
+new_arr2d_col = np.insert(arr2d, 2, [7, 8], axis=1)     # axis 1 means column
+print("After inserting new column at index 2:\n", new_arr2d_col)
+
+# Output:-
+After inserting new column at index 2:
+ [[1 2 7 3]
+ [4 5 8 6]]
+```
+
+* insert element end of the list
+```python
+import numpy as np
+
+arr = np.array([5, 6, 7])
+
+# Insert at the end (index = len(arr))
+arr_end = np.insert(arr, len(arr), 10)
+print("Insert 10 at end:", arr_end) # Output:- [ 5  6  7 10]
 ```

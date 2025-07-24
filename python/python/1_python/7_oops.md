@@ -1,3 +1,5 @@
+<!-- 🧰 🧱 🪵 🧪 🧯 📜 🔎 🧹 💣 🛑 ❌ 👉 👈 🧠 ✅ 📌 🔧 🧪 🔍 -->
+
 |  No.  | [Python Oops Interview Questions](./7_oops/1_oops.md)                                                                                           |
 | :---: | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 |       | [Object-Oriented Programming (OOPS)?](#object-oriented-programming-oops)                                                                        |
@@ -6,7 +8,6 @@
 |       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python)                                                  |
 |       | [What is issubclass()?](#ques-what-is-issubclass)                                                                                               |
 |       | [What is __str_ _ and __repr_ _?](#ques-what-is-str-and-repr)                                                                                   |
-|       | [What is Abstract Method?](#ques-what-is-abstract-method)                                                                                       |
 |       | [What is Concrete Method?](#ques-what-is-concrete-method)                                                                                       |
 |       | [Difference between method and function?](#ques-difference-between-method-and-function)                                                         |
 |       | ------------------------------------------------------------------------------------------------                                                |
@@ -15,6 +16,7 @@
 |       | [Set/Change values for class variables](#setchange-values-for-class-variables)                                                                  |
 |       | [Delete class variables](#delete-class-variables)                                                                                               |
 |       | [Built-In Class Functions (getattr, setattr, delattr, hasattr) In Python?](#built-in-class-functions-getattr-setattr-delattr-hasattr-in-python) |
+|       | [What is class meta?](#what-is-class-meta)                                                                                                      |
 |       | ------------------------------------------------------------------------------------------------                                                |
 |       | [What is Object?](#ques-what-is-object)                                                                                                         |
 |       | [Delete the Object?](#ques-delete-the-object)                                                                                                   |
@@ -43,6 +45,7 @@
 |       | [MRO(Method Resolution Order) / Diamond Problam?](#ques-what-is-mromethod-resolution-order--diamond-problam)                                    |
 |       | [What is Abstract Class?](#ques-what-is-abstract-class)                                                                                         |
 |       | [When use abstratc class?](#ques-when-use-abstratc-class)                                                                                       |
+|       | [How to Create an Abstract Method](#how-to-create-an-abstract-method)                                                                           |
 |       | [Built-In Class Attributes?](#built-in-class-attributes)                                                                                        |
 |       | [What is Method Overloading?](#ques-what-is-method-overloading)                                                                                 |
 |       | [What is Method Overriding?](#ques-what-is-method-overriding)                                                                                   |
@@ -64,7 +67,7 @@
 * Data Abstraction
 <div style="page-break-before: always;"></div>  
 
-### **Ques. What is the use of self in Python?**
+### 📌 **Ques. What is the use of self in Python?**
 * The Self parameter is a **reference** to the **current instance of the class**, we can access the attributes and methods of the class in python.
 * We can give **any name** in place of self but **first parameter** is **compulsory**.
 ```python
@@ -87,7 +90,7 @@ p1 = Person("mohit")
 p1.myfunc() # Output:- Hello my name is mohit
 ```
 
-### **Ques. What is __init__ Method?**
+### 📌 **Ques. What is __init__ Method?**
 * **__init__** is a constructor method in Python, and is **automatically called** to allocate memory when a **new object/instance is created**.
 * All classes have a function called __init__() function, whatever you create them or not, which is always excuted when the object is being initiated.
 ```python
@@ -173,9 +176,9 @@ print(issubclass(Dog, (Animal, Car)))  # True — Dog is a subclass of one of th
 <div style="page-break-before: always;"></div>
 
 
-### **Ques. What is __str__ and __repr__?**
-#### **str Function**
-* The __str__ method also known as a "dunder" method (double underscore method), that defines the string representation of an object. 
+### 📌 **Ques. What is __str__ and __repr__?**
+#### ✅ **str Function**
+* The __str__ method also known as a **dunder method/double underscore method**, that defines the string representation of an object. 
 * It's used to return a **human-readable** string when the built-in functions str() or print() are called on an instance of a class.
 ```python
 class Student:
@@ -198,7 +201,7 @@ obj = Student("mohit")
 print(obj)  # Output:- <__main__.Student object at 0x7dc248f35c70>
 ```
 
-#### **repr Function**
+#### ✅ **repr Function**
 * The **repr() method** returns a string containing a printable representation of an **object**.
 * **__repr__** method returns a string representation of an object that is **machine-readable**.
   
@@ -210,18 +213,6 @@ print(repr(today))  # datetime.datetime(2025, 5, 11, 10, 47, 8, 923663) (officia
 ```
 <div style="page-break-before: always;"></div>
 	
-
-
-### **Ques. What is Abstract Method?**
-* To define an abstract **method** we use the **@abstractmethod** decorator of the abc module.
-```python
-from abc import ABC, abstractmethod
-class DemoAbstractClass(ABC):
-	@abstractmethod
-	def abstract_method_name(self):
-    	Pass
-```
-
 ### **Ques. What is Concrete Method?**
 * A concreate method is a method whose action is defined in the abstract class itself.
 ```python
@@ -251,7 +242,7 @@ obj.show_data()
 ### **Ques. Difference between method and function?**
 #### Function
 * A function is a block of code that performs a specific task and can be called independently from anywhere in your program.
-* It is defined using the def keyword.
+* It is defined using the **def** keyword.
 * It can take arguments (input values) and return values (output values).
 ```python
 def add_numbers(x, y):
@@ -326,7 +317,7 @@ print(id(person)) # 1943155787760
 ### **Python get Class Variables/attributes**
 * Get the values of **class variables**
 ```python
-# using class name
+# ------using class name---------
 class Student:
     name = 'mohit saxena'
     roll_no = '12845678'
@@ -335,14 +326,14 @@ print(Student.name)     # mohit saxena
 print(Student.roll_no)  # 12845678
 
 
-# using **getattr()** function:- The getattr() function accepts an object and a variable name. It returns the value of the class variable.
+# -------using **getattr()** function:- The getattr() function accepts an object and a variable name. It returns the value of the class variable.
 name = getattr(Student, 'name')
 rollno = getattr(Student, 'roll_no')
 
 print(name)     # mohit saxena
 print(rollno)   # 12845678
 
-# using object:- Accessing through object instantiation. 
+# -------using object:- Accessing through object instantiation. 
 obj= Student() 
 print(obj.name) # mohit saxena
 ```
@@ -520,7 +511,51 @@ print(x)    # True
 <div style="page-break-before: always;"></div>
 
 
+### **What is class meta?**
+* In Python, class Meta is not a built-in Python feature, but rather a convention commonly used in frameworks like Django and SQLAlchemy to define configuration or metadata for a class.
+* class Meta is typically used inside a class definition to provide extra options or internal class configuration that modify the behavior of the class without affecting its main logic.
+#### Example of Django
+```python
+from django.db import models
 
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ['title']
+        db_table = 'library_book'
+
+
+# Explanation
+# ordering = ['title']: Default ordering when querying books.
+# db_table = 'library_book': Use a custom table name in the database.
+```
+
+#### Example in Pydantic
+```python
+from pydantic import BaseModel
+
+class User(BaseModel):
+    id: int
+    name: str
+
+    class Config:
+        orm_mode = True
+
+```
+
+#### Custom Use (General Python)
+* You can define and use class Meta however you like in your own classes, but you need to access it manually.
+```python
+class MyClass:
+    class Meta:
+        verbose_name = "My Class"
+
+print(MyClass.Meta.verbose_name)  # Output: My Class
+
+```
+<div style="page-break-before: always;"></div>
 
 # Object
 ### **Ques. What is Object?**
@@ -1685,14 +1720,33 @@ mother class Constructor
 ### **Ques. What is Abstract Class?**
 * We cannot create an abstract class in Python directly. However, Python does provide a module that allows us to define abstract classes. The module we can use to create an abstract class in Python is abc(abstract base class) module.
 **Rule**
-* PVM can not create objects of an abstract class (abstract class ka hum object nahi bna sakte hai).
+* we can not create objects of an abstract class (abstract class ka hum object nahi bna sakte hai).
 * It is not neccessary to declare all methods abstract in a abstract class.
 * Abstract class can have abstract method and concreate method.
 * If there is any abstract method in a class, that class must be abstract.
 * The abstract methods of an abstract class must be defined in its child class/subclass.
 
+
 ### **Ques. When use abstratc class?**
 * We use abstract class when there are some common feature shered by all the objects as they are.
+
+### 📌 **How to Create an Abstract Method**
+* Import the required tools from the abc module.
+* Use the @abstractmethod decorator above your method.
+* Make the class inherit from ABC (Abstract Base Class).
+
+```python
+from abc import ABC, abstractmethod  # Step 1
+
+class Animal(ABC):  # Step 2: Inherit from ABC
+
+    @abstractmethod  # Step 3: Use decorator
+    def make_sound(self):  # Abstract method
+        pass
+
+```
+<div style="page-break-before: always;"></div>
+
 **Example:-**
 ```python
 # gun is common features
@@ -1734,6 +1788,13 @@ c.show()
 
 c2 = child2()
 c2.disp(10,30)
+
+👉 Output:-
+60
+defining abstrat class
+concreate class
+300
+defining abstrat class
 ```
 <div style="page-break-before: always;"></div>
 

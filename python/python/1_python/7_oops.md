@@ -3,7 +3,7 @@
 |  No.  | [Python Oops Interview Questions](./7_oops/1_oops.md)                                                                                           |
 | :---: | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 |       | [Object-Oriented Programming (OOPS)?](#object-oriented-programming-oops)                                                                        |
-|       | [What is __init_ _ Method?](#ques--what-is-init-method)                                                                                         |
+|       | [What is __init_ _ Method?](#ques-what-is-init-method)                                                                                         |
 |       | [What is the use of self in Python?](#ques-what-is-the-use-of-self-in-python)                                                                   |
 |       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python)                                                  |
 |       | [What is issubclass()?](#ques-what-is-issubclass)                                                                                               |
@@ -67,7 +67,7 @@
 * Data Abstraction
 <div style="page-break-before: always;"></div>  
 
-### 📌 **Ques. What is the use of self in Python?**
+### **Ques. What is the use of self in Python?**
 * The Self parameter is a **reference** to the **current instance of the class**, we can access the attributes and methods of the class in python.
 * We can give **any name** in place of self but **first parameter** is **compulsory**.
 ```python
@@ -90,7 +90,7 @@ p1 = Person("mohit")
 p1.myfunc() # Output:- Hello my name is mohit
 ```
 
-### 📌 **Ques. What is __init__ Method?**
+### **Ques. What is __init__ Method?**
 * **__init__** is a constructor method in Python, and is **automatically called** to allocate memory when a **new object/instance is created**.
 * All classes have a function called __init__() function, whatever you create them or not, which is always excuted when the object is being initiated.
 ```python
@@ -176,7 +176,7 @@ print(issubclass(Dog, (Animal, Car)))  # True — Dog is a subclass of one of th
 <div style="page-break-before: always;"></div>
 
 
-### 📌 **Ques. What is __str__ and __repr__?**
+### **Ques. What is __str__ and __repr__?**
 #### ✅ **str Function**
 * The __str__ method also known as a **dunder method/double underscore method**, that defines the string representation of an object. 
 * It's used to return a **human-readable** string when the built-in functions str() or print() are called on an instance of a class.

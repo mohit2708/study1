@@ -5,6 +5,7 @@
 |   1   | [Hello World](#ques-print-hello-world)                                                         |
 |   2   | [swap two variables](#ques-swap-two-variables)                                                 |
 |   3   | [check if a number is Even or odd](#ques-program-to-check-if-a-number-is-even-or-odd)          |
+|       | [Check even or odd without any condition?](#check-even-or-odd-without-any-condition)           |
 |   4   | [Print the even number and odd number](#print-the-even-number-and-odd-number)                  |
 |   5   | [Check Prime Number Or Not?](#ques-check-prime-number-or-not)                                  |
 |   6   | [Prime Number Print between lower to upper?](#ques-prime-number-print-between-lower-to-upper)  |
@@ -105,6 +106,24 @@ def evenOrOdd(n):
     else:
         print('Odd Number hai')
 evenOrOdd(6)
+```
+
+### **Check even or odd without any condition?**
+```python
+# Type 1
+number = 61
+list = ["even", "odd"]
+print(list[number%2])
+
+# Type 2
+def check_even_odd(n):
+    return ("Even" * (n & 1 == 0)) or ("Odd")
+    # return ("Even" * (n %2==0)) or ("Odd")
+
+# Test the function
+number = 5
+result = check_even_odd(number)
+print(f"The number {number} is {result}.")  # Output:- The number 5 is Odd.
 ```
 
 ### **Print the even number and odd number**

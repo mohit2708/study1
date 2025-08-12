@@ -394,3 +394,76 @@ plt.show()
 <img src="../AI_ML/images/matplotlib/img_matplotlib_title_loc.png"/>
 
 # Matplotlib Adding Grid Lines
+
+
+
+
+
+### Importing Matplotlib
+```python
+import matplotlib.pyplot as plt
+OR
+from matplotlib import pyplot as plt
+```
+
+```python
+import matplotlib.pyplot as plt
+
+x=["python","C++","C","php"]
+y =[2,4,6,8]
+c = ['r','y','g','b']
+
+plt.bar(x,y,color= c)
+plt.show()
+
+# change width for bar line
+plt.bar(x,y,width=0.4)
+
+# Single color
+plt.bar(x,y,width=0.4, color="y")
+
+# Multipal color
+col = ['r','y','g','b']
+plt.bar(x,y,width=0.4, color="col")
+
+# align bar chart:- By default center
+plt.bar(x,y,width=0.4, align="edge")
+plt.bar(x,y,width=0.4, align="center") # for center
+
+# Boundary
+plt.bar(x,y,width=0.4, edgecolor="r")
+# for border width
+plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10")
+# line style
+plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10", linestyle=":")
+# border halka karna ho to
+plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10", linestyle=":", alpha="0.4")
+
+# bar chart ka label
+plt.bar(x,y,width=0.4, edgecolor="r", label="python")
+plt.legend()
+plt.show()
+```
+```python
+# two bar graph overlap
+import matplotlib.pyplot as plt
+import numpy as np
+
+x=["python","C++","C","php"]
+y =[8,4,6,7]
+z =[4,2,4,3]
+
+c = ['r','y','g','b']
+
+plt.xlabel("language", fontsize="40")
+plt.ylabel("no", fontsize="30")
+plt.title("mohit", fontsize="20")
+#plt.bar(x,y,width=0.4,color="r", label=)
+plt.bar(x,y,width=0.4, color="r", label="python1")
+plt.bar(x,z,width=0.4, color="y", label="python2")
+plt.legend()
+plt.show()
+
+# two bar code without overlap
+
+```

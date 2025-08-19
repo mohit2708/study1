@@ -1,10 +1,14 @@
-|  No.  | [Numpy]()                                               |
-| :---: | ------------------------------------------------------- |
-|       | [What is Numpy?](#ques-what-is-numpy)                   |
-|       | [Installation of NumPy?](#installation-of-numpy)        |
-|       | [Checking NumPy Version?](#ques-checking-numpy-version) |
-||[How do I access or Slicing elements in a NumPy array?](#how-do-i-access-or-slicing-elements-in-a-numpy-array)|
-|       | [numpy.insert](#numpyinsert)                            |
+|  No.  | [Numpy]()                                                                                                      |
+| :---: | -------------------------------------------------------------------------------------------------------------- |
+|       | [What is Numpy?](#ques-what-is-numpy)                                                                          |
+|       | [Installation of NumPy?](#installation-of-numpy)                                                               |
+|       | [Checking NumPy Version?](#ques-checking-numpy-version)                                                        |
+|       | [Creating Arrays](#creating-arrays)                                                                            |
+|       | [How do I access or Slicing elements in a NumPy array?](#how-do-i-access-or-slicing-elements-in-a-numpy-array) |
+|       | [Numpy Array Methods](#numpy-array-methods)                                                                    |
+|       | [Creating Arrays with Zeros](#creating-arrays-with-zeros)                                                      |
+|       | [Creating Arrays with Ones](#creating-arrays-with-ones)                                                        |
+|       | [numpy.insert](#numpyinsert)                                                                                   |
 
 
 <div style="page-break-before: always;"></div>
@@ -28,7 +32,8 @@ print(np.__version__)
 
 Output:- 1.16.3
 ```
-### **Example:-** 
+
+### **Creating Arrays**
 * Once NumPy is installed, import it in your applications by adding the import keyword:
 ```python
 import numpy
@@ -38,7 +43,32 @@ print(arr)  # Output:- [1 2 3 4 5]
 # Create an **alias** with the as keyword while importing:
 import numpy as np
 arr = np.array([1, 2, 3, 4, 5])
+
+print(arr)          # Output:- [1 2 3 4 5]
+print(type(arr))    # Output:- <class 'numpy.ndarray'>
+
+# 0-D Arrays
+import numpy as np
+arr = np.array(42)
+print(arr)  # Output:- 42
+
+# 1-D Arrays
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
 print(arr)  # Output:- [1 2 3 4 5]
+```
+<div style="page-break-before: always;"></div>
+
+```python
+# 2-D Arrays
+import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr)  # Output:- [[1 2 3][4 5 6]]
+
+# 3-D arrays
+import numpy as np
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
+print(arr)      # Output:- [[[1 2 3][4 5 6]] [[1 2 3] [4 5 6]]]
 ```
 <div style="page-break-before: always;"></div>
 
@@ -87,39 +117,102 @@ print(arr[0, 1, 2])     # Output:- 6
 ```
 <div style="page-break-before: always;"></div>
 
-### Ques. Why is NumPy Faster Than Lists?
 
+### **NumPy Data Types**
+* **strings -** used to represent text data, the text is given under quote marks. **e.g. "ABCD"**
+* **integer -** used to represent integer numbers. **e.g. -1, -2, -3**
+* **float -** used to represent real numbers. **e.g. 1.2, 42.42**
+* **boolean -** used to represent **True or False**.
+* **complex -** used to represent complex numbers. **e.g. 1.0 + 2.0j, 1.5 + 2.5j**
 
-#### **Creating Arrays**
+# **Numpy Array Methods**
+### **Creating Arrays with Zeros**
+1. 1-D Array of Zeros:-
 ```python
 import numpy as np
 
-arr = np.array([1, 2, 3, 4, 5])
+zeros_1d = np.zeros(3)  # Creates a 1-D array with 3 zeros
+print("1-D Array of Zeros:", zeros_1d)
 
-print(arr)          # Output:- [1 2 3 4 5]
-print(type(arr))    # Output:- <class 'numpy.ndarray'>
-
-# 0-D Arrays
-import numpy as np
-arr = np.array(42)
-print(arr)  # Output:- 42
-
-
-# 1-D Arrays
-import numpy as np
-arr = np.array([1, 2, 3, 4, 5])
-print(arr)  # Output:- [1 2 3 4 5]
-
-# 2-D Arrays
-import numpy as np
-arr = np.array([[1, 2, 3], [4, 5, 6]])
-print(arr)  # Output:- [[1 2 3][4 5 6]]
-
-# 3-D arrays
-import numpy as np
-arr = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
-print(arr)      # Output:- [[[1 2 3][4 5 6]] [[1 2 3] [4 5 6]]]
+# Output:- 1-D Array of Zeros: [0. 0. 0.]
 ```
+2. 2-D Array of Zeros:
+```python
+import numpy as np
+
+zeros_2d = np.zeros((2, 3))  # Creates a 2-D array with shape (2,3) filled with zeros
+print("2-D Array of Zeros:\n", zeros_2d)
+
+# Output:-
+2-D Array of Zeros:
+ [[0. 0. 0.]
+ [0. 0. 0.]]
+```
+3. 3-D Array of Zeros:
+```python
+import numpy as np
+
+zeros_3d = np.zeros((2, 3, 4))  # Creates a 3-D array with shape (2, 3, 4) filled with zeros
+print("3-D Array of Zeros:\n", zeros_3d)
+
+# Output:-
+3-D Array of Zeros:
+ [[[0. 0. 0. 0.]
+  [0. 0. 0. 0.]
+  [0. 0. 0. 0.]]
+
+ [[0. 0. 0. 0.]
+  [0. 0. 0. 0.]
+  [0. 0. 0. 0.]]]
+```
+
+### **Creating Arrays with Ones**
+1. 1-D Array of Ones:
+```python
+import numpy as np
+
+ones_1d = np.ones(5)  # Creates a 1-D array with 5 ones
+print("1-D Array of Ones:", ones_1d)
+
+# Output:- 1-D Array of Ones: [1. 1. 1. 1. 1.]
+```
+
+2. 2-D Array of Ones:
+```python
+import numpy as np
+
+ones_2d = np.ones((3, 4))  # Creates a 2-D array with shape (3, 4) filled with ones
+print("2-D Array of Ones:\n", ones_2d)
+
+# Output:-
+2-D Array of Ones:
+ [[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]]
+```
+
+3. 3-D Array of Ones:
+```python
+import numpy as np
+ones_3d = np.ones((2, 3, 4))  # Creates a 3-D array with shape (2, 3, 4) filled with ones
+print("3-D Array of Ones:\n", ones_3d)
+
+# Output:-
+3-D Array of Ones:
+ [[[1. 1. 1. 1.]
+  [1. 1. 1. 1.]
+  [1. 1. 1. 1.]]
+
+ [[1. 1. 1. 1.]
+  [1. 1. 1. 1.]
+  [1. 1. 1. 1.]]]
+```
+
+
+### Ques. Why is NumPy Faster Than Lists?
+
+
+
 
 #### **How to Check Number of Dimensions?**
 * NumPy Arrays provides the **ndim attribute** that returns an integer that tells us how many dimensions the array have.
@@ -290,37 +383,6 @@ start = time.time()
 squares = np.arange(1000000) ** 2
 execution_time = time.time() - start
 print(execution_time)
-
-### Creating array from scracth
-Creating Arrays with Zeros  :-  creates an array filled with zeros.
-1-D Array of Zeros:
-import numpy as np
-
-zeros_1d = np.zeros(5)  # Creates a 1-D array with 5 zeros
-print("1-D Array of Zeros:", zeros_1d)
-
-2-D Array of Zeros:
-zeros_2d = np.zeros((3, 4))  # Creates a 2-D array with shape (3, 4) filled with zeros
-print("2-D Array of Zeros:\n", zeros_2d)
-
-3-D Array of Zeros:
-zeros_3d = np.zeros((2, 3, 4))  # Creates a 3-D array with shape (2, 3, 4) filled with zeros
-print("3-D Array of Zeros:\n", zeros_3d)
-
-
-### Creating Arrays with Ones
-* creates an array filled with ones.
-1-D Array of Ones:
-ones_1d = np.ones(5)  # Creates a 1-D array with 5 ones
-print("1-D Array of Ones:", ones_1d)
-
-2-D Array of Ones:
-ones_2d = np.ones((3, 4))  # Creates a 2-D array with shape (3, 4) filled with ones
-print("2-D Array of Ones:\n", ones_2d)
-
-3-D Array of Ones:
-ones_3d = np.ones((2, 3, 4))  # Creates a 3-D array with shape (2, 3, 4) filled with ones
-print("3-D Array of Ones:\n", ones_3d)
 
 
 np.full()

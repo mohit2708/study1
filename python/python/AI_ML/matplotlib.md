@@ -9,18 +9,34 @@
 pip install matplotlib
 ```
 
-### **Import Matplotlib**
-```python
-import matplotlib
-```
-
 ### **Checking Matplotlib Version**
 ```python
 import matplotlib
 
 print(matplotlib.__version__)   # Output:- 2.0.0
 ```
+
+### **Import Matplotlib**
+```python
+Importing Matplotlib
+import matplotlib.pyplot as plt
+OR
+from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
+```
 <div style="page-break-before: always;"></div>
+
+### **Types of Matplotlib**
+1. Liner Plot
+2. Scatter Plot
+3. Bar Plot
+4. Stem Plot
+5. Step Plot
+6. Hist Plot
+7. Box Plot
+8. Pie Plot
+9. Fill_between Plot
+
 
 ### **Pyplot Example**
 ```python
@@ -394,57 +410,432 @@ plt.show()
 <img src="../AI_ML/images/matplotlib/img_matplotlib_title_loc.png"/>
 
 # Matplotlib Adding Grid Lines
-
-
-
-
-
-### Importing Matplotlib
+* We can use the grid() function to add grid lines to the plot.
 ```python
+import numpy as np
 import matplotlib.pyplot as plt
-OR
-from matplotlib import pyplot as plt
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+plt.plot(x, y)
+plt.grid()
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_grid.png"/>
+
+### **Specify Which Grid Lines to Display**
+```python
+plt.plot(x, y)
+plt.grid(axis = 'x')
+
+# Display only grid lines for the y-axis:
+plt.plot(x, y)
+plt.grid(axis = 'y')
 ```
 
+* Set **Line Properties** for the **Grid**
+  * we can also set the line properties of the grid, like this: grid(color = 'color', linestyle = 'linestyle', linewidth = number).
+```python
+plt.plot(x, y)
+plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
+```
+
+# Matplotlib Subplot
+### Display Multiple Plots
+* With the **subplot() function** you can draw multiple plots in one figure:
+* The subplot() function takes **three** arguments that describes the layout of the figure.
+  * The layout is organized in **rows** and **columns**, which are represented by the **first** and **second** argument.
+  * The **third** argument represents the index of the **current plot**.
+```python
+plt.subplot(1, 2, 1)
+```
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(1, 2, 2)
+plt.plot(x,y)
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots.png"/>
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 1, 1)
+plt.plot(x,y)
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 1, 2)
+plt.plot(x,y)
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots2.png"/>
+
+```pyhton
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 1)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 3, 2)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 3)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 3, 4)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 5)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 3, 6)
+plt.plot(x,y)
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots3.png"/>
+
+
+### Subplot Title
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+plt.title("SALES")
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(1, 2, 2)
+plt.plot(x,y)
+plt.title("INCOME")
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots4.png"/>
+
+### Super Title
+* We can add a title to the entire figure with the suptitle() function:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+plt.title("SALES")
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(1, 2, 2)
+plt.plot(x,y)
+plt.title("INCOME")
+
+plt.suptitle("MY SHOP")
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots5.png"/>
+
+
+# Matplotlib Scatter
+* We can use the **scatter() function** to draw a scatter plot.
+* The **scatter() function** plots one dot for each observation. It needs two arrays of the same length, one for the values of the x-axis, and one for values on the y-axis:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+
+plt.scatter(x, y)
+plt.show()
+```
+* The observation in the example above is the result of 13 cars passing by.
+* The **X-axis shows** how **old** the **car** is.
+* The **Y-axis shows** the **speed** of the **car** when it passes.
+* Are there any relationships between the observations?
+* It seems that the newer the car, the faster it drives, but that could be a coincidence, after all we only registered 13 cars.
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter.png"/>
+
+### Compare Plots
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+#day one, the age and speed of 13 cars:
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+plt.scatter(x, y)
+
+#day two, the age and speed of 15 cars:
+x = np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12])
+y = np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85])
+plt.scatter(x, y)
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_compare.png"/>
+
+### Change Scatter Colors
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+plt.scatter(x, y, color = 'hotpink')
+
+x = np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12])
+y = np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85])
+plt.scatter(x, y, color = '#88c999')
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_color.png"/>
+
+### **Color Each Dot**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+colors = np.array(["red","green","blue","yellow","pink","black","orange","purple","beige","brown","gray","cyan","magenta"])
+
+plt.scatter(x, y, c=colors)
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_colors2.png"/>
+
+### **How to Use the ColorMap**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+colors = np.array([0, 10, 20, 30, 40, 45, 50, 55, 60, 70, 80, 90, 100])
+
+plt.scatter(x, y, c=colors, cmap='viridis')
+
+plt.colorbar()
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_colormap2.png"/>
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+colors = np.array([0, 10, 20, 30, 40, 45, 50, 55, 60, 70, 80, 90, 100])
+
+plt.scatter(x, y, c=colors, cmap='viridis')
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_colormap1.png"/>
+
+### **Change Scatter Size**
+* You can change the size of the dots with the **s** argument.
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+sizes = np.array([20,50,100,200,500,1000,60,90,10,300,600,800,75])
+
+plt.scatter(x, y, s=sizes)
+
+plt.show()
+```
+
+### **Alpha**
+* We can adjust the **transparency** of the dots with the alpha argument.
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+sizes = np.array([20,50,100,200,500,1000,60,90,10,300,600,800,75])
+
+plt.scatter(x, y, s=sizes, alpha=0.5)
+
+plt.show()
+```
+
+### **Combine Color Size and Alpha**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.randint(100, size=(100))
+y = np.random.randint(100, size=(100))
+colors = np.random.randint(100, size=(100))
+sizes = 10 * np.random.randint(100, size=(100))
+
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.5, cmap='nipy_spectral')
+
+plt.colorbar()
+
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_combine.png"/>
+
+
+
+# Matplotlib Bars
+### Creating Bars
+* We can use the **bar() function** to draw bar graphs.
 ```python
 import matplotlib.pyplot as plt
 
 x=["python","C++","C","php"]
-y =[2,4,6,8]
-c = ['r','y','g','b']
+y =[2,4,8,6]
 
-plt.bar(x,y,color= c)
+plt.bar(x,y)
 plt.show()
+```
+<img src="../AI_ML/images/matplotlib/img_matplotlib_bars1.png"/>
 
-# change width for bar line
-plt.bar(x,y,width=0.4)
+### **Horizontal Bars**
+* If you want the bars to be displayed horizontally instead of vertically, use the **barh()** function:
+```python
+import matplotlib.pyplot as plt
 
-# Single color
-plt.bar(x,y,width=0.4, color="y")
+x=["python","C++","C","php"]
+y =[2,4,8,6]
 
-# Multipal color
+plt.bar(x,y)
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/horizontal_bars.png"/>
+
+* Bar color for single
+```python
+plt.bar(x,y, color="y")
+```
+
+* Multipal color
 col = ['r','y','g','b']
 plt.bar(x,y,width=0.4, color="col")
 
-# align bar chart:- By default center
-plt.bar(x,y,width=0.4, align="edge")
-plt.bar(x,y,width=0.4, align="center") # for center
+* Bar Width
+  * The **bar()** takes the keyword argument **width** to set the width of the bars:
+```python
+plt.bar(x, y, width = 0.1)
+```
+  * The **barh()** takes the keyword argument **height** to set the height of the bars:
+```python
+plt.barh(x, y, height = 0.1)
+```
 
+###  **Bar color**
+```python
+# single color
+plt.bar(x,y,width=0.4, color="y")
+
+# multipal color
+col = ['r','y','g','b']
+plt.bar(x,y,width=0.4, color="col")
+```
+
+### **Align bar chart:-** By default center
+```python
+plt.bar(x,y,width=0.4, align="edge")    # for left
+plt.bar(x,y,width=0.4, align="center") # for center
+```
+
+### **Boundary**
+```python
 # Boundary
 plt.bar(x,y,width=0.4, edgecolor="r")
+
 # for border width
 plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10")
-# line style
-plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10", linestyle=":")
-# border halka karna ho to
-plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10", linestyle=":", alpha="0.4")
 
+# Boundary line style
+plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10", linestyle=":")
+
+# Boundary line style ko halka karna ho to
+plt.bar(x,y,width=0.4, edgecolor="r", linewidth="10", linestyle=":", alpha="0.4")
+```
+
+
+
+
+```python
 # bar chart ka label
 plt.bar(x,y,width=0.4, edgecolor="r", label="python")
 plt.legend()
 plt.show()
-```
-```python
+
+
 # two bar graph overlap
 import matplotlib.pyplot as plt
 import numpy as np
@@ -465,5 +856,112 @@ plt.legend()
 plt.show()
 
 # two bar code without overlap
-
 ```
+<div style="page-break-before: always;"></div>
+
+# Matplotlib Pie Charts
+### **Creating Pie Charts**
+* we can use the **pie() function** to draw pie charts.
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+
+plt.pie(y)
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie1.png"/>
+<div style="page-break-before: always;"></div>
+
+### **Pie Labels**
+```python
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+plt.pie(y, labels = mylabels)
+plt.show() 
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_labels.png"/>
+
+### **Pie Start Angle**
+* As mentioned the **default start angle** is at the **x-axis**, but we can change the start angle by specifying a startangle parameter.
+* The startangle parameter is defined with an angle in degrees, default angle is 0:
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_angles.png"/>
+
+```python
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+plt.pie(y, labels = mylabels, startangle = 90)
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_angle_90.png"/>
+
+### **Pie Explode**
+* Maybe you want one of the wedges to stand out? The explode parameter allows you to do that.
+* The explode parameter, if specified, and not None, must be an array with one value for each wedge.
+* Each value represents how far from the center each wedge is displayed:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.2, 0, 0, 0]
+
+plt.pie(y, labels = mylabels, explode = myexplode)
+plt.show() 
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_explode.png"/>
+
+### **Pie Shadow**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.2, 0, 0, 0]
+
+plt.pie(y, labels = mylabels, explode = myexplode, shadow = True)
+plt.show() 
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_shadow.png"/>
+
+### **Pie colors**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+mycolors = ["black", "hotpink", "b", "#4CAF50"]
+
+plt.pie(y, labels = mylabels, colors = mycolors)
+plt.show()
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_color.png"/>
+
+### **Pie Legend**
+* To add a list of explanation for each wedge, use the legend() function:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+plt.pie(y, labels = mylabels)
+plt.legend()
+plt.show() 
+```
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_legend.png"/>
+
+```python
+plt.pie(y, labels = mylabels)
+plt.legend(title = "Four Fruits:")
+plt.show()
+```
+
+<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_legend_title.png"/>

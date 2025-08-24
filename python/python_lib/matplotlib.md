@@ -18,13 +18,12 @@ print(matplotlib.__version__)   # Output:- 2.0.0
 
 ### **Import Matplotlib**
 ```python
-Importing Matplotlib
+# Importing Matplotlib
 import matplotlib.pyplot as plt
 OR
 from matplotlib import pyplot as plt
 import matplotlib.pyplot as plt
 ```
-<div style="page-break-before: always;"></div>
 
 ### **Types of Matplotlib**
 1. Liner Plot
@@ -37,6 +36,9 @@ import matplotlib.pyplot as plt
 8. Pie Plot
 9. Fill_between Plot
 
+<div style="page-break-before: always;"></div>
+
+# Liner plot
 
 ### **Pyplot Example**
 ```python
@@ -44,15 +46,14 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import numpy as np
 
-xpoints = np.array([0, 6])
-ypoints = np.array([0, 250])
+xpoints = np.array([0, 1, 2, 3, 4])
+ypoints = np.array([0, 2, 4, 6, 8])
 
 plt.plot(xpoints, ypoints)
 plt.show()
 ```
-<!-- ![](../AI_ML/images/matplotlib/img_matplotlib_pyplot.png) -->
-<!-- <img src="../AI_ML/images/matplotlib/img_matplotlib_pyplot.png" width="300" height="300" /> -->
-<img src="../AI_ML/images/matplotlib/img_matplotlib_pyplot.png"/>
+
+<img src="./images/matplotlib/liner/linear_plot_1.png"/>
 <div style="page-break-before: always;"></div>
 
 ```python
@@ -66,21 +67,8 @@ ypoints = np.array([3, 10])
 plt.plot(xpoints, ypoints)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_plotting1.png"/>
+<img src="./images/matplotlib/liner/linear_plot_2.png"/>
 <div style="page-break-before: always;"></div>
-
-### **Plotting Without Line Example**
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-xpoints = np.array([1, 8])
-ypoints = np.array([3, 10])
-
-plt.plot(xpoints, ypoints, 'o')
-plt.show()
-```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_plot_o.png"/>
 
 ### **Multiple Points**
 * Draw a line in a diagram from position (1, 3) to (2, 8) then to (6, 1) and finally to position (8, 10):
@@ -94,7 +82,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(xpoints, ypoints)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_plotting2.png"/>
+<img src="./images/matplotlib/img_matplotlib_plotting2.png"/>
 
 ### **Default X-Points**
 ```python
@@ -106,7 +94,20 @@ ypoints = np.array([3, 8, 1, 10, 5, 7])
 plt.plot(ypoints)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_plotting4.png"/>
+<img src="./images/matplotlib/img_matplotlib_plotting4.png"/>
+
+### **Plotting Without Line Example**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([1, 8])
+ypoints = np.array([3, 10])
+
+plt.plot(xpoints, ypoints, 'o')
+plt.show()
+```
+<img src="./images/matplotlib/img_matplotlib_plot_o.png"/>
 
 ### **Matplotlib Markers**
 ```python
@@ -118,13 +119,13 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, marker = 'o')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_o.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_o.png"/>
 
 ```python
 plt.plot(ypoints, marker = '*')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_star.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_star.png"/>
 
 #### Marker Reference
 | Marker | Description    |
@@ -185,10 +186,10 @@ import numpy as np
 
 ypoints = np.array([3, 8, 1, 10])
 
-plt.plot(ypoints, 'o:r')    # o menas circule / r means red
+plt.plot(ypoints, 'o:r')    # o menas circule / : means dotted line / r means red
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_fmt1.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_fmt1.png"/>
 
 ### **Marker Size**
 * You can use the keyword argument **markersize** or the shorter version, **ms** to set the size of the markers:
@@ -201,7 +202,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, marker = 'o', ms = 20)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_o_20.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_o_20.png"/>
 
 ### **Marker Color**
 * You can use the keyword argument **markeredgecolor** or the shorter **mec** to set the color of the edge of the markers:
@@ -214,7 +215,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, marker = 'o', ms = 20, mec = 'r')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_o_mec.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_o_mec.png"/>
 
 * You can use the keyword argument **markerfacecolor** or the shorter **mfc** to set the color inside the edge of the markers:
 ```python
@@ -226,7 +227,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, marker = 'o', ms = 20, mfc = 'r')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_o_mfc.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_o_mfc.png"/>
 
 * Use **both** the **mec** and **mfc** arguments to color the entire marker:
 ```python
@@ -238,7 +239,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, marker = 'o', ms = 20, mec = 'r', mfc = 'r')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_o_mec_mfc.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_o_mec_mfc.png"/>
 
 * We can also **use** **Hexadecimal** **color** values:
 ```python
@@ -250,7 +251,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, marker = 'o', ms = 20, mec = '#4CAF50', mfc = '#4CAF50')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_marker_o_hex.png"/>
+<img src="./images/matplotlib/img_matplotlib_marker_o_hex.png"/>
 
 * We can also **use** **color names** values: (https://www.w3schools.com/colors/colors_names.asp)
 ```python
@@ -286,7 +287,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, linestyle = 'dotted')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_line_dotted.png"/>
+<img src="./images/matplotlib/img_matplotlib_line_dotted.png"/>
 
 # Line Color
 * You can use the keyword argument **color** or the shorter **c** to set the color of the line:
@@ -315,7 +316,7 @@ ypoints = np.array([3, 8, 1, 10])
 plt.plot(ypoints, linewidth = '20.5')
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_line_lw.png"/>
+<img src="./images/matplotlib/img_matplotlib_line_lw.png"/>
 <div style="page-break-before: always;"></div>
 
 # Multiple Lines
@@ -332,7 +333,7 @@ plt.plot(y2)
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_line_two.png"/>
+<img src="./images/matplotlib/img_matplotlib_line_two.png"/>
 
 * You can also plot many lines by adding the points for the x- and y-axis for each line in the same plt.plot() function.
 ```python
@@ -347,7 +348,7 @@ y2 = np.array([6, 2, 7, 11])
 plt.plot(x1, y1, x2, y2)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_line_two.png"/>
+<img src="./images/matplotlib/img_matplotlib_line_two.png"/>
 
 # Matplotlib Labels and Title
 * we can use the **xlabel()** and **ylabel()** functions to **set** a label for the x- and y-axis.
@@ -367,7 +368,7 @@ plt.ylabel("Calorie Burnage")
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_title.png"/>
+<img src="./images/matplotlib/img_matplotlib_title.png"/>
 
 ### **Set Font Properties for Title and Labels**
 * You can use the fontdict parameter in xlabel(), ylabel(), and title() to set font properties for the title and labels.
@@ -388,7 +389,7 @@ plt.ylabel("Calorie Burnage", fontdict = font2)
 plt.plot(x, y)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_title_fontdict.png"/>
+<img src="./images/matplotlib/img_matplotlib_title_fontdict.png"/>
 
 ### **Position the Title**
 * You can use the **loc** parameter in title() to position the title.
@@ -407,7 +408,7 @@ plt.ylabel("Calorie Burnage")
 plt.plot(x, y)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_title_loc.png"/>
+<img src="./images/matplotlib/img_matplotlib_title_loc.png"/>
 
 # Matplotlib Adding Grid Lines
 * We can use the grid() function to add grid lines to the plot.
@@ -427,7 +428,7 @@ plt.grid()
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_grid.png"/>
+<img src="./images/matplotlib/img_matplotlib_grid.png"/>
 
 ### **Specify Which Grid Lines to Display**
 ```python
@@ -475,7 +476,7 @@ plt.plot(x,y)
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots.png"/>
+<img src="./images/matplotlib/img_matplotlib_subplots.png"/>
 
 ```python
 import matplotlib.pyplot as plt
@@ -497,7 +498,7 @@ plt.plot(x,y)
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots2.png"/>
+<img src="./images/matplotlib/img_matplotlib_subplots2.png"/>
 
 ```pyhton
 import matplotlib.pyplot as plt
@@ -541,7 +542,7 @@ plt.plot(x,y)
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots3.png"/>
+<img src="./images/matplotlib/img_matplotlib_subplots3.png"/>
 
 
 ### Subplot Title
@@ -567,7 +568,7 @@ plt.title("INCOME")
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots4.png"/>
+<img src="./images/matplotlib/img_matplotlib_subplots4.png"/>
 
 ### Super Title
 * We can add a title to the entire figure with the suptitle() function:
@@ -594,7 +595,7 @@ plt.title("INCOME")
 plt.suptitle("MY SHOP")
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_subplots5.png"/>
+<img src="./images/matplotlib/img_matplotlib_subplots5.png"/>
 
 
 # Matplotlib Scatter
@@ -615,7 +616,7 @@ plt.show()
 * The **Y-axis shows** the **speed** of the **car** when it passes.
 * Are there any relationships between the observations?
 * It seems that the newer the car, the faster it drives, but that could be a coincidence, after all we only registered 13 cars.
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter.png"/>
 
 ### Compare Plots
 ```python
@@ -634,7 +635,7 @@ plt.scatter(x, y)
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_compare.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter_compare.png"/>
 
 ### Change Scatter Colors
 ```python
@@ -651,7 +652,7 @@ plt.scatter(x, y, color = '#88c999')
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_color.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter_color.png"/>
 
 ### **Color Each Dot**
 ```python
@@ -666,7 +667,7 @@ plt.scatter(x, y, c=colors)
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_colors2.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter_colors2.png"/>
 
 ### **How to Use the ColorMap**
 ```python
@@ -683,7 +684,7 @@ plt.colorbar()
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_colormap2.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter_colormap2.png"/>
 
 ```python
 import matplotlib.pyplot as plt
@@ -697,7 +698,7 @@ plt.scatter(x, y, c=colors, cmap='viridis')
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_colormap1.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter_colormap1.png"/>
 
 ### **Change Scatter Size**
 * You can change the size of the dots with the **s** argument.
@@ -745,7 +746,7 @@ plt.colorbar()
 
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_scatter_combine.png"/>
+<img src="./images/matplotlib/img_matplotlib_scatter_combine.png"/>
 
 
 
@@ -761,7 +762,7 @@ y =[2,4,8,6]
 plt.bar(x,y)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/img_matplotlib_bars1.png"/>
+<img src="./images/matplotlib/img_matplotlib_bars1.png"/>
 
 ### **Horizontal Bars**
 * If you want the bars to be displayed horizontally instead of vertically, use the **barh()** function:
@@ -774,7 +775,7 @@ y =[2,4,8,6]
 plt.bar(x,y)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/horizontal_bars.png"/>
+<img src="./images/matplotlib/horizontal_bars.png"/>
 
 * Bar color for single
 ```python
@@ -871,7 +872,7 @@ y = np.array([35, 25, 25, 15])
 plt.pie(y)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie1.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie1.png"/>
 <div style="page-break-before: always;"></div>
 
 ### **Pie Labels**
@@ -882,12 +883,12 @@ mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
 plt.pie(y, labels = mylabels)
 plt.show() 
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_labels.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_labels.png"/>
 
 ### **Pie Start Angle**
 * As mentioned the **default start angle** is at the **x-axis**, but we can change the start angle by specifying a startangle parameter.
 * The startangle parameter is defined with an angle in degrees, default angle is 0:
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_angles.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_angles.png"/>
 
 ```python
 y = np.array([35, 25, 25, 15])
@@ -896,7 +897,7 @@ mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
 plt.pie(y, labels = mylabels, startangle = 90)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_angle_90.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_angle_90.png"/>
 
 ### **Pie Explode**
 * Maybe you want one of the wedges to stand out? The explode parameter allows you to do that.
@@ -913,7 +914,7 @@ myexplode = [0.2, 0, 0, 0]
 plt.pie(y, labels = mylabels, explode = myexplode)
 plt.show() 
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_explode.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_explode.png"/>
 
 ### **Pie Shadow**
 ```python
@@ -927,7 +928,7 @@ myexplode = [0.2, 0, 0, 0]
 plt.pie(y, labels = mylabels, explode = myexplode, shadow = True)
 plt.show() 
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_shadow.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_shadow.png"/>
 
 ### **Pie colors**
 ```python
@@ -941,7 +942,7 @@ mycolors = ["black", "hotpink", "b", "#4CAF50"]
 plt.pie(y, labels = mylabels, colors = mycolors)
 plt.show()
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_color.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_color.png"/>
 
 ### **Pie Legend**
 * To add a list of explanation for each wedge, use the legend() function:
@@ -956,7 +957,7 @@ plt.pie(y, labels = mylabels)
 plt.legend()
 plt.show() 
 ```
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_legend.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_legend.png"/>
 
 ```python
 plt.pie(y, labels = mylabels)
@@ -964,4 +965,4 @@ plt.legend(title = "Four Fruits:")
 plt.show()
 ```
 
-<img src="../AI_ML/images/matplotlib/pie/img_matplotlib_pie_legend_title.png"/>
+<img src="./images/matplotlib/pie/img_matplotlib_pie_legend_title.png"/>

@@ -1,0 +1,60 @@
+### **Ques. What is Monkey Patching?**
+* The term monkey patching refers to dynamic(or **run time**) **modifictaion** of class or method.
+* A class or method can be changed at the runtime.
+```python
+class A:  
+   def hello(self):  
+      print ("The hello() function is being called") 
+      
+def monkey_f():
+    print ("monkey_f() is being called")
+
+#normal class method call   
+obj = A()
+obj.hello()
+
+#calling class method after monkey patch
+obj.hello = monkey_f
+obj.hello()
+
+Output:- 
+The hello() function is being called
+monkey_f() is being called
+```
+```python
+# Original buggy function
+def calculate_area(length, width):
+  return length * width  # Missing multiplication by 2
+
+# Monkey patch the bug
+def fixed_calculate_area(length, width):
+  return length * width * 2
+
+calculate_area = fixed_calculate_area
+
+print(calculate_area(5, 3))  # Output: 30 (correctly calculated)
+```
+<div style="page-break-before: always;"></div>
+
+```python
+# Original Class
+class Power:
+    def square(self, num):
+        return f"Square of {num} is: {num**2}"
+
+# Creating an object of Power
+obj = Power()
+print(obj.square(3))  # Expected output: Square of 3 is: 9
+
+------------apply moncky paching
+# Define the replacement function
+def cube(self, num):
+    return f"Cube of {num} is: {num**3}"
+
+# Monkey Patching
+Power.square = cube  # Assigning the new 'cube' method to replace 'square'
+
+# Testing the patch
+obj = Power()
+print(obj.square(3))  # Expected output: Cube of 3 is: 27
+```

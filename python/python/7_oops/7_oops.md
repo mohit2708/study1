@@ -571,9 +571,7 @@ class Addition:
 
 obj = Addition()
 # print(obj.my_sum(3, 4))
-print(obj.my_sum(3, 4, 5))
-
-Output: 12
+print(obj.my_sum(3, 4, 5))  # Output: 12
 ```
 
 ### **Ques. What is Method Overriding?**

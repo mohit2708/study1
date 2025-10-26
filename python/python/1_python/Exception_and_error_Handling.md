@@ -1,4 +1,7 @@
-### Try, Except, else and Finally
+### What is Exception Handling?
+### Try, Except, else and Finally?
+* Exception handling is a way to **manage errors** and unusual conditions that occur during the execution of a program. Instead of crashing the program when an error happens, exception handling allows you to respond to the error gracefully, enabling the program to continue running or to end smoothly.
+* When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
 * **try:-** try block lets you test a block of code for errors.
 * **except:-** The except block lets you **handle the error**.
 * **else:-** The **else** block lets you **execute** code when there is **no error**.
@@ -59,7 +62,25 @@ always executed
 ```
 <div style="page-break-before: always;"></div>
 
-### Handling Error
+#### Types of Errors in Python?
+* In Python, errors are generally categorized into two main types: **syntax errors** and **exceptions**. Each of these types can be further divided into more specific categories.
+1. Syntax Errors
+   1. Missing colons, parentheses, or quotation marks.
+   2. Incorrect indentation.
+```python
+def sample_function()  # Missing colon
+    print("Hello, World!")
+```
+
+2. Logical Errors:-
+   1. Incorrect mathematical operations.
+   2. Misused conditional statements.
+```python
+def add_numbers(a, b):
+    return a - b  # Logical error; should be a + b
+```
+
+3. Exceptions Handling Error
 ```python
 # ZeroDivisionError
 try:
@@ -72,7 +93,7 @@ except ZeroDivisionError:
 # Index Error
 try:
     even_numbers = [2,4,6,8]
-    print(even_numbers[5])
+    print(even_numbers[5])  # Accessing an index that doesn't exist
 except IndexError:
     print("Index Out of Bound.")    # index is not found
 
@@ -86,10 +107,54 @@ except NameError as e:
 
 # TypeError
 try:
-    result = "Hello" + 5  # Attempting to add a string and an integer
+    result = "Hello" + 5  # Trying to add a string and an integer
 except TypeError as e:
     print(f"A TypeError occurred: {e}") # A TypeError occurred: can only concatenate str (not "int") to str
 
+
+# Key error
+my_dict = {'name': 'Alice'}
+try:
+    print(my_dict['age'])  # Key 'age' is not in the dictionary
+except KeyError:
+    print("Error: Key not found in the dictionary.")
+
+# value error
+try:
+    number = int("abc")  # String is not numeric
+except ValueError:
+    print("Error: Invalid value for conversion.")
+
+
+# FileNotFoundError
+try:
+    with open('non_existent_file.txt') as f:
+        content = f.read()
+except FileNotFoundError:
+    print("Error: File not found.")
+
+# ImportError
+try:
+    import non_existent_module
+except ImportError:
+    print("Error: Module not found.")
+
+# AttributeError
+class Sample:
+    pass
+
+obj = Sample()
+try:
+    obj.some_method()  # Method does not exist
+except AttributeError:
+    print("Error: Attribute not found.")
+
+
+# EOFError
+try:
+    input_value = input("Enter something: ")  # Simulate EOF
+except EOFError:
+    print("Error: End of file reached.")
 
 
 
@@ -160,7 +225,7 @@ This is finally block.
 ### Errors and Exceptions in Python
 1. Syntax Errors:
 ```python
-print("Hello, World!"  # Missing closing parenthesis
+print("Hello, World!")  # Missing closing parenthesis
 
 #
 a = 10000 

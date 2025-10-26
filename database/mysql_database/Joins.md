@@ -52,6 +52,7 @@ JOIN Customers c2 ON c1.SALARY = c2.SALARY AND c1.ID < c2.ID;
 ```
 <div style="page-break-before: always;"></div>
 
+
 #### INNER JOIN
 * The MySQL Inner Join is used to returns only those results from the tables that **match** the specified condition and hides other rows and columns.
 * Inner join: Inner join return rows when there is at least one match of rows between the tables.

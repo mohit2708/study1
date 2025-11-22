@@ -55,7 +55,7 @@ else:
 finally:
   print("always executed")
 
-Output:-
+# Output:-
 x
 execute if no exception
 always executed

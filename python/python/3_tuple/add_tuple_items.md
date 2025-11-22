@@ -1,0 +1,32 @@
+### **Add Tuples Items**
+* You can convert the tuple into a list, change the list, and convert the list back into a tuple.
+* **Append Items:-** Add an item to the **end of the list**, use the **append()** method.
+
+```python
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.append("orange")
+thistuple = tuple(y)
+
+print(thistuple)    # output:- ('apple', 'banana', 'cherry', 'orange')
+```
+
+* **insert()** method inserts an item at the ***specified index***.
+```python
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.insert(0,"orange")
+thistuple = tuple(y)
+
+print(thistuple)    # Output:- ('orange', 'apple', 'banana', 'cherry')
+```
+
+**Extend method:-** The extend() method does not have to append lists, you can **add any iterable** object (tuples, sets, dictionaries etc.).
+```python
+thistuple = ("apple", "banana", "cherry")
+list_thislist = list(thistuple)
+tropical = ("mango", "pineapple", "papaya")
+
+list_thislist.extend(tropical)
+print(tuple(list_thislist))  # Output:- ('apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya')
+```

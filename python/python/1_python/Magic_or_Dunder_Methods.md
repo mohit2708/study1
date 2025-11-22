@@ -9,6 +9,7 @@
 | Special Method | Description                 |
 | -------------- | --------------------------- |
 | __len__()      | Supports the len() function |
+
 ```python
 class emp():
     def __init__(self,name,salery):

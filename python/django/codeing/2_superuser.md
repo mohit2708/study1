@@ -14,10 +14,35 @@ pass
 (env) C:\Users\mohits4\env\Scripts\testdjango> python manage.py runserver
 ```
 
+- if got error
+```python
+$ python manage.py createsuperuser
+Superuser creation skipped due to not running in a TTY. You can run `manage.py createsuperuser` in your project to create one manually.
+```
+```python
+winpty python manage.py createsuperuser
+```
+
+### Create superuser without prompt (non-interactive)
+- all command in shell
+```python
+python manage.py createsuperuser --username admin --email admin@example.com --noinput
+```
+```python
+python manage.py shell
+```
+```python
+from django.contrib.auth.models import User
+u = User.objects.get(username="admin")
+u.set_password("yourpassword")
+u.save()
+```
+
 
 ### Show app in your admin
+- Go to myapp/admin.py and add:
 ```python
-=========admin.py=====
+# =========admin.py=====
 from django.contrib import admin
 from blog_app.models import Post, Comment, Category
 # Register your models here.

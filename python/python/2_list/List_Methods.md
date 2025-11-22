@@ -68,9 +68,7 @@ Output:- 2
 ```python
 fruits = [4, 55, 64, 32, 16, 32]
 x = fruits.index(32)
-print(x)
-                        
-Output:- 3
+print(x)  # Output:- 3
 ```
 * **pop():-** Removes the element at the specified position
 * if you do not specify the index, the **pop()** method removes the last item.
@@ -88,25 +86,20 @@ banana
 ```python
 fruits = ['apple', 'banana', 'cherry']
 fruits.remove("banana")
-print(fruits)
-                        
-Output:- ['apple', 'cherry']
+print(fruits) # Output:- ['apple', 'cherry']
 ```
+
 * **clear():-**	Removes all the elements from the list
 ```python
 fruits = ["apple", "banana", "cherry"]
 fruits.clear()
-print(fruits)
-
-Output:- []
+print(fruits) # Output:- []
 ```
 * **reverse():-** Reverses the order of the list
 ```python
 fruits = ['apple', 'banana', 'cherry']
 fruits.reverse()
-print(fruits)                        
-                        
-Output:- ['cherry', 'banana', 'apple']
+print(fruits)  # Output:- ['cherry', 'banana', 'apple']
 ```
 * **sort():-**	Sorts the list
 ```python

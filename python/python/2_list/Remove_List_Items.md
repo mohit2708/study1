@@ -1,39 +1,55 @@
-### **Ques. Remove List Items?**
+### Remove List Items
+
+- using **remove()** method :-
+    - remove() method the **first instance of a matching object**.
+    - Remove **Specified Item** from the List using remove() method.
+    - If item **not exist** in remove method then **show the error.**
+
 ```python
-# * Remove **Specified Item** from the List using remove() method.
-# remove() method the first instance of a matching object.
 thislist = ["apple", "banana", "cherry", "banana"]
 thislist.remove("banana")
 print(thislist)     # Output:- ['apple', 'cherry', "banana"]
+```
 
-
-# If item not exist in remove method then show the error
+```python
 thislist.remove("banana1")
 print(thislist) # Output:- error item not in the list
+```
 
+- using **pop()** method :-
+    - pop() method removes an item at a **specified index**.
+    - If no index is specified, it removes the **last item**.
 
-# using **pop() method:-** The pop() method **removes the specified index**.
+```python
 thislist = ["apple", "banana", "cherry"]
 thislist.pop(1)
 print(thislist)     # Output:- ['apple', 'cherry']
+```
 
+```python
+thislist = ["apple", "banana", "cherry"]
 
-# pop() method without index:- if we do not specify the index, the pop() method **removes the last item**.
 thislist.pop()
 print(thislist)     # Output:- ['apple', 'banana']
+```
 
+- using **del** keyword :-
+    - del keyword removes an item at a **specified index**.
+    - Can also **delete the entire list**.
 
-# **del() method:-** The del keyword also **removes the specified index.**
+```python
+thislist = ["apple", "banana", "cherry"]
 del thislist[0]
 print(thislist)     # Output:- ['banana', 'cherry']
 
+del thislist        # Deletes the entire list
+```
 
-# The **del** keyword can also **delete the list completely.**
-del thislist
-print(thislist) #this will cause an error because you have succsesfully deleted "thislist".
+- using **clear()** method :-
+    - clear() method **empties the list** but the list still exists.
 
-
-#  **clear() method:-** The clear() method **empties the list.**
+```python
+thislist = ["apple", "banana", "cherry"]
 thislist.clear()
 print(thislist)     # Output:- []
 ```

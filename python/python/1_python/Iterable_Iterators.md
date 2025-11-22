@@ -1,5 +1,5 @@
 ### **Ques. What is an Iterable?**
-* Lists, tuples, dictionaries, Strings, and sets are all iterable objects. They are iterable containers which you can get an iterator from.
+* Lists, tuples, dictionaries, Strings, and sets are all **iterable objects**. They are iterable containers which you can get an iterator from.
 * An Iterable is an object that implements the __iter__() method and returns an iterator object or an object that implements __getitem__() method (and should raise an IndexError when indices are exhausted). 
 
 ### What is Iterators?

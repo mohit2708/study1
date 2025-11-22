@@ -20,7 +20,8 @@
 
 ### **What is Docker**
 * Docker is an open-source platform that allows developers to package, deploy, and run applications as containers. A container is a lightweight, portable environment that houses an application and all of its dependencies.
-* The application can be run anywhere (Windows, Linux, Cloud) in the same way.* We can run code and dependencies in containers without installing them directly on your system.
+* The application can be run anywhere (Windows, Linux, Cloud) in the same way.
+* We can run code and dependencies in containers without installing them directly on your system.
 
 ### **Docker Installation**
 * search **get docker** on google (OR) hit "https://docs.docker.com/get-started/get-docker/"

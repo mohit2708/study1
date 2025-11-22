@@ -85,7 +85,7 @@ async def create_item():
 
 #### Path parameters 
 * Path parameters with types
-  * You can capture dynamic parts of the URL (called path parameters) by enclosing them in **curly braces {}** in the path string. FastAPI automatically passes these values to the decorated function as keyword arguments.
+  * We can capture dynamic parts of the URL (called path parameters) by enclosing them in **curly braces {}** in the path string. FastAPI automatically passes these values to the decorated function as keyword arguments.
 ```python
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):

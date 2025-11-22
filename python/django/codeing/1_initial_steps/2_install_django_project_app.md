@@ -31,7 +31,6 @@ django-admin startproject projectName .
 OR
 python manage.py startproject projectName .
 ```
-
 ### Start server
 ```python
 python manage.py runserver
@@ -40,15 +39,12 @@ python manage.py runserver 8484
 ```
 
 ### Create App
-- Create App
 ```python
 
 python manage.py startapp app_name
 OR
 django-admin startapp app_name
-```
-- Add the app name in project -> setting.py file
-```python
+
 ====project ki settings.py mai appn_ame add kar denge======
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,10 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_name',
 ]
-```
-- Add the template
-```python
-====project ki settings.py mai template add kar denge====== 
+
+====project ki settings.py mai template add kar denge======
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_name',
+    'app_name', # register your app
 ]
 
 ====project ki settings.py mai template add kar denge======

@@ -91,3 +91,23 @@ admin.site.register(Category , AdminCategory)
 admin.site.register(Customer )
 admin.site.register(Order )
 ```
+
+
+### Reset Superuser Password Using Django Shell
+- Run Django shell
+```python
+python manage.py shell
+```
+
+- Update the admin password
+```python
+from django.contrib.auth.models import User
+u = User.objects.get(username='admin')  # replace admin with your superuser username
+u.set_password('newpassword')
+u.save()
+```
+- Exit
+```python
+exit()
+```
+- Now you can log in with the new password.

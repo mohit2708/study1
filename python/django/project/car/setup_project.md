@@ -179,3 +179,19 @@ Superuser creation skipped due to not running in a TTY. You can run `manage.py c
 winpty python manage.py createsuperuser
 ```
 
+
+
+### Register in admin file
+```python
+from django.contrib import admin
+from .models import Customer
+
+admin.site.site_header = "Mohit ka Panel"
+admin.site.site_title = "Mohit Admin Portal"
+admin.site.index_title = "Mohit Welcome to Dashboard"
+
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ("id", "first_name", "last_name", "user_name", "created_at")
+    search_fields = ("first_name", "last_name", "user_name")
+```

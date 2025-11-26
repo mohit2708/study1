@@ -1,3 +1,4 @@
+## Virtual Enviroment
 ### Create virtual environment
 ```python
 python -m venv virtual-name
@@ -9,6 +10,7 @@ cd virtual-name\Scripts
 d:\mohit\virtual-name\Scripts> activate
 ```
 
+## Install django
 ### Install django
 ```python
 <virtual-name> d:\mohit> python -m pip install django
@@ -221,7 +223,7 @@ def individual_post(request):
     return render(request, 'index.html')
     return render(request,"signup.html", {'name':'mohit'})
 ```
-
+##
 ### Multipal views
 - Step 1: Create the Views Folder Structure
 ```python
@@ -270,3 +272,5 @@ from .home_view import home
 from .test_view import test
 ```
 - After this → you can delete views.py.
+
+## Migration and model

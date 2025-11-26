@@ -8,7 +8,7 @@ firstly we create the database in mysql
 ```
 * Install the package:- 
 ```python
-pip install mysqlclient 
+pip install mysqlclient
 ```
 In setting.py
 ```python

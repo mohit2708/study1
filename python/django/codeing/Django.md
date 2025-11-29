@@ -1,13 +1,5 @@
 ### View calling
 ```python
-=========urls.py======================
-from .import views
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.individual_post, name='individual_post'),
-]
 ======create viesw.py file=============
 from django.shortcuts import render
 from django.http import HttpResponse

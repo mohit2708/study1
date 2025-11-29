@@ -133,6 +133,8 @@ from .auth_view import signupGet, login_view, logout_view
 
 <a href="/login/">Login</a>
 ```
+
+#### Autofill value if any error
 ```python
 # jab koi error aati hai to form fill hi rahta hai 
 value="{{ first_name|default:'' }}">
@@ -168,3 +170,5 @@ urlpatterns = [
     path('dashboard/', dashboard_views.dashboard, name="dashboard"),
 ]
 ```
+
+

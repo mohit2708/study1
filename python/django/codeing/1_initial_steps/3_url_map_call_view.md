@@ -18,6 +18,8 @@ urlpatterns = [
 from django.contrib import admin
 from django.urls import path
 from . import views
+# if multipla view inside the view folder
+
 
 urlpatterns = [
 	path('', views.home, name='home'),

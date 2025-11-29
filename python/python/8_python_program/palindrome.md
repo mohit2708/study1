@@ -16,9 +16,7 @@ def isPalindrome(string):
 
 s = "malayalam"
 # s = "Mohit saxena"
-isPalindrome(s)
-
-Output:- The string is a palindrome!
+isPalindrome(s) # Output:- The string is a palindrome!
 ```
 
 ```python

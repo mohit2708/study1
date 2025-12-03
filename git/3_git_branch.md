@@ -36,6 +36,11 @@ git checkout branch_name
 git checkout -b branch_name
 ```
 
+### branch push on remote
+```git
+git push --set-upstream origin branch_name
+```
+
 #### current branch details
 ```git
 git branch -vv

@@ -1,4 +1,18 @@
 ### **Ques. What is Stored procedure?**
+* A Stored Procedure is a pre compiled SQL program stored inside the MySQL database that you can run again and again.
+* It is used to:
+  * Reduce repeated SQL code
+  * Improve performance
+  * Add security
+  * Apply business logic at the database level
+* Advantages of Stored Procedures
+  * Faster execution (precompiled)
+  * Code reusability
+  * Better security (direct table access can be restricted)
+  * Reduced network traffic
+  * Easy maintenance
+
+
 * Stored procedure is a function which cantains a collection of sql quries, the procedure can take inputs, process them and send back output.
 * Stored procedure is a database object which is used to perform some specific task.
 * Stored procedure is called explicitly.

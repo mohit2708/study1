@@ -16,9 +16,18 @@
 
 
 ### **TO check version**
+- Shows installed Docker version
 ```docker
-# opne cmd
+docker --version
 docker -v
+```
+- Shows client + server version
+```docker
+docker version
+```
+- Shows full system info (images, containers, CPU, storage, etc.)
+```docker
+docker info
 ```
 
 ### **Check the all docker Commands**

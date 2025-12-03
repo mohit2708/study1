@@ -14,32 +14,8 @@
 |       | [container run in background/detached mode](#container-run-in-backgrounddetached-mode) |
 <div style="page-break-before: always;"></div>
 
-
-<div style="page-break-before: always;"></div>
-
 # Image Commands
 
-### **Create docker image**
-* If this image is not present in our local environment then it is pulled from Docker Hub.
-```docker
-docker pull hello-world
-docker pull mysql
-docker pull mysql:8.0   #if any specific version or tag
-```
-
-### **Show docker images**
-```docker
-docker images
-```
-
-### **Delte the images**
-* delete the container first related to image
-```docker
-docker rmi IMAGE_ID
-docker rmi mohit2708/myfastapiapp:latest  #delete with specific name
-docker rmi -f IMAGE_ID  #Force delete
-docker image prune    #Remove unused images
-```
 
 ### Build an image from a Dockerfile
 ```docker
@@ -377,3 +353,6 @@ docker login -u <username>
 
 docker push devapnacollege/testapp  # push in docker
 ```
+=======================
+
+

@@ -14,8 +14,6 @@
 |       | [container run in background/detached mode](#container-run-in-backgrounddetached-mode) |
 <div style="page-break-before: always;"></div>
 
-# Image Commands
-
 
 ### Build an image from a Dockerfile
 ```docker
@@ -353,6 +351,3 @@ docker login -u <username>
 
 docker push devapnacollege/testapp  # push in docker
 ```
-=======================
-
-

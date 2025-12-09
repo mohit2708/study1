@@ -1,22 +1,63 @@
 ### What is a Docker Container?
-- A container is a running instance of an image.
+### Docker Container Command
+#### List Running Containers
+- Container is a running instance of an image.
+```docker
+# Show running containers
+docker ps
 
-3. Docker Container Commands (Container = Running App)
-Command	What it Does
-docker ps	Show running containers
-docker ps -a	Show all containers
-docker run nginx	Create + start container
-docker run -d nginx	Run in background
-docker run -p 8080:80 nginx	Port mapping (host → container)
-docker run --name mycon nginx	Run with custom name
-docker run -it ubuntu bash	Run in interactive mode
-docker stop con_id	Stop container
-docker start con_id	Start stopped container
-docker restart con_id	Restart container
-docker rm con_id	Delete container
-docker rm -f con_id	Force delete running container
-docker rm $(docker ps -aq)	Delete all containers
+# List All Containers (Running + Stopped)
+docker ps -a    
+```
 
-✅ Interview Line:
+#### Run a Container
+```docker
+docker run nginx
 
-Container is a running instance of an image.
+# Run in background
+docker run -d nginx 
+
+# Port mapping (host → container)
+docker run -p 8080:80 nginx
+
+# Run with custom name
+docker run --name mycontainer nginx
+```
+
+#### Run Interactive Mode
+```docker
+docker run -it ubuntu bash
+```
+
+#### Stop Container
+```docker
+docker stop container_id
+```
+
+#### Start Container
+```docker
+docker start container_id
+```
+
+#### Restart Container
+```docker
+docker restart container_id
+```
+
+#### Remove Container
+```docker
+docker rm container_id
+
+# Force Remove Running Container
+docker rm -f con_id
+
+# Delete all containers
+docker rm $(docker ps -aq)
+```
+
+
+#### Docker Exec (Enter Inside Container)
+```docker
+docker exec -it container_id bash
+docker exec -it container_id sh
+```

@@ -1,57 +1,4 @@
-# Firebase setup
-
-## **Firebase Account**
-
-### **How to Create a Firebase Account (Step-by-Step)**
-
-- **Open the Firebase website:** [https://firebase.google.com/](https://firebase.google.com/)
-- Click “Get Started”
-- Login With Google Account
-- Create a New Project
-    - Click "Add project"
-    - Enter your project name
-    - Example: my-laravel-app
-    - You can disable Google Analytics (optional)
-    - Click Create project
-- After Project is Created → Open Firebase Console
-    - Click Continue to enter the console.
-- 🚀 Firebase Account is Now Created
-
-### **Enable Cloud Messaging (Required for Push Notification)**
-
-- Inside your Firebase project:
-- Go to “Project Settings” :- (bottom left gear icon)
-- Click “Cloud Messaging” tab
-    - Here you will find:
-        - Server Key (FCM key)
-        - Sender ID
-- Laravel will use the service account JSON, not the server key.
-
-### **Generate Service Account JSON**
-
-- Steps:
-    - Console → Project Settings
-    - Tab → Service accounts
-    - Click “Generate new private key”
-    - A service-account.json file will download
-- You will need to place this file in:
-    - create the downloaded file rename - downloaded_or_rename_file_name
-    - and **create the folder** firebase inside the **/storage/app**
-    - The path in .env must match exact filename
-
-```php
-/storage/app/firebase/downloaded_or_rename_file_name.json
-```
-
-### **After creating folder → Add in .env**
-
-```php
-# Replace /full/path/to/ with the actual path where your serviceAccountKey.json is located.
-FIREBASE_CREDENTIALS=/storage/app/firebase/service-account.json
-```
-
-### **Install Firebase in Laravel**
-
+### Install Firebase in Laravel
 ```php
 composer require kreait/laravel-firebase
 ```
@@ -62,6 +9,109 @@ composer require kreait/laravel-firebase
 php artisan vendor:publish --provider="Kreait\Laravel\Firebase\ServiceProvider" --tag=config
 ```
 
+## Firebase Account
+### How to Create a Firebase Account (Step-by-Step)
+- **Open the Firebase website:** https://firebase.google.com/
+- Click “Get Started”
+- Login With Google Account
+- Create a New Project
+  - Click "Add project"
+  - Enter your project name
+  - Example: my-laravel-app
+  - You can disable Google Analytics (optional)
+  - Click Create project
+- After Project is Created → Open Firebase Console
+  - Click Continue to enter the console.
+- 🚀 Firebase Account is Now Created
+
+### Enable Cloud Messaging (Required for Push Notification)
+- Inside your Firebase project:
+- Go to “Project Settings” :- (bottom left gear icon)
+- Click “Cloud Messaging” tab
+  - Here you will find:
+    - Server Key (FCM key)
+    - Sender ID
+- Laravel will use the service account JSON, not the server key.
+
+### Generate Service Account JSON
+- Steps:
+  - Console → Project Settings
+  - Tab → Service accounts
+  - Click “Generate new private key”
+  - A service-account.json file will download
+- You will need to place this file in:
+  - create the downloaded file rename - downloaded_or_rename_file_name
+  - and **create the folder** firebase inside the **/storage/app**
+  - The path in .env must match exact filename
+
+```php
+/storage/app/firebase/downloaded_or_rename_file_name.json
+```
+
+### After creating folder → Add in .env
+```php
+# Replace /full/path/to/ with the actual path where your serviceAccountKey.json is located.
+FIREBASE_CREDENTIALS=/storage/app/firebase/service-account.json
+```
+
+## Create Model + Migration
+```php
+php artisan make:model UserDeviceToken -m
+```
+
+### Edit Migration
+```php
+public function up()
+{
+    Schema::create('user_device_tokens', function (Blueprint $table) {
+        $table->id();
+        $table->unsignedBigInteger('user_id');
+        $table->string('fcm_token')->unique();
+        $table->string('device_type')->nullable(); // android / ios / web
+        $table->string('device_id')->nullable();   // optional
+        $table->timestamps();
+
+        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+    });
+}
+
+```
+
+### Run the migration
+```php
+php artisan migrate --path=/database/migrations/2025_11_19_105525_create_user_device_tokens_table.php
+```
+
+### save the token behalf of user_id
+- by api for mobile team
+- we can save staticaly save toke for testing
+```php
+public function storeMobileToken(Request $request)
+{
+    $request->validate([
+        'user_id' => 'required|exists:users,id',
+        'fcm_token' => 'required|string'
+    ]);
+
+    // Save OR Update Token
+    UserDeviceToken::updateOrCreate(
+        [
+            'user_id' => $request->user_id,
+            'device_id' => $request->device_id,
+        ],
+        [
+            'fcm_token' => $request->fcm_token,
+            'device_type' => $request->device_type,
+        ]
+    );
+
+    return response()->json([
+        'message' => 'Token saved successfully'
+    ]);
+}
+```
+
+
 ### Create Service in your project
 
 - app/Services/FirebaseService.php
@@ -70,7 +120,6 @@ php artisan vendor:publish --provider="Kreait\Laravel\Firebase\ServiceProvider" 
 <?php
 
 // app/Services/FirebaseService.php
-
 namespace App\Services;
 
 use Kreait\Firebase\Factory;

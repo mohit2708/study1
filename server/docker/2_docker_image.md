@@ -24,6 +24,9 @@ docker build -t myapp .
 
 # Download a specific version
 docker build -t myapp:v1 .
+
+#build without cache
+docker build -t <image_name>:<version> . -no-cache
 ```
 
 ### Delete image

@@ -15,13 +15,6 @@
 <div style="page-break-before: always;"></div>
 
 
-### Build an image from a Dockerfile
-```docker
-docker build -t <image_name>:<version> .            #version is optional
-docker build -t <image_name>:<version> . -no-cache  #build without cache
-```
-<div style="page-break-before: always;"></div>
-
 ### 🧱 **What Are Docker Image Layers?**
 * A Docker image is made up of a series of layers stacked on top of each other.
 * Each layer represents a change or addition made to the image, like:
@@ -42,25 +35,12 @@ docker build -t <image_name>:<version> . -no-cache  #build without cache
 
 # Container commands
 
-### 🧠 **Run the container**
-
-#### ✅ **Create & run a new container/Image to container**
-* if image not available locally, it’ll be downloaded from DockerHub
-```docker
-docker run image_id/image_name
-```
-
 #### **Run container using Port Binding**
 * The first 8000 (before the colon) is the **host port** — the port on your computer.
 * The second 8000 (after the colon) is the **container port** — the port inside the Docker container where your app is running.
 ```docker
 docker run -p<host_port>:<container_port> <image_name>
 docker run -d -p 8000:8000 myfastapiapp // example
-```
-
-#### **Run container with custom name**
-```docker
-docker run --name <container_name> <image_name>
 ```
 
 #### **container run in background/detached mode**
@@ -99,11 +79,6 @@ docker run -e <var_name>=<var_value> <container_name> (or <container_id)
 docker ps
 # see all containers (running or stopped):
 docker ps -a
-```
-
-### **container start/Stoped**
-```docker
-docker start|stop container_id/container_name
 ```
 
 ### **Delete the container**

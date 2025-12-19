@@ -1,6 +1,8 @@
 ### Install & Configure JWT Authentication Package
 ```php
 composer require tymon/jwt-auth
+composer require tymon/jwt-auth:^2.2 --with-all-dependencies
+composer require tymon/jwt-auth:^2.2 -W
 ```
 
 ### config/app.php

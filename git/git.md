@@ -9,11 +9,6 @@
 |       | [Removing Files from the Staging Area](#removing-files-from-the-staging-area)   |
 
 
-```python
-
-```
-
-
 ### ssl error
 * when we got the ssl error
 ```git

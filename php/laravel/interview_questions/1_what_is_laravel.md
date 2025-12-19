@@ -94,3 +94,17 @@ php artisan up
 * min() 
 * avg() 
 * sum()
+
+
+### How to check laravel version?
+```php
+# bash
+php artisan --version
+php artisan -V
+
+# From within the Application Code
+echo app()->version();
+
+# In a Blade template
+{{ app()->version() }}
+```

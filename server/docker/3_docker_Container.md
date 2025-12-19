@@ -10,8 +10,10 @@ docker ps
 docker ps -a    
 ```
 
-#### Run a Container
+#### create and Run a Container
+#### Image to container
 ```docker
+docker run image_id/image_name
 docker run nginx
 
 # Run in background
@@ -21,6 +23,7 @@ docker run -d nginx
 docker run -p 8080:80 nginx
 
 # Run with custom name
+docker run --name <container_name> <image_name>
 docker run --name mycontainer nginx
 ```
 
@@ -31,30 +34,33 @@ docker run -it ubuntu bash
 
 #### Stop Container
 ```docker
-docker stop container_id
+docker stop container_id/container_name
 ```
 
 #### Start Container
 ```docker
-docker start container_id
+docker start container_id/container_name
 ```
 
 #### Restart Container
 ```docker
-docker restart container_id
+docker restart container_id/container_name
 ```
 
 #### Remove Container
 ```docker
-docker rm container_id
+# Step 1:- stop the container
+docker stop <container_id_or_name>
 
-# Force Remove Running Container
+# Step 2:- delete the container
+docker rm container_id/container_name
+
+# Force Remove Running Container/stop and remove the container
 docker rm -f con_id
 
 # Delete all containers
 docker rm $(docker ps -aq)
 ```
-
 
 #### Docker Exec (Enter Inside Container)
 ```docker

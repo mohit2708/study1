@@ -76,7 +76,10 @@ def num():
 
 print(num())    # Output:- 15
 
-# Calling type2
+# ---Calling type2---
+def num():
+    return 10
+
 result = num_decor(num)
 print(result()) # Output:- 15
 ```

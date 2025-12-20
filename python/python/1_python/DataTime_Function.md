@@ -26,9 +26,7 @@ from datetime import datetime
 
 # returns current date and time
 now = datetime.now()
-print("now = ", now)
-
-Output:- now =  2024-12-25 10:35:43.891754
+print("now = ", now)    # Output:- now =  2024-12-25 10:35:43.891754
 ```
 
 ### Get Current Date
@@ -36,16 +34,14 @@ Output:- now =  2024-12-25 10:35:43.891754
 import datetime
 # get current date
 current_date = datetime.date.today()
-print(current_date)
+print(current_date) # Output:- 2024-12-25
 
 (OR)
 # Import date class from datetime module
 from datetime import date
 # Returns the current local date
 today = date.today()
-print("Today date is: ", today)
-
-Output:- 2024-12-25
+print("Today date is: ", today) # Output:- 2024-12-25
 ```
 
 ### Format change data and time
@@ -54,7 +50,7 @@ from datetime import datetime
 
 # returns current date and time
 now = datetime.now().strftime("%Y/%m/%d")   # change the format
-print("now = ", now)
+print("now = ", now)    # Output:- now =  2025/12/20
 ```
 
 ### Do I Get a Specific Date in Python?

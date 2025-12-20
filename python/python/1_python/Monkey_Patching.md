@@ -58,3 +58,8 @@ Power.square = cube  # Assigning the new 'cube' method to replace 'square'
 obj = Power()
 print(obj.square(3))  # Expected output: Cube of 3 is: 27
 ```
+
+#### Why Use Monkey Patching?
+* Fix bugs in third-party libraries without altering their source code
+* Add custom behavior to built-in or library classes
+* Useful in testing and mocking

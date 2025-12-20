@@ -1,28 +1,25 @@
 ### **Ques. What is Lambda/Anonymous Function?**
 * A lambda function is a small anonymous function(anonymous function is a function that is defined without a name).
 * While normal functions are defined using the **def** keyword in Python, anonymous functions are defined using the **lambda** keyword.
-* **Note** The anonymous function does not have a return keyword, the anonymous function will automatically return the result of the expression in the function once it is executed.
+* **Note** The anonymous function does not have a **return keyword**, the anonymous function will **automatically return** the result of the expression in the function once it is executed.
 ```python
+# Normal Function
 def add(a,b):
   print(a+b)
 add(5,10)
 
 # Using Lambda function
 x = lambda a: a + 10
-print(x(5))
-
-Output:- 15
+print(x(5)) # Output:- 15
 ```
-* You can use lambda function in **filter()**
+* We can use lambda function in **filter()**
 ```python
 # filter() function is used to filter a given iterable (list like object) using another function that defines the filtering logic.
 # Syntex:- filter(object, iterable)
 # The object here should be a lambda function which returns a boolean value.
 mylist = [2,3,4,5,6,7,8,9,10]
 list_new  = list(filter(lambda x : (x%2==0), mylist))
-print(list_new)
-
-Output:- [2, 4, 6, 8, 10]
+print(list_new) # Output:- [2, 4, 6, 8, 10]
 ```
 * We can use lambda function in **map()**
 ```python

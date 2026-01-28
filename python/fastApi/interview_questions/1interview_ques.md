@@ -233,3 +233,106 @@ async def process_items(background_tasks: BackgroundTasks):
     background_tasks.add_task(task_two, "arg2", keyword="value")
     return {"message": "Tasks started"}
 ```
+
+### How do you handle errors in a FastAPI application?
+- FastAPI provides several ways to handle errors. 
+  - We can use try-except blocks to catch exceptions and return custom error responses. 
+  - Additionally, FastAPI has built-in support for error handling using the **@app.exception_handler** decorator. This allows you to define custom handlers for specific exception types.
+
+### How do you implement authentication and authorization in a FastAPI application?
+- FastAPI provides several options for implementing authentication and authorization, including:
+  - Using **OAuth2** with libraries like **fastapi-security**
+  - Implementing JWT (JSON Web Tokens) using libraries like **python-jose**
+  - Using session-based authentication with libraries like **fastapi-session**
+- You can also use external services like **Auth0** or **Okta** to handle authentication.
+
+
+### How do you optimize the performance of a FastAPI application?
+- To optimize the performance of a FastAPI application, you can:
+  - Use async/await syntax to write non-blocking code
+  - Use caching mechanisms like Redis or Memcached to reduce database queries
+  - Optimize database queries using indexing and efficient query methods
+  - Use a load balancer to distribute traffic across multiple instances
+  - Monitor performance metrics using tools like Prometheus and Grafana
+
+### How do you deploy a FastAPI application?
+- FastAPI applications can be deployed in several ways, including:
+  - Using a **WSGI** server like **Gunicorn** or uWSGI
+  - Using an **ASGI** server like **uvicorn** or hypercorn
+  - Deploying to a cloud platform like AWS Elastic Beanstalk or Google Cloud App Engine
+  - Using a containerization tool like Docker
+
+### Can you explain the concept of async/await in FastAPI?
+- Async/await is a syntax for writing non-blocking code that allows your application to handle multiple requests concurrently. In FastAPI, async/await is used to define coroutines that can be executed asynchronously. This allows your application to handle multiple requests without blocking, improving performance and scalability.
+
+### How do you validate user input in a FastAPI application?
+- FastAPI provides several ways to validate user input, including:
+  - Using Pydantic models to define validation rules for incoming data
+  - Using the @app.validator decorator to define custom validation logic
+  - Using external libraries like **marshmallow** or **cerberus** for validation
+
+
+### Can you explain the difference between a route and an endpoint in FastAPI?
+- In FastAPI, a route is a path that maps to a specific handler function. An endpoint is a specific URL that can be used to interact with the application. 
+- For example, /users might be a route that maps to a handler function that returns a list of users, while /users/123 might be an endpoint that returns a specific user.
+
+
+### How do you handle file uploads in a FastAPI application?
+- FastAPI provides support for handling file uploads using the Request object and the File class from the fastapi.datastructures module. You can also use external libraries like python-magic to handle file uploads.
+
+### Can you explain how to use WebSockets in a FastAPI application?
+- FastAPI provides support for WebSockets using the **WebSocket class** from the **fastapi.websockets module**. You can use this to establish real-time communication between the client and server, allowing for bidirectional messaging and event-driven programming.
+
+### How do you handle CORS (Cross-Origin Resource Sharing) in a FastAPI application?
+- FastAPI provides built-in support for handling CORS using the CORSMiddleware class from the fastapi.middleware.cors module. You can configure this middleware to allow specific origins, methods, and headers.
+
+12. Can you explain how to use background tasks in a FastAPI application?
+
+Background tasks are used to run tasks asynchronously in the background. In FastAPI, you can use libraries like background_tasks or celery to handle background tasks. These tasks can be used to perform long-running operations without blocking the main thread.
+
+13. How do you implement logging in a FastAPI application?
+
+FastAPI provides support for logging using the logging module from Python's standard library. You can also use external libraries like loguru or structlog to handle logging. It's recommended to configure logging at the start of your application and use it throughout.
+
+14. Can you explain how to use FastAPI with a database?
+
+FastAPI supports several databases, including relational databases like PostgreSQL and MySQL, as well as NoSQL databases like MongoDB and Cassandra. You can use libraries like sqlalchemy or pymongo to interact with your database. FastAPI also provides support for ORMs (Object-Relational Mappers) like pydantic-sqlalchemy.
+
+15. How do you handle pagination in a FastAPI application?
+
+Pagination is used to limit the number of results returned by an API endpoint. In FastAPI, you can use query parameters like limit and offset to implement pagination. You can also use libraries like paginate or sqlalchemy-pagination.
+
+16. Can you explain how to use FastAPI with Docker?
+
+FastAPI applications can be containerized using Docker. To do this, you need to create a Dockerfile that installs the required dependencies and copies your application code into the container. Then, you can build and run the container using Docker.
+
+17. How do you handle authentication with JWT (JSON Web Tokens) in a FastAPI application?
+
+FastAPI provides support for authenticating users with JWT tokens using libraries like python-jose or fastapi-security. You can use these libraries to verify and validate JWT tokens sent by clients.
+
+18. Can you explain how to use FastAPI with GraphQL?
+
+GraphQL is an alternative to traditional REST APIs that allows clients to specify exactly what data they need. In FastAPI, you can use libraries like graphene or ariadne to implement a GraphQL API.
+
+### How do you handle errors and exceptions in a FastAPI application using try-except blocks?
+- Try-except blocks are used to catch exceptions that occur during the execution of your code. In FastAPI, you can use these blocks to handle errors and return custom error responses.
+
+20. Can you explain how to use OpenAPI (Swagger) documentation with a FastAPI application?
+
+OpenAPI (formerly Swagger) is an API description standard that allows clients to discover and interact with APIs programmatically. FastAPI provides built-in support for generating OpenAPI documentation using the FastAPI class.
+
+21. How do you handle sensitive data in a FastAPI application?
+
+Sensitive data includes secrets, passwords, and other confidential information. In FastAPI, you can use libraries like python-dotenv or secureconfig to manage sensitive data securely.
+
+22. Can you explain how to implement rate limiting in a FastAPI application?
+
+Rate limiting is used to limit the number of requests an API endpoint receives within a certain time period. In FastAPI, you can use libraries like fastapi-rate-limit or slowApi to implement rate limiting.
+
+23. How do you handle caching in a FastAPI application?
+
+Caching involves storing frequently accessed data in memory or on disk so that subsequent requests for the same data can be served quickly. In FastAPI, you can use libraries like fastapi-caching or redis to implement caching.
+
+24. Can you explain how to use Webhooks with a FastAPI application?
+
+Webhooks involve sending HTTP callbacks from one server to another in response to certain events. In FastAPI, you can use webhooks to send notifications to clients when data changes.

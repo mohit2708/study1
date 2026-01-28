@@ -6,9 +6,10 @@
 
 #### **Types of Normalization**
 1. **First Normal Form (1NF)**
-* Each column can have only one value, that is, there cannot be more than one value in the same cell.
+* Each column can have only one type of data/value, i.e, there cannot be more than one value in the same cell.
 * All values in a column must be of the same data type, such as all names or all numbers
-* Each record (row) must be unique.
+* Each record (row) must be unique identifier (primary key).
+
 ```sql
 -- Unnormalized Table (UNF)
 | OrderID | CustomerName | ProductName   |
@@ -27,6 +28,7 @@
 2. **Second Normal Form (2NF)**
 * The table should already be in 1NF.
 * Every non-prime attribute (which is not part of the primary key) in the table must depend on the entire primary key,
+* suppose hame kisi data ka name change karna pada to sabhi column mai karna padega isliye id use karte hai
 ```sql
 -- Unnormalized Table (UNF)
 | std_id | course_id | std_name | course_name |
@@ -46,6 +48,12 @@
 | 101       | Math        |
 | 102       | Hindi       |
 ```
+
+3. तीसरा सामान्य रूप (3NF)
+- Remove the Transitive Dependency
+- 3NF में हम यह सुनिश्चित करते हैं कि कोई ट्रांजिटिव डिपेंडेंसी (Transitive Dependency) न हो। इसका मतलब है कि अगर कॉलम A → B और कॉलम B → C है, तो हमें कॉलम C को टेबल से अलग करना होगा और उसे स्वतंत्र टेबल में रखना होगा।
+
+
 
 
 #### Data modification anomalies can be categorized into three types:

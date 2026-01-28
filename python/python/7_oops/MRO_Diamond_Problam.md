@@ -2,6 +2,7 @@
 * MRO is a concept used in **inheritance**.
 * MRO stands for Method Resolution Order. MRO defines the order of the inherited methods in the child class.
 * In Python, the MRO is from **bottom to top** and **left to right**. This means that, first, the method is searched in the class of the object. If it’s not found, it is searched in the immediate super class. In the case of multiple super classes, it is searched left to right, in the order by which was declared by the developer.
+* sable pahle child class ke function ko call karege agar child class mai wo function nahi hai to uske uper wali class mai call karge agar usme bhi nahi hai to uske uper wali class mai call karega asa hi same process chalega.
 
 ```python
 # Example1
@@ -137,3 +138,5 @@ obj.__class__.__bases__[1].__init__(obj)    # 0 if father or 1 is mother class s
 son class Constructor
 mother class Constructor
 ```
+
+### Diamond Problem?

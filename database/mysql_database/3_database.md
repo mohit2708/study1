@@ -6,6 +6,10 @@
 |       | [Drop/Delete Database](#drop-database) |
 |       | [Select Database](#select-database)    |
 
+
+### What is a database?
+- A database is an organized collection of data that allows efficient storage, retrieval, and management.
+
 #### Show Database
 ```sql
 SHOW DATABASES/SCHEMAS;

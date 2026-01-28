@@ -14,10 +14,9 @@ print(thislist) # Output:- [23, 50, 65, 82, 100]
 ```python
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
 thislist.sort(key = str.lower)
-print(thislist)
-
-Output:- ['banana', 'cherry', 'Kiwi', 'Orange']
+print(thislist) # Output:- ['banana', 'cherry', 'Kiwi', 'Orange']
 ```
+
 * **Sort Descending:-** To sort descending, use the keyword argument reverse = True.
 ```python
 thislist = ["orange", "mango", "Kiwi", "Pineapple", "banana"]

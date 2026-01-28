@@ -1,7 +1,6 @@
 
 |  No.  | Questions                                                                                                                             |
 | :---: | ------------------------------------------------------------------------------------------------------------------------------------- |
-|       | [Find the Length of a List?](#find-the-length-of-a-list)                                                                              |
 |       | [find the single number(unique-element) of the list?](#ques-find-the-single-numberunique-element-of-the-list)                         |
 |       | [Interchange first and last elements in a list?](#ques-interchange-first-and-last-elements-in-a-list)                                 |
 |       | [Swap Two Elements in a List?](#swap-two-elements-in-a-list)                                                                          |
@@ -17,9 +16,7 @@
 |       | [Generate a number list between two ranges?](#ques-generate-a-number-list-between-two-ranges)                                         |
 |       | [Remove elements in a list after a specific index?](#ques-remove-elements-in-a-list-after-a-specific-index)                           |
 |       | [Remove elements in a list before  a specific index?](#ques-remove-elements-in-a-list-before--a-specific-index)                       |
-|       | [Remove elements in a list between 2 indices?](#ques-remove-elements-in-a-list-between-2-indices)                                     |
 |       | [Count the elements of a specific object in a list?](#ques-count-the-elements-of-a-specific-object-in-a-list)                         |
-|       | [Remove the negative index from the list?](#ques-remove-the-negative-index-from-the-list)                                             |
 |       | [Multiply a Python List by a Number Using a for loop?](#ques-multiply-a-python-list-by-a-number-using-a-for-loop)                     |
 |       | [Multiply a Python List by a Number Using a list comprehension?](#ques-multiply-a-python-list-by-a-number-using-a-list-comprehension) |
 |       | [Convert a list into a tuple?](#ques-convert-a-list-into-a-tuple)                                                                     |
@@ -29,30 +26,7 @@
 |       | [Sort the list on the basis of length?](#ques-sort-the-list-on-the-basis-of-length)                                                   |
 |       | [How would you convert a list to an array?](#ques-how-would-you-convert-a-list-to-an-array)                                           |
 
-### **Find the Length of a List?**
-* Using **len() Function** or **length_hint** function
-```python
-# Using lentgh function
-li = [10, 20, 30]
-n = len(li)
-print("The length of list is: ", n)
-Output:- The length of list is:  3
 
-# Using length_hint Function
-from operator import length_hint
-test_list = [1, 4, 5, 7, 8]
-list_len_hint = length_hint(test_list)
-print("Length of list using length_hint() is : " + str(list_len_hint))
-Output:- Length of list using length_hint() is : 5
-
-# using for loop
-test_list = [1, 4, 5, 7, 8]
-counter = 0
-for i in test_list:
-	counter = counter + 1
-print("Length of list using naive method is : " + str(counter))
-Output:- Length of list using naive method is : 5
-```
 
 ### **Ques. find the single number(unique element) of the list?**
 ```python
@@ -69,108 +43,6 @@ print([num for num in mylist if mylist.count(num)==1]) # Output:-[1, 4]
 ```
 <div style="page-break-before: always;"></div>
 
-
-### **Ques. Interchange first and last elements in a list?**
-```python
-# Without temp varibale
-------------------------
-list = [12, 35, 9, 56, 24]
-list[0] = list[-1]
-list[-1] = list[0]
-print(list) # Output:- [24, 35, 9, 56, 24]
-
-# With temp variable
---------------------
-list = [12, 35, 9, 56, 24]
-length = len(list)
-temp = list[0]
-list[0] = list[length - 1]
-list[length - 1] = temp
-print(list) # Output:- [24, 35, 9, 56, 12]
-
-# Using comma function
-----------------------
-def swapList(newList):
-    newList[0], newList[-1] = newList[-1], newList[0]
-    return newList
-    
-# Driver code
-newList = [12, 35, 9, 56, 24]
-print(swapList(newList))    # Output:- [24, 35, 9, 56, 12]
-
-# Using * operand.
-------------------
-list = [1, 2, 3, 4]
-
-a, *b, c = list
-
-print(a)
-print(b)
-print(c)
-
-Output:-
-1
-[2, 3]
-4
-# Using * operand 2 approch.
-def swapList(list):
-    start, *middle, end = list
-    list = [end, *middle, start]
-    return list
-
-newList = [12, 35, 9, 56, 24]
-print(swapList(newList))    # Output:- [24, 35, 9, 56, 12]
-```
-<div style="page-break-before: always;"></div>
-
-
-
-### **Swap Two Elements in a List?**
-* using **comma** assignment
-```python
-def swapPositions(list, pos1, pos2):
-     
-    list[pos1], list[pos2] = list[pos2], list[pos1]
-    return list
- 
-# Driver function
-List = [23, 65, 19, 90]
-pos1, pos2  = 1, 3
- 
-print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
-```
-
-* Using **temp** variable
-```python
-def swapPositions(lis, pos1, pos2):
-    temp=lis[pos1]
-    lis[pos1]=lis[pos2]
-    lis[pos2]=temp
-    return lis
-# Driver function
-List = [23, 65, 19, 90]
-pos1, pos2 = 1, 3
- 
-print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
-```
-
-* Using **enumerate**
-```python
-def swapPositions(lis, pos1, pos2):
-    for i, x in enumerate(lis):
-        if i == pos1:
-            elem1 = x
-        if i == pos2:
-            elem2 = x
-    lis[pos1] = elem2
-    lis[pos2] = elem1
-    return lis
- 
-List = [23, 65, 19, 90]
-pos1, pos2 = 1, 3
-print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
-```
-<div style="page-break-before: always;"></div>
 
 ### **Ques. find the even number from the list?**
 ```python
@@ -213,6 +85,29 @@ print(odd)      # Output:- [9, 7, 3, 1]
 print(duplicate)
 ```
 
+### Find the duplicate element from list?
+```python
+list = [9,3,6,4,7,3,1,4]
+duplicate = []
+for i in list:
+    if list.count(i) > 1 and i not in duplicate:
+        duplicate.append(i)
+   
+print(duplicate)    # Output:- [3,4]
+```
+
+```python
+l=[1,2,3,4,5,2,3,4,7,9,5]
+l1=[]
+for i in l:
+    if i not in l1:
+        l1.append(i)
+    else:
+        print(i,end=' ')
+
+Output:- 2 3 4 5
+```
+
 ### Ques. even values from a list using list comprehension?
 ```python
 # normal function
@@ -231,30 +126,7 @@ Output:- [12, 18, 14, 6]
 ```
 <div style="page-break-before: always;"></div>
 
-### Find the duplicate element from list?
-```python
-list = [9,3,6,4,7,3,1,4]
-duplicate = []
-for i in list:
-    if list.count(i) > 1 and i not in duplicate:
-        duplicate.append(i)
-   
-print(duplicate)
 
-Output:-
-[3,4]
-```
-```python
-l=[1,2,3,4,5,2,3,4,7,9,5]
-l1=[]
-for i in l:
-    if i not in l1:
-        l1.append(i)
-    else:
-        print(i,end=' ')
-
-Output:- 2 3 4 5
-```
 
 ### Ques. Remove duplicate item from list using List comprehension?
 ```python
@@ -275,37 +147,6 @@ print('list after shuffling =',listtostring)
 Output:-
 list after shuffling = my name is Mohit Saxena
 ```
-
-### Ques. Write a program to print a list in reverse order?
-* **using slice method**
-```python
-def revlist(list):
-    return list[::-1]
-    
-list = [24,55,78,64,25,12,22,11,1,2,44]
-print(revlist(list))
-
-Output:- [44, 2, 1, 11, 22, 12, 25, 64, 78, 55, 24]
-```
-* **Using For loop**
-```python
-list1 = [1, 2, 4, 5, 8, 9]
-list2 = []
-for item in list1:
-    list2.insert(0, item)
-print(list2)  
-
-Output:- [9, 8, 5, 4, 2, 1]
-```
-
-
-
-
-
-
-
-
-
 
 
 ### Ques. find the max, min number from the list user input?
@@ -365,38 +206,12 @@ li[15:]
 #=> [16, 17, 18, 19, 10]
 ```
 
-### Ques. Remove elements in a list between 2 indices?
-```python
-li = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,10]
-li[12:17]
-#=> [13, 14, 15, 16, 17]
-```
-
 ### Ques. Count the elements of a specific object in a list?
 * The count() method returns the number of occurrences of a specific object.
 ```python
 pets = ['dog','cat','fish','fish','cat']
 index = pets.count('fish')
-print(index)
-
-Output:- 2
-```
-
-### Ques. Remove the negative index from the list?
-```python
-lstnum = [-5, 27, 1000, -4, 0, -80,56,-67]
-# //Removing negative values
-posNum = []
-for item in lstnum:
-    if item >= 0:
-        posNum.append(item)
-print(posNum)
-
-res_lst = [item for item in lstnum if item >= 0] 
-print('list after removing negative values =',res_lst)
-
-Output:-
-[27, 1000, 0, 56]
+print(index)    # Output:- 2
 ```
 
 
@@ -615,22 +430,6 @@ Output:-
 26
 51
 101
-```
-
-
-
-### **Ques. Remove negative values from a list with the filter function?**
-```python
-def remove_negatives(x):
-    return True if x >= 0 else False
-    
-a = [-10, 27, 1000, -1, 0, -30]
-b  = [x for x in filter(remove_negatives, a)] 
-print(b)
-
-# Using for Comprehension
-res = [ele for ele in test_list if ele > 0]
-print("List after filtering : " + str(res))
 ```
 
 

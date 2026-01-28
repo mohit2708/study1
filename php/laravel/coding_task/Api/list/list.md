@@ -17,7 +17,8 @@
                 'status' => 200
             ],200);
         }
-        catch(\Exception $e)
+        // catch(\Exception $e)
+        catch (\Throwable $e)
         {
             return response()->json([
                 'success' => False,

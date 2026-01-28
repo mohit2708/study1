@@ -6,7 +6,6 @@
 |       | [What is __init_ _ Method?](#ques-what-is-init-method)                                                                                         |
 |       | [What is the use of self in Python?](#ques-what-is-the-use-of-self-in-python)                                                                   |
 |       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python)                                                  |
-|       | [What is issubclass()?](#ques-what-is-issubclass)                                                                                               |
 |       | [What is __str_ _ and __repr_ _?](#ques-what-is-str-and-repr)                                                                                   |
 |       | [What is Concrete Method?](#ques-what-is-concrete-method)                                                                                       |
 |       | [Difference between method and function?](#ques-difference-between-method-and-function)                                                         |
@@ -18,16 +17,6 @@
 |       | [Built-In Class Functions (getattr, setattr, delattr, hasattr) In Python?](#built-in-class-functions-getattr-setattr-delattr-hasattr-in-python) |
 |       | [What is class meta?](#what-is-class-meta)                                                                                                      |
 |       | ------------------------------------------------------------------------------------------------                                                |
-|       | [What is Object?](#ques-what-is-object)                                                                                                         |
-|       | [Delete the Object?](#ques-delete-the-object)                                                                                                   |
-|       | [Counting the Number of objects of a Class?](#ques-counting-the-number-of-objects-of-a-class)                                                   |
-|       | ----------------------------------------------------------------                                                                                |
-|       | [What is Inheritance?](#ques-what-is-inheritance)                                                                                               |
-|       | [Single Inheritance](#single-inheritance)                                                                                                       |
-|       | [Multiple Inheritance](#multiple-inheritance)                                                                                                   |
-|       | [Multi-Level Inheritance](#multi-level-inheritance)                                                                                             |
-|       | [Hierarchical Inheritance](#hierarchical-inheritance)                                                                                           |
-|       | [Hybrid Inheritance](#hybrid-inheritance)                                                                                                       |
 |       | ------------------------------------------------------------------------------------------------                                                |
 |       | [What is Encapsulation?](#ques-what-is-encapsulation)                                                                                           |
 |       | ------------------------------------------------------------------------------------------------                                                |
@@ -37,12 +26,9 @@
 |       | [Types of Constructors (Default, Non-parametrized, Parameterized)](#types-of-constructors-default-non-parametrized-parameterized)               |
 |       | [Constructor With Default Values?](#ques-constructor-with-default-values)                                                                       |
 |       | [Constructor Overloading](#ques-constructor-overloading)                                                                                        |
-|       | [What is Destructors?](#ques-what-is-destructors)                                                                                               |
 |       | ------------------------------------------------------------------------------------------------                                                |
-|       | [Python Access Modifiers?](#python-access-modifiers)                                                                                            |
 |       | [private attributes and method?](#private-attributes-and-method)                                                                                |
 |       | [What is the super() Function](#ques-what-is-the-super-function)                                                                                |
-|       | [MRO(Method Resolution Order) / Diamond Problam?](#ques-what-is-mromethod-resolution-order--diamond-problam)                                    |
 |       | [What is Abstract Class?](#ques-what-is-abstract-class)                                                                                         |
 |       | [When use abstratc class?](#ques-when-use-abstratc-class)                                                                                       |
 |       | [How to Create an Abstract Method](#how-to-create-an-abstract-method)                                                                           |
@@ -50,7 +36,6 @@
 |       | [What is Method Overloading?](#ques-what-is-method-overloading)                                                                                 |
 |       | [What is Method Overriding?](#ques-what-is-method-overriding)                                                                                   |
 |       | [What is Method?](#ques-what-is-method)                                                                                                         |
-|       | [What is static method?](#what-is-static-method)                                                                                                |
 
 
 <div style="page-break-before: always;"></div>
@@ -66,70 +51,6 @@
 * Inheritance
 * Data Abstraction
 <div style="page-break-before: always;"></div>  
-
-
-### **Ques. What is __str__ and __repr__?**
-#### ✅ **str Function**
-* The __str__ method also known as a **dunder method/double underscore method**, that defines the string representation of an object. 
-* It's used to return a **human-readable** string when the built-in functions str() or print() are called on an instance of a class.
-```python
-class Student:
-    def __init__(self, name):
-        self.name = name
-    
-    def __str__(self):
-        return f'I am a {self.name}'
-        
-obj = Student("mohit")
-print(obj)  # Output:- I am a mohit
-
-# Without str
-# Without a __str__ method, Python uses the default representation
-class Student:
-    def __init__(self, name):
-        self.name = name
-        
-obj = Student("mohit")
-print(obj)  # Output:- <__main__.Student object at 0x7dc248f35c70>
-```
-
-#### ✅ **repr Function**
-* The **repr() method** returns a string containing a printable representation of an **object**.
-* **__repr__** method returns a string representation of an object that is **machine-readable**.
-  
-```python
-import datetime
-today = datetime.datetime.now()
-print(str(today))   # 2025-05-11 10:47:08.923663 (Readable end user format)
-print(repr(today))  # datetime.datetime(2025, 5, 11, 10, 47, 8, 923663) (official developmrnt format)
-```
-<div style="page-break-before: always;"></div>
-	
-### **Ques. What is Concrete Method?**
-* A concreate method is a method whose action is defined in the abstract class itself.
-```python
-from abc import ABC, abstractmethod
-class Father(ABC):
-    @abstractmethod
-    def disp(self): 
-        pass                                # method without body
-    def show(self):
-        print("concrete method")            # concrete Method / method with body
-```
-
-```python
-class Father:
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-    
-    def show_data(self):
-        print(self.first_name)
-
-obj = Father('mohit','saxena')
-obj.show_data()
-```
-<div style="page-break-before: always;"></div>
 
 ### **What is Python Enumeration?**
 * In Python, an enumeration (or "enum") is a class that defines a set of symbolic names (constants) that are bound to unique, constant values. Enums are created using the enum module and are typically used to represent groups of related constants, making code more readable and maintainable.
@@ -150,46 +71,6 @@ print(TrafficLight(1).name) # Output: RED
 print(TrafficLight(3).value) # Output: 3
 ```
 <div style="page-break-before: always;"></div>
-
-
-
-### **Ques. What is Method Overloading?**
-* Two or more methods have the same name but different numbers of parameters, These methods are called overloaded methods.
-```python
-class Addition:
-	# first sum for 2 params
-	def my_sum(self, a, b):
-		return a + b
-	
-	# second overloaded sum for 3 params
-	def my_sum(self, a, b, c):
-		return a + b + c
-
-obj = Addition()
-# print(obj.my_sum(3, 4))
-print(obj.my_sum(3, 4, 5))  # Output: 12
-```
-
-### **Ques. What is Method Overriding?**
-* When a child class method has the same name, same parameters, and same return type as a method.
-```python
-class Vehicle:
-    def max_speed(self):
-        print("max speed is 100 Km/Hour")
-
-class Car(Vehicle):
-    # overridden the implementation of Vehicle class
-    def max_speed(self):
-        print("max speed is 200 Km/Hour")
-
-# Creating object of Car class
-car = Car()
-car.max_speed()
-
-Output:- max speed is 200 Km/Hour
-```
-<div style="page-break-before: always;"></div>
-
 
 
 ### **Ques. What is Method?**
@@ -292,21 +173,4 @@ Ragnar
 Lothbrock
 Lagertha
 This is a static method
-```
-<div style="page-break-before: always;"></div>
-
-
-### **What is static method?**
-* static method don't use the self parameter.
-* static method ko hum object ke sath bhi call kar sakte hai or class ke stah bhi.
-```python
-class Student:
-    
-    @staticmethod
-    def hello():
-        print("hello")
-    
-stu1 = Student()
-stu1.hello()        # output:- Hello  
-Student.hello()     # output:- Hello
 ```

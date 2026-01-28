@@ -9,7 +9,6 @@
 | :---: | -------------------------------------------------------------------------------------------------------- |
 |       | [generate a random number between 0 and 9](#Program-to-generate-a-random-number-between-0-and-9)         |
 |       | [Get a Substring of a String](#Get-a-Substring-of-a-String)                                              |
-|       | [How to reverse a sentence in Python input by User?](#How-to-reverse-a-sentence-in-Python-input-by-User) |
 |       | [Count number of characters in a string](#count-number-of-characters-in-a-string)                        |
 |       | [convert a list to string](#program-to-convert-a-list-to-string)                                         |
 |       | [Interchange first and last elements in a list](#ques-interchange-first-and-last-elements-in-a-list)     |

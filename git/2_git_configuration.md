@@ -1,6 +1,12 @@
-|  No.  | Questions                                                        |
-| :---: | ---------------------------------------------------------------- |
-|       | [List of branch?](#show-all-remote-and-local-branch-names)       |
+|  No.  | Questions                                        |
+| :---: | ------------------------------------------------ |
+|       | [Check a git username?](#check-a-git-username)   |
+|       | [Set a Git username?](#set-a-git-username)       |
+|       | [Check a git email?](#check-a-git-email)         |
+|       | [Set a Git email?](#set-a-git-email)             |
+|       | [check origin?](#check-origin)                   |
+|       | [Set origin?](#set-origin)                       |
+|       | [Check all config list?](#check-all-config-list) |
 
 ### Git configuration
 

@@ -1,22 +1,6 @@
 ### New project setup in git
-* Step1:- create the repostery in git website
-```git
-git clone https://url.git
-# move to folder
-cd folder_name
-```
-
-#### When we download the project for particular branch
-```git
-git clone -b branch_name remote_repo_url
-```
-
-#### Git Commit
-```python
-git commit -m "initial commit"
-```
-
-### Push Command
-```git
-git push -u origin branch_name
-```
+- we clone the project from the particular branch **:-** git clone -b branch_name remote_repo_url
+- Create branch **:-** git branch branch_name
+- Checkout Branch:- git checkout branch_name
+- Git Commit:- git commit -m "initial commit"
+- Push Command:- git push -u origin branch_name

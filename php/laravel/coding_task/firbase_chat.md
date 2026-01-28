@@ -286,3 +286,42 @@ window.addEventListener('beforeunload', function () {
 </html>
 
 ```
+
+
+### some time database rules issue
+- Go to Firebase Console → Realtime Database → Rules
+```php
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
+# or----
+{
+  "rules": {
+    "typing": {
+      "$chatId": {
+        "$userId": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.uid === $userId"
+        }
+      }
+    },
+    "chats": {
+      "$chatId": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "status": {
+      "$user": {
+        ".read": true,
+        ".write": "auth != null"
+      }
+    }
+  }
+}
+
+```

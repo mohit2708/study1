@@ -33,6 +33,8 @@
 /******************
     * Change Password *
     ******************/
+    use Illuminate\Support\Facades\Auth;
+    
     public function changePassword(Request $request){
         $user = Auth::user();
         $input = $request->all();

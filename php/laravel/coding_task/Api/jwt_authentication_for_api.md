@@ -3,7 +3,30 @@
 composer require tymon/jwt-auth
 composer require tymon/jwt-auth:^2.2 --with-all-dependencies
 composer require tymon/jwt-auth:^2.2 -W
+sudo composer require tymon/jwt-auth    # on server
+
+# for lower version
+composer require php-open-source-saver/jwt-auth
+
 ```
+
+### Publish config config/jwt.php
+```php
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+# for lower version
+php artisan vendor:publish --provider="PHPOpenSourceSaver\JWTAuth\Providers\LaravelServiceProvider"
+```
+
+### generate a secret key by executing the following command.
+```php
+php artisan jwt:secret
+```
+- This will add in .env:
+```php
+JWT_SECRET=your_secret_key
+```
+
 
 ### config/app.php
 ```php
@@ -20,16 +43,79 @@ composer require tymon/jwt-auth:^2.2 -W
 ],
 ```
 
-### config/jwt.php
+### config/auth.php
 ```php
-php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+return [
+    'defaults' => [
+        'guard' => 'api',
+        'passwords' => 'users',
+    ],
+
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+    ],
 ```
 
-### generate a secret key by executing the following command.
+### Update User Model
 ```php
-php artisan jwt:secret
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
+
+class User extends Authenticatable implements JWTSubject
+{
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+}
+
 ```
 
+### new code by 
+```php
+public function user_login(Request $request)
+{
+    // Validate request data
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
+
+    // Find user by email
+    $user = User::where('email', $request->email)->first();
+
+    if (!$user) {
+        return response()->json(['status' => false, 'message' => 'Invalid email or password.'], 401);
+    }
+
+    // Auth::login($user);
+    $token = JWTAuth::fromUser($user);
+
+    return response()->json([
+        'status' => true,
+        'token' => $token,
+        'token_type' => 'Bearer',
+        'expires_in' => JWTAuth::factory()->getTTL() * 60,
+        // 'expires_in' => auth('api')->factory()->getTTL() * 60,
+        'data' => $user,
+        'message' => 'Login successful.'
+    ], 200);
+}
+```
+
+# old
 ### app/Models/User.php
 
 ```php
@@ -98,26 +184,7 @@ class User extends Authenticatable implements JWTSubject
 }
 ```
 
-### config/auth.php
-```php
-return [
-    'defaults' => [
-        'guard' => 'api',
-        'passwords' => 'users',
-    ],
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-        'api' => [
-            'driver' => 'jwt',
-            'provider' => 'users',
-            'hash' => false,
-        ],
-    ],
-```
 
 ### Build Authentication Controller
 ```php

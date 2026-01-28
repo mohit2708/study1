@@ -7,13 +7,14 @@
 
 
 ### Branch
-* The current local branch will be marked with an asterisk.
+* The current local branch will be marked with an asterisk(*).
   
 #### Show All Remote and Local Branch Names
 ```git
 git branch
 OR
 git branch -a
+git branch --all
 ```
 
 #### all remote branch names
@@ -57,14 +58,3 @@ git branch -vva
 git branch -m old-branch new-branch
 ```
 
-#### Delete remote Branches
-```git
-git push origin --delete my-branch-name
-```
-
-#### Delete local Branches
-```git
-git branch -d my-branch-name
-OR
-git branch -D my-branch-name
-```

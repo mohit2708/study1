@@ -9,13 +9,6 @@
 |       | [Removing Files from the Staging Area](#removing-files-from-the-staging-area)   |
 
 
-### ssl error
-* when we got the ssl error
-```git
-git config --global http.sslVerify false
-```
-
-
 ## Starting a project
 
 ### Initialize Git

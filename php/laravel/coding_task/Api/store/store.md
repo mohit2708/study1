@@ -1,5 +1,6 @@
 ### store data by rashmimohit
 ```php
+use Illuminate\Support\Facades\Validator;
 /**
  * store
  *

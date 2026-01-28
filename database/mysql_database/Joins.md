@@ -235,13 +235,14 @@ FULL OUTER JOIN departments ON employees.department_id = departments.department_
 
 #### CROSS Join
 * The CROSS JOIN keyword returns all records from both tables (table1 and table2).
-* If you have a Products table with 3 products and a Colors table with 2 colors, a CROSS JOIN would return a result set with 6 combinations (3 * 2):
+* If you have a Products table with 2 products and a Colors table with 2 colors, a CROSS JOIN would return a result set with 6 combinations (3 * 2):
 ```sql
 -- Products table
 | ProductID | ProductName |
 | --------- | ----------- |
 | 1         | T-Shirt     |
 | 2         | Jeans       |
+| 2         | Cap         |
 
 -- Colors table
 | ColorID | Color |
@@ -260,13 +261,15 @@ CROSS JOIN Colors;
 | T-Shirt     | Blue  |
 | Jeans       | Red   |
 | Jeans       | Blue  |
+| Cap         | Red   |
+| Cap         | Blue  |
 
 ```
 <div style="page-break-before: always;"></div>
 
 #### Full Join/FULL OUTER JOIN
 * A FULL JOIN (also called a FULL OUTER JOIN) returns all rows when there is a match in either left (table1) or right (table2) table. It returns all records from both tables, and the result set will have NULL values for columns where there is no match.
-#### Key Points:
+##### Key Points:
 * Rows from both tables are included even if there is no match.
 * If there is no match, the columns from the table that doesn’t have a match will contain NULL.
 * This join is useful when you want to retrieve all records, whether or not there's a match in both tables.

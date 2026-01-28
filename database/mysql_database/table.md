@@ -1,10 +1,10 @@
 |  No.  | [Tables](#tables)                                                             |
 | :---: | ----------------------------------------------------------------------------- |
 |       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql) |
-|       | [Data Definition Language (DDL)](#types-of-sql-commandssubsets-of-sql)        |
-|       | [Data Manipulation Language (DML)](#types-of-sql-commandssubsets-of-sql)      |
-|       | [Data Control Language (DCL)](#types-of-sql-commandssubsets-of-sql)           |
-|       | [Transaction Control Language (TCL)](#types-of-sql-commandssubsets-of-sql)    |
+|       | [-- Data Definition Language (DDL)](#types-of-sql-commandssubsets-of-sql)     |
+|       | [-- Data Manipulation Language (DML)](#types-of-sql-commandssubsets-of-sql)   |
+|       | [-- Data Control Language (DCL)](#types-of-sql-commandssubsets-of-sql)        |
+|       | [-- Transaction Control Language (TCL)](#types-of-sql-commandssubsets-of-sql) |
 |       | --------------------------------------------------------------                |
 |       | [Create TABLE?](#create-table)                                                |
 |       | [show Tables](#show-tables)                                                   |
@@ -12,7 +12,8 @@
 |       | [Alter/Rename table name](#alterrename-table-name)                            |
 |       | [Delete/Drop table](#deletedrop-table)                                        |
 |       | [Truncate table](#truncate-table)                                             |
-|       | [Alter table column name](#add-a-column-in-the-table)                         |
+|       | [Column Modify](#column-modify)                                               |
+|       | [-- Alter table column name](#add-a-column-in-the-table)                      |
 |       | [-- Alter table column name after field](#add-column-after-particular-field)  |
 |       | [-- Add column in first](#add-column-in-first)                                |
 |       | [-- Add multiple columns in the table](#add-multiple-columns-in-the-table)    |
@@ -117,6 +118,7 @@ ALTER TABLE table_name ADD column_name datatype;
 ALTER TABLE table_name ADD new_column_name datatype [ FIRST | AFTER column_name ]; 
 ```
 
+# Column Modify
 ### **ADD a column in the table**
 ```sql
 ALTER TABLE employee_table ADD cus_age varchar(40) NOT NULL;
@@ -252,27 +254,3 @@ WHERE some_column = some_value;
 ```sql
 DELETE FROM table_name;
 ```
-
-
-
-
-
-### **Ques. Difference between Delete, Truncate & Drop?**
-| Delete                                                | Truncate                                                       | Drop                  |
-| :---------------------------------------------------- | :------------------------------------------------------------- | :-------------------- |
-| Delete is a DML command                               | Truncate is DDL command                                        |                       |
-| We can use where clause in delete command             | We cannot use where clause with truncate                       |                       |
-| Delete statement is used to delete a row from a table | Truncate statement is used to remove all the row from a table  | Remove table and data |
-| You can rollback data after using delete statement    | It is not possible to rollback after using TRUNCATE statement. | Can’t rollback        |
-| Delete is slower                                      | Truncate is faster                                             |                       |
-
-
-### **Ques. Difference b/w DROP and TRUNCATE statements?**
-* **Drop Table:-**
-  * Table structure will be dropped
-  * Relationship will be dropped
-  * Integrity constraints will be dropped
-  * Access privileges will also be dropped
-* **TRUNCATE Table:-**
-  * On the other hand when we TRUNCATE a table, the table structure remains the same, so you will not face any of the above problems.
-

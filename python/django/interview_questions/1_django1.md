@@ -41,29 +41,6 @@ https://www.javatpoint.com/django-interview-questions-and-answers -- 1
 |       |                                                                                                         |
 
 
-### **Ques. What is virtual Enviroment**
-* A virtual environment is like a separate space wherein we can install our project requirements which is completely isolated from the global installations.
-
-### **Ques. What is Django?**
-* Django—pronounced “Jango,”. Django is a free and open source and server-side web application framework written in Python.
-* Django follows the MVT (Model View Template) pattern which is based on the Model View Controller architecture.
-* It was orginally created By Adrian Holovaty and simon willison.
-
-### **Ques. What is the latest version of Django?**
-The latest version of Django is Django 4.1.
-
-### **Ques. Explain Django architecture?**
-* url request -> manage.py -> setting.py ->urls.py -> views.py -> models.py -> template.
-* Django follows a software design pattern called a **MVT(Model view Template)** architecture.
-* **Model:-** It helps in handling the databse. they provide the option to create edit and query data records in the databse.
-* **View:-** the view is used to execute the business logic and intrect with a model to carry data and renders a template.
-* **Template:-** The template is a presentation layer. It define the structure of file layout to present data in web page. it is an html file mixed with django template language.
-----
-* Here, a user requests for a resource to the Django, Django works as a controller and check to the available resource in URL.
-* If URL maps, a view is called that interact with model and template, it renders a template.
-* Django responds back to the user and sends a template as a response.
-------
-
 ### **Ques. Explain the django project directory structure?**
 <ul>
     <li><b>manage.py</b> - A command-line utility that allows you to interact with your Django project</li>
@@ -180,13 +157,6 @@ Some of the companies that make use of Django are Instagram, DISCUS, Mozilla Fir
 * SEO Optimized
 * Extremely fast
 
-### **Ques. How to create virtual Enviroment and How can Activate?**
-```python
-python -m venv virtual-name
-
-# Activate Process
-virtual Enviroment Folder -> Scripts -> Activate
-```
 
 ### **Ques. How to install Django and Uninstall Django?**
 ```python

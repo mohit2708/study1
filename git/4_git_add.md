@@ -21,9 +21,16 @@ git add filename1.html filename2.html
 git add *.java
 ```
 
+### if we add the file then remove 
+```git
+git reset
+git reset file_name
+```
+
 #### Removing Files from the Staging Area
 ```git
-git rm file_name.txt
+git rm <file_name>
 (OR)
 git restore file_name.txt
+git commit --amend --no-edit
 ```

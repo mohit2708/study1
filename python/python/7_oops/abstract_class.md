@@ -77,3 +77,28 @@ concreate class
 300
 defining abstrat class
 ```
+
+### Hum Abstract Class kyu aur kab banate hain?
+- Hum abstract class tab banate hain jab hume child classes par methods implement karna compulsory karna ho aur common structure define karna ho.
+- Hum chahte hain ki child class kuch methods zaroor implement kare.
+
+#### Real-life Example of Abstract Class
+- Abstract Class:
+```python
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self):
+        pass
+```
+- Child Classes:
+```python
+class UPI(Payment):
+    def pay(self):
+        print("Payment via UPI")
+
+class Card(Payment):
+    def pay(self):
+        print("Payment via Card")
+```

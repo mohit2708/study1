@@ -11,26 +11,56 @@
 |       | [Non cluster index](#non-cluster-index)                                                                                 |
 |       | [difference between cluster and non cluster index?](#ques-what-is-the-difference-between-cluster-and-non-cluster-index) |
 
-#### What is Index?
+### **What is Index?**
 * An index is used to enhance the performance of SQL Queries. It allows the database to find data quickly and efficiently by using Row ID, avoiding full table scans.
 * Indexes can be created on one or more columns of a table.
 * Index allows the database application to find data fast, without reading the whole table.
 * An index can be created in a table to find data more quickly and efficiently.
 * **How It Works:-** Behind the scenes, an index is usually implemented as a B-tree or similar structure.
 
+
+
+#### Types of Indexes in MySQL
+1. Primary Key Index
+   1. Automatically created when you define a PRIMARY KEY on a table.
+   2. Ensures that the key values are unique and that no null values are allowed in the indexed columns.
+   3. This is the most important index, as it determines how rows are physically stored in the table (in the clustered index format).
+2. Unique Index
+   1. Similar to the primary key, but it allows for one or more NULL values in the indexed column(s).
+   2. It enforces uniqueness in the indexed columns, meaning no two rows can have the same value in that column (except NULL values).
+3. Regular (Non-Unique) Index
+   1. The most common type of index used to speed up query performance.
+   2. Does not enforce uniqueness, but allows MySQL to search the indexed columns faster.
+   3. Often created on columns frequently used in WHERE, ORDER BY, GROUP BY, or JOIN conditions.
+4. Full-Text Index
+   1. Used for full-text searches in text-based columns.
+   2. Works with MATCH() and AGAINST() to find words or phrases within large text fields. Commonly used for columns of type TEXT or VARCHAR.
+   3. MySQL supports full-text indexes in MyISAM and InnoDB (with some limitations in InnoDB).
+5. Spatial Index
+   1. Used for indexing spatial data types (e.g., POINT, LINESTRING, POLYGON).
+   2. Typically used in geographical data queries, such as for finding points within a certain radius or performing complex spatial operations.
+6. Composite Index
+   1. An index on multiple columns.
+   2. Useful when queries often use multiple columns in the WHERE clause, JOIN, or ORDER BY.
+   3. The order of the columns in the index matters; the index is most efficient if the query uses the columns in the same order as the index.
+
+
 #### Types of Indexes?
 1. **Single-column index:-** on one column
 ```sql
-CREATE INDEX idx_product_id ON Sales (product_id);
+CREATE INDEX idx_column_name ON Sales (column_name);
 ```
+
 2. **Composite/Multi-column indexes:** on multiple columns
 ```sql
-CREATE INDEX idx_dept_salary ON employees(department, salary);
+CREATE INDEX idx_multiple_columns ON employees(column_name1, column_name2);
 ```
+
 3. Unique Index:- 
 ```sql
 CREATE UNIQUE INDEX idx_email_unique ON employees(email);
 ```
+
 4. Full-Text Index :- Designed for efficient text search in large text fields (e.g., for searching keywords in articles, product descriptions, etc.)
 ```sql
 CREATE FULLTEXT INDEX idx_description ON products(description);

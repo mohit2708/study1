@@ -120,6 +120,6 @@ php artisan migrate:generate --ignore="table3,table4,table5"
 
 
 php artisan migrate --path=/database/migrations/2023_10_04_171556_create_virtual_clipboards_table.php
-php artisan migrate --path=/database/migrations/2025_09_12_174932_create_user_sessions_table.php
+php artisan migrate --path=/database/migrations/2025_12_25_154510_create_ai_projects_table.php
 
 

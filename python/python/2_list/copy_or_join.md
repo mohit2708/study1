@@ -5,18 +5,14 @@
 ```python
 thislist = ["apple", "banana", "cherry"]
 mylist = thislist.copy()
-print(mylist)
-
-Output:- ['apple', 'banana', 'cherry']
+print(mylist) #Output:- ['apple', 'banana', 'cherry']
 ```
 
 * **list() method**
 ```python
 thislist = ["apple", "banana", "cherry"]
 mylist = list(thislist)
-print(mylist)
-
-Output:- ['apple', 'banana', 'cherry']
+print(mylist) # Output:- ['apple', 'banana', 'cherry']
 ```
 <div style="page-break-before: always;"></div>
 

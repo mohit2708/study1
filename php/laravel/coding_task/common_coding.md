@@ -11,6 +11,7 @@ php artisan migrate:fresh
 ### Create controller
 ```php
 php artisan make:controller Admin\user\UserController
+php artisan make:controller TechAssist\VideoController
 ```
 
 ### try catch

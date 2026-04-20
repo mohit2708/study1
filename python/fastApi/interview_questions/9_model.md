@@ -1,0 +1,133 @@
+### Create Model structure
+* Create the database folder
+* create the model folder under the database folder
+* Create the user.py, role.py etc and __init__.py file
+
+### write the code under the __init__.py file
+```python
+from .user import *
+from .role import *
+from .user_details import *
+```
+
+### write the code under the role.py file
+```python
+from sqlalchemy import Boolean, Column, Integer, String, DateTime, ForeignKey
+from datetime import datetime
+from sqlalchemy.orm import relationship
+from database.connection import Base
+
+# Role Table
+class Role(Base):
+    __tablename__ = "roles"
+
+    id = Column(Integer, primary_key=True, index=True)
+    slug = Column(String(255), nullable=False, unique=True)  # unique slug for each role
+    name = Column(String(255), nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    
+    users = relationship("User", back_populates="role", cascade="all, delete-orphan")
+```
+
+### write the code under the user.py file
+```python
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey
+from datetime import datetime
+from sqlalchemy.orm import relationship, Session
+from database.connection import Base
+# from passlib.context import CryptContext
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, index=True)
+    role_id = Column(Integer, ForeignKey('roles.id', ondelete='CASCADE'), nullable=False)  # Define foreign key relationship
+    role = relationship("Role", back_populates="users")  # Define relationship with Role model
+    
+    first_name = Column(String(255), nullable=False)
+    last_name = Column(String(255), nullable=False)
+    user_name = Column(String(255), unique=True, index=True, nullable=False)
+    email = Column(String(255), nullable=False, unique=True, index=True)
+    password = Column(String(255), nullable=False)
+    
+    deleted_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+    user_details = relationship("UserDetails", back_populates="user", uselist=False, cascade="all, delete-orphan")
+
+
+    """
+    check plain_password or hashed_password are same
+    """
+    @staticmethod
+    def verify_password(plain_password, hashed_password):
+        password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+        return password_context.verify(plain_password, hashed_password)
+
+    # 1 type get email
+    # @classmethod
+    # def get_email(cls, db: Session, request):
+    #     return db.query(cls).filter(cls.email == request.email).first()
+
+    # 2 type get email
+    def get_user_by_email(db: Session, request):
+        return db.query(User).filter(User.email == request.email).first()
+    
+
+    """
+    check user exist or not
+    """
+    def get_user_by_username(db: Session, request):
+        return db.query(User).filter(User.user_name == request.username).first()
+```
+
+### write the code under the user_details.py file
+```python
+from sqlalchemy import Boolean, Column, Integer, String, DateTime, ForeignKey
+from datetime import datetime
+from sqlalchemy.orm import relationship
+from database.connection import Base
+
+class UserDetails(Base):
+    __tablename__ = "user_details"
+
+    id          = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)  # Foreign key to User table
+    user = relationship("User", back_populates="user_details")  # Define relationship with User model
+
+    address     = Column(String(255), nullable=True)
+    state       = Column(String(255), nullable=True)
+    city        = Column(String(255), nullable=True)
+    zip_code    = Column(String(255), nullable=True)
+    created_at  = Column(DateTime, default=datetime.utcnow)
+    updated_at  = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+```
+
+### Now we insert table in the databse.
+```python
+# Import model,engine,Base in main.py file
+from database.connection import engine, Base
+
+from database.models.roles import Role
+from database.models.users import User
+
+# some change in main.py file add this code
+def create_tables():
+	Base.metadata.create_all(bind=engine)
+
+# app = FastAPI(title=os.getenv("PROJECT_NAME"),version=os.getenv("PROJECT_VERSION"))
+def start_application():
+    app = FastAPI(title=os.getenv("PROJECT_NAME"),version=os.getenv("PROJECT_VERSION"))
+    create_tables()
+    return app
+
+app = start_application()
+
+# and again run the application and check database
+```
+
+
+### What is uselist?
+* user_details relationship in User: uselist=False is used here since each user should have only one UserDetails record.

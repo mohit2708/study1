@@ -1,4 +1,62 @@
 ### What are Microservices?
+- Microservices एक software architecture style है जिसमें बड़ी application को छोटे-छोटे independent services में बाँट दिया जाता है।
+- हर service अपना अलग काम करती है और API के through दूसरी services से बात करती है।
+
+#### Example
+- मान लो एक E-commerce app है।
+- Monolithic में सब कुछ एक ही codebase में होगा (user, order, payment, product).
+- लेकिन Microservices में:
+  - User service
+  - Product service
+  - Order service
+  - Payment service
+  - सब अलग-अलग होंगे।
+- हर service:
+  - अलग database रख सकती है
+  - अलग language में बन सकती है
+  - independently deploy हो सकती है
+
+#### Benifits
+- छोटी-छोटी services → एक काम के लिए एक service
+- Independent deployment → एक service बदलो, पूरी app deploy नहीं करनी
+- Loose coupling → services एक-दूसरे पर ज़्यादा dependent नहीं
+- API communication → HTTP / REST / Message queue से बात
+- Team अलग-अलग service पर काम कर सकती है
+- Fault isolation (एक service down हो तो पूरी app बंद नहीं)
+
+#### Disadvantage
+- Setup complex होता है
+- Network calls ज़्यादा होती हैं → latency
+- Monitoring और debugging मुश्किल
+- DevOps knowledge चाहिए
+
+
+### Monolithic in hindi
+- Monolithic architecture एक ऐसा software design है जिसमें पूरी application का code
+  - एक ही project
+  - एक ही codebase
+  - एक ही server
+  - एक ही database में होता है।
+- यानी सारा system एक साथ जुड़ा हुआ (single unit) होता है।
+- Monolithic में ये सब एक ही application में लिखे होते हैं। अगर तुम्हें payment में छोटा सा change करना है तो 👉 पूरी application को फिर से build और deploy करना पड़ेगा।
+
+#### Advantage
+- Single codebase
+- Single deployment
+- Single database
+- सारे modules tightly coupled होते हैं
+- शुरुआत में बनाना आसान
+- Testing simple होती है
+- Performance अच्छा (internal calls, network नहीं)
+- छोटे projects के लिए best
+
+#### Disadvantage
+- Code बहुत बड़ा हो जाता है
+- एक छोटा change → पूरी app deploy
+- Scaling मुश्किल (पूरी app scale करनी पड़ती है)
+- एक bug → पूरी app crash हो सकती है
+
+### What are Microservices?
 - Microservices, also known as microservice architecture, is an architectural style that structures an application as a collection of small, **independent services**. 
 - Each service is designed to perform a specific business capability and can be developed, tested, deployed, and scaled independently of other services in the application.
 

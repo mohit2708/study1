@@ -14,3 +14,6 @@
 - **CHECK** - Ensures that the values in a column satisfies a specific condition
 - **DEFAULT** - Sets a default value for a column if no value is specified
 - **CREATE INDEX** - Used to create and retrieve data from the database very quickly
+
+
+

@@ -1,3 +1,27 @@
+### Install Packege
+```php
+composer require pusher/pusher-php-server
+```
+
+### Set env file
+```php
+BROADCAST_DRIVER=pusher
+PUSHER_APP_ID=2077344
+PUSHER_APP_KEY=258da326056b69ffc370
+PUSHER_APP_SECRET=95143ddd8f0cae49e791
+PUSHER_APP_CLUSTER=ap2
+VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+```
+
+### Route in web
+```php
+Route::get('/pusher-test', function () {
+    return view('test-notification');
+});
+```
+
+### In Blade file
 ```php
 <!DOCTYPE html>
 <html>
@@ -104,5 +128,107 @@
 
 </body>
 </html>
+
+```
+
+
+### route API
+```php
+use App\Http\Controllers\NoticeController;
+
+Route::post('/send-notice', [NoticeController::class, 'sendNotice']);
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Notice;
+use App\Events\NoticeCreated;
+
+class NoticeController extends Controller
+{
+    public function sendNotice(Request $request)
+    {
+        // dd($request->user_id);   // i fond user id
+        $notice = Notice::create([
+            'user_id' => $request->user_id,
+            'notice_heading' => $request->heading,
+            'notice_title'   => $request->title,
+            'notice_date'    => now(),
+            'notice_link'    => $request->link,
+            'notice_section' => $request->section,
+        ]);
+        // dd($notice); // but i can not fond user id
+
+        broadcast(new NoticeCreated($notice))->toOthers();
+
+        return response()->json(['status' => 'sent']);
+    }
+}
+
+- api response
+{
+    "user_id" : 23,
+    "heading": "New Message11",
+    "title": "Request for chat",
+    "link": "https://example.com/details1",
+    "section": "general1"
+}
+```
+
+### Model file
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Notice extends Model
+{
+    // use HasFactory;
+    protected $table = 'notifications'; // your existing table
+
+    protected $primaryKey = 'notice_id';
+
+    public $timestamps = false; // because your table has no created_at
+
+    protected $fillable = [
+        'user_id',
+        'notice_heading',
+        'notice_title',
+        'notice_date',
+        'notice_link',
+        'notice_section',
+    ];
+}
+```
+
+### App/events/noticecreated.php
+```php
+<?php
+
+namespace App\Events;
+
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+
+class NoticeCreated implements ShouldBroadcast
+{
+    public $notice;
+
+    public function __construct($notice)
+    {
+        $this->notice = $notice;
+    }
+
+    public function broadcastOn()
+    {
+        return new Channel('notice-channel');
+    }
+}
 
 ```

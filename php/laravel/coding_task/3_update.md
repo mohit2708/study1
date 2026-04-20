@@ -1,7 +1,7 @@
 
-|  No.  | Tables                                   |
-| :---: | ---------------------------------------- |
-|       | [update data by DB?](#update-data-by-db) |
+|  No.  | Tables                                                 |
+| :---: | ------------------------------------------------------ |
+|       | [update data by DB?](#update-data-by-db)               |
 |       | [update data in two table?](#update-data-in-two-table) |
 
 

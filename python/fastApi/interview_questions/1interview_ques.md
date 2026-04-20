@@ -66,39 +66,8 @@ def create_item(item: Item):
 * Header Parameters
 * Cookie Parameters
 
-#### Basic route syntax
-```python
-from fastapi import FastAPI
 
-app = FastAPI()
 
-# Define an endpoint for GET requests to the root URL "/"
-@app.get("/")
-async def read_root():
-    return {"message": "Hello World"}
-
-# Define an endpoint for POST requests to "/items/"
-@app.post("/items/")
-async def create_item():
-    return {"message": "Item created"}
-```
-
-#### Path parameters 
-* Path parameters with types
-  * We can capture dynamic parts of the URL (called path parameters) by enclosing them in **curly braces {}** in the path string. FastAPI automatically passes these values to the decorated function as keyword arguments.
-```python
-@app.get("/items/{item_id}")
-async def read_item(item_id: int):
-    # The item_id is automatically converted to an integer
-    return {"item_id": item_id}
-```
-* Path parameters containing paths
-```python
-@app.get("/files/{file_path:path}")
-async def read_file(file_path: str):
-    return {"file_path": file_path}
-
-```
 
 
 ### Path Parameters vs Query Parameters
@@ -139,41 +108,7 @@ def read_items():
     return items
 ```
 
-### what is Dependency Injection in FastAPI?
-* Dependency Injection is a design pattern where components receive their dependencies from external sources rather than creating them internally. FastAPI has a powerful dependency injection system.
-```python
-from fastapi import Depends, FastAPI
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
-# Assume this is your database setup
-DATABASE_URL = "sqlite:///./sql_app.db"
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-app = FastAPI()
-
-# 1. Define the dependency: A function that provides a database session
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db  # Use `yield` to allow for cleanup after the request
-    finally:
-        db.close() # The session is closed automatically after the endpoint completes
-
-@app.get("/users/")
-# 2. Declare the dependency in your endpoint
-def read_users(db: Session = Depends(get_db)):
-    # 3. FastAPI injects the 'db' session, which you can now use
-    users = db.query(User).all()
-    return users
-```
-
-#### Benefits:
-* Code reusability
-* Easy testing
-* Separation of concerns
-* Automatic validation
 
 
 ### Exception and Error Handling

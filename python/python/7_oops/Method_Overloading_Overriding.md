@@ -12,7 +12,7 @@ class Addition:
 		return a + b + c
 
 obj = Addition()
-# print(obj.my_sum(3, 4)) # missing 1 required positional argument:
+# print(obj.my_sum(3, 4)) # Addition.my_sum() missing 1 required positional argument
 print(obj.my_sum(3, 4, 5))  # Output: 12
 ```
 

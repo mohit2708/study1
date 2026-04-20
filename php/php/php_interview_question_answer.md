@@ -37,43 +37,7 @@
 |       | [What does isset() function?](#ques-What-does-isset()-function)                                                                     |
 
 
-### **Ques. What is Constant?**
-* A constant is a name or an identifier for a simple value. A Constant value cannot be changed during the execution of the Script.
-* A valid constant name starts with a letter or underscore (no $ sign before the constant name).
 
-**Syntex** define(name, value, case-insensitive)
-```php 
-<?php
- define("GREETING", "Welcome to mohit");
- echo GREETING;
-?>
-Output:- Welcome to mohit 
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. What is Variable?** 
-* Variable temporary data hold Karta hai.
-* A variable starts with the $ sign, followed by the name of the variable.
-* A variable name must start with a letter or the underscore character.
-* A variable name cannot start with a number.
-* Variable names are case-sensitive ($age and $AGE are two different variables).
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. Difference between Constant And Variable?**
-* There is no need to write a dollar sign ($) before a constant, whereas in Variable one has to write a dollar sign.
-* Constants cannot be defined by simple assignment, they may only be defined using the define() function.
-* Constants may be defined and accessed anywhere without regard to variable scoping rules.
-* Once the Constants have been set, may not be redefined or undefined.
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. Difference between Echo And Print?**
-|                                                          Echo                                                          |                                                               Print                                                                |
-| :--------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
-| Echo is a statement i.e. used to display the output. It can be used with parentheses echo or without parentheses echo. | Print is also a statement i.e. used to display the output. It can be used with parentheses print ( ) or without parentheses print. |
-|                                             Echo does not return any value                                             |                                                       Print always return 1                                                        |
-|                                               Echo is faster than print                                                |                                                     Print is slower than echo                                                      |
-|                                    echo can pass multiple string separated as ( , )                                    |                                           using print can doesn’t pass multiple argument                                           |
-|                                                   Echo is statement                                                    |                                                         Print is function                                                          |
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. Php Global Variables (Superglobals)?**
@@ -176,56 +140,6 @@ $$message = ?
 ?>
 Output:- mohit 
 ```
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is Cookie?
-Php cookie is a small piece of information, which is stored on the client browser.
-**Ex:-** Remember me.
-
-**How to set cookie:-**        Setcookie("name", "value", time()+3600);<br>
-__How to Retrieve a cookie:-__ echo $_cookie["user"];<br>
-__How to unset Cookie:-__      Setcookie(“sample”, “ram”, time()-3600);<br>
-
-##### Two types of cookie:-
-__Persistent Cookie:-__ A persistent cookie is a cookie which is store information for certain time in a browser. By default cookie are temporary and are erased if we close the browser.
-
-**Non Persistent Cookie:-** Non persistent cookies are stored in ram on the server, and destroyed when the browser is closed. Ex:- login
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is Session ?
-Session is way to store information to be used across multiple pages. It stores information on the server.
-```php
-Create session:- 			session_start(); 
-Set value into session:- 		$_SESSION['USER_ID']=1; 
-Remove data from a session:- 	unset($_SESSION['USER_ID'];
-```
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. How can we destroy a session in PHP?
-We can destroy a session by:
-```php
-<?php
-	session_destroy();
-?>
-```
-To delete a speciﬁc session variable, we use:-
-```php
-<?php
-	seesion_unset($_seesion['variable_name']);
-?>
-```
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is difference between seesion_unregister and session_unset ?
-The session_unregister() function unregister a global variable from the current session and the session_unset() function frees all session variables.
-
-### Ques. Difference between cookie and Session ?
-|                          Cookie                          |                                           Session                                           |
-| :------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
-| Cookie are stored on the client side in text file format |                            Session are stored on the server Side                            |
-|          Cookie can not hold multiple variables          |                            Session can hold multiple variables.                             |
-|              We can set expiry for a cookie              |                 session only remains active as long as the browser is open                  |
-|                                                          | Users do not have access to the data you stored in Session,Since it is stored in the server |
-|         cookies using for user activity tracking         |                       Session is mainly used for login/logout purpose                       |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Array?

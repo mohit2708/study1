@@ -14,7 +14,7 @@
 |       | [Difference between Primary Key & Foreign Key?](#ques-difference-between-primary-key--foreign-key) |
 <div style="page-break-before: always;"></div>
 
-#### Primary Key?
+### Primary Key?
 * A PRIMARY KEY is a column or combination of columns that uniquely identifies each record in a database table.
 * A Primary Key column cannot have Null values.
 * A table can have only one primary key per table.
@@ -68,6 +68,7 @@ ALTER TABLE Employee DROP CONSTRAINT PK_Employee;
 ALTER TABLE table_name DROP PRIMARY KEY;
 ```
 <div style="page-break-before: always;"></div>
+
 
 
 #### Ques. What Is Unique Key?
@@ -215,6 +216,13 @@ CREATE TABLE Employees (
     UNIQUE (first_name, last_name, department)
 );
 ```
+
+#### Can any one field in a composite key be NULL?
+* **Composite Primary Key:** No, because all columns that are part of a primary key are automatically NOT NULL.
+* **Composite Unique Key:** Yes, in MySQL NULL values can be allowed depending on the constraint and database behaviour.
+
+
+
 <div style="page-break-before: always;"></div>
 
 

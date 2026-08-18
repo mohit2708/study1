@@ -17,6 +17,16 @@
 * NumPy is short for "**Numerical Python**".
 * NumPy is a Python library. it is used for working with arrays.
 * NumPy was created in **2005** by **Travis Oliphant**.
+* Its provide:-
+  * Fast operations on large arrays and matrices
+  * Mathematical functions (linear algebra, statistics, trigonometry, etc.)
+  * Tools for scientific computing and data analysis
+* NumPy is widely used in:
+  * Data science
+  * Machine learning
+  * Scientific research
+  * Engineering
+  * AI frameworks like TensorFlow and PyTorch
 
 ### **Installation of NumPy?**
 * If you have Python and PIP already installed on a system, then installation of NumPy is very easy.

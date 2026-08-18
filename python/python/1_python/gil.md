@@ -1,6 +1,24 @@
 ### What is GIL?
 - GIL standas for **Global Interpreter Lock**
 - The GIL is a lock that allows only one thread to execute at a time in Python, making CPU-bound multithreading slow but I/O-bound tasks fast.
+- The GIL is a lock used by the CPython interpreter that allows only one thread at a time to execute Python bytecode within a process.
+- Example
+```python
+import threading
+
+def task():
+    for i in range(5):
+        print(i)
+
+t1 = threading.Thread(target=task)
+t2 = threading.Thread(target=task)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
 
 #### Why GIL Exists
 - GIL is mainly used because of:

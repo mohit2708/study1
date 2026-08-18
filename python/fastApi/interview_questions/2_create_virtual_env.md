@@ -15,3 +15,10 @@ d:\mohit\virtual-name\Scripts> activate
 (OR)
 source env_crud/Scripts/activate
 ```
+
+### For activate
+| Terminal   | Command                            |
+| ---------- | ---------------------------------- |
+| PowerShell | `.\virt_env\Scripts\Activate.ps1`  |
+| CMD        | `virt_env\Scripts\activate.bat`    |
+| Git Bash   | `source virt_env/Scripts/activate` |

@@ -1,4 +1,30 @@
 ### What is Exception Handling?
+* Exception handling is a mechanism in Python used to handle runtime errors gracefully so that the program does not terminate unexpectedly.
+* Hindi:- Exception Handling ka use Python program mein **runtime errors ko handle karne ke liye hota hai**, taaki error aane par program abruptly terminate na ho aur hum us situation ko properly handle kar saken.
+* Exception ek runtime error hoti hai jo program ke execution ke time occur hoti hai.
+
+#### Common Exceptions
+| Exception             | Kab aati hai?                         |
+| --------------------- | ------------------------------------- |
+| `ZeroDivisionError`   | 0 se divide karne par                 |
+| `ValueError`          | Invalid value dene par                |
+| `TypeError`           | Wrong data type operation             |
+| `IndexError`          | Invalid list index                    |
+| `KeyError`            | Dictionary mein key nahi mili         |
+| `NameError`           | Variable defined nahi hai             |
+| `FileNotFoundError`   | File nahi mili                        |
+| `AttributeError`      | Object mein attribute/method nahi hai |
+| `ImportError`         | Import related problem                |
+| `ModuleNotFoundError` | Module nahi mila                      |
+
+
+#### Python mein mainly ye keywords use hote hain:
+* try
+* except
+* else
+* finally
+* raise
+
 ### Try, Except, else and Finally?
 * Exception handling is a way to **manage errors** and unusual conditions that occur during the execution of a program. Instead of crashing the program when an error happens, exception handling allows you to respond to the error gracefully, enabling the program to continue running or to end smoothly.
 * When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
@@ -8,6 +34,169 @@
 * **finally:-**  Finally block **always** gets **executed** either **exception** is **generated or not**
 
 
+#### Example of try and except
+```python
+try:
+    a = 10
+    b = 0
+    print(a / b)
+
+except:
+    print("Something went wrong")
+```
+
+* Specific Exception Handle Karna
+```python
+try:
+    result = 10 / 0
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+# Output:- Cannot divide by zero
+```
+
+* Multiple Exceptions
+```python
+try:
+    value = int(input("Enter number: "))
+    result = 10 / value
+
+except ValueError:
+    print("Please enter a valid number")
+
+except ZeroDivisionError:
+    print("Number cannot be zero")
+
+# if we put abc then output Please enter a valid number
+# if we put 0 then output Number cannot be zero
+```
+
+* Multiple Exceptions in One except
+```python
+try:
+    value = int(input("Enter number: "))
+    result = 10 / value
+
+except (ValueError, ZeroDivisionError):
+    print("Invalid input")
+```
+
+
+#### else Block
+* The else block executes only when no exception occurs in the try block.
+* else tab execute hota hai jab try block successfully execute ho jaye aur koi exception na aaye.
+```python
+try:
+    result = 10 / 2
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+else:
+    print("Calculation successful")
+
+# Output:- Calculation successful    
+```
+
+#### finally Block
+* Finally block **always** gets **executed** either **exception** is **generated or not**
+* finally normally execute hota hi hai, chahe exception aaye ya na aaye.
+* Without exception:
+```python
+try:
+    result = 10 / 2
+
+except ZeroDivisionError:
+    print("Error")
+
+finally:
+    print("Finally executed")
+
+# Output:- Finally executed
+```
+* With exception:
+```python
+try:
+    result = 10 / 0
+
+except ZeroDivisionError:
+    print("Error occurred")
+
+finally:
+    print("This will always execute")
+
+# Output:-
+Error occurred
+This will always execute
+```
+
+#### try + except + else + finally
+```python
+try:
+    # risky code
+
+except SomeException:
+    # handle exception
+
+else:
+    # executes if no exception
+
+finally:
+    # executes almost always
+```
+```python
+try:
+    number = int(input("Enter number: "))
+    result = 100 / number
+
+except ValueError:
+    print("Invalid input")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+else:
+    print("Result:", result)
+
+finally:
+    print("Program finished")
+```
+
+
+#### raise Keyword
+* raise ka use manually exception generate karne ke liye hota hai.
+```python
+age = 15
+
+if age < 18:
+    raise ValueError("Age must be 18 or above")
+```
+
+#### Custom Exception
+* A user-defined exception created by inheriting from Exception.
+* Hum apni khud ki exception class bana sakte hain.
+```python
+# create
+class InsufficientBalanceError(Exception):
+    pass
+
+# use
+try:
+    balance = 1000
+    withdraw = 2000
+
+    if withdraw > balance:
+        raise InsufficientBalanceError("Insufficient balance")
+
+except InsufficientBalanceError as e:
+    print(e)
+```
+
+#### BaseException
+
+
+####
 ```python
 # Example_1 for try except
 try:

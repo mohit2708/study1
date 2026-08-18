@@ -17,8 +17,13 @@
 * Index allows the database application to find data fast, without reading the whole table.
 * An index can be created in a table to find data more quickly and efficiently.
 * **How It Works:-** Behind the scenes, an index is usually implemented as a B-tree or similar structure.
-
-
+```sql
+       20
+      /  \
+    10    30
+   /  \   /  \
+  20  20 20  20
+```
 
 #### Types of Indexes in MySQL
 1. Primary Key Index

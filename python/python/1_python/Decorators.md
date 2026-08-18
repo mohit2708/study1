@@ -20,7 +20,7 @@ def greet():
 
 greet()
 
-Output:-
+# Output:-
 Before calling the function.
 Hello, Mohit!
 After calling the function.
@@ -107,4 +107,180 @@ def say_hi():
     return 'hello there'
 
 print(say_hi())     # Output:-'HELLO THERE'
+```
+
+#### Why do we use Decorators?
+* Decorators are useful when you want to add common functionality to multiple functions.
+* For example:
+  * Logging
+  * Authentication
+  * Authorization
+  * Permission checking
+  * Execution time calculation
+  * Caching
+  * Validation
+  * Exception handling
+  * Transaction management
+  * Rate limiting
+
+#### Passing Function as an Argument
+```python
+def hello():
+    print("Hello")
+
+
+def execute(func):
+    func()
+
+
+execute(hello)
+
+# Output:- Hello
+```
+
+#### Returning a Function
+* A function can also return another function.
+```python
+def outer():
+
+    def inner():
+        print("Hello")
+
+    return inner
+
+result = outer()
+
+result()
+
+# Output:- Hello
+```
+
+#### Decorator with Function Arguments
+```python
+def decorator(func):
+
+    def wrapper(*args, **kwargs):
+        print("Before function")
+        result = func(*args, **kwargs)
+        print("After function")
+
+        return result
+
+    return wrapper
+```
+```python
+# calling
+@decorator
+def add(a, b):
+    return a + b
+
+
+result = add(10, 20)
+# result = add(a=10, b=20) 
+
+print(result)
+
+# Output:-
+Before function
+After function
+30
+```
+
+* hamne func(*args, **kwargs) ye isliye likha hai kyuki user result = add(10, 20) or result = add(a=10, b=20) value de sakta hai.
+* *args:- Stores positional arguments: func(10, 20, 30)
+* **kwargs:- Stores keyword arguments: func(name="Mohit", age=30)
+
+#### Decorator with Arguments
+```python
+def repeat(n):
+
+    def decorator(func):
+        def wrapper():
+            for i in range(n):
+                func()
+        return wrapper
+
+    return decorator
+
+# use
+@repeat(3)
+def hello():
+    print("Hello")
+
+
+hello()
+
+# Output:-
+Hello
+Hello
+Hello
+```
+
+#### Practical Example
+1. Logging Decorator
+```python
+from functools import wraps
+
+
+def log_function(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        print(f"Calling function: {func.__name__}")
+        result = func(*args, **kwargs)
+        print(f"Function completed: {func.__name__}")
+
+        return result
+
+    return wrapper
+
+# USe
+@log_function
+def add(a, b):
+    return a + b
+
+# call
+result = add(10, 20)
+print(result)
+
+# Output:-
+Calling function: add
+Function completed: add
+30
+```
+
+2. Execution Time
+```python
+import time
+from functools import wraps
+
+
+def execution_time(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print("Execution time:", end - start)
+
+        return result
+
+    return wrapper
+
+
+# Use:
+@execution_time
+def test():
+    time.sleep(2)
+    print("Hello")
+
+test()
+
+
+# Output:-
+Hello
+Execution time: 2.00
 ```

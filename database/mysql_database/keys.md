@@ -12,13 +12,14 @@
 |       | [Composite Key?](#ques-what-is-composite-key)                                                      |
 |       | [Difference between Primary Key & Unique Key?](#ques-difference-between-primary-key--unique-key)   |
 |       | [Difference between Primary Key & Foreign Key?](#ques-difference-between-primary-key--foreign-key) |
+
 <div style="page-break-before: always;"></div>
 
 ### Primary Key?
-* A PRIMARY KEY is a column or combination of columns that uniquely identifies each record in a database table.
-* A Primary Key column cannot have Null values.
-* A table can have only one primary key per table.
-* When multiple fields are used as a primary key, they are called a composite key.
+* A PRIMARY KEY is a column or combination of columns that **uniquely identifies each record** in a database table.
+* A Primary Key column **cannot have Null values**.
+* A table can have only **one primary key** per table.
+* When **multiple fields** are used as a primary key, they are called a **composite key**.
 
 ```sql
 -- Create Primary Key

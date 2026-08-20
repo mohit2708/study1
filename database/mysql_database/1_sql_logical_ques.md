@@ -7,7 +7,11 @@
 |       | [salary + department:- Highest Salary ka Department kaun sa hai?](#highest-salary-ka-department-kaun-sa-hai) |
 |       | [salary + department:-Department Having Total Salary > 100000](#department-having-total-salary--100000)      |
 |       | [salary + department:- Department-wise average salary?](#department-wise-average-salary)                     |
+|       | [value count:- Email]()                                                                                      |
 |       | [Duplicate values in a Table?](#how-to-find-duplicate-values-in-a-table)                                     |
+|       | [Duplicate values remove](#duplicate-value-remove)                                                           |
+|       | [Replace a column value:- M to F & F to M](#replace-a-column-values-from-male-to-female-and-female-to-male)  |
+
 
 
 
@@ -67,7 +71,13 @@ WHERE salary = (
 ```
 
 #### Using Limit
+* The limit clause has two components, the **First component** is to skip a number of rows from the top and the **second component** is to display the number of rows we want.
+
 ```sql
+-- Syntex:- Using Limit
+Select DISTINCT Salary from table_name order by Salary DESC limit n-1,1;
+
+-- 3rd highest salary
 SELECT salary FROM employees ORDER BY salary DESC LIMIT 2,1;
 SELECT emp_name, salary FROM employees ORDER BY salary DESC LIMIT 2,1;
 
@@ -76,6 +86,9 @@ SELECT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 2;
 
 -- For DISTINCT duplicate salary ko handle karega
 SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 2;
+
+-- Example:- 4th Highest salary using limit
+Select DISTINCT emp_name, salary from Employee order by salary DESC limit 3,1;
 ```
 
 #### Using Subquery
@@ -253,7 +266,58 @@ FROM employees GROUP BY department;
 ```
 <div style="page-break-before: always;"></div>
 
-### **How to Find Duplicate values in a Table?**
+### 🎯**Count email number**
+```sql
++----+----------+-----------------+
+| id | emp_name | email           |
++----+----------+-----------------+
+|  1 | Mohit    | mohit@gmail.com |
+|  2 | Rahul    | rahul@gmail.com |
+|  3 | Amit     | mohit@gmail.com |
+|  4 | Sumit    | NULL            |
+|  5 | Raj      | rahul@gmail.com |
++----+----------+-----------------+
+```
+
+* Total non-NULL emails
+```sql
+SELECT COUNT(email) AS total_email FROM Person;
+
++-------------+
+| total_email |
++-------------+
+|           4 |
++-------------+
+```
+
+* Count each email
+```sql
+SELECT email, COUNT(email) AS total_email FROM Person GROUP BY email;
+
++-----------------+-------------+
+| email           | total_email |
++-----------------+-------------+
+| NULL            |           0 |
+| mohit@gmail.com |           2 |
+| rahul@gmail.com |           2 |
++-----------------+-------------+
+```
+
+* Only duplicate emails
+```sql
+SELECT email, COUNT(email) AS total_email FROM Person
+GROUP BY email HAVING COUNT(email) > 1;
+
++-----------------+-------------+
+| email           | total_email |
++-----------------+-------------+
+| mohit@gmail.com |           2 |
+| rahul@gmail.com |           2 |
++-----------------+-------------+
+```
+<div style="page-break-before: always;"></div>
+
+### 🎯**How to Find Duplicate values in a Table?**
 ```sql
 +----+----------+-------------------+
 | id | emp_name | email             |
@@ -304,3 +368,46 @@ WHERE email IN (
 );
 ```
 <div style="page-break-before: always;"></div>
+
+### 🎯**Duplicate value remove**
+* Using Join
+```sql
+DELETE t1
+FROM my_table t1
+INNER JOIN my_table t2
+    ON t1.col1 = t2.col1
+   AND t1.col2 = t2.col2 -- agar aap duplicate ko multiple columns ke combination ke basis par identify karna chahte ho, tab use karoge.
+   AND t1.id > t2.id;
+```
+
+* Using Subquery
+```sql
+DELETE FROM Person
+WHERE id IN (
+    SELECT id
+    FROM (
+        SELECT t1.id
+        FROM Person t1
+        JOIN Person t2
+            ON t1.email = t2.email
+           AND t1.id > t2.id
+    ) AS temp
+);
+```
+<div style="page-break-before: always;"></div>
+
+### 🎯**Replace a Column Values from 'male' to 'female' and 'female' to 'male'**
+```sql
+UPDATE empdata
+SET GENDER = CASE
+    WHEN GENDER='male' THEN 'female'
+    WHEN GENDER='female' THEN 'male'
+    END;
+(OR)
+UPDATE EMPDATA 
+SET gender = CASE 
+    gender WHEN 'male' THEN 'female' 
+            WHEN 'female' THEN 'male'
+    ELSE gender
+END;
+```

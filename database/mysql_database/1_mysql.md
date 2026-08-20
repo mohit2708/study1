@@ -1,24 +1,21 @@
-|  No.  | [Mysql]()                                                                                                                                                 |
-| :---: | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|       | [What is MySQL?](#what-is-mysql)                                                                                                                          |
-|       | [What is Sql?](#what-is-sql)                                                                                                                              |
-|       | [What is the difference between SQL and MySQL?](#what-is-the-difference-between-sql-and-mysql)                                                            |
-|       | [What are the advantages of MySQL?](#what-are-the-advantages-of-mysql)                                                                                    |
-|       | [Check version of the sql?](#ques-check-version-of-the-sql)                                                                                               |
-|       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql)                                                                             |
-|       | [-- Data Definition Language (DDL)](#types-of-sql-commandssubsets-of-sql)                                                                                 |
-|       | [-- Data Manipulation Language (DML)](#types-of-sql-commandssubsets-of-sql)                                                                               |
-|       | [-- Data Control Language (DCL)](#types-of-sql-commandssubsets-of-sql)                                                                                    |
-|       | [-- Transaction Control Language (TCL)](#types-of-sql-commandssubsets-of-sql)                                                                             |
-|       | [How to copy a table in another table?](#ques-how-to-copy-a-table-in-another-table)                                                                       |
-|       | [How to copy structure of a table but not data?](#ques-how-to-copy-structure-of-a-table-but-not-data)                                                     |
-|       | [Create a table through another table/Duplicate table through another table?](#create-a-table-through-another-tableduplicate-table-through-another-table) |
-|       | [Duplicate table through another table, with structure and data?](#duplicate-table-through-another-table-with-structure-and-data)                         |
+|  No.  | [Mysql]()                                                                                                                         |
+| :---: | --------------------------------------------------------------------------------------------------------------------------------- |
+|       | [What is MySQL?](#what-is-mysql)                                                                                                  |
+|       | [What is Sql?](#what-is-sql)                                                                                                      |
+|       | [What is the difference between SQL and MySQL?](#what-is-the-difference-between-sql-and-mysql)                                    |
+|       | [What are the advantages of MySQL?](#what-are-the-advantages-of-mysql)                                                            |
+|       | [Check version of the sql?](#ques-check-version-of-the-sql)                                                                       |
+|       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql)                                                     |
+|       | [-- Data Definition Language (DDL)](#types-of-sql-commandssubsets-of-sql)                                                         |
+|       | [-- Data Manipulation Language (DML)](#types-of-sql-commandssubsets-of-sql)                                                       |
+|       | [-- Data Control Language (DCL)](#types-of-sql-commandssubsets-of-sql)                                                            |
+|       | [-- Transaction Control Language (TCL)](#types-of-sql-commandssubsets-of-sql)                                                     |
+|       | [How to copy a table in another table?](#ques-how-to-copy-a-table-in-another-table)                                               |
+|       | [How to copy structure of a table but not data?](#ques-how-to-copy-structure-of-a-table-but-not-data)                             |
+|       | [Create a table through another table?](#create-a-table-through-another-tableduplicate-table-through-another-table)               |
+|       | [Duplicate table through another table?](#create-a-table-through-another-tableduplicate-table-through-another-table)              |
+|       | [Duplicate table through another table, with structure and data?](#duplicate-table-through-another-table-with-structure-and-data) |
 
-
-### **What is MySQL?**
-- MySQL is an open-source relational **database management system** (RDBMS) based on SQL (Structured Query Language).
-- It's commonly used for managing data in web applications and is known for its performance and ease of use.
 
 ### **What is Sql?**
 * SQL is stands for **structure query language**. 

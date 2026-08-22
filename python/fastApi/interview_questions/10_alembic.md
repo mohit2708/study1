@@ -41,7 +41,7 @@ import models
 target_metadata = Base.metadata
 ```
 
-- change onle line
+- change one line
 ```python
 # before
 with connectable.connect() as connection:

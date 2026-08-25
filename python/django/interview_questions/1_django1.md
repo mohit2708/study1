@@ -7,8 +7,6 @@ https://www.javatpoint.com/django-interview-questions-and-answers -- 1
 
 |  No.  | Questions                                                                                               |
 | :---: | ------------------------------------------------------------------------------------------------------- |
-|       | [What is Django?](#Ques-What-is-Django)                                                                 |
-|       | [What is the latest version of Django?](#Ques-What-is-the-latest-version-of-Django)                     |
 |       | [Explain Django architecture?](#Ques-Explain-Django-architecture)                                       |
 |       | [Explain the django project directory structure?](#Ques-Explain-the-django-project-directory-structure) |
 |       | [Give a brief about the settings.py file?](#Ques-Give-a-brief-about-the-settingspy-file)                |
@@ -372,15 +370,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 {% load static %}
 <link rel="stylesheet" type="text/css"  href="{% static 'admin/css/adminlte.min.css' %}" />
  ```
-
-
-### **Ques. Meta Class in Models?**
-Model Meta is basically the inner class of your model class. Model Meta is basically used to change the behavior of your model fields like changing order options,verbose_name, and a lot of other options. It’s completely optional to add a Meta class to your model.
-```python
-class student(models.Model):
-    class Meta:
-        options........
-```
 
 
 ### **Ques. What is CRUD operations Django?**

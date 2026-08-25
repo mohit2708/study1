@@ -13,10 +13,10 @@ Output:- Welcome to mohit
 
 ### **Ques. What is Variable?** 
 * Variable temporary data hold Karta hai.
-* A variable starts with the $ sign, followed by the name of the variable.
-* A variable name must start with a letter or the underscore character.
-* A variable name cannot start with a number.
-* Variable names are case-sensitive ($age and $AGE are two different variables).
+* A variable starts with the **$** sign, followed by the name of the variable.
+* A variable name must **start with a letter or the underscore character**.
+* A variable name **cannot** start with a **number**.
+* Variable names are **case-sensitive** ($age and $AGE are two different variables).
 
 
 ### **Ques. Difference between Constant And Variable?**

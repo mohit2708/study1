@@ -10,10 +10,11 @@
 * The application can be run anywhere (Windows, Linux, Cloud) in the same way.
 * We can run code and dependencies in containers without installing them directly on your system.
 * 
-* Docker is an open-source containerization platform that allows developers to package, deploy, and run applications inside containers.
-* A container is a lightweight, portable, and isolated environment that contains an application along with all its required dependencies, libraries, and configurations.
+* Docker is an **open-source containerization platform** that allows developers to package, deploy, and run applications inside containers.
+* A container is a lightweight, portable, and isolated(Isolated ka matlab hota hai alag ya separate environment me chalna) environment that contains an application along with all its required dependencies, libraries, and configurations.
 * Docker ensures that the application runs consistently across different environments such as Windows, Linux, and cloud platforms.
 * It allows us to run applications and their dependencies inside containers without installing those dependencies directly on the host operating system.
+
 
 #### **Docker Installation**
 * search **get docker** on google (OR) hit "https://docs.docker.com/get-started/get-docker/"
@@ -28,7 +29,15 @@
 6. Isolation
 7. CI/CD Integration
 
-#### Difference Between Docker and Virtual Machine
+### **Difference Between Docker and Virtual Machine**
+* Docker host OS ka kernel(Kernel Operating System ka core (heart) hota hai jo hardware aur software ke beech communication karwata hai.) share karta hai, jabki VM har instance ke liye alag Guest OS chalata hai.
+* Docker lightweight hota hai, jabki VM heavy hoti hai.
+* Docker seconds me start ho jata hai, VM ko start hone me zyada time lagta hai.
+* Docker kam RAM aur CPU use karta hai, VM zyada resources consume karti hai.
+* Docker me containers run hote hain, VM me virtual machines run hoti hain.
+* Docker ki performance generally better hoti hai kyunki full OS load nahi hota.
+* VM stronger isolation provide karti hai kyunki har VM ka apna OS hota hai.
+* Docker applications ko package aur deploy karne ke liye use hota hai, VM poora operating system virtualize karti hai.
 
 #### Advantages of Docker
 1. Lightweight

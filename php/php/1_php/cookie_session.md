@@ -4,11 +4,11 @@ Php cookie is a small piece of information, which is stored on the client browse
 
 * How to **set** cookie:-
 ```php
-    Setcookie("name", "value", time()+3600);
+Setcookie("name", "value", time()+3600);
 ```
 * How to **Retrieve** a cookie:-
 ```php
-    echo $_cookie["user"];
+echo $_cookie["user"];
 ```
 * How to **unset** Cookie:-      
 ```php

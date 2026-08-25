@@ -249,7 +249,6 @@ The Reversed String is:  anexaS tihoM evol i
 ### **Reverse a Number**
 
 - using a **while loop**
-
 ```python
 Number = int(input("Please Enter any Number: "))
 Reverse = 0

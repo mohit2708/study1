@@ -1,5 +1,5 @@
 ### **Ques. What is Stored procedure?**
-- Stored procedures are precompiled collections of SQL statements that can be executed on demand. They help improve performance by reducing the amount of SQL sent to the server.
+- Stored procedures are **precompiled collections of SQL statements** that can be executed on demand. They help improve performance by reducing the amount of SQL sent to the server.
 * A Stored Procedure is a precompiled SQL program stored inside the MySQL database that you can run again and again.
 * It is used to:
   * Reduce repeated SQL code

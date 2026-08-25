@@ -165,7 +165,6 @@ How does AWS Lambda work?
 What are Lambda triggers?
 What is a Lambda function?
 Lambda vs EC2?
-What is Lambda cold start?
 What is Lambda timeout?
 What is Lambda concurrency?
 What is Lambda Layer?

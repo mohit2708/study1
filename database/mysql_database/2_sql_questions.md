@@ -1,9 +1,12 @@
+### Back To TOP
+
 |  No.  | My SQL Questions                                                                               |
 | :---: | ---------------------------------------------------------------------------------------------- |
 |       | [What is MySQL](#what-is-mysql)                                                                |
 |       | [What is MySQL?](#what-is-mysql)                                                               |
 |       | [What is Sql?](#what-is-sql)                                                                   |
 |       | [What is the difference between SQL and MySQL?](#what-is-the-difference-between-sql-and-mysql) |
+|       | [Difference between SQL and NoSQL?](#mysql-vs-nosql)                                           |
 
 |  No.  | [Mysql User Management](#mysql-user-management)                                    |
 | :---: | ---------------------------------------------------------------------------------- |
@@ -36,6 +39,7 @@
 |       | [What is Aggregate function?](#-what-is-aggregate-function)                                  |
 |       | [constraints](#what-are-constraints-in-mysql)                                                |
 |       | [Wildcard Characters/Like Query](#wildcard-characterslike-query)                             |
+|       | [Aliases?](#aliases)                                                                         |
 
 <div style="page-break-before: always;"></div>
 
@@ -65,6 +69,8 @@
 |       | [CROSS Join](#cross-join)                              |
 |       | [Full Join/FULL OUTER JOIN](#full-joinfull-outer-join) |
 
+
+### Index
 |  No.  | [Index](#index)                                                                                                         |
 | :---: | ----------------------------------------------------------------------------------------------------------------------- |
 |       | [What is Index?](#what-is-index)                                                                                        |
@@ -78,6 +84,16 @@
 |       | [Non cluster index](#non-cluster-index)                                                                                 |
 |       | [difference between cluster and non cluster index?](#ques-what-is-the-difference-between-cluster-and-non-cluster-index) |
 
+### view
+|  No.  | View                                                       |
+| :---: | -------------------------------------------------------------------- |
+|       | [What is View?](#what-is-view)                                       |
+|       | [Create view](#create-view)                                          |
+|       | [Show view](#show-view)                                              |
+|       | [Alter view](#alter-view)                                            |
+|       | [Deleted view](#deleted-view)                                        |
+|       | [Views used in real projects?](#why-are-views-used-in-real-projects) |
+
 |  No.  |                                                                               |
 | :---: | ----------------------------------------------------------------------------- |
 |       | [What Is Union & Union All?](#what-is-union--union-all)                       |
@@ -86,12 +102,15 @@
 |       | [What is EXCEPT?](#what-is-except)                                            |
 |       | [What is Intersect?](#what-is-intersect)                                      |
 
+
+
 <div style="page-break-before: always;"></div>
 
 ### 🎯**What is MySQL?**
 - MySQL is an open-source relational **database management system** (RDBMS) that uses SQL to store, manage, and retrieve data.
 - It's commonly used for managing data in web applications and is known for its performance and ease of use.
 
+[🔝 Back to Top](#back-to-top)
 ### 🎯**What is Sql?**
 * SQL is stands for **structure query language**. 
 * SQL (Structured Query Language) is a standard language used to **create**, **read**, **update**, and **delete** data in relational databases. It is also used to create and modify database structures such as tables.
@@ -104,6 +123,93 @@
 - MySQL → RDBMS / Database Management System
   
 <div style="page-break-before: always;"></div>
+
+### 🎯**MySQL vs NoSQL?**
+* **MySQL** is a **relational database** that stores data in tables with **predefined schemas** and uses SQL for querying.
+* **NoSQL** is a **non-relational database** that stores data in **flexible formats such as documents, key-value pairs, graphs, or columns**, making it suitable for large-scale and rapidly changing applications.
+
+#### When to Use MySQL?
+* Banking Systems
+* E-commerce Orders
+* ERP/CRM Applications
+* Applications requiring complex JOINs and transactions
+
+#### When to Use NoSQL?
+* Social Media Apps
+* Real-time Analytics
+* Chat Applications
+* Large-scale Distributed Systems
+
+| MySQL                              | NoSQL                                                           |
+| ---------------------------------- | --------------------------------------------------------------- |
+| Relational Database                | Non-Relational Database                                         |
+| Data tables mein store hota hai    | Data documents, key-value, graph ya columns mein store hota hai |
+| Fixed Schema                       | Flexible Schema                                                 |
+| SQL language use karta hai         | Different query methods use karta hai                           |
+| JOIN support karta hai             | JOIN support limited ya nahi hota                               |
+| ACID transactions strong hote hain | Mostly scalability par focus                                    |
+| Vertical Scaling (RAM/CPU badhao)  | Horizontal Scaling (servers badhao)                             |
+| Complex relationships ke liye best | Large-scale data ke liye best                                   |
+| Data consistency high              | High availability aur performance                               |
+| Example: MySQL, PostgreSQL         | MongoDB, Redis, Cassandra                                       |
+
+<div style="page-break-before: always;"></div>
+
+### **Difference between SQL and NoSQL?**
+- The main difference between SQL (Structured Query Language) and NoSQL (Not Only SQL) databases lies in how they store, manage, and retrieve data.
+- Here's a breakdown of the key differences:
+1. Data Structure:
+   - SQL:
+     - Relational databases use tables to store data in rows and columns.
+     - Data is organized into predefined schemas with relationships (foreign keys) between tables.
+     - Examples: MySQL, PostgreSQL, Oracle, MS SQL Server.
+   - NoSQL:
+     - Non-relational databases can store data in various formats such as key-value pairs, document-based, column-family, or graph-based.
+     - More flexible schema (often schema-less or dynamic schemas), allowing changes in data structure without affecting the database.
+     - Examples: MongoDB (document), Redis (key-value), Cassandra (column-family), Neo4j (graph).
+2. Schema:
+   - SQL:
+     - Strict schema: data must adhere to a predefined structure (tables, columns, data types).
+     - Changes to schema (adding/removing columns) can be complex.
+   - NoSQL:
+     - Flexible schema: no strict schema, data can be stored with varying structures.
+     - Allows quick changes to the data model, making it ideal for rapidly evolving applications.
+3. Scalability:
+   - SQL:
+     - Vertical scaling (scaling up by upgrading hardware resources like CPU, RAM).
+     - More challenging to scale horizontally (across multiple machines).
+   - NoSQL:
+     - Horizontal scaling (scaling out by adding more servers or nodes).
+     - Designed to handle large volumes of data and high-traffic loads more efficiently.
+4. Transactions & Consistency:
+   - SQL:
+     - ACID (Atomicity, Consistency, Isolation, Durability) properties are strictly followed to ensure data integrity and reliability.
+     - Best suited for applications where data consistency is critical (e.g., banking, financial systems).
+   - NoSQL:
+     - Most NoSQL databases follow the BASE (Basically Available, Soft state, Eventually consistent) model.
+     - Designed to provide high availability and partition tolerance, but may allow some degree of eventual consistency.
+
+5. Query Language:
+- SQL:
+  - Uses structured query language (SQL) for querying the database (e.g., SELECT, INSERT, UPDATE, DELETE).
+  - Well-defined and standardized.
+- NoSQL:
+  - Query languages vary based on the type of NoSQL database (e.g., MongoDB uses its own query language).
+  - Queries can be less standardized across NoSQL systems.
+  - 
+6. Use Cases:
+- SQL:
+  - Best suited for applications with complex querying needs, transactional systems, and when data consistency is paramount (e.g., banking, CRM systems).
+- NoSQL:
+  - Ideal for applications with large amounts of unstructured or semi-structured data, or when scalability and flexibility are more important than strict consistency (e.g., big data, real-time web apps, IoT).
+
+7. Examples of Databases:
+   - SQL: 
+     - MySQL, PostgreSQL, SQLite, MS SQL Server, Oracle DB.
+   - NoSQL: 
+     - MongoDB, Cassandra, Couchbase, Redis, Neo4j.
+<div style="page-break-before: always;"></div>
+
 
 ### 🎯**Create User**
 ```sql
@@ -511,6 +617,77 @@ SELECT COUNT(column_name) FROM table_name;
 
 ```sql
 SELECT * FROM Customers WHERE City LIKE 'ber%';
+```
+<div style="page-break-before: always;"></div>
+
+
+[🔝 Back to Top](#back-to-top)
+### **Aliases**
+* AS is a keyword in SQL that allows you to rename a column or table using an alias.
+* Aliases are used to give a table, or a column in a table, a temporary name.
+* An alias is created with the **AS** keyword.
+
+#### Alias Column Syntax:-
+```sql
+SELECT column_name AS alias_name FROM table_name;
+
+-- Basic Column Alias
+SELECT first_name AS name, last_name AS surname FROM employees;
+
+-- Using quotes for aliases with spaces
+SELECT 
+    first_name AS 'Employee First Name',
+    last_name AS 'Employee Last Name',
+    salary AS 'Monthly Compensation'
+FROM 
+    employees;
+    
+-- Without AS keyword
+SELECT first_name name, last_name surname FROM employees;
+
+-- Simple Table Alias
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e JOIN departments d 
+ON e.department_id = d.department_id;
+
+-- Calculation with Alias
+SELECT 
+    product_name, 
+    price * quantity AS total_value,
+    (price * quantity) * 1.1 AS total_with_tax
+FROM products;
+
+-- Concatenation Alias
+SELECT 
+    CONCAT(first_name, ' ', last_name) AS full_name,
+    email AS contact_email
+FROM customers;
+
+-- Subquery with Alias
+SELECT 
+    (SELECT AVG(salary) FROM employees) AS avg_salary,
+    (SELECT MAX(salary) FROM employees) AS max_salary;
+
+
+-- Aggregate Function Aliases
+SELECT 
+    department_id,
+    AVG(salary) AS average_salary,
+    COUNT(*) AS employee_count,
+    MAX(salary) AS highest_salary
+FROM employees
+GROUP BY department_id;
+
+-- Conditional Aliases
+SELECT 
+    first_name,
+    last_name,
+    CASE 
+        WHEN salary < 50000 THEN 'Junior'
+        WHEN salary BETWEEN 50000 AND 100000 THEN 'Mid-Level'
+        ELSE 'Senior'
+    END AS salary_category
+FROM employees;
 ```
 <div style="page-break-before: always;"></div>
 
@@ -1195,6 +1372,66 @@ ALTER TABLE table_name DROP CONSTRAINT constraint_name;
 | Data rows are stored in the order of the index. | Data rows are not sorted in any particular order.        |
 | Only one clustered index per table.             | Multiple non-clustered indexes can exist per table.      |
 | Created by default for the primary key.         | Must be explicitly created (e.g., for specific queries). |
+<div style="page-break-before: always;"></div>
+
+
+[Back to Top](#view)
+### **What is View?**
+* A view is a **virtual table** based on the result set of a SELECT query.
+* It does not store data itself but provides a way to look at data from one or more tables in a structured and reusable manner.
+* It **behaves** like a **table** but **doesn't store** the **data physically**.
+
+#### Why use Views?
+* Security provide karti hai (sab columns hide kar sakte hain).
+* Complex queries ko simple banati hai.
+* Reusable query hoti hai.
+* Data abstraction provide karti hai.
+* Multiple tables ko ek virtual table ki tarah dikhaya ja sakta hai.
+
+### **Create view**
+```sql
+Create view view_name As
+Select column1, column2
+From  table_name  
+Where [condition];
+```
+
+#### **Show view**
+```sql
+SELECT * FROM view_name;
+```
+
+#### **Alter view**
+* CREATE OR REPLACE VIEW Syntax
+```sql
+CREATE OR REPLACE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+#### **Deleted view**
+* A view is **deleted** with the **DROP VIEW statement**.
+```sql
+DROP VIEW view_name
+DROP VIEW IF EXISTS view_name;
+```
+
+#### Can we insert data into a View?
+* Haan, lekin sirf simple views me.
+
+#### Can we create a View on another View?
+* haa
+```sql
+CREATE VIEW view2 AS
+SELECT * FROM view1;
+```
+
+#### Why are Views used in real projects?
+* Users ko sirf required columns dikhaye ja sakte hain bina original table ka access diye.
+* Security, code reusability, complex query simplification, aur data abstraction ke liye Views use ki jaati hain. 
+
+
 <div style="page-break-before: always;"></div>
 
 ### 🎯**What Is Union & Union All?**

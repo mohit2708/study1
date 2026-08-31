@@ -43,30 +43,6 @@ docker run -p<host_port>:<container_port> <image_name>
 docker run -d -p 8000:8000 myfastapiapp // example
 ```
 
-#### **container run in background/detached mode**
-* docker run -d image_name में -d का मतलब है detached mode।
-* -d (detached mode) का मतलब है कि कंटेनर background में चलेगा।
-* आप कंटेनर को स्टार्ट करेंगे, लेकिन उसका टर्मिनल या आउटपुट आपके स्क्रीन पर नहीं दिखेगा।
-* कंटेनर अपने आप काम करता रहेगा और आप अपना टर्मिनल फ्री रख सकते हैं।
-```docker
-docker run -d <image_name>
-```
-
-##### उदाहरण:
-```docker
-docker run -d nginx
-```
-* ये कमांड Nginx वेब सर्वर कंटेनर को बैकग्राउंड में रन करता है।
-* आप कंटेनर के लॉग देखने के लिए बाद में docker logs <container_id> चला सकते हैं।
-* या कंटेनर को मैनेज करने के लिए docker ps से कंटेनर की लिस्ट देख सकते हैं।
-* जब आपको कंटेनर को लगातार बैकग्राउंड में चलाना हो, जैसे कि वेब सर्वर, डेटाबेस, या कोई सर्विस।
-* जब आपको कंटेनर के साथ इंटरैक्ट करने की जरूरत न हो, बल्कि वह अपने आप काम करता रहे।
-
-##### Example
-* In Docker, the **-e** option is used to set environment variables inside the container at runtime.
-```docker
-docker run -d --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw mysql:latest
-```
 
 #### **Set environment variables in a container**
 ```docker
@@ -91,21 +67,6 @@ docker rm <container_id_or_name>
 docker rm -f <container_id_or_name>
 (OR)-- Remove all stopped containers at once-- prune:- It removes things like stopped containers, unused networks, dangling images, or unused volumes.
 docker container prune
-```
-
-### **What is docker inspect?**
-* The docker inspect command is used to view detailed low-level information about:
-  * a container
-  * an image
-  * a volume
-  * a network, etc.
-* It shows information in JSON format that Docker uses internally.
-```docker
-docker inspect <container_name_or_id>
-
-docker inspect <image_name_or_id>
-docker inspect <volume_name>
-docker inspect <network_name>
 ```
 
 #### 🧾 **What kind of information does it show?**
@@ -175,11 +136,6 @@ docker push <your-dockerhub-username>/myfastapiapp:latest
 ### **View Logs of a Container**
 ```docker
 docker log cont_id/cont_name
-```
-
-### **Detailed info about a container/image**
-```docker
-docker inspect <container_or_image_name>   # Detailed info about a container/image
 ```
 
 ### **Get Inside a Running Container (Debug)**

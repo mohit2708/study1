@@ -1,12 +1,15 @@
-|  No.  | Project Setup                                                       |
-| :---: | ------------------------------------------------------------------- |
-|       | [virtual environment:- Create](#create-virtual-environment)         |
-|       | [virtual environment:- Activate](#activated-virtual-environment)    |
-|       | [Install Fastapi](#install-fastapi)                                 |
-|       | [upgratde Pip version](#upgratde-pip-version)                       |
-|       | [Install Uvicorn](#install-uvicorn)                                 |
-|       | [Create main.py file with route](#create-a-mainpy-file-with-routes) |
-|       | [Run the server](#run-the-server)                                   |
+### Back to Top
+
+|  No.  | Project Setup                                                             |
+| :---: | ------------------------------------------------------------------------- |
+|       | [virtual environment:- Create](#create-virtual-environment)               |
+|       | [virtual environment:- Activate](#activated-virtual-environment)          |
+|       | [Install Fastapi](#install-fastapi)                                       |
+|       | [upgratde Pip version](#upgratde-pip-version)                             |
+|       | [Install Uvicorn](#install-uvicorn)                                       |
+|       | [Create main.py file with route](#create-a-mainpy-file-with-routes)       |
+|       | [Run the server](#run-the-server)                                         |
+|       | [Project setup one pc to another Pc](#project-setup-one-pc-to-another-pc) |
 
 |  No.  | FastAPI Questions                                                     |
 | :---: | --------------------------------------------------------------------- |
@@ -18,14 +21,17 @@
 |       | [Describe Fastapi code](#describe-fastapi-code)                       |
 |       | [Starlette](#starlette)                                               |
 |       | [ASGI](#asgi)                                                         |
+|       | [WSGI](#what-is-wsgi)                                                 |
 |       | [uvicorn](#uvicorn)                                                   |
 |       | [Gunicorn](#gunicorn)                                                 |
 |       | [Gunicorn और Uvicorn में Difference](#gunicorn-और-uvicorn-में-difference) |
+|       | [FastAPI vs Flask](#fastapi-vs-flask)                                 |
 
 |  No.  | Endpoint Questions                    |
 | :---: | ------------------------------------- |
 |       | [GET endpoint](#what-is-get-endpoint) |
 |       | [POST endpoint](#post-endpoint)       |
+|       | [PUT vs PATCH](#put-vs-patch)         |
 
 |  No.  | Path Parameter                                                                  |
 | :---: | ------------------------------------------------------------------------------- |
@@ -34,6 +40,7 @@
 |       | [validate path parameters](#how-do-you-validate-path-parameters)                |
 |       | [What is Path()](#what-is-path)                                                 |
 
+### Query Parameter
 |  No.  | Query Parameter                                                                     |
 | :---: | ----------------------------------------------------------------------------------- |
 |       | [Query Parameter](#query-parameter)                                                 |
@@ -41,13 +48,20 @@
 |       | [Query parameters:- restrict values](#how-do-you-restrict-query-parameter-values)   |
 |       | [What is Query() in FastAPI?](#what-is-query-in-fastapi)                            |
 |       | [Path Parameter vs Query Parameter](#path-parameter-vs-query-parameter)             |
+|       | [Query parameter optional?](#how-do-query-parameter-optional)                       |
+
+
+### Pydantic & Validation 
+|  No.  |  Pydantic & Validation                                                                     |
+| :---: | ----------------------------------------------------------------------------------- |
+|       | [what is BaseModel?](#what-is-basemodel)                                            |
 
 
 
 
 <div style="page-break-before: always;"></div>
 
-
+# Project Setup
 ### 🎯**Create virtual environment**
 * create the folder and open the cmd
 ```python
@@ -72,7 +86,7 @@ source env_crud/Scripts/activate
 | PowerShell | `.\virt_env\Scripts\Activate.ps1`  |
 | CMD        | `virt_env\Scripts\activate.bat`    |
 | Git Bash   | `source virt_env/Scripts/activate` |
-<div style="page-break-before: always;"></div>
+
 
 ### 🎯**Install Fastapi**
 * we have install two packages/library **fastapi** and **uvicorn**
@@ -201,7 +215,31 @@ python run.py
 ```
 <div style="page-break-before: always;"></div>
 
+### 🎯**Project setup one pc to another Pc**
+* First of all we run the command
+```python
+pip freeze > requirements.txt
+```
+* And other system follows these step
+```python
+# Create and activate virtual environment
+virtualenv -p python3 env
+. ./env/bin/activate
 
+# Install Python dependencies
+pip install -r requirements.txt
+pip install --default-timeout=100 -r requirements.txt
+
+# Create SQLite databse, run migrations
+cd myapp
+./manage.py migrate
+
+# Run Django dev server
+./manage.py runserver
+```
+<div style="page-break-before: always;"></div>
+
+# Fast API Basic Questions
 ### 🎯**What is Fastapi**
 - **FastAPI is a modern, high-performance Python web framework used for building RESTful APIs.**
 - It is based on **Starlette** for the web framework and **Pydantic** for data validation.
@@ -337,6 +375,16 @@ async def app(scope, receive, send):
 | Gunicorn + Uvicorn Workers | Production deployment में बहुत common combination |
 <div style="page-break-before: always;"></div>
 
+### **What is WSGI?**
+* WSGI (Web Server Gateway Interface) is a standard interface between Python web applications and web servers. Frameworks like Flask and Django use WSGI to communicate with servers such as Gunicorn and uWSGI. WSGI is synchronous and handles one request per worker at a time.
+* WSGI (Web Server Gateway Interface) Python web applications aur web servers ke beech communication ka standard interface hai.
+* **HINDI:** WSGI web server (Apache, Nginx, Gunicorn) aur Python application (Flask, Django) ke beech bridge ka kaam karta hai.
+
+#### WSGI ki Limitation
+* Agar ek request ko 5 seconds lagte hain, to worker us request ke complete hone tak busy rahega.
+
+<div style="page-break-before: always;"></div>
+
 ### 🎯**uvicorn**
 * Uvicorn is an ASGI server used to run FastAPI applications.
 * Uvicorn is a lightweight, high-performance ASGI server used to run FastAPI applications.
@@ -386,6 +434,8 @@ Python App
 gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app
 ```
 
+[🔝 Back to Top](#back-to-top)
+
 ### 🎯**Gunicorn और Uvicorn में Difference**
 | Feature       | Gunicorn                    | Uvicorn            |
 | :------------ | :-------------------------- | :----------------- |
@@ -395,6 +445,47 @@ gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app
 | Use case      | Traditional Python web apps | Modern async apps  |
 <div style="page-break-before: always;"></div>
 
+
+### 🎯**FastAPI vs Flask**
+* Flask is a lightweight web framework, while FastAPI is a modern high-performance API framework with built-in validation, documentation, and async support.
+| Feature              | FastAPI                         | Flask                         |
+| -------------------- | ------------------------------- | ----------------------------- |
+| Release Year         | 2018                            | 2010                          |
+| Performance          | Very Fast (ASGI)                | Slower than FastAPI (WSGI)    |
+| Async Support        | Built-in (`async/await`)        | Limited, requires extra setup |
+| Data Validation      | Automatic with Pydantic         | Manual validation             |
+| API Documentation    | Auto-generates Swagger & ReDoc  | Requires extra libraries      |
+| Type Hints           | Strongly uses Python type hints | Optional                      |
+| Learning Curve       | Slightly higher                 | Easier for beginners          |
+| Best For             | REST APIs, Microservices        | Small to Medium Web Apps      |
+| Dependency Injection | Built-in                        | Not available by default      |
+| WebSocket Support    | Built-in                        | Requires extensions           |
+
+#### Example
+* Flask
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/hello")
+def hello():
+    return {"message": "Hello World"}
+```
+
+* Fastapi
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/hello")
+def hello():
+    return {"message": "Hello World"}
+```
+<div style="page-break-before: always;"></div>
+
+# Endpoint Questions
 ### 🎯**What is GET endpoint?**
 * In FastAPI, a GET endpoint is created using the **@app.get() decorator**. The decorator defines the URL path, and the function below it handles the incoming GET request and returns the response, usually as a Python dictionary which FastAPI automatically converts to JSON.
 * Hindi:- FastAPI में GET endpoint बनाने के लिए @app.get() decorator का उपयोग किया जाता है।
@@ -422,10 +513,16 @@ def read_root():
 def create_item():
     return {"message": "Item created successfully"}
 ```
+
+### 🎯**PUT vs PATCH**
+* PUT → Entire resource ko update karta hai.
+* PATCH → Sirf specified fields ko update karta hai.
 <div style="page-break-before: always;"></div>
 
+# Path Parameter Questions
 ### 🎯**Path Parameter**
-* A Path Parameter is a value that is passed as part of the URL path. It is used to identify a specific resource.
+* A Path Parameter is a **value that is passed as part of the URL path**. 
+* It is used to **identify a specific resource**.
 * Path Parameter is a variable that is included in the URL path and it is used to **identify a specific resource**. In FastAPI, path parameters are defined using curly braces {} in the route.
 * **Hindi:-** Path Parameter URL ke andar pass kiya jata hai aur kisi specific record ko identify karne ke liye use hota hai.
 ```python
@@ -470,7 +567,7 @@ app = FastAPI()
 
 @app.get("/users/{user_id}")
 def get_user(
-    user_id: int = Path(..., ge=1, le=1000)
+    user_id: int = Path(..., ge=1, le=1000) # ... means the parameter is required.
 ):
     return {"user_id": user_id}
 ```
@@ -489,6 +586,7 @@ user_id: int = Path(..., ge=1)
 ```
 <div style="page-break-before: always;"></div>
 
+# Query Parameter Questions
 ### 🎯**Query Parameter?**
 * A Query Parameter is a value that is passed in the URL after the ? symbol. It is commonly used for **filtering**, **searching**, **sorting**, and **pagination**.
 * Query Parameter URL mein ? ke baad aata hai aur data ko filter ya search karne ke liye use hota hai.
@@ -596,7 +694,7 @@ def search(
 | Required hota hai                    | Usually optional hota hai          |
 <div style="page-break-before: always;"></div>
 
-### 🎯**How do you make a parameter optional in FastAPI?**
+### 🎯**How do query parameter optional?**
 * In FastAPI, you can make a parameter optional by giving it a default value, commonly None, and using **Optional** or **| None**.
 * **HIndi:-** Parameter ko optional banane ke liye uski default value None set kar dete hain.
 
@@ -661,7 +759,7 @@ def create_user(user: User):
 # Pydantic
 ### **Pydantic**
 * Pydantic is a Python library **used for data validation**, parsing, and serialization using Python type hints.
-* FastAPI uses Pydantic models to:
+* FastAPI **uses** Pydantic models to:
   * validate incoming request data,
   * convert data into Python objects,
   * and generate JSON responses automatically.
@@ -717,8 +815,8 @@ def create_user(user: User):
 }
 ```
 
-### **How do you make a field optional?**
-* To make a field optional in Pydantic, we use Optional[type] from the typing module and assign a default value of None.
+### 🎯**How do you make a field optional?**
+* To make a field optional in Pydantic, we use **Optional[type]** from the typing module and assign a default value of None.
 * Hindi:- Pydantic में किसी field को optional बनाने के लिए Optional और default value None का उपयोग किया जाता है। इससे वह field request में भेजना आवश्यक नहीं रहता।
 ```python
 from typing import Optional
@@ -731,7 +829,7 @@ class User(BaseModel):
 ```
 <div style="page-break-before: always;"></div>
 
-### **What is a Pydantic Model?**
+### 🎯**What is a Pydantic Model?**
 * A Pydantic model is a Python class that inherits from BaseModel and is used to define the structure, validation rules, and data types for data.
 * FastAPI में इसे request body, response body, और data validation के लिए use किया जाता है।
 
@@ -744,7 +842,8 @@ class User(BaseModel):
 ```
 * यह पूरा User class ही Pydantic model कहलाता है।
 
-### **What is BaseModel?**
+
+### 🎯**What is BaseModel?**
 * BaseModel Pydantic की मुख्य (core) class है।
 * BaseModel is the base class provided by Pydantic that enables automatic data validation, parsing, and serialization using Python type hints.
 * जब हम कोई class BaseModel को inherit करके बनाते हैं, तो वह class Pydantic model बन जाती है और उसमें automatic:
@@ -1215,6 +1314,7 @@ project/
 * Open **alembic.ini** file
   * Find:- sqlalchemy.url = driver://user:pass@localhost/dbname
   * Change to: sqlalchemy.url = mysql+pymysql://root:password@localhost:3306/fastapi_db
+
 * open **alembic/env.py** file
   * find:- target_metadata = None
   * Replace with:
@@ -1328,6 +1428,7 @@ alembic current
 
 <div style="page-break-before: always;"></div>
 
+# Authentication & Authorization
 ### Authentication vs Authorization?
 * Authentication verifies the identity of a user (who you are), while Authorization determines the permissions and resources that the authenticated user can access (what you can do).
 

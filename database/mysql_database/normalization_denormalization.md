@@ -3,11 +3,28 @@
 * The Normalization form is used to reduce redundancy from the database table, and improve data integrity.
 * Normalization divides the larger table into smaller and links them using relationships using foreign keys.
 * It is also used to eliminate undesirable characteristics like Insertion, Update, and Deletion Anomalies.
+* HINDI:- 
+  * Normalization database ko organize karne ki process hai jisse:
+    * Data redundancy (duplicate data) kam ho
+    * Data consistency bani rahe
+    * Insert, Update aur Delete anomalies na aaye
+    * Tables ko relationships (Primary Key aur Foreign Key) ke through connect kiya ja sake
+
+#### Why do we need Normalization?
+* Normalization is used to **organize data in a database**, reduce data redundancy (duplicate data), improve data integrity, and eliminate insertion, update, and deletion anomalies.
+
+#### Benefits of Normalization
+1. Reduces Data Redundancy:- Same data baar-baar store nahi karna padta.
+2. Improves Data Integrity:- Data consistent aur accurate rehta hai.
+3. Avoids Update Anomalies:- Ek value change karne par multiple rows update nahi karni padti.
+4. Avoids Insert Anomalies:- Naya data insert karna aasaan hota hai.
+5. Avoids Delete Anomalies:- Ek record delete karne se important information lose nahi hoti.
+6. Better Database Design:- Tables logically organized rehti hain.
 
 #### **Types of Normalization**
 1. **First Normal Form (1NF)**
-* Each column can have only one type of data/value, i.e, there cannot be more than one value in the same cell.
-* All values in a column must be of the same data type, such as all names or all numbers
+* Each column can have only **one type of data/value**, i.e, there cannot be more than one value in the same cell.
+* All values in a column **must be of the same data type**, such as all names or all numbers
 * Each record (row) must be unique identifier (primary key).
 
 ```sql
@@ -26,7 +43,7 @@
 ```
 
 2. **Second Normal Form (2NF)**
-* The table should already be in 1NF.
+* The table **should already be in 1NF**.
 * Every non-prime attribute (which is not part of the primary key) in the table must depend on the entire primary key,
 * suppose hame kisi data ka name change karna pada to sabhi column mai karna padega isliye id use karte hai
 ```sql
@@ -50,6 +67,7 @@
 ```
 
 3. तीसरा सामान्य रूप (3NF)
+* Third Normal Form means the **table should be in 2NF**, and there should be **no transitive dependency**. Non-key attributes should depend only on the primary key, not on another non-key attribute.
 - Remove the Transitive Dependency
 - 3NF में हम यह सुनिश्चित करते हैं कि कोई ट्रांजिटिव डिपेंडेंसी (Transitive Dependency) न हो। इसका मतलब है कि अगर कॉलम A → B और कॉलम B → C है, तो हमें कॉलम C को टेबल से अलग करना होगा और उसे स्वतंत्र टेबल में रखना होगा।
 
@@ -64,23 +82,6 @@
 Notes:- Anomaly means 
 
 
-### **Ques. What are types of normalization?**
-1. **First Normal Form (1NF):-** A relation is said to be in ﬁrst normal form if and only if all underlying domains contain atomic values only. After 1NF, we can still have redundant data.
-2. **Second Normal Form (2NF):-** A relation is said to be in 2NF if and only if it is in 1NF and every non key attribute is fully dependent on the primary key. After 2NF, we can still have redundant data.
-3. **Third Normal Form (3NF):-** A relation is said to be in 3NF, if and only if it is in 2NF and every non key attribute is non-transitively dependent on the primary key.
-
-```
-**Types of normalization:**
-A. First normal form (1NF): This should remove all the duplicate columns from the table.
-Creation of tables for the related data and identification of unique columns.
-B. Second normal form (2NF): Meeting all requirements of the first normal form. Placing the
-subsets of data in separate tables and Creation of relationships between the tables using
-primary keys
-C. Third normal form (3NF): This should meet all requirements of 2NF. Removing the columns
-0which are not dependent on primary key constraints.
-D. Fourth normal form (4NF): Meeting all the requirements of third normal form and it should
-not have multi- valued dependencies.
-```
 
 ### **Ques. What is Denormalization?**
 DeNormalization is a technique used to access the data from higher to lower normal

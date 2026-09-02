@@ -1,20 +1,4 @@
-### What is Alembic?
-- Alembic is a database migration tool for SQLAlchemy.
-- It helps you:
-  - ✔ Add new columns
-  - ✔ Modify tables
-  - ✔ Track schema versions
-  - ✔ Avoid deleting DB ❌
 
-#### Install alembic
-* install package
-```python
-pip install alembic
-```
-* Initialize Alembic:
-```python
-alembic init alembic
-```
 
 ### Core Workflow & Commands
 - Creating Revisions

@@ -94,12 +94,10 @@
 10. difference between cluster and non cluster index?
 
 ### 🧠 **Mysql Logical Questions**
-1. [Duplicate values in a Table?]
+1. [Duplicate values in a Table?](/database/mysql_database/sql-query-questions/find_duplicate_value.md)
 2. [Duplicate values remove]
 3. [value count:- Email]
 4. [Replace a column value:- M to F & F to M]
-
-
 <div style="page-break-before: always;"></div>
 
 #### 🧠 **Mysql Salary logical Questions**

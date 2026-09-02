@@ -1,3 +1,6 @@
+a {
+    color: red;
+}
 # 🎯Python Interview Questions
 ### 🧠 **Python Basic Questions**
 1. What is **python**?
@@ -62,7 +65,7 @@
 2. what is **context manager**?
 3. what is **decorators**?
 4. what is **generator function**?
-5. What is **GIL**?
+5. What is **GIL(Global Interpreter Lock)**?
 6. What is **moncky patching**?
 7. What is **Multitherading**?
 8. what is **pickling and unpickling**?
@@ -86,36 +89,37 @@
 1. What is **List**?
 2. List **length**?
 3. ⭐ [List **comprehension**?](/python/python/2_list/2.0_list.md#ques-list-comprehension)
-4. Access List Items/List Slicing?
-5. How to check if an item exists in a list?
-6. [Add List Items?](/python/python/2_list/2.5_add_list_item.md)
+4. ⭐ <a href="/python/python/2_list/2.0_list.md#ques-list-comprehension" style="color: red;">List comprehension</a>
+5. Access List Items/List Slicing?
+6. How to check if an item exists in a list?
+7. [Add List Items?](/python/python/2_list/2.5_add_list_item.md)
    1. Append method?
    2. Insert Method?
    3. Extend Method?
    4. ⭐ Difference between append() and extend()?
-7. Change/Update List Items?
-8. Copy List?
+8. Change/Update List Items?
+9. Copy List?
    1. Copy Method?
    2. List Method?
-9. Join List?
+10. Join List?
    1. Plas(+) Operator
    2. append method
    3. extend method
-10. Remove List Item?
+11. Remove List Item?
    1.  remove() method?
    2.  pop() Method?
    3.  del keyword?
    4.  clear() method?
    5.  ⭐ Difference between remove() and pop()?
-11. Sort list?
+12. Sort list?
     1.  thislist.sort() :- A, B, C, a, b, c
     2.  thislist.sort(key = str.lower) :- a, b, c, A, B, C
     3.  thislist.sort(reverse = True) :- c, b, a, C, B, A
     4.  thislist.reverse() :- a, B, c, D, e
     5.  ⭐ Difference between sort() and sorted()?
     6.  ⭐ How to reverse a list? :- list1.reverse()
-12. ⭐ Flatten list?
-13. List Method?
+13. ⭐ Flatten list?
+14. List Method?
     1.  append() Method
     2.  extend() Method
     3.  insert() Method
@@ -127,8 +131,8 @@
     9.  clear() Method
     10. reverse() Method
     11. sort() Method
-14. ⭐ List vs Tuple
-15. ⭐ Mutable vs Immutable Objects
+15. ⭐ List vs Tuple
+16. ⭐ Mutable vs Immutable Objects
 <div style="page-break-before: always;"></div>
 
 ### 🧠 **Python String Questions**
@@ -475,7 +479,7 @@ What is Abstraction?
 
 
 # 🎯 Python Fast API Questions
-### 🧠 **Project setup**
+### 🧠 **FastAPI Project setup**
 1. [virtual environment:- Create](/python/fastApi/Project_Setup.md#create-virtual-environment)
 2. virtual environment:- Activate
 3. Install Fastapi
@@ -485,10 +489,62 @@ What is Abstraction?
 7. Run the server
 8. Project setup one pc to another Pc
 
-### 
+### 🧠 [**FastAPI Basic Questions**](/python/fastApi/fastapi_basic_ques.md)
+1. What is Fastapi
+2. Fastapi:- Main Features
+3. FAstapi:- Advantages
+4. FAstapi:- Disadvantages
+5. FAstapi:- Example
+6. Describe Fastapi code
+7. [Starlette](/python/fastApi/fastapi_basic_ques.md#starlette)
+8. ASGI
+9. WSGI
+10. uvicorn
+11. Gunicorn
+12. Gunicorn और Uvicorn में Difference
+13. FastAPI vs Flask
 
+### 🧠 [**Rate limiting**](/python/fastApi/Rate_limiting.md)
+1. How do you implement rate limiting?
+
+### 🧠 **FastAPI Endpoint Questions**
+1. GET endpoint
+2. POST endpoint
+3. PUT vs PATCH
+
+### 🧠 [**FastAPI Path Parameter Questions**](/python/fastApi/Path_Parameter.md)
+1. Path Parameter
+2. define multiple path parameters?
+3. validate path parameters
+4. What is Path()
+<div style="page-break-before: always;"></div>
+
+### 🧠 [**FastAPI Query Parameter Questions**](/python/fastApi/Query_Parameter.md)
+1. Query Parameter
+2. Query parameters:- define multiple?
+3. Query parameters:- restrict values
+4. What is Query() in FastAPI?
+5. Path Parameter vs Query Parameter
+6. [Query parameter optional?](/python/fastApi/Query_Parameter.md#how-do-query-parameter-optional)
+
+
+### 🧠 [**FastAPI Alembic Questions**](/python/fastApi/alembic.md)
+1. What is Alembic?
+2. [Why do we use Alembic?](/python/fastApi/alembic.md#why-is-alembic-used)
+3. Install Alembic?
+4. How do you initialize Alembic?
+5. What is migration?
+6. What is alembic revision --autogenerate?
+7. What is alembic upgrade head?
+8. How do you rollback migrations?
+9. What is the versions folder?
+10. How do you handle schema changes?
+11. Difference between migration and seeding?
 
 # 🎯 Python Django API Questions
 
 # Software enginring Questions
 1. What is the difference between authentication and authorization?
+
+<div style="page-break-before: always;"></div>
+<div style="page-break-before: always;"></div>

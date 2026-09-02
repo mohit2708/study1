@@ -1,9 +1,56 @@
+|  No.  | Alembic Questions                            |
+| :---: | -------------------------------------------- |
+|       | [What is Alembic?](#what-is-alembic)         |
+|       | [Why is Alembic used?](#why-is-alembic-used) |
+
+
+### **What is Alembic?**
+- Alembic is a database migration tool for SQLAlchemy.
+- It helps you manage changes in your database schema (tables, columns, indexes, constraints) without manually writing SQL every time.
+- It helps you:
+  - ✔ Add new columns
+  - ✔ Modify tables
+  - ✔ Track schema versions
+  - ✔ Avoid deleting DB ❌
+
+### Why is Alembic used?
+1. **Version Control for Database:-** Just like Git tracks code changes, Alembic tracks database changes.
+```python
+versions/
+    001_create_users.py
+    002_add_email_to_users.py
+    003_create_roles.py
+```
+2. **Team Collaboration**
+* If one developer creates a new table:
+```python
+alembic upgrade head
+```
+* Other developers can apply the same changes without manually updating their databases.
+3. **Database Upgrade & Rollback**
+```python
+alembic upgrade head
+
+# Rollback one version:
+alembic downgrade -1
+
+# Rollback to a specific version:
+alembic downgrade abc123
+```
+4. **Automatic Migration Generation**
+* Alembic compares SQLAlchemy models with the database and generates migration scripts.
+```python
+alembic revision --autogenerate -m "create roles table"
+```
+
+
 ### Install alembic
 * install package
 ```python
 pip install alembic
 ```
-* Initialize Alembic:
+
+### Initialize Alembic:
 ```python
 alembic init alembic
 ```

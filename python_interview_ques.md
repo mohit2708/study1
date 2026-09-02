@@ -87,11 +87,11 @@
 2. List **length**? :- print(len(list1))
 3. ⭐ [List **comprehension**?](/python/python/2_list/2.0_list.md#ques-list-comprehension)
 4. Access List Items/List Slicing?
-5. How to check if an item exists in a list?
+5. [How to check if an item exists in a list?](/python/python/2_list/2.0_list.md#how-to-check-if-item-exists)
 6. [Add List Items?](/python/python/2_list/2.5_add_list_item.md)
-   1. Append method?
-   2. Insert Method?
-   3. Extend Method?
+   1. Append method? :- list1.append("a")
+   2. Insert Method? :- list1.insert(1, "apple")
+   3. Extend Method? :- list1.extend(sets)
    4. ⭐ Difference between append() and extend()?
 7. Change/Update List Items?
 8. Copy List?

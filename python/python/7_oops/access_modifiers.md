@@ -144,6 +144,13 @@ print(acc1.reset_pass())    # Output:- pass@123
 ```
 
 ### **using mangled name**
+* "Name Mangling is a Python mechanism that changes a private attribute name like __salary to _ClassName__salary to avoid accidental access and name conflicts in inheritance."
+* **HINDI:-** Name Mangling Python का एक mechanism है जो private variables/methods (__variable) को accidental access या overriding से बचाने के लिए उनके नाम को internally बदल देता है।
+* जब किसी variable या method के आगे double underscore (__) लगाया जाता है, तो Python उसका नाम बदलकर: 
+  * _ClassName__variable
+* कर देता है।
+* When you define a method or attribute with a double underscore, Python automatically changes its name to include the class name as a prefix. This is done to avoid accidental access or modification of the method or attribute from outside the class or from subclasses.
+
 ```python
 class MyClass:
     def __init__(self):
@@ -156,15 +163,10 @@ class MyClass:
 # Create an instance of MyClass
 obj = MyClass()
 
-# Attempting to call the private method directly will raise an AttributeError
-# obj.__private_method()  # Uncommenting this line will raise an error
+# 
+obj.__private_method()  # Attempting to call the private method directly will raise an AttributeError
 
 # Accessing the private method using its mangled name
-"""
-In Python, a mangled name refers to the modified name of a class attribute or method that has been defined with a double underscore prefix (__). This name mangling is a mechanism used to prevent name clashes in subclasses and to provide a level of encapsulation.
-
-When you define a method or attribute with a double underscore, Python automatically changes its name to include the class name as a prefix. This is done to avoid accidental access or modification of the method or attribute from outside the class or from subclasses.
-"""
 obj._MyClass__private_method()  # This will work
 ```
 

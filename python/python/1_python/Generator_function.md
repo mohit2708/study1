@@ -1,5 +1,5 @@
 ### **Ques. What is Generator Functions?**
-* Generator Function is a function which returns values ​​one by one and saves memory.
+* Generator Function is a function which **returns values ​​one by one** and saves memory.
 * Normal function uses **return**, while generator function uses **yield**.
 * The **difference** between **yield** and **return** is that yield **returns a value and pauses the execution** while maintaining the internal states, whereas the **return statement returns a value and terminates the execution** of the function.
 * Generator function is a function which gives the next value when called repeatedly and saves memory.

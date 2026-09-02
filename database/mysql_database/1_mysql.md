@@ -1,6 +1,5 @@
 |  No.  | [Mysql]()                                                                                                                         |
 | :---: | --------------------------------------------------------------------------------------------------------------------------------- |
-|       | [What is MySQL?](#what-is-mysql)                                                                                                  |
 |       | [What is Sql?](#what-is-sql)                                                                                                      |
 |       | [What is the difference between SQL and MySQL?](#what-is-the-difference-between-sql-and-mysql)                                    |
 |       | [What are the advantages of MySQL?](#what-are-the-advantages-of-mysql)                                                            |

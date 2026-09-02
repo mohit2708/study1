@@ -43,7 +43,6 @@
 file = open("filename", "mode")
 ```
 
-
 ```python
 #example 1
 print("hello")

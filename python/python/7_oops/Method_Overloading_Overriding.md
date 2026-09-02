@@ -1,5 +1,5 @@
 ### **Ques. What is Method Overloading?**
-* Two or more methods have the same name but different numbers of parameters, These methods are called overloaded methods.
+* Two or more methods have the **same name** but **different numbers of parameters**, These methods are called overloaded methods.
 * Python does not directly support method overloading
 ```python
 class Addition:

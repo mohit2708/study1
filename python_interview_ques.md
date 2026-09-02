@@ -1,6 +1,3 @@
-a {
-    color: red;
-}
 # 🎯Python Interview Questions
 ### 🧠 **Python Basic Questions**
 1. What is **python**?
@@ -86,40 +83,39 @@ a {
 <div style="page-break-before: always;"></div>
 
 ### 🧠 **Python List Questions**
-1. What is **List**?
-2. List **length**?
+1. [What is **List**?](/python/python/2_list/2.0_list.md#ques-what-is-list)
+2. List **length**? :- print(len(list1))
 3. ⭐ [List **comprehension**?](/python/python/2_list/2.0_list.md#ques-list-comprehension)
-4. ⭐ <a href="/python/python/2_list/2.0_list.md#ques-list-comprehension" style="color: red;">List comprehension</a>
-5. Access List Items/List Slicing?
-6. How to check if an item exists in a list?
-7. [Add List Items?](/python/python/2_list/2.5_add_list_item.md)
+4. Access List Items/List Slicing?
+5. How to check if an item exists in a list?
+6. [Add List Items?](/python/python/2_list/2.5_add_list_item.md)
    1. Append method?
    2. Insert Method?
    3. Extend Method?
    4. ⭐ Difference between append() and extend()?
-8. Change/Update List Items?
-9. Copy List?
+7. Change/Update List Items?
+8. Copy List?
    1. Copy Method?
    2. List Method?
-10. Join List?
+9. Join List?
    1. Plas(+) Operator
    2. append method
    3. extend method
-11. Remove List Item?
+10. Remove List Item?
    1.  remove() method?
    2.  pop() Method?
    3.  del keyword?
    4.  clear() method?
    5.  ⭐ Difference between remove() and pop()?
-12. Sort list?
+11. Sort list?
     1.  thislist.sort() :- A, B, C, a, b, c
     2.  thislist.sort(key = str.lower) :- a, b, c, A, B, C
     3.  thislist.sort(reverse = True) :- c, b, a, C, B, A
     4.  thislist.reverse() :- a, B, c, D, e
     5.  ⭐ Difference between sort() and sorted()?
     6.  ⭐ How to reverse a list? :- list1.reverse()
-13. ⭐ Flatten list?
-14. List Method?
+12. ⭐ Flatten list?
+13. List Method?
     1.  append() Method
     2.  extend() Method
     3.  insert() Method
@@ -131,8 +127,8 @@ a {
     9.  clear() Method
     10. reverse() Method
     11. sort() Method
-15. ⭐ List vs Tuple
-16. ⭐ Mutable vs Immutable Objects
+14. ⭐ List vs Tuple
+15. ⭐ Mutable vs Immutable Objects
 <div style="page-break-before: always;"></div>
 
 ### 🧠 **Python String Questions**

@@ -1,34 +1,165 @@
 
-|  No.  | Questions                                                                                                                             |
-| :---: | ------------------------------------------------------------------------------------------------------------------------------------- |
-|       | [find the single number(unique-element) of the list?](#ques-find-the-single-numberunique-element-of-the-list)                         |
-|       | [Interchange first and last elements in a list?](#ques-interchange-first-and-last-elements-in-a-list)                                 |
-|       | [Swap Two Elements in a List?](#swap-two-elements-in-a-list)                                                                          |
-|       | [find the even number from the list?](#ques-find-the-even-number-from-the-list)                                                       |
-|       | [Print duplicate list, Find Even Or Odd Number?](#ques-print-duplicate-list-find-even-or-odd-number)                                  |
-|       | [even values from a list using list comprehension?](#ques-even-values-from-a-list-using-list-comprehension)                           |
-|       | [Find the duplicate element from list?](#find-the-duplicate-element-from-list)                                                        |
-|       | [Remove duplicate item from list using List comprehension?](#ques-remove-duplicate-item-from-list-using-list-comprehension)           |
-|       | [Convert a list into string?](#ques-convert-a-list-into-string)                                                                       |
-|       | [Write a program to print a list in reverse order?](#ques-write-a-program-to-print-a-list-in-reverse-order)                           |
-|       | [find the max, min number from the list user input?](#ques-find-the-max-min-number-from-the-list-user-input)                          |
-|       | [find the sum of list elements?](#ques-find-the-sum-of-list-elements)                                                                 |
-|       | [Generate a number list between two ranges?](#ques-generate-a-number-list-between-two-ranges)                                         |
-|       | [Remove elements in a list after a specific index?](#ques-remove-elements-in-a-list-after-a-specific-index)                           |
-|       | [Remove elements in a list before  a specific index?](#ques-remove-elements-in-a-list-before--a-specific-index)                       |
-|       | [Count the elements of a specific object in a list?](#ques-count-the-elements-of-a-specific-object-in-a-list)                         |
-|       | [Multiply a Python List by a Number Using a for loop?](#ques-multiply-a-python-list-by-a-number-using-a-for-loop)                     |
-|       | [Multiply a Python List by a Number Using a list comprehension?](#ques-multiply-a-python-list-by-a-number-using-a-list-comprehension) |
-|       | [Convert a list into a tuple?](#ques-convert-a-list-into-a-tuple)                                                                     |
-|       | [Find to common/Intersect element in two list?](#ques-find-to-commonintersect-element-in-two-list)                                    |
-|       | [Get the difference between two List using comprehension?](#ques-get-the-difference-between-two-list-using-comprehension)             |
-|       | [How to iterate over 2+ lists at the same time?](#ques-how-to-iterate-over-2-lists-at-the-same-time)                                  |
-|       | [Sort the list on the basis of length?](#ques-sort-the-list-on-the-basis-of-length)                                                   |
-|       | [How would you convert a list to an array?](#ques-how-would-you-convert-a-list-to-an-array)                                           |
+|  No.  | Questions                                                                                                                        |
+| :---: | -------------------------------------------------------------------------------------------------------------------------------- |
+|       | [Find the Length of a List?](#find-the-length-of-a-list)                                                                         |
+|       | [Swap Two Elements in a List?](#swap-two-elements-in-a-list)                                                                     |
+|       | [Interchange first and last elements in a list?](#interchange-first-and-last-elements-in-a-list)                                 |
+|       | [find the single number(unique-element) of the list?](#find-the-single-numberunique-element-of-the-list)                         |
+|       | [find the even number from the list?](#ques-find-the-even-number-from-the-list)                                                  |
+|       | [Print duplicate list, Find Even Or Odd Number?](#ques-print-duplicate-list-find-even-or-odd-number)                             |
+|       | [even values from a list using list comprehension?](#ques-even-values-from-a-list-using-list-comprehension)                      |
+|       | [Find the duplicate element from list?](#find-the-duplicate-element-from-list)                                                   |
+|       | [Remove duplicate item from list using List comprehension?](#ques-remove-duplicate-item-from-list-using-list-comprehension)      |
+|       | [Convert a list into string?](#ques-convert-a-list-into-string)                                                                  |
+|       | [Write a program to print a list in reverse order?](#ques-write-a-program-to-print-a-list-in-reverse-order)                      |
+|       | [find the max, min number from the list user input?](#ques-find-the-max-min-number-from-the-list-user-input)                     |
+|       | [find the sum of list elements?](#ques-find-the-sum-of-list-elements)                                                            |
+|       | [Generate a number list between two ranges?](#ques-generate-a-number-list-between-two-ranges)                                    |
+|       | [Remove elements in a list after a specific index?](#ques-remove-elements-in-a-list-after-a-specific-index)                      |
+|       | [Remove elements in a list before  a specific index?](#ques-remove-elements-in-a-list-before--a-specific-index)                  |
+|       | [Count the elements of a specific object in a list?](#ques-count-the-elements-of-a-specific-object-in-a-list)                    |
+|       | [Multiply a Python List by a Number Using a for loop?](#ques-multiply-a-python-list-by-a-number-using-a-for-loop)                |
+|       | [Multiply a Python List by a Number Using a list comprehension?](#multiply-a-python-list-by-a-number-using-a-list-comprehension) |
+|       | [Convert a list into a tuple?](#ques-convert-a-list-into-a-tuple)                                                                |
+|       | [Find to common/Intersect element in two list?](#ques-find-to-commonintersect-element-in-two-list)                               |
+|       | [Get the difference between two List using comprehension?](#ques-get-the-difference-between-two-list-using-comprehension)        |
+|       | [How to iterate over 2+ lists at the same time?](#ques-how-to-iterate-over-2-lists-at-the-same-time)                             |
+|       | [Sort the list on the basis of length?](#ques-sort-the-list-on-the-basis-of-length)                                              |
+|       | [How would you convert a list to an array?](#ques-how-would-you-convert-a-list-to-an-array)                                      |
 
 
 
-### **Ques. find the single number(unique element) of the list?**
+### **Find the Length of a List?**
+* Using **len() Function** or **length_hint** function
+```python
+# Using lentgh function
+li = [10, 20, 30]
+n = len(li)
+print("The length of list is: ", n)
+Output:- The length of list is:  3
+
+# Using length_hint Function
+from operator import length_hint
+test_list = [1, 4, 5, 7, 8]
+list_len_hint = length_hint(test_list)
+print("Length of list using length_hint() is : " + str(list_len_hint))
+Output:- Length of list using length_hint() is : 5
+
+# using for loop
+test_list = [1, 4, 5, 7, 8]
+counter = 0
+for i in test_list:
+	counter = counter + 1
+print("Length of list using naive method is : " + str(counter))
+Output:- Length of list using naive method is : 5
+```
+
+### **Swap Two Elements in a List?**
+* using **comma** assignment
+```python
+def swapPositions(list, pos1, pos2):
+     
+    list[pos1], list[pos2] = list[pos2], list[pos1]
+    return list
+ 
+# Driver function
+List = [23, 65, 19, 90]
+pos1, pos2  = 1, 3
+ 
+print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
+```
+
+* Using **temp** variable
+```python
+def swapPositions(lis, pos1, pos2):
+    temp=lis[pos1]
+    lis[pos1]=lis[pos2]
+    lis[pos2]=temp
+    return lis
+# Driver function
+List = [23, 65, 19, 90]
+pos1, pos2 = 1, 3
+ 
+print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
+```
+
+* Using **enumerate**
+```python
+def swapPositions(lis, pos1, pos2):
+    for i, x in enumerate(lis):
+        if i == pos1:
+            elem1 = x
+        if i == pos2:
+            elem2 = x
+    lis[pos1] = elem2
+    lis[pos2] = elem1
+    return lis
+ 
+List = [23, 65, 19, 90]
+pos1, pos2 = 1, 3
+print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
+```
+
+### **Interchange first and last elements in a list?**
+- Without temp varibale
+```python
+list = [12, 35, 9, 56, 24]
+list[0] = list[-1]
+list[-1] = list[0]
+print(list) # Output:- [24, 35, 9, 56, 24]
+```
+
+- With temp variable
+```python
+list = [12, 35, 9, 56, 24]
+length = len(list)
+temp = list[0]
+list[0] = list[length - 1]
+list[length - 1] = temp
+print(list) # Output:- [24, 35, 9, 56, 12]
+```
+
+- Using comma function
+```python
+def swapList(newList):
+    newList[0], newList[-1] = newList[-1], newList[0]
+    return newList
+    
+# Driver code
+newList = [12, 35, 9, 56, 24]
+print(swapList(newList))    # Output:- [24, 35, 9, 56, 12]
+```
+
+
+- Using * operand.
+```python
+list = [1, 2, 3, 4]
+
+a, *b, c = list
+
+print(a)
+print(b)
+print(c)
+
+Output:-
+1
+[2, 3]
+4
+```
+
+
+- Using * operand 2 approch.
+```python
+def swapList(list):
+    start, *middle, end = list
+    list = [end, *middle, start]
+    return list
+
+newList = [12, 35, 9, 56, 24]
+print(swapList(newList))    # Output:- [24, 35, 9, 56, 12]
+```
+
+### **find the single number(unique element) of the list?**
 ```python
 mylist = [1,2,2,3,3,4,5,5,5,6,6,6,6]
 new_list = []
@@ -226,7 +357,7 @@ Output:- [2, 4, 6, 8, 10]
 ```
 
 
-### **Ques. Multiply a Python List by a Number Using a list comprehension?**
+### **Multiply a Python List by a Number Using a list comprehension?**
 ```python
 numbers = [1, 2, 3, 4, 5]
 multiplied = [number * 2 for number in numbers]

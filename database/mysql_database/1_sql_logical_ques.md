@@ -318,8 +318,6 @@ GROUP BY email HAVING COUNT(email) > 1;
 <div style="page-break-before: always;"></div>
 
 
-<div style="page-break-before: always;"></div>
-
 ### 🎯**Duplicate value remove**
 * Using Join
 ```sql

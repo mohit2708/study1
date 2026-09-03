@@ -82,6 +82,11 @@
 
 <div style="page-break-before: always;"></div>
 
+### 🧠 **Python String Questions**
+1. 
+
+<div style="page-break-before: always;"></div>
+
 ### 🧠 **Python List Questions**
 1. [What is **List**?](/python/python/2_list/2.0_list.md#ques-what-is-list)
 2. List **length**? :- print(len(list1))
@@ -92,7 +97,7 @@
    1. Append method? :- list1.append("a")
    2. Insert Method? :- list1.insert(1, "apple")
    3. Extend Method? :- list1.extend(sets)
-   4. ⭐ Difference between append() and extend()?
+   4. ⭐ [Difference between append() and extend()?](/python/python/2_list/2.5_add_list_item.md#difference-between-append-and-extend)
 7. Change/Update List Items?
 8. Copy List?
    1. Copy Method?
@@ -131,21 +136,18 @@
 15. ⭐ Mutable vs Immutable Objects
 <div style="page-break-before: always;"></div>
 
-### 🧠 **Python String Questions**
-1. 
 
-<div style="page-break-before: always;"></div>
 
-### 🧠 **Python List Logical Questions**
-1. How to **find duplicate elements** in a list?
-2. How to **remove duplicates** from a list?
-3. Find **Maximum** and **Minimum** Element?
-4. Find Second Largest Element?
-5. Common Coding Questions on Lists
+### 🧠 [**Python List Logical Questions**](/python/python/2_list/list_logical_ques)
+1. How to find count of the list?
+2. [**find duplicate elements** in a list?](/python/python/2_list/list_logical_ques/list_logical_ques.md#find-the-duplicate-element-from-list)
+3. How to **remove duplicates** from a list?
+4. Find **Maximum** and **Minimum** Element?
+5. Find Second Largest Element?
+6. Common Coding Questions on Lists
 ```
 Reverse a list without built-in functions.
 Find largest/smallest element.
-Merge two lists.
 Rotate a list.
 Check if a list is palindrome.
 Find intersection of two lists.
@@ -308,6 +310,7 @@ Time Complexity of List Operations
 ### 🧠 **Abstract Class and interface**
 1. What is Abstract Class?
 2. What is Interface?
+3. [Abstract Class vs Interface?](/python/python/7_oops/abstract_class_and_interface.md)
 
 ### Other Questions
 1. What is MRO(Method Resolution Order) / Diamond Problam?

@@ -1,4 +1,4 @@
-### Ques. Write a program to print a list in reverse order?
+### **Print a list in reverse order?**
 - **using slice method**
 ```python
 def revlist(list):

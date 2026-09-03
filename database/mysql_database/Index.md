@@ -1,15 +1,15 @@
-|  No.  | [Index](#index)                                                                                                         |
-| :---: | ----------------------------------------------------------------------------------------------------------------------- |
-|       | [What is Index?](#what-is-index)                                                                                        |
-|       | [Types of Indexes](#types-of-indexes)                                                                                   |
-|       | [Unique Indexes](#unique-indexes)                                                                                       |
-|       | [Show Index](#show-index)                                                                                               |
-|       | [Alter/Modify an Index](#altermodify-an-index)                                                                          |
-|       | [Drop Index](#drop-index)                                                                                               |
-|       | [Unique Indexes](#unique-indexes)                                                                                       |
-|       | [Cluster Index](#cluster-index)                                                                                         |
-|       | [Non cluster index](#non-cluster-index)                                                                                 |
-|       | [difference between cluster and non cluster index?](#ques-what-is-the-difference-between-cluster-and-non-cluster-index) |
+|  No.  | [Index](#index)                                                                                              |
+| :---: | ------------------------------------------------------------------------------------------------------------ |
+|       | [What is Index?](#what-is-index)                                                                             |
+|       | [Types of Indexes](#types-of-indexes)                                                                        |
+|       | [Unique Indexes](#unique-indexes)                                                                            |
+|       | [Show Index](#show-index)                                                                                    |
+|       | [Alter/Modify an Index](#altermodify-an-index)                                                               |
+|       | [Drop Index](#drop-index)                                                                                    |
+|       | [Unique Indexes](#unique-indexes)                                                                            |
+|       | [Cluster Index](#cluster-index)                                                                              |
+|       | [Non cluster index](#non-cluster-index)                                                                      |
+|       | [diff between cluster and non cluster index?](#what-is-the-difference-between-cluster-and-non-cluster-index) |
 
 
 ### **What is Index?**
@@ -154,7 +154,7 @@ ALTER TABLE table_name DROP CONSTRAINT constraint_name;
 * **Example:** If you create a non-clustered index on the Department column, the index will store the department values along with pointers to the corresponding rows in the table, but the table data itself remains in its original order.
 * table mai jis column par select command sabse jyda chalte hai to us column par hum non cluster index bna lete hai.
 
-#### Ques. What is the difference between cluster and non cluster index?
+#### What is the difference between cluster and non cluster index?
 
 | Cluster index                                   | Non cluster index                                        |
 | :---------------------------------------------- | :------------------------------------------------------- |

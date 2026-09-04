@@ -106,7 +106,7 @@
    1. Plas(+) Operator
    2. append method
    3. extend method
-10. Remove List Item?
+10. [Remove List Item?](/python/python/2_list/Remove_List_Items.md)
    1.  remove() method?
    2.  pop() Method?
    3.  del keyword?

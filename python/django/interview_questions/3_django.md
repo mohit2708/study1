@@ -160,7 +160,7 @@ python manage.py createsuperuser
 * It was orginally created By **Adrian Holovaty** and **simon willison**.
 
 #### **latest version of Django?**
-* The latest version of Django is Django 4.1.
+* The latest version of Django is Django 6.1.
 
 #### Why is Django Used/Key Features?
 * Rapid development

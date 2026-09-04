@@ -8,8 +8,6 @@
 |       | [Difference between SQL and NoSQL?](#mysql-vs-nosql)                                           |
 
 
-
-
 |  No.  | Other Questions                                                                              |
 | :---: | -------------------------------------------------------------------------------------------- |
 |       | [What is ACID property/SQL TRANSACTIONS](#what-is-acid-propertysql-transactions)             |
@@ -37,6 +35,7 @@
 - It's commonly used for managing data in web applications and is known for its performance and ease of use.
 
 [🔝 Back to Top](#back-to-top)
+
 ### 🎯**What is Sql?**
 * SQL is stands for **structure query language**. 
 * SQL (Structured Query Language) is a standard language used to **create**, **read**, **update**, and **delete** data in relational databases. It is also used to create and modify database structures such as tables.
@@ -281,24 +280,6 @@ HAVING COUNT(*) > 2;    -- Filters groups after GROUP BY
 ```
 <div style="page-break-before: always;"></div>
 
-### **SQL Comments?**
-* There are typically two main types of SQL comments:
-
-1. **Single-line Comments:** Started with two dashes (--)
-```sql
--- This is a single-line comment
-SELECT * FROM employees; -- Retrieve all employee records
-```
-
-2. **Multi-line Comments:** Started with /* and ended with */
-```sql
-/* This is a 
-   multi-line comment 
-   explaining the query */
-SELECT id, name, email FROM employees;
-```
-<div style="page-break-before: always;"></div>
-
 ### What are constraints in MySQL?
 - Constraints are **rules applied to table columns** to ensure the accuracy, consistency, and integrity of data in a database.
 - Constraints are like rules on a form
@@ -474,27 +455,3 @@ id	value
 
 ### 🎯**What is EXCEPT?**
 * same as minus nothing different.
-
-
-### 🎯**What is Intersect?**
-* The INTERSECT statement will return only those rows that are **identical/common** to both of the SELECT statements from two or more tables
-```sql
--- Employees                          -- Managers
-| EmpID | EmpName | Department |  | EmpID | EmpName | Department |
-| ----- | ------- | ---------- || ----- | ------- | ---------- |
-| 1     | Alice   | HR         |      | 2     | Bob     | IT         |
-| 2     | Bob     | IT         |      | 4     | David   | IT         |
-| 3     | Charlie | Finance    |      | 6     | Frank   | Sales      |
-| 4     | David   | IT         |      | 7     | Grace   | Marketing  |
-| 5     | Eve     | Marketing  |
-
--- Output
-SELECT EmpID, EmpName, Department FROM Employees
-INTERSECT
-SELECT EmpID, EmpName, Department FROM Managers;
-| EmpID | EmpName | Department |
-| ----- | ------- | ---------- |
-| 2     | Bob     | IT         |
-| 4     | David   | IT         |
-
-```

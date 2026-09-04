@@ -1,6 +1,4 @@
 
-
-
 ### Network Solution renew
 #### Genrate the CSR file and private key on aws server
 ```php

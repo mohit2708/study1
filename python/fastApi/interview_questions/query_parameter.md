@@ -52,6 +52,7 @@ async def read_item(item_id: str, q: str | None = None):
         return {"item_id": item_id, "q": q}
     return {"item_id": item_id}
 ```
+
 * Using Optional Method
 ```python
 from fastapi import FastAPI
@@ -65,6 +66,7 @@ async def read_item(item_id: str, q: Optional[int] = None):
         return {"item_id": item_id, "q": q}
     return {"item_id": item_id}
 ```
+
 * Union operator (|) for Python 3.10+
 ```python
 from fastapi import FastAPI
@@ -78,6 +80,7 @@ async def optional_query_parameter(id: int | None = None):
         return {"get return id": id}
     return {"message": "ID is optional. No ID was provided."}
 ```
+
 * typing.Union for Python 3.9 and earlier
 ```python
 from fastapi import FastAPI

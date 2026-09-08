@@ -20,3 +20,56 @@ SELECT EmpID, EmpName, Department FROM Managers;
 | 3     | Charlie | Finance    |
 | 5     | Eve     | Marketing  |
 ```
+
+#### Key characteristics of the MINUS operator:
+* **Returns distinct rows:** Only unique rows from the first query that are not found in the second are returned.
+* **Requires compatible SELECT statements:** Both SELECT statements involved in the MINUS operation must have the same number of columns, and the corresponding columns must have compatible data types and be in the same order. 
+
+* **Note:-** While MINUS is a standard SQL operator supported by many database systems (like Oracle, PostgreSQL), **MySQL does not** directly **support** the MINUS operator.
+
+#### Achieving the MINUS functionality in MySQL:
+* We can achieve the same results as MINUS in MySQL using various techniques, most commonly by combining **LEFT JOIN** and **WHERE** clauses, or using **subqueries** with **NOT IN** or **NOT EXISTS**.
+
+1. Using LEFT JOIN
+```sql
+SELECT a.*
+FROM table_a AS a
+LEFT JOIN table_b AS b ON a.id = b.id
+WHERE b.id IS NULL;
+```
+
+2. Using NOT IN
+```sql
+SELECT *
+FROM table_a
+WHERE id NOT IN (SELECT id FROM table_b);
+```
+
+3. Using NOT EXISTS
+```sql
+SELECT *
+FROM table_a AS a
+WHERE NOT EXISTS (SELECT 1 FROM table_b AS b WHERE a.id = b.id);
+```
+
+```sql
+table_a
+
+id	value
+1	Apple
+2	Banana
+3	Cherry
+4	Date
+
+----------------------
+table_b
+
+id	value
+2	Banana
+4	Date
+
+------Output:----------
+id	value
+1	Apple
+3	Cherry
+```

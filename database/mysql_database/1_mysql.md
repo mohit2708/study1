@@ -3,7 +3,7 @@
 |       | [What is Sql?](#what-is-sql)                                                                                                      |
 |       | [What is the difference between SQL and MySQL?](#what-is-the-difference-between-sql-and-mysql)                                    |
 |       | [What are the advantages of MySQL?](#what-are-the-advantages-of-mysql)                                                            |
-|       | [Check version of the sql?](#ques-check-version-of-the-sql)                                                                       |
+|       | [Check version of the sql?](#check-version-of-the-sql)                                                                       |
 |       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql)                                                     |
 |       | [-- Data Definition Language (DDL)](#types-of-sql-commandssubsets-of-sql)                                                         |
 |       | [-- Data Manipulation Language (DML)](#types-of-sql-commandssubsets-of-sql)                                                       |
@@ -32,7 +32,7 @@
 - Cross-platform
 - ACID-compliant (InnoDB)
 
-### **Ques. Check version of the sql?**
+### **Check version of the sql?**
 ```sql
 select version()
 ```

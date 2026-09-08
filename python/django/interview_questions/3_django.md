@@ -1,170 +1,72 @@
 ### Back To TOP
 
-|  No.  | Django Questions                                                    |
-| :---: | ------------------------------------------------------------------- |
-|       | [What is Django?](#ques-what-is-django)                             |
-|       | [Django:- Latest version](#latest-version-of-django)                |
-|       | [Why is Django Used/Key Features?](#why-is-django-usedkey-features) |
-|       | [Django Architecture (MVT)](#django-architecture-mvt)               |
-|       | [What is MTV architecture?](#what-is-mtv-architecture)              |
-|       | [Create a Django Project?](#create-a-django-project)                |
-|       | [Django Project Structure](#django-project-structure)               |
-|       | [what is manage.py?](#1-managepy)                                   |
-|       | [What is Django Apps?](#django-apps)                                |
-|       | [Create app](#creating-an-app)                                      |
-|       | [Project vs App](#project-vs-app)                                   |
-
-|  No.  | Django Models & Database Questions                                                              |
-| :---: | ----------------------------------------------------------------------------------------------- |
-|       | [What is a Model?](#what-is-a-model)                                                            |
-|       | [What are Migrations](#what-are-migrations)                                                     |
-|       | [Difference between makemigrations and migrate](#difference-between-makemigrations-and-migrate) |
-|       | [What is the Meta Class?](#what-is-the-meta-class)                                              |
-|       | [What is ORM?](#what-is-orm)                                                                    |
-|       | [What is indexes in Django?](#what-is-indexes-in-django)                                        |
-|       | [How do you write raw SQL?](#how-do-you-write-raw-sql)                                          |
+|  No.  | Django Questions                                                                                         |
+| :---: | -------------------------------------------------------------------------------------------------------- |
+|       | [What is Django?](#-what-is-django)                                                                      |
+|       | [How to install Django?](#-how-to-install-django)                                                        |
+|       | [How to check django latest version?](#how-to-check-django-latest-version)                               |
+|       | [Django:- Latest version](#latest-version-of-django)                                                     |
+|       | [How to check installed packages?](#how-to-check-installed-packages)                                     |
+|       | [How to run server?](#how-to-run-server)                                                                 |
+|       | [Why is Django Used/Key Features?](#why-is-django-usedkey-features)                                      |
+|       | [Django Architecture (MVT)](#django-architecture-mvt)                                                    |
+|       | [What is MTV architecture?](#what-is-mtv-architecture)                                                   |
+|       | [Create a Django Project?](#create-a-django-project)                                                     |
+|       | [Django Project Structure](#django-project-structure)                                                    |
+|       | [what is manage.py?](#1-managepy)                                                                        |
+|       | [What is Django Apps?](#django-apps)                                                                     |
+|       | [Create app](#creating-an-app)                                                                           |
+|       | [Project vs App](#project-vs-app)                                                                        |
+|       | [Why is Django called a "loosely coupled" framework?](#why-is-django-called-a-loosely-coupled-framework) |
 
 
 
 <div style="page-break-before: always;"></div>
 
-### 🎯**Dajngo project setup**
-1. Virtual Environment
-```python
-# Create virtual env
-python -m venv venv
-
-# activate
-venv\Scripts\activate
-```
-
-2. Django install karo
-```python
-pip install django
-
-# check version
-django-admin --version
-```
-
-3. Django project create karo
-```python
-django-admin startproject myproject
-
-myproject/
-│
-├── manage.py
-│
-└── myproject/
-    ├── __init__.py
-    ├── settings.py
-    ├── urls.py
-    ├── asgi.py
-    └── wsgi.py
-```
-
-4. Server run karo
-```python
-python manage.py runserver  # http://127.0.0.1:8000/
-
-# Django ka default page open ho jayega.
-```
-<div style="page-break-before: always;"></div>
-
-5. App create karo
-```python
-python manage.py startapp users
-
-myproject/
-│
-├── manage.py
-│
-├── myproject/
-│   ├── settings.py
-│   ├── urls.py
-│   └── ...
-│
-└── users/
-    ├── migrations/
-    ├── __init__.py
-    ├── admin.py
-    ├── apps.py
-    ├── models.py
-    ├── tests.py
-    └── views.py
-```
-
-6. App ko settings.py mein add karo
-* myproject/settings.py
-```python
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-
-    'users',    # add app
-]
-```
-
-7. First View banao
-* users/views.py
-```python
-from django.http import HttpResponse
-
-
-def home(request):
-    return HttpResponse("Hello Django")
-```
-
-8. URL seeting
-* App ke andar urls.py banao:- users/urls.py
-```python
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.home, name='home'),
-]
-```
-
-* Project ke urls.py mein include karo
-```python
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('users.urls')),
-]
-```
-
-9. Database migrations
-```python
-python manage.py migrate
-```
-
-10. Admin user banao
-```python
-python manage.py createsuperuser
-
-# http://127.0.0.1:8000/admin/
-```
-<div style="page-break-before: always;"></div>
-
-### 🎯**Ques. What is Django?**
+### 🎯 **What is Django?**
 * Django—pronounced **“Jango”**. 
 * Django is a free and open source and server-side web application framework written in Python.
 * Django follows the **MVT** (Model View Template) pattern which is based on the Model View Template architecture. and provides many built-in features like authentication, database management, security, and an admin panel.
 * It was orginally created By **Adrian Holovaty** and **simon willison**.
 
+#### 🎯 **How to install Django?**
+```python
+pip install django
+```
+
+#### How to check django latest version?
+```python
+python -m django --version
+```
+
 #### **latest version of Django?**
 * The latest version of Django is Django 6.1.
 
+#### How to check installed packages?
+```python
+pip freeze
+```
+
+#### How to run server?
+* By default, this cmd start the development server on the internal IP at port 8000
+* By defalult, the server runs on port **8000** on the IP address **127.0.0.1**
+```python
+python manage.py runserver
+python manage.py runserver 8000
+
+# If i want to change server IP, pass it along with the port.
+python manage.py runserver 0.0.0.0:8000
+```
+
 #### Why is Django Used/Key Features?
+#### What are the advantages of Django?
+* Fast Development
+  * Django follows the **"Don't Repeat Yourself (DRY)" principle**.
+  * Many built-in features reduce development time.
 * Rapid development
 * Built-in Admin Panel
+  * Django automatically provides an admin interface.
+  * You can manage users, products, orders, etc., without creating a separate admin dashboard.
 * Authentication & Authorization
 * ORM (Object Relational Mapper)
 * Security features (CSRF, XSS, SQL Injection protection)
@@ -174,6 +76,55 @@ python manage.py createsuperuser
 * Session Management
 * Middleware Support
 * REST API support (using Django REST Framework)
+* 
+* DRY (Don't Repeat Yourself) ka matlab hai: 👉 Same code ko baar-baar likhne se bachna.
+
+
+1. Built-in Admin Panel
+   1. Django automatically provides an admin interface.
+   2. You can manage users, products, orders, etc., without creating a separate admin dashboard.
+2. High Security
+   1. Protects against common attacks:
+      1. SQL Injection
+      2. Cross-Site Scripting (XSS)
+      3. Cross-Site Request Forgery (CSRF)
+      4. Clickjacking
+3. Scalable
+   1. Suitable for small projects as well as large applications.
+   2. Used by high-traffic websites.
+4. ORM (Object Relational Mapping)
+   1. Write Python code instead of raw SQL.
+   2. Easier database operations and migration management.
+   3. users = User.objects.filter(is_active=True)
+5. MVT Architecture
+   1. Uses Model-View-Template (MVT) pattern.
+   2. Keeps code organized and maintainable.
+6. Authentication System
+   1. Built-in support for:
+      1. Login
+      2. Logout
+      3. Registration
+      4. Password Reset
+      5. Permissions & Roles
+7. Large Ecosystem
+   1. Thousands of reusable packages available.
+   2. Examples:
+      1. Django REST Framework (API)
+      2. Django Allauth (Social Login)
+      3. Celery (Background Tasks)
+8. Database Support
+   1. MySQL
+   2. PostgreSQL
+   3. SQLite
+   4. Oracle
+9. SEO Friendly
+   1.  Clean URLs and easy metadata management help SEO.
+10. Excellent Documentation
+   1.  One of the best documentations among Python frameworks.
+   2. Easy for beginners to learn.
+11. Testing Support
+    1.  Built-in unit testing framework.
+    2.  Helps maintain code quality.
 <div style="page-break-before: always;"></div>
 
 ### 🎯**Django Architecture (MVT)**
@@ -195,14 +146,38 @@ User Response
 ```
 
 ### 🎯**What is MTV architecture?**
+* Django की architecture को generally MVT (Model–View–Template) architecture कहा जाता है।
 - Model → Handles database tables and data
 - Template → Handles UI (HTML)
 - View → Contains business logic
+```python
+User / Browser
+      ↓
+Django server
+      ↓
+Manage.py file
+      ↓
+setting.py file
+      ↓
+     URL
+      ↓
+    View
+   ↙     ↘
+Model    Template
+  ↓         ↓
+Database   HTML
+      ↘   ↙
+      Response
+         ↓
+      Browser
+```
+
 
 ### 🎯**Create a Django Project?**
 ```python
 django-admin startproject myproject
-
+```
+```python
 myproject/
 │
 ├── manage.py
@@ -215,6 +190,7 @@ myproject/
     └── wsgi.py
 ```
 <div style="page-break-before: always;"></div>
+
 
 ### 🎯**Django Project Structure?**
 * When we create a Django project using:
@@ -245,6 +221,9 @@ python manage.py startapp users :-   Create an app
 python manage.py shell
 ```
 
+#### 2. __init__.py 
+* An empty file that tells Python that the current directory should be considered as a Python package
+
 2. settings.py
 * Contains the **configuration/settings** of your Django project.
 * It contains things like:
@@ -270,6 +249,7 @@ DATABASES = {
 3. urls.py
 * This is the main URL configuration of the project.
 * It decides which view should handle a particular URL.
+* All the URLs of the project are present here
   
 ```python
 # Example:
@@ -320,6 +300,7 @@ def home(request):
 7. wsgi.py
 * WSGI stands for Web Server Gateway Interface.
 * It is commonly used to deploy Django applications with traditional synchronous WSGI servers.
+* This is an entry point for your application which is used by the web servers to serve the project you have created.
 
 #### Project + App Structure
 * In a real project, you'll usually have:
@@ -391,431 +372,9 @@ products/
 | Contains multiple apps                    | Handles a particular feature              |
 | Created using `django-admin startproject` | Created using `python manage.py startapp` |
 | Example: `ecommerce`                      | Example: `products`, `orders`             |
-<div style="page-break-before: always;"></div>
 
 
-
-### 🎯**What is a Model?**
-* A Django Model is a Python class that represents a database table. 
-* It defines the fields and relationships of the data and allows us to interact with the database using Django ORM without writing raw SQL for most operations.
-
-#### Where do we create a Model?
-* Models are generally created inside an app's models.py:
-```python
-myproject/
-│
-├── manage.py
-│
-├── myproject/
-│   ├── settings.py
-│   └── urls.py
-│
-└── users/
-    ├── models.py      # ← Model is created here
-    ├── views.py
-    └── admin.py
-```
-```python
-from django.db import models
-
-class User(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    age = models.IntegerField()
-```
-
-* After creating the model, run:
-```python
-python manage.py makemigrations
-
-# Then
-python manage.py migrate
-```
-
-[Back to Top](#back-to-top)
-### 🎯**What are Migrations?**
-* Migrations are files that Django uses to track and apply changes made to models in the database schema.
-* Whenever you create, modify, or delete a model field, Django records those changes in migration files.
-
-### 🎯**Difference between makemigrations and migrate?**
-* makemigrations creates migration files based on changes in Django models, while migrate applies those migration files to the database and updates the database schema.
-* makemigrations prepares the changes; migrate executes them.
-
-
-| `makemigrations`             | `migrate`                               |
-| ---------------------------- | --------------------------------------- |
-| Creates migration files      | Applies migration files to the database |
-| Detects changes in models    | Executes SQL on the database            |
-| Does not change the database | Changes the database structure          |
-| Generates migration scripts  | Runs migration scripts                  |
-
-```python
-# Create/Modify a Model
-from django.db import models
-
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-
-# Step 2
-python manage.py makemigrations # Run makemigrations
-
-# Example migration file:
-migrations.CreateModel(
-    name='Employee',
-    fields=[
-        ('id', models.BigAutoField(primary_key=True)),
-        ('name', models.CharField(max_length=100)),
-        ('email', models.EmailField()),
-    ],
-)
-
-# Run migrate
-python manage.py migrate
-```
-
-### 🎯**What is the Meta Class?**
-* The Meta class is an inner class inside a Django model that is used to provide metadata (extra configuration) about the model.
-* It does not create database fields. Instead, it controls how Django behaves with the model.
-* **HINDI:-** Meta class model ki additional configuration define karne ke liye use hoti hai. Isme db_table, ordering, verbose_name, unique_together, indexes, constraints, permissions jaise options define kiye ja sakte hain.
-```python
-from django.db import models
-
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-
-    class Meta:
-        db_table = "employees"
-```
-
-#### Common Uses of Meta
-1. Specify a **custom table name**.
-```python
-class Meta:
-    db_table = "employees"
-
-# appname_employee
-```
-
-2. ordering
-* - (minus sign) lagane se descending order ho jata hai.
-* for Ascending Order (A → Z)
-```python
-class Meta:
-    ordering = ['name']
-```
-* for Descending Order (Z → A)
-```python
-class Meta:
-    ordering = ['-name']
-```
-
-* ISI trahe se bahute sare hai
-```python
-from django.db import models
-from django.db.models import Q
-
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    salary = models.DecimalField(max_digits=10, decimal_places=2)
-
-    class Meta:
-        db_table = "employees"
-        ordering = ["name"]
-        verbose_name = "Employee"
-        verbose_name_plural = "Employees"
-        unique_together = ['name', 'email']
-        get_latest_by = "id"
-        indexes = [
-            models.Index(fields=["email"]),
-        ]
-        constraints = [
-            models.CheckConstraint(
-                condition=Q(salary__gte=0),
-                name="salary_positive"
-            )
-        ]
-```
-| Option                | Purpose                                   |
-| --------------------- | ----------------------------------------- |
-| `db_table`            | Custom table name                         |
-| `ordering`            | Default sorting                           |
-| `verbose_name`        | Singular name in Admin                    |
-| `verbose_name_plural` | Plural name in Admin                      |
-| `unique_together`     | Multiple fields unique                    |
-| `indexes`             | Database indexes                          |
-| `constraints`         | Custom DB constraints                     |
-| `permissions`         | Custom permissions                        |
-| `default_permissions` | Add/remove default permissions            |
-| `managed`             | Whether Django manages the table          |
-| `abstract`            | Create abstract base model                |
-| `proxy`               | Create proxy model                        |
-| `app_label`           | Assign model to an app manually           |
-| `get_latest_by`       | Latest object field                       |
-| `db_table_comment`    | Add table comment (newer Django versions) |
-
-
-### 🎯**What is ORM?**
-* ORM (Object Relational Mapping) is a technique that allows us to interact with a database using Python objects and methods instead of writing SQL queries directly.
-* Django provides a built-in ORM called Django ORM.
-
-#### Advantages of ORM
-* No need to write SQL for common operations.
-* Database-independent (MySQL, PostgreSQL, SQLite, etc.).
-* Faster development.
-* More readable and maintainable code.
-* Helps prevent SQL injection in normal ORM usage.
-
-#### Example
-1. Get Data
-```python
-employees = Employee.objects.all()
-Employee.objects.get(id=1)
-Employee.objects.filter(name="Mohit")
-```
-
-2. Create
-```python
-Employee.objects.create(
-    name="Mohit",
-    email="mohit@gmail.com"
-)
-```
-
-3. Read
-```python
-Employee.objects.all()
-Employee.objects.get(id=1)
-Employee.objects.filter(name="Mohit")
-```
-
-4. Update
-```python
-emp = Employee.objects.get(id=1)
-emp.name = "Rahul"
-emp.save()
-```
-5. Delete
-```python
-emp = Employee.objects.get(id=1)
-emp.delete()
-```
-
-### 🎯**What is indexes in Django?**
-* Django mein database index add karne ke liye mainly Meta class ke andar indexes option use karte hain.
-* Index ka purpose database queries ko faster banana hota hai, especially jab kisi column par frequently filter(), order_by() ya lookup kiya jata hai.
-
-1. Single-field Index
-```python
-from django.db import models
-
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-
-    class Meta:
-        indexes = [
-            models.Index(fields=['email']),
-        ]
-# Yahan email column par index create hoga.
-```
-* Single field ke liye directly:
-```python
-email = models.EmailField(db_index=True)
-```
-
-2. Multiple Indexes
-```python
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    department = models.CharField(max_length=100)
-
-    class Meta:
-        indexes = [
-            models.Index(fields=['email']),
-            models.Index(fields=['department']),
-        ]
-```
-
-3. Composite Index
-```python
-class Employee(models.Model):
-    name = models.CharField(max_length=100)
-    department = models.CharField(max_length=100)
-    salary = models.IntegerField()
-
-    class Meta:
-        indexes = [
-            models.Index(fields=['department', 'salary']),
-        ]
-```
-
-4. Index ko Custom Name dena
-```python
-class Meta:
-    indexes = [
-        models.Index(
-            fields=['email'],
-            name='employee_email_idx'
-        ),
-    ]
-```
-
-### 🎯**db_index=True vs Meta.indexes**
-| `db_index=True`                            | `Meta.indexes`                          |
-| ------------------------------------------ | --------------------------------------- |
-| Simple single-field index                  | More flexible                           |
-| Field ke andar define hota hai             | `Meta` ke andar define hota hai         |
-| `email = models.EmailField(db_index=True)` | `models.Index(fields=['email'])`        |
-| Basic use case                             | Composite/custom indexes ke liye useful |
-
-### 🎯**How do you write raw SQL?**
-* Django normally ORM use karta hai, lekin jab complex query ho ya ORM se query likhna convenient na ho, tab raw SQL use kar sakte hain.
-* Django mein raw SQL execute karne ke mainly 3 common ways hain.
-1. **Model.objects.raw()**
-```python
-employees = Employee.objects.raw(
-    "SELECT * FROM employees WHERE salary > %s",
-    [50000]
-)
-
-for employee in employees:
-    print(employee.name)
-```
-
-2. **connection.cursor()**
-* Agar INSERT, UPDATE, DELETE ya koi arbitrary SQL execute karna hai:
-```python
-from django.db import connection
-
-with connection.cursor() as cursor:
-    cursor.execute(
-        "UPDATE employees SET salary = %s WHERE id = %s",
-        [60000, 1]
-    )
-
-# Example select
-from django.db import connection
-
-with connection.cursor() as cursor:
-    cursor.execute(
-        "SELECT id, name FROM employees WHERE salary > %s",
-        [50000]
-    )
-
-    rows = cursor.fetchall()
-
-for row in rows:
-    print(row)
-```
-
-3. RawSQL
-* Django ke queryset ke andar custom SQL expression use karna ho to RawSQL use kar sakte hain:
-```python
-from django.db.models.expressions import RawSQL
-
-employees = Employee.objects.annotate(
-    custom_value=RawSQL(
-        "salary * 2",
-        []
-    )
-)
-```
-
-
-### **What is a View?**
-* A View in Django is a Python function or class that receives an HTTP request, processes the required application logic, interacts with models if needed, and returns an HTTP response to the client.
-* HINDI:- A View Django ka wo part hai jo HTTP request receive karta hai aur HTTP response return karta hai.
-* View application ka logic handle karta hai.
-* View generally:
-  * Request receive karta hai.
-  * Request se data leta hai.
-  * Business logic perform karta hai.
-  * Model/database se data fetch karta hai.
-  * Template ko data bhej sakta hai.
-  * Response return karta hai.
-
-#### Types of Views
-* Django mein mainly 2 types commonly use hote hain:
-1. Function-Based View (FBV)
-```python
-def home(request):
-    return HttpResponse("Hello")
-```
-
-2. Class-Based View (CBV)
-```python
-from django.views import View
-from django.http import HttpResponse
-
-class HomeView(View):
-
-    def get(self, request):
-        return HttpResponse("Hello")
-```
-
-#### Difference between FBV and CBV?
-
-| FBV                                                | CBV                                              |
-| -------------------------------------------------- | ------------------------------------------------ |
-| Function-based                                     | Class-based                                      |
-| Simple functions                                   | Classes and methods                              |
-| Easy to understand                                 | Slightly more complex                            |
-| Less abstraction                                   | More abstraction                                 |
-| Reusability manually implement karni pad sakti hai | Inheritance se easily reusable                   |
-| HTTP methods manually handle kar sakte hain        | `get()`, `post()`, `put()` etc. separate methods |
-| Small/simple views ke liye good                    | Complex/reusable views ke liye good              |
-| Generic Views use nahi karte directly              | Django Generic Views mostly CBV based hain       |
-
-| FBV                                   | CBV                                      |
-| ------------------------------------- | ---------------------------------------- |
-| View **function** hota hai            | View **class** hota hai                  |
-| `def` use karte hain                  | `class` use karte hain                   |
-| Simple logic ke liye easy             | Complex/reusable logic ke liye better    |
-| GET/POST ko `if` se handle karte hain | `get()`, `post()` methods use karte hain |
-| Inheritance nahi hoti                 | Inheritance use kar sakte hain           |
-| Code generally simple hota hai        | Code reusable hota hai                   |
-| Generic Views ka direct benefit nahi  | Generic Views use kar sakte hain         |
-
-
-* FBV Example — GET + POST
-```python
-def employee(request):
-
-    if request.method == "GET":
-        return HttpResponse("GET request")
-
-    if request.method == "POST":
-        return HttpResponse("POST request")
-```
-
-* CBV Example — GET + POST
-```python
-from django.views import View
-
-class EmployeeView(View):
-
-    def get(self, request):
-        return HttpResponse("GET request")
-
-    def post(self, request):
-        return HttpResponse("POST request")
-```
-
-### **Authentication vs Authorization?**
-* Authentication **verifies the identity of a user**, while authorization **determines what resources or actions that authenticated** user is allowed to access. 
-* Authentication answers "Who are you?", whereas authorization answers "What are you allowed to do?"
-* Dono ka simple difference:
-  * Authentication = Aap kaun ho?
-  * Authorization = Aapko kya karne ki permission hai?
-
-| Authentication                   | Authorization                   |
-| -------------------------------- | ------------------------------- |
-| Identity verify karta hai        | Permission check karta hai      |
-| "Who are you?"                   | "What can you do?"              |
-| Login se related                 | Access/permissions se related   |
-| Usually first step               | Authentication ke baad hota hai |
-| Username/password, OTP, JWT etc. | Roles, permissions, policies    |
+### **Why is Django called a "loosely coupled" framework?**
+* Django is called a loosely coupled framework because its components such as Models, Views, Templates, URLs, and Middleware **are independent of each other**. Changes in one component usually do not require changes in other components, making the application easier to maintain, test, and scale.
+* Loosely Coupled = Components are independent and can be changed or replaced without affecting the whole application.
+* We can change the frontend template, switch the database, or modify URLs without affecting the core business logic. This demonstrates Django's loosely coupled architecture.

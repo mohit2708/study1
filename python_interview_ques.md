@@ -542,6 +542,7 @@ What is Abstraction?
 
 # 🎯 Python Django API Questions
 
+
 # Software enginring Questions
 1. What is the difference between authentication and authorization?
 

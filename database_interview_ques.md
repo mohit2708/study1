@@ -14,18 +14,19 @@
 
 ### 🧠 [**Mysql Basic Questions**](/database/mysql_database/2_sql_questions.md)
 1. [What is MySQL?](/database/mysql_database/2_sql_questions.md#what-is-mysql)
-2. What are the features of MySQL?
-3. What is the difference between SQL and MySQL?
-4. What are databases and tables?
-5. sql comments?
-6. What are rows and columns?
-7. What are MySQL data types?
-8. What is NULL?
-9. ⭐ [Difference between CHAR and VARCHAR?](/database/mysql_database/2_sql_questions.md#difference-between-char-vs-varchar)
-10. Difference between INT and BIGINT?
-11. What is AUTO_INCREMENT?
-12. ⭐ Difference between WHERE and HAVING clauses?
-13. [Wildcard Characters/Like Query?](/database/mysql_database/Wildcard_Characters_Like%20Query.md)
+2. [Check version of the sql?](/database/mysql_database/1_mysql.md#check-version-of-the-sql)
+3. What are the features of MySQL?
+4. What is the difference between SQL and MySQL?
+5. What are databases and tables?
+6. sql comments?
+7. What are rows and columns?
+8. What are MySQL data types?
+9. What is NULL?
+10. ⭐ [Difference between CHAR and VARCHAR?](/database/mysql_database/2_sql_questions.md#difference-between-char-vs-varchar)
+11. Difference between INT and BIGINT?
+12. What is AUTO_INCREMENT?
+13. ⭐ Difference between WHERE and HAVING clauses?
+14. [Wildcard Characters/Like Query?](/database/mysql_database/Wildcard_Characters_Like%20Query.md)
 
 ### 🧠 [**User Management**](/database/mysql_database/User_Management.md)
 1. Create Databse user?
@@ -39,12 +40,19 @@
 
 ### 🧠 [**Aggregate function**](/database/mysql_database/Aggregate_function.md)
 1. What is Aggregate function?
-   1. SUM
+   1. SUM() function
    2. AVG
    3. MAX
    4. MIN
    5. COUNT
-2. COUNT() vs COUNT(*) in MySQL?
+2. [COUNT() vs COUNT(*) in MySQL?](/database/mysql_database/Aggregate_function.md#-count-vs-count-in-mysql)
+3. Can aggregate functions be used without GROUP BY?
+4. How does COUNT handle NULL values?
+
+
+What is GROUP BY?
+What is HAVING?
+Find department-wise employee count.
 
 
 ### 🧠 [**Mysql Keys Questions**](/database/mysql_database/keys.md)
@@ -65,18 +73,36 @@
 1. [What Is Joins?]
 2. [self join]
 3. [INNER JOIN]
-4. [Left JOIN/LEFT OUTER JOIN]
-5. [Right JOIN]
-6. [Outer join](/database/mysql_database/Joins.md#outer-join)
-7. [CROSS Join](/database/mysql_database/Joins.md#cross-join)
-8. [Full Join/FULL OUTER JOIN]
+4. When do you use SELF JOIN?
+5. [Left JOIN/LEFT OUTER JOIN]
+6. [Right JOIN]
+7. [Outer join](/database/mysql_database/Joins.md#outer-join)
+8. [CROSS Join](/database/mysql_database/Joins.md#cross-join)
+9. [Full Join/FULL OUTER JOIN]
+10. Difference between INNER JOIN and OUTER JOIN?
+11. Difference between LEFT JOIN and RIGHT JOIN?
+
+### 🧠 [**Mysql Normalization Questions**](/database/mysql_database/normalization_denormalization.md)
+1. What is Normalization?
+2. Why do we need Normalization?
+3. Advantages and disadvantages of Normalization?
+4. What is 1NF?
+5. What is 2NF?
+6. What is 3NF?
+7. What is BCNF?
+8. What is 4NF?
+9. What is 5NF?
+10. What is Functional Dependency?
+11. What is Transitive Dependency?
+12. Difference between 3NF and BCNF?
 
 ### 🧠 [**Mysql Union & Union All Questions**](/database/mysql_database/union_and_union_all.md)
-1. [What Is Union & Union All?](/database/mysql_database/union_and_union_all.md#what-is-union--union-all)
-2. [Difference between Union & Union All?]
-3. [What is MINUS?](/database/mysql_database/MINUS.md#what-is-minus)
-4. What is EXCEPT?
-5. [What is Intersect?](/database/mysql_database/Intersect.md#what-is-intersect)
+1. What is UNION?
+2. [What Is Union & Union All?](/database/mysql_database/union_and_union_all.md#what-is-union--union-all)
+3. [Difference between Union & Union All?]
+4. [What is MINUS?](/database/mysql_database/MINUS.md#what-is-minus)
+5. What is EXCEPT?
+6. [What is Intersect?](/database/mysql_database/Intersect.md#what-is-intersect)
 
 
 ### 🧠 [**Mysql View Questions**](/database/mysql_database/View.md)
@@ -85,19 +111,32 @@
    2. Show view
    3. Alter view
    4. Deleted view
-2. Views used in real projects?
+2. Why use Views?
+3. Views used in real projects?
+
+
+Difference between View and Table?
+Can data be inserted into a View?
+What is a Materialized View?
+How to create a View?
+Advantages of Views?
 
 ### 🧠 [**Mysql Index Questions**](/database/mysql_database/Index.md)
 1. What is Index?
-2. Types of Indexes
-3. Unique Indexes
-4. Show Index
-5. Alter/Modify an Index
-6. Drop Index
-7. Unique Indexes
-8. Cluster Index
-9. Non cluster index
-10. difference between cluster and non cluster index?
+2. Why are Indexes used?
+3. Types of Indexes
+4. Unique Indexes
+5. Show Index
+6. Alter/Modify an Index
+7. Drop Index
+8. Unique Indexes
+9. Cluster Index
+10. Non cluster index
+11. difference between cluster and non cluster index?
+12. What is Composite Index?
+13. How do indexes improve performance?
+14. Can indexes slow down performance?
+15. How to check indexes on a table?
 
 ### 🧠 **Mysql Logical Questions**
 1. [Duplicate values in a Table?](/database/mysql_database/sql-query-questions/find_duplicate_value.md)
@@ -137,27 +176,10 @@ Difference between IN and EXISTS?
 What is BETWEEN?
 What is CASE statement?
 🔗 4. Joins
-What is JOIN?
-What is INNER JOIN?
-What is LEFT JOIN?
-What is RIGHT JOIN?
-What is FULL OUTER JOIN?
-What is SELF JOIN?
-What is CROSS JOIN?
-Difference between INNER JOIN and OUTER JOIN?
-Difference between LEFT JOIN and RIGHT JOIN?
-When do you use SELF JOIN?
+
 📊 5. Aggregate Functions
-What are Aggregate Functions?
-COUNT() vs COUNT(*)?
-SUM() function?
-AVG() function?
-MAX() and MIN() functions?
-How does COUNT handle NULL values?
-What is GROUP BY?
-What is HAVING?
-Can aggregate functions be used without GROUP BY?
-Find department-wise employee count.
+
+
 🏆 6. SQL Query-Based Questions
 Find the 2nd highest salary.
 Find the 3rd highest salary.
@@ -169,38 +191,7 @@ Find departments having more than 5 employees.
 Find nth highest salary.
 Find records without duplicates.
 Find top 5 highest salaries.
-📑 7. Normalization
-What is Normalization?
-Why do we need Normalization?
-What is 1NF?
-What is 2NF?
-What is 3NF?
-What is BCNF?
-What is 4NF?
-What is 5NF?
-What is Functional Dependency?
-What is Transitive Dependency?
-Difference between 3NF and BCNF?
-Advantages and disadvantages of Normalization?
-⚡ 8. Indexes
-What is an Index?
-Why are Indexes used?
-Types of Indexes?
-What is Clustered Index?
-What is Non-Clustered Index?
-What is Composite Index?
-What is Unique Index?
-How do indexes improve performance?
-Can indexes slow down performance?
-How to check indexes on a table?
-🔄 9. Views
-What is a View?
-Why use Views?
-Difference between View and Table?
-Can data be inserted into a View?
-What is a Materialized View?
-How to create a View?
-Advantages of Views?
+
 🔒 10. Transactions
 What is a Transaction?
 What are ACID properties?
@@ -250,8 +241,7 @@ AFTER UPDATE Trigger?
 Advantages and disadvantages of Triggers?
 Difference between Trigger and Stored Procedure?
 🔄 15. UNION & Subqueries
-What is UNION?
-Difference between UNION and UNION ALL?
+
 What is a Subquery?
 What is a Correlated Subquery?
 What is a Nested Query?
@@ -307,4 +297,96 @@ How would you design an e-commerce database?
 ✅ Locks & Deadlocks
 ✅ Database Design & Relationships
 
-8+ years experience interviews usually focus heavily on Joins, Indexes, Transactions, Normalization, Query Writing, Performance Tuning, and Scenario-Based Questions.
+
+### Table of Contents
+<!-- ❌ 👉 👈 🧠 ✅ 📌 🔧 🧪 🔍 -->
+||  No.  | [Database](#database)                                                            |
+| :---: | -------------------------------------------------------------------------------- |
+|       | [What is storage engine/Table Types in mysql?](#what-is-storage-engine-in-mysql) |
+
+|  No.  | [Tables](#tables)                                                                                |
+| :---: | ------------------------------------------------------------------------------------------------ |
+|       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql)                    |
+|       | [Data Definition Language (DDL)](#types-of-sql-commandssubsets-of-sql)                           |
+|       | [Data Manipulation Language (DML)](#types-of-sql-commandssubsets-of-sql)                         |
+|       | [Data Control Language (DCL)](#types-of-sql-commandssubsets-of-sql)                              |
+|       | [Transaction Control Language (TCL)](#types-of-sql-commandssubsets-of-sql)                       |
+|       | --------------------------------------------------------------                                   |
+|       | [Alter](#alter)                                                                                  |
+|       | [ADD a column in the table](#add-a-column-in-the-table)                                          |
+|       | [Add column after particular field](#add-column-after-particular-field)                          |
+|       | [Add column in first](#add-column-in-first)                                                      |
+|       | [Add multiple columns in the table](#add-multiple-columns-in-the-table)                          |
+|       | --------------------------------------------------------------                                   |
+|       | [RENAME column in table?](#rename-column-in-table)                                               |
+|       | [UPDATE](#update)                                                                                |
+|       | [DELETE](#delete)                                                                                |
+|       | [Change Datatype from alter cmd?](./4_Tables.md#change-datatype-from-alter-cmd)                  |
+|       | [DROP column in table?](./4_Tables.md#drop-column-in-table)                                      |
+|       | [TRUNCATE table?](#truncate)                                                                     |
+|       | [RENAME table name?](#rename-table-name)                                                         |
+|       | [Difference between Delete, Truncate & Drop?](#ques-difference-between-delete-truncate--drop)    |
+|       | [Difference b/w DROP and TRUNCATE statements?](#ques-difference-bw-drop-and-truncate-statements) |
+
+
+|  No.  | [SQL Comments?](#sql-comments)                                                                                  |
+| :---: | --------------------------------------------------------------------------------------------------------------- |
+|       | [Difference between In and Between Operator in SQL?](#ques-difference-between-in-and-between-operator-in-sql)   |
+|       | [BETWEEN and NOT BETWEEN Operator?](#ques-between-and-not-between-operator)                                     |
+|       | [Difference between WHERE and HAVING in SQL?](#difference-between-where-and-having-in-sql)                      |
+|       | [Ques. Difference between Group By And Order By?](#ques-difference-between-group-by-and-order-by)               |
+|       | [What is Aggregate function?(sum,avg,max,min,count)](#what-is-aggregate-function)                               |
+|       | [SQL Operators and Clauses](#sql-operators-and-clauses)                                                         |
+|       | [LIKE](#like)                                                                                                   |
+|       | [INNER JOIN](#inner-join)                                                                                       |
+|       | [OUTER JOIN](#outer-join)                                                                                       |
+|       | [IF()](#if)                                                                                                     |
+|       | [IFNULL](#ifnull)                                                                                               |
+|       | [NULLIF](#nullif)                                                                                               |
+|       | [IS NULL and IS NOT NULL](#is-null-and-is-not-null)                                                             |
+|       | [Round()](#round)                                                                                               |
+|       | [BETWEEN()](#between)                                                                                           |
+|       | [Case](#case)                                                                                                   |
+|       | [GROUP BY](#group-by)                                                                                           |
+|       | [Having](#having)                                                                                               |
+|       | [Limit](#limit)                                                                                                 |
+|       | [ORDER BY](#order-by)                                                                                           |
+|       | [SELECT DISTINCT](#select-distinct)                                                                             |
+|       | [With()](#with)                                                                                                 |
+|       | [WHERE](#where)                                                                                                 |
+|       | [Wildcard Characters/Like Query](#wildcard-characterslike-query)                                                |
+|       | [what is Aliases?](#aliases)                                                                                    |
+|       | [What Is Union & Union All](#ques-what-is-union--union-all)                                                     |
+|       | [What is Intersect?](#what-is-intersect)                                                                        |
+|       | [What is MINUS?](#what-is-minus)                                                                                |
+|       | [Optimizing SQL Queries for Faster Performance?](#ques-optimizing-sql-queries-for-faster-performance)           |
+|       | ------------------------------                                                         |
+|       | [What is ACID property/SQL TRANSACTIONS?](#ques-what-is-acid-propertysql-transactions) |
+
+|  No.  | interview_Questions_answers                                       |
+| :---: | ----------------------------------------------------------------- |
+|       | [What are Constraints in SQL?](#ques-what-are-constraints-in-sql) |
+
+
+|  No.  | [Sql Query questions](#sql-query-questions)                                                                                                |
+| :---: | ------------------------------------------------------------------------------------------------------------------------------------------ |
+|       | [Demo data for execute the query](#demo-data-for-execute-the-query)                                                                        |
+|       | [Current date?](#current-date)                                                                                                             |
+|       | [How to copy a table in another table?](#ques-how-to-copy-a-table-in-another-table)                                                        |
+|       | [How to copy structure of a table but not data?](#ques-how-to-copy-structure-of-a-table-but-not-data)                                      |
+|       | [Duplicate table through another table, with structure and data?](#duplicate-table-through-another-table-with-structure-and-data)          |
+|       | [How to find **Nth** highest salary from a table?](#nth-highest-salary)                                                                    |
+|       | [Top Nth Salery?](#top-N-salery)                                                                                                           |
+|       | [Find the Highest Salary of Each Department?](#find-the-highest-salary-of-each-department)                                                 |
+|       | [How to Find Duplicate values in a Table?](#how-to-find-duplicate-values-in-a-table)                                                       |
+|       | [Delete Duplicate Records?](#delete-duplicate-records)                                                                                     |
+|       | [Check max_salary is not exceed the upper limit of 25000](#create-a-table-and-check-max_salary-is-not-exceed-the-upper-limit-of-25000)     |
+|       | [Replace a Column Values from 'male' to 'female' and 'female' to 'male'?](#replace-a-column-values-from-male-to-female-and-female-to-male) |
+|       | [Update remaing days startdate - enddate](#update-remaing-days-startdate---enddate)                                                        |
+|       | [Count phone number](#count-phone-number)                                                                                                  |
+
+
+
+<!-- ![asdf](./img/mohit_pic.jpg){width=600 height=500} -->
+
+https://www.w3resource.com/sql-exercises/joins-hr/sql-joins-hr-exercise-11.php

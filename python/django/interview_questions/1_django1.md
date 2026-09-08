@@ -27,26 +27,16 @@ https://www.javatpoint.com/django-interview-questions-and-answers -- 1
 |       | [App Directery](#)                                                                                      |
 |       | [How to Run Server](#)                                                                                  |
 |       | [create a superuser](#)                                                                                 |
-|       | [ What is the django command to view a databse schema of an existing(or legacy) databse?](#)            |
+|       | [What is the django command to view a databse schema of an existing(or legacy) databse?](#)            |
 |       | [How to view all items in the Model using django QuerySet?](#)                                          |
 |       | [How to filter items in the model using django QuerySet?](#)                                            |
 |       | [How to get a particular items in the model using django QuerySet?](#)                                  |
 |       | [Model Meta Options](#)                                                                                 |
 |       | [Meta Class in Models?](#)                                                                              |
 |       | [What is CRUD operations Django?](#)                                                                    |
-|       |                                                                                                         |
-|       |                                                                                                         |
-|       |                                                                                                         |
 
 
-### **Ques. Explain the django project directory structure?**
-<ul>
-    <li><b>manage.py</b> - A command-line utility that allows you to interact with your Django project</li>
-    <li><b>__init__.py</b> - An empty file that tells Python that the current directory should be considered as a Python package</li>
-    <li><b>settings.py</b> - configurations of the current project like DB connections.</li>
-    <li><b>urls.py</b> - All the URLs of the project are present here</li>
-    <li><b>wsgi.py</b> - This is an entry point for your application which is used by the web servers to serve the project you have created.</li>
-</ul>
+
 
 ### **Ques. Give a brief about the settings.py file?**
 As the name implies, 
@@ -232,17 +222,7 @@ python manage.py runserver:8484
 python manage.py runserver0.0.0.0:8484
 ```
 
-### **Ques. create a superuser**
-```python
-# create a super user
-python manage.py createsuperuser
 
-username: ------
-email address: ------
-password: -------
-password(again): ------
-superuser created successfully
-```
 
 ### **Ques. What is the django command to view a databse schema of an existing(or legacy) databse?**
 ```python

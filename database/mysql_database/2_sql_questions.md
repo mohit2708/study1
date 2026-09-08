@@ -6,6 +6,7 @@
 |       | [What is Sql?](#what-is-sql)                                                                   |
 |       | [What is the difference between SQL and MySQL?](#what-is-the-difference-between-sql-and-mysql) |
 |       | [Difference between SQL and NoSQL?](#mysql-vs-nosql)                                           |
+|       | [Types of SQL Commands](#types-of-sql-commandssubsets-of-sql)                                  |
 
 
 |  No.  | Other Questions                                                                              |
@@ -20,11 +21,11 @@
 
 <div style="page-break-before: always;"></div>
 
-|  No.  |                                                                               |
-| :---: | ----------------------------------------------------------------------------- |
-|       | [What is MINUS?](#what-is-minus)                                              |
-|       | [What is EXCEPT?](#what-is-except)                                            |
-|       | [What is Intersect?](#what-is-intersect)                                      |
+|  No.  |                                          |
+| :---: | ---------------------------------------- |
+|       | [What is MINUS?](#what-is-minus)         |
+|       | [What is EXCEPT?](#what-is-except)       |
+|       | [What is Intersect?](#what-is-intersect) |
 
 
 
@@ -134,6 +135,29 @@
    - NoSQL: 
      - MongoDB, Cassandra, Couchbase, Redis, Neo4j.
 <div style="page-break-before: always;"></div>
+
+
+### **Types of SQL Commands/subsets of SQL?**
+* DDL (Data Definition Language):
+  * **CREATE:** Creates a new table or database.
+  * **ALTER:** Modifies an existing database object.
+  * **DROP:** Deletes an entire table, database, or other objects.
+  * **TRUNCATE:** Removes all records from a table, deleting the space allocated for the records.
+
+* DML (Data Manipulation Language):
+  * **SELECT:** Retrieves data from the database.
+  * **INSERT:** Adds new data to a table.
+  * **UPDATE:** Modifies existing data within a table.
+  * **DELETE:** Removes data from a table.
+
+* DCL (Data Control Language):
+  * **GRANT:** Gives users access privileges to the database.
+  * **REVOKE:** Removes access privileges given with the GRANT command.
+* TCL (Transaction Control Language):
+  * **COMMIT:** Saves all changes made in the current transaction.
+  * **ROLLBACK:** Restores the database to the last committed state.
+  * **SAVEPOINT:** Sets a savepoint within a transaction.
+  * **SET TRANSACTION:** Places a name on a transaction.
 
 
 ### 🎯**Difference between CHAR vs VARCHAR**
@@ -368,90 +392,3 @@ SELECT
     END AS salary_category
 FROM employees;
 ```
-<div style="page-break-before: always;"></div>
-
-
-
-<div style="page-break-before: always;"></div>
-
-
-<div style="page-break-before: always;"></div>
-
-### 🎯**What is MINUS?**
-* MINUS operator will return only those rows which are **unique(distinct)** in only first SELECT query and not those rows which are **common to both first and second** SELECT queries.
-```sql
--- Employees                        -- Managers
-| EmpID | EmpName | Department |  | EmpID | EmpName | Department |
-| ----- | ------- | ---------- || ----- | ------- | ---------- |
-| 1     | Alice   | HR         |    | 2     | Bob     | IT         |
-| 2     | Bob     | IT         |    | 4     | David   | IT         |
-| 3     | Charlie | Finance    |    | 6     | Frank   | Sales      |
-| 4     | David   | IT         |    | 7     | Grace   | Marketing  |
-| 5     | Eve     | Marketing  |
-
--- output:-
-SELECT EmpID, EmpName, Department FROM Employees
-MINUS
-SELECT EmpID, EmpName, Department FROM Managers;
-| EmpID | EmpName | Department |
-| ----- | ------- | ---------- |
-| 1     | Alice   | HR         |
-| 3     | Charlie | Finance    |
-| 5     | Eve     | Marketing  |
-```
-
-#### Key characteristics of the MINUS operator:
-* **Returns distinct rows:** Only unique rows from the first query that are not found in the second are returned.
-* **Requires compatible SELECT statements:** Both SELECT statements involved in the MINUS operation must have the same number of columns, and the corresponding columns must have compatible data types and be in the same order. 
-
-* **Note:-** While MINUS is a standard SQL operator supported by many database systems (like Oracle, PostgreSQL), **MySQL does not** directly **support** the MINUS operator.
-
-#### Achieving the MINUS functionality in MySQL:
-* We can achieve the same results as MINUS in MySQL using various techniques, most commonly by combining **LEFT JOIN** and **WHERE** clauses, or using **subqueries** with **NOT IN** or **NOT EXISTS**.
-
-1. Using LEFT JOIN
-```sql
-SELECT a.*
-FROM table_a AS a
-LEFT JOIN table_b AS b ON a.id = b.id
-WHERE b.id IS NULL;
-```
-
-2. Using NOT IN
-```sql
-SELECT *
-FROM table_a
-WHERE id NOT IN (SELECT id FROM table_b);
-```
-
-3. Using NOT EXISTS
-```sql
-SELECT *
-FROM table_a AS a
-WHERE NOT EXISTS (SELECT 1 FROM table_b AS b WHERE a.id = b.id);
-```
-
-```sql
-table_a
-
-id	value
-1	Apple
-2	Banana
-3	Cherry
-4	Date
-
-----------------------
-table_b
-
-id	value
-2	Banana
-4	Date
-
-------Output:----------
-id	value
-1	Apple
-3	Cherry
-```
-
-### 🎯**What is EXCEPT?**
-* same as minus nothing different.

@@ -1,5 +1,5 @@
-### **What is CSRF? (Cross-Site Request Forgery)?**
-* CSRF (Cross-Site Request Forgery) is a web security attack where a malicious website tricks a logged-in user into performing unwanted actions on another website without their knowledge.
+### 🎯 **What is CSRF? (Cross-Site Request Forgery)?**
+* CSRF (Cross-Site Request Forgery) is a **web security attack** where a malicious website tricks a logged-in user into performing unwanted actions on another website without their knowledge.
 * Because browsers automatically send:
   * Session Cookies
   * Authentication Cookies
@@ -20,11 +20,11 @@
 * If tokens match → Request allowed.
 * If not → 403 Forbidden.
 
-### **What is XSS? (Cross-Site Scripting)?**
+### 🎯 **What is XSS? (Cross-Site Scripting)?**
 * XSS (Cross-Site Scripting) ek security attack hai jisme attacker **website me malicious JavaScript code inject kar deta hai**, jo dusre users ke browser me execute ho jata hai.
 * Django templates by default data ko **escape** karte hain:
 
-### CSRF vs XSS
+### 🎯 **CSRF vs XSS**
 * CSRF: User se bina permission ke request bhejna.
 * XSS: Website me malicious JavaScript inject karke user ke browser me chalana.
 * Easy yaad rakhne ka tarika:
@@ -43,7 +43,8 @@
 | Prevention       | CSRF Token                                                      | Input Validation, Output Escaping, CSP           |
 
 
-### **What is SQL Injection?**
+### 🎯 **What is SQL Injection?**
+* SQL injection is an attack in which the attacker manipulates or accesses the database by injecting a malicious SQL query.
 * SQL Injection ek attack hai jisme attacker **malicious SQL query inject karke database ko manipulate ya access kar leta hai**.
 
 #### Agar login query aise likhi ho:
@@ -76,7 +77,7 @@ cursor.execute(
 )
 ```
 
-### **What is Clickjacking?**
+### 🎯 **What is Clickjacking?**
 * Clickjacking is a security attack where an attacker tricks a user into clicking on a hidden or disguised element to perform an unintended action.
 * Clickjacking ek security attack hai jisme attacker user ko trick karke kisi hidden ya disguised button/link par click karwa deta hai, jisse unwanted action perform ho jata hai.
 
@@ -94,7 +95,7 @@ cursor.execute(
 'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ```
 
-### **What is Security Middleware?**
+### 🎯 **What is Security Middleware?**
 * Security Middleware Django ka built-in middleware hai jo web application ko common security attacks aur vulnerabilities se protect karne me help karta hai.
 * Django SecurityMiddleware provides several security-related protections for a Django application, such as HTTPS redirects, HSTS, and security HTTP headers.
 ```python

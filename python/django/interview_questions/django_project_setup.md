@@ -1,5 +1,6 @@
 ### 🎯**Dajngo project setup**
-1. Virtual Environment
+#### Virtual Environment
+* [More](../../virtual_env.md)
 ```python
 # Create virtual env
 python -m venv venv
@@ -16,7 +17,7 @@ pip install django
 django-admin --version
 ```
 
-3. Django project create karo
+#### Django project create karo
 ```python
 django-admin startproject myproject
 

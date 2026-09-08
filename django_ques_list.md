@@ -3,7 +3,7 @@
 ### 🧠 [**Dajngo project setup**](/python/django/interview_questions/django_project_setup.md)
 1. [Virtual Environment](/python/virtual_env.md)
 2. Django install karo
-3. Django project create karo
+3. [Django project create karo](/python/django/interview_questions/django_project_setup.md#django-project-create-karo)
 4. Server run karo
 5. App create karo
 6. App ko settings.py mein add karo
@@ -15,7 +15,7 @@
 
 ### 🧠 [**Django Basic Questions**](/python/django/interview_questions/3_django.md)
 1. [What is **Django**?](/python/django/interview_questions/3_django.md#-what-is-django)
-2. ⭐ How to install Django?
+2. ⭐ [How to install Django?](/python/django/interview_questions/django_project_setup.md)
 3. ⭐ How to check django latest version?
 4. How to check installed packages?
 5. Django:- Latest version
@@ -258,12 +258,13 @@ How do you cache views?
 
 
 ### 🧠 [**Django Security**](/python/django/interview_questions/Security.md)
-1. What is CSRF?
-2. What is XSS?
-3. What is SQL Injection?
-4. How does Django prevent SQL Injection?
-5. What is Clickjacking?
-6. What is Security Middleware?
+1. [What is CSRF?](/python/django/interview_questions/Security.md#-what-is-csrf-cross-site-request-forgery)
+2. [What is XSS?](/python/django/interview_questions/Security.md#-what-is-xss-cross-site-scripting)
+3. [CSRF VS XSS](/python/django/interview_questions/Security.md#-csrf-vs-xss)
+4. [What is SQL Injection?](/python/django/interview_questions/Security.md#-what-is-sql-injection)
+   1. How does Django prevent SQL Injection?
+5. [What is Clickjacking?](/python/django/interview_questions/Security.md#-what-is-clickjacking)
+6. [What is Security Middleware?](/python/django/interview_questions/Security.md#-what-is-security-middleware)
    
 
 7.  Deployment

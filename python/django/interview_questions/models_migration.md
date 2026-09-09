@@ -41,6 +41,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     age = models.IntegerField()
+    description = models.TextField()             # Long text
 ```
 
 * After creating the model, run:
@@ -122,7 +123,7 @@ python manage.py sqlmigrate app_name migration_name
 
 
 ### 🎯**What is the Meta Class?**
-* The Meta class is an inner class inside a Django model that is used to provide metadata (extra configuration) about the model.
+* The Meta class is an **inner class inside a Django model** that is used to **provide metadata (extra configuration) about the model**.
 * It does not create database fields. Instead, it controls how Django behaves with the model.
 * **HINDI:-** Meta class model ki additional configuration define karne ke liye use hoti hai. Isme db_table, ordering, verbose_name, unique_together, indexes, constraints, permissions jaise options define kiye ja sakte hain.
 ```python
@@ -418,4 +419,36 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+```
+### Difference between CharField and TextField?
+* **CharField** is used for storing small strings and requires max_length, such as names, titles, and emails.
+* **TextField** is used for storing large amounts of text like descriptions, comments, and blog content, and it does not require max_length.
+
+```python
+# models.py
+
+from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)      # Short text
+    description = models.TextField()             # Long text
+```
+
+### **What is ForeignKey?**
+* ForeignKey is used to create a Many-to-One relationship between two models.
+* 👉 It means many records of one table can be related to one record of another table.
+```python
+# models.py
+
+from django.db import models
+
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    department = models.ForeignKey(
+        Department,
+        on_delete=models.CASCADE
+    )
 ```

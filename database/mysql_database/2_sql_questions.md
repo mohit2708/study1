@@ -192,6 +192,11 @@ CREATE TABLE users (
     name VARCHAR(50)
 );
 ```
+
+### **Difference between CharField and TextField?**
+* **CharField** is used for storing small strings and requires max_length, such as names, titles, and emails.
+* **TextField** is used for storing large amounts of text like descriptions, comments, and blog content, and it does not require max_length.
+  
 <div style="page-break-before: always;"></div>
 
 ### **Difference between Delete, Truncate & Drop?**

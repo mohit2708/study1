@@ -77,7 +77,7 @@ objsubclass.access_protected() # Output:- My name is mohit and I am 30 years old
 
 #### **private access modifier:-**
 * Private attributes are denoted with a double underscore prefix (__) and are intended for internal use within a class, not to be accessed or modified directly from outside.
-* Private attributes & method are meant to be used only within the class and are not accessibale from the outside the class.
+* Private attributes & method are meant to be **used only within the class** and are not accessibale from the outside the class.
 * agar humne double underscore se kisi ko private kar diya hai to use usi class ke function call kar payenge.
 * hum diractly hello function ko call nahi kar sakte hai kyuki hello function private hai agar hame karana hai to usi class mai dusra function banakar welcome banakar usme call karenge phir welcome function ko call karenge to call ho jayega.
   
@@ -147,7 +147,7 @@ print(acc1.reset_pass())    # Output:- pass@123
 * "Name Mangling is a Python mechanism that changes a private attribute name like __salary to _ClassName__salary to avoid accidental access and name conflicts in inheritance."
 * **HINDI:-** Name Mangling Python का एक mechanism है जो private variables/methods (__variable) को accidental access या overriding से बचाने के लिए उनके नाम को internally बदल देता है।
 * जब किसी variable या method के आगे double underscore (__) लगाया जाता है, तो Python उसका नाम बदलकर: 
-  * _ClassName__variable
+  * **_ClassName__variable**
 * कर देता है।
 * When you define a method or attribute with a double underscore, Python automatically changes its name to include the class name as a prefix. This is done to avoid accidental access or modification of the method or attribute from outside the class or from subclasses.
 

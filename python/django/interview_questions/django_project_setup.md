@@ -1,6 +1,6 @@
 ### 🎯**Dajngo project setup**
-#### Virtual Environment
-* [More](../../virtual_env.md)
+#### 1. Virtual Environment
+* [More Info](../../virtual_env.md)
 ```python
 # Create virtual env
 python -m venv venv
@@ -9,7 +9,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-2. Django install karo
+#### 2. Django install karo
 ```python
 pip install django
 
@@ -33,7 +33,7 @@ myproject/
     └── wsgi.py
 ```
 
-4. Server run karo
+#### 4. Server run karo
 ```python
 python manage.py runserver  # http://127.0.0.1:8000/
 
@@ -41,7 +41,7 @@ python manage.py runserver  # http://127.0.0.1:8000/
 ```
 <div style="page-break-before: always;"></div>
 
-5. App create karo
+#### 5. App create karo
 ```python
 python manage.py startapp users
 
@@ -64,7 +64,7 @@ myproject/
     └── views.py
 ```
 
-6. App ko settings.py mein add karo
+#### 6. App ko settings.py mein add karo
 * myproject/settings.py
 ```python
 INSTALLED_APPS = [
@@ -79,7 +79,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-7. First View banao
+#### 7. First View banao
 * users/views.py
 ```python
 from django.http import HttpResponse
@@ -89,7 +89,7 @@ def home(request):
     return HttpResponse("Hello Django")
 ```
 
-8. URL seeting
+#### 8. URL seeting
 * App ke andar urls.py banao:- users/urls.py
 ```python
 from django.urls import path
@@ -111,16 +111,9 @@ urlpatterns = [
 ]
 ```
 
-9. Database migrations
+#### 9. Database migrations
 ```python
 python manage.py migrate
-```
-
-10. Admin user banao
-```python
-python manage.py createsuperuser
-
-# http://127.0.0.1:8000/admin/
 ```
 
 

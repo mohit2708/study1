@@ -1,20 +1,20 @@
-# 🎯Python Interview Questions
-### 🧠 **Python Basic Questions**
-1. What is **python**?
-2. **Features** of Python?
-3. Python **Frameworks**?
-4. Difference between Python 2 and Python 3?
-5. What is an **Interpreted language**?
-6. What is a **dynamically typed language**?
-7. Is **indentation** required in python?
-8. What is **PEP 8**?
-9. File Extensions in Python?
-10. What is the difference between **.py** and **.pyc** files?
+# 🎯 Python Interview Questions
+### 🧠 [**Python Basic Questions**](/python/python/1_python/0.1_python_basic.md)
+1. [What is **python**?](/python/python/1_python/0.1_python_basic.md#ques-what-is-python)
+   1. [**Features** of Python?](/python/python/1_python/0.1_python_basic.md#ques-features-of-python)
+   2. [Python **Frameworks**?](/python/python/1_python/0.1_python_basic.md#ques-python-frameworks)
+2. Difference between Python 2 and Python 3?
+3. What is an **Interpreted language**?
+4. What is a **dynamically typed language**?
+5. Is **indentation** required in python?
+6. ⭐ [What is **PEP 8**?](/python/python/1_python/0.1_python_basic.md#ques-what-is-pep-8)
+7. File Extensions in Python?
+8. Difference between **.py** and **.pyc** files?
 
-### 🧠 **Python Comments Questions**
+### 🧠 [**Python Comments Questions**](/python/python/1_python/Comments_Docstrings.md)
 1. Python **Comments**?
-2. [What is **Docstrings**?](/python/python/1_python/0.1_python_basic.md#ques-what-is-docstrings)
-   1. [how to **get docstring** in python?](/python/python/1_python/0.1_python_basic.md#ques-how-to-get-docstring-in-python)
+2. [What is **Docstrings**?](/python/python/1_python/Comments_Docstrings.md#-ques-what-is-docstrings)
+   1. [how to **get docstring** in python?](/python/python/1_python/Comments_Docstrings.md#ques-how-to-get-docstring-in-python)
 3. Difference **between** Python **comments** and **docstrings**?
 
 ### 🧠 **Python Variables Questions**
@@ -132,7 +132,7 @@
     9.  clear() Method
     10. reverse() Method
     11. sort() Method
-14. ⭐ List vs Tuple
+14. ⭐ [List vs Tuple](/python/python/2_list/2.0_list.md#difference-between-list-and-tuples-in-python)
 15. ⭐ Mutable vs Immutable Objects
 <div style="page-break-before: always;"></div>
 
@@ -145,6 +145,11 @@
 4. Find **Maximum** and **Minimum** Element?
 5. Find Second Largest Element?
 6. Common Coding Questions on Lists
+
+
+
+
+
 ```
 Reverse a list without built-in functions.
 Find largest/smallest element.
@@ -251,25 +256,25 @@ Time Complexity of List Operations
 <div style="page-break-before: always;"></div>
 
 # 🎯 Python OOPS
-1. What is Object-Oriented Programming (OOPS)?
+1. [What is Object-Oriented Programming (OOPS)?](/python/python/7_oops/7_oops.md#oops)
 2. What is **break**, **continue** and **pass** in Python?
-3. Difference between **method** and **function**?
+3. ⭐ Difference between **method** and **function**?
 4. [What is Python Access Modifiers?](/python/python/7_oops/access_modifiers.md#python-access-modifiers)
-   1. Public Member
+   1. [Public Member](/python/python/7_oops/access_modifiers.md#public-access-modifier-)
    2. Protected Member
    3. Private Member
-5. what is Name **Mangling** in Python?
+5. [what is Name **Mangling** in Python?](/python/python/7_oops/access_modifiers.md#using-mangled-name)
 
-### 🧠 **Class in oops**
-1. What is **Class**?
+### 🧠 [**Class in oops**](/python/python/7_oops/7.1_class.md)
+1. [What is **Class**?](/python/python/7_oops/7.1_class.md#ques-what-is-class)
 2. Define a class?
-3. Get Class Variables/attributes?
-4. Change values for class variables?
-5. **Delete** class variables?
+3. [Get Class Variables/attributes?](/python/python/7_oops/7.1_class.md#get-the-values-of-class-variables)
+4. [Change values for class variables?](/python/python/7_oops/7.1_class.md#setchange-values-for-class-variables)
+5. [**Delete** class variables?](/python/python/7_oops/7.1_class.md#delete-class-variables)
 6. Built-In Class Functions?
 7. What is **issubclass**()?
 8. Built-In Class Attributes?
-9. [what is **self keyword**?](/python/python/7_oops/7.3_self_keyword_init_method.md#ques-what-is-the-use-of-self-in-python)
+9. ⭐ [what is **self keyword**?](/python/python/7_oops/7.3_self_keyword_init_method.md#ques-what-is-the-use-of-self-in-python)
 10. What is **__init__** Method?
 11. Difference between **Class Variable** and **Instance Variable**?
 12. What is an Instance Method?
@@ -282,17 +287,17 @@ Time Complexity of List Operations
 3. Delete the properties of the Object?
 4. Counting the Number of objects of a Class?
 
-### 🧠 **Encapsulation**
+### 🧠 [**Encapsulation**](/python/python/7_oops/7.4_encapsulation.md)
 1. What is Encapsulation?
 3. Getter and Setter Methods?
 
-### 🧠 **Polymorphism**
+### 🧠 [**Polymorphism**](/python/python/7_oops/7.4_polymorphism.md)
 1. What is Polymorphism?
 2. Types of Polymorphism?
    1. Compile time polymorphism (Static) - Method Overloading
    2. Runtime time polymorphism (Dynamic) - Method Overriding
 
-### 🧠 **Inheritance**
+### 🧠 [**Inheritance**](/python/python/7_oops/7.5_inheritance.md)
 1. What is Inheritance?
 2. Why do we use Inheritance?
 3. Types Of Inheritance?
@@ -302,22 +307,30 @@ Time Complexity of List Operations
    4. Hierarchical Inheritance
    5. Hybrid Inheritance
 
-### 🧠 **constructor and Destructors**
-1. what is constructor?
-2. Types of Constructors?
-3. What is Destructors?
+### 🧠 [**constructor and Destructors**](/python/python/7_oops/7.7_constructor.md)
+1. [what is constructor?](/python/python/7_oops/7.7_constructor.md#ques-what-is-a-constructor-in-python)
+2. [Types of Constructors?](/python/python/7_oops/7.7_constructor.md#types-of-constructors)
+3. [Constructor Overloading?](/python/python/7_oops/7.7_constructor.md#constructor-overloading)
+4. [What is Destructors?](/python/python/7_oops/7.8_destructor.md#ques-what-is-destructors)
 
-### 🧠 **Abstract Class and interface**
-1. What is Abstract Class?
+### 🧠 [**Abstract Class and interface**](/python/python/7_oops/abstract_class.md)
+1. [What is Abstract Class?](/python/python/7_oops/abstract_class.md#ques-what-is-abstract-class)
 2. What is Interface?
 3. [Abstract Class vs Interface?](/python/python/7_oops/abstract_class_and_interface.md)
 
 ### Other Questions
-1. What is MRO(Method Resolution Order) / Diamond Problam?
-2. How does Python resolve methods in Multiple Inheritance?
-3. What is static method?
-4. What is __str__ and __repr__?
-5. What is the super() Function?
+1. [What is MRO(Method Resolution Order) / Diamond Problam?](/python/python/7_oops/MRO_Diamond_Problam.md#ques-what-is-mromethod-resolution-order--diamond-problam)
+2. [Diamond Problem](/python/python/7_oops/MRO_Diamond_Problam.md#diamond-problem)
+3. How does Python resolve methods in Multiple Inheritance?
+4. [What is static method?](/python/python/7_oops/static_method.md#what-is-static-method)
+5. What is __str__ and __repr__?
+6. [What is the super() Function?](/python/python/7_oops/super_func.md#ques-what-is-the-super-function)
+   1. [super() in Multiple Inheritance?](/python/python/7_oops/super_func.md#super-with-multiple-inheritance)
+
+
+### Programs
+1. [Print Hello World](/python/python/8_python_program/1_Print_Hello_World.md)
+2. 
 
 ```
 हाँ, आपने Python OOPS के लगभग सभी महत्वपूर्ण topics cover कर लिए हैं। Interview के लिए यह list 85-90% complete है।
@@ -335,7 +348,6 @@ Time Complexity of List Operations
 
 🧠 Class & Object
 
-✅ self keyword
 ✅ init()
 ✅ Class Variables vs Instance Variables
 ✅ Instance Methods
@@ -358,11 +370,6 @@ Public, Protected and Private Members?
 Getter and Setter Methods?
 🧠 Inheritance
 
-✅ Single Inheritance
-✅ Multiple Inheritance
-✅ Multi-Level Inheritance
-✅ Hierarchical Inheritance
-✅ Hybrid Inheritance
 
 ➕ Add:
 
@@ -425,23 +432,15 @@ Method Type	First Parameter
 Instance Method	self
 Class Method	cls
 Static Method	No self/cls
-🧠 MRO
-
-✅ MRO
-✅ Diamond Problem
 
 ➕ Add:
 
 How does Python resolve methods in Multiple Inheritance?
 What is mro() method?
-🧠 super()
-
-✅ super()
 
 ➕ Add:
 
-Why use super()?
-super() in Multiple Inheritance?
+
 🧠 Object Lifecycle
 
 ➕ Add:
@@ -456,9 +455,6 @@ Difference between Encapsulation and Abstraction?
 Difference between Method Overloading and Overriding?
 Difference between Class Variable and Instance Variable?
 Difference between Class Method and Static Method?
-What is MRO?
-What is Diamond Problem?
-What is super()?
 What is Abstract Class?
 What is Interface?
 What is Constructor?
@@ -471,80 +467,12 @@ What is Inheritance?
 What is Encapsulation?
 What is Abstraction?
 
-अगर आप Python OOPS Interview की तैयारी कर रहे हैं, तो इन 20 questions के answers और coding examples अच्छे से तैयार कर लें। इनमें से अधिकांश interviews में पूछे जाते हैं।
 ```
 
 <div style="page-break-before: always;"></div>
 
 
-# 🎯 Python Fast API Questions
-### 🧠 **FastAPI Project setup**
-1. [virtual environment:- Create](/python/fastApi/Project_Setup.md#create-virtual-environment)
-2. virtual environment:- Activate
-3. Install Fastapi
-4. upgratde Pip version
-5. Install Uvicorn
-6. Create main.py file with route
-7. Run the server
-8. Project setup one pc to another Pc
-
-### 🧠 [**FastAPI Basic Questions**](/python/fastApi/fastapi_basic_ques.md)
-1. What is Fastapi
-2. Fastapi:- Main Features
-3. FAstapi:- Advantages
-4. FAstapi:- Disadvantages
-5. FAstapi:- Example
-6. Describe Fastapi code
-7. [Starlette](/python/fastApi/fastapi_basic_ques.md#starlette)
-8. ASGI
-9. WSGI
-10. uvicorn
-11. Gunicorn
-12. Gunicorn और Uvicorn में Difference
-13. FastAPI vs Flask
-
-### 🧠 [**Rate limiting**](/python/fastApi/Rate_limiting.md)
-1. How do you implement rate limiting?
-
-### 🧠 **FastAPI Endpoint Questions**
-1. GET endpoint
-2. POST endpoint
-3. PUT vs PATCH
-
-### 🧠 [**FastAPI Path Parameter Questions**](/python/fastApi/Path_Parameter.md)
-1. Path Parameter
-2. define multiple path parameters?
-3. validate path parameters
-4. What is Path()
-<div style="page-break-before: always;"></div>
-
-### 🧠 [**FastAPI Query Parameter Questions**](/python/fastApi/Query_Parameter.md)
-1. Query Parameter
-2. Query parameters:- define multiple?
-3. Query parameters:- restrict values
-4. What is Query() in FastAPI?
-5. Path Parameter vs Query Parameter
-6. [Query parameter optional?](/python/fastApi/Query_Parameter.md#how-do-query-parameter-optional)
-
-
-### 🧠 [**FastAPI Alembic Questions**](/python/fastApi/alembic.md)
-1. What is Alembic?
-2. [Why do we use Alembic?](/python/fastApi/alembic.md#why-is-alembic-used)
-3. Install Alembic?
-4. How do you initialize Alembic?
-5. What is migration?
-6. What is alembic revision --autogenerate?
-7. What is alembic upgrade head?
-8. How do you rollback migrations?
-9. What is the versions folder?
-10. How do you handle schema changes?
-11. Difference between migration and seeding?
-
-# 🎯 Python Django API Questions
-
-
 # Software enginring Questions
 1. What is the difference between authentication and authorization?
 
-<div style="page-break-before: always;"></div>
 <div style="page-break-before: always;"></div>

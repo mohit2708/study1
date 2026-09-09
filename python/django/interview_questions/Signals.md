@@ -1,5 +1,6 @@
-### **What are Django Signals?**
-* Django Signals allow decoupled applications to get notified when certain events occur, such as saving or deleting a model instance. We can connect a **receiver** function to a signal and execute custom logic automatically when that event occurs.
+### 🎯 **What are Django Signals?**
+* Django Signals allow decoupled applications to get notified when certain events occur, such as saving or deleting a model instance.
+* We can connect a **receiver** function to a signal and execute custom logic automatically when that event occurs.
 * Django Signals ek mechanism hai jo humein allow karta hai ki kisi particular event ke hone par automatically koi function execute ho jaye.
 * Simple words:
   * Signal = Event hone par automatically action perform karna.
@@ -43,7 +44,7 @@ def create_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user=instance)
 ```
 
-### **Why use signals?**
+### 🎯 **Why use signals?**
 * We use Django Signals to automatically execute specific actions when certain events occur. They help keep event-driven logic separate from the main application logic and reduce repetitive code.
 * Common Use Cases
   * User create hone par Profile create karna

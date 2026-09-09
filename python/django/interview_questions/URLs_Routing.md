@@ -142,7 +142,7 @@ urlpatterns = [
 
 
 ### **What is URL reversing?**
-* URL reversing in Django is used to generate URLs dynamically using their URL names instead of hard-coding URL paths. It makes applications easier to maintain when URL patterns change.
+* URL reversing in Django is used to **generate URLs dynamically using their URL names** instead of hard-coding URL paths. It makes applications easier to maintain when URL patterns change.
 * URL reversing ka matlab hai URL name ka use karke actual URL generate karna, instead of URL ko manually hard-code karna.
 * Agar URL change ho: toh template mein URL manually change karne ki zarurat nahi hai. Sirf urls.py change karna padega.
 

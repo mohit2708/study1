@@ -1,4 +1,4 @@
-### **What is Django Template Engine?**
+### 🎯 **What is Django Template Engine?**
 * Django Template Engine is a system in Django that is used to create dynamic HTML pages by combining HTML templates with data from Python/Django views.
 * Django Template Engine is a built-in system used to generate dynamic HTML pages. It allows us to display data from views/models in HTML using template syntax such as variables, loops, conditions, template inheritance, and filters.
 
@@ -30,7 +30,7 @@ def home(request):
 | `{# comment #}`  | Template comment            |
 
 
-### **Difference between {{ }} and {% %}?**
+### 🎯 **Difference between {{ }} and {% %}?**
 * **{{ }}** is used to **display dynamic data or variables**, whereas **{% %}** is used for **template logic and instructions such as conditions, loops, URL generation, and template inheritance**.
 * Django templates में {{ }} और {% %} दोनों का use dynamic behavior के लिए होता है, लेकिन उनका purpose अलग है।
 
@@ -88,11 +88,12 @@ def home(request):
 | Variables के लिए           | `if`, `for`, `url`, `extends`, `block` आदि |
 | Example: `{{ name }}`    | Example: `{% if user %}`                  |
 
-### **What are template tags?**
+### 🎯 **What are template tags?**
 * Template tags are special Django template commands **used to perform logic** and **template operations such as conditions**, **loops**, URL generation, template inheritance, and including other templates. They are written using {% %} syntax.
 
 ### **What are filters?**
-* Django template filters are used to modify or format variable values before displaying them in a template. Filters are applied **using the pipe (|) symbol**, such as {{ name|upper }}.
+* Django template filters are u**sed to modify or format variable values before displaying them** in a template.
+* Filters are applied **using the pipe (|) symbol**, such as {{ name|upper }}.
 * Django Template Filters are used to modify or format the value of a variable before displaying it in a template.
 * They are written using the pipe (|) symbol.
 * Filter = Variable ke data ko modify/format karna.
@@ -179,3 +180,83 @@ Home
 
 ### **What is base.html?**
 * base.html is a custom parent template that contains the common layout of a website, such as header, navbar, footer, and common blocks.
+
+### **How do you load static files in templates?**
+* Django me CSS, JavaScript, Images jaise static files use karne ke liye {% load static %} tag use karte hain.
+* {% load static %} Django template me static template tag library ko load karne ke liye use hota hai. Iske baad hum {% static %} tag ka use karke CSS, JavaScript aur image files ke URLs generate kar sakte hain.
+
+```python
+project/
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│       └── logo.png
+```
+
+#### Steps
+* Step 1: Template me static tag load karo
+```python
+{% load static %}
+```
+
+* Step 2: Static file ko use karo
+```python
+# css file
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+# js file
+<script src="{% static 'js/script.js' %}"></script>
+
+# image file
+<img src="{% static 'images/logo.png' %}" alt="Logo">
+```
+
+* Step 3: settings.py
+```python
+STATIC_URL = 'static/'
+```
+
+### Difference between STATIC_URL and STATIC_ROOT?
+* **STATIC_URL** browser ko static files ka **URL path** batata hai, jaise /static/.
+* **STATIC_ROOT** production me collectstatic command ke baad static **files ko store karne ki final directory** hoti hai.
+
+#### Setting
+```python
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+```
+
+| Feature       | STATIC_URL               | STATIC_ROOT                          |
+| ------------- | ------------------------ | ------------------------------------ |
+| Purpose       | Static files ka URL path | Static files ka physical folder path |
+| Used By       | Browser                  | Django `collectstatic` command       |
+| Example       | `/static/`               | `/var/www/project/staticfiles/`      |
+| Environment   | Development & Production | Mainly Production                    |
+| Stores Files? | No                       | Yes                                  |
+
+
+### Difference between static files and media files?
+* **Static Files** wo files hoti hain jo developer provide karta hai, jaise CSS, JavaScript aur website images.
+* **Media Files** wo files hoti hain jo **users upload karte hain, jaise profile pictures**, documents aur videos.
+```python
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# structure
+media/
+├── profile_pics/user1.jpg
+├── documents/resume.pdf
+└── videos/demo.mp4
+
+static/
+├── css/style.css
+├── js/script.js
+└── images/logo.png
+```

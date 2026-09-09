@@ -1,6 +1,6 @@
 ### **Ques. What is Abstract Class?**
 * We cannot create an abstract class in Python directly. However, Python does provide a module that allows us to define abstract classes. The module we can use to create an abstract class in Python is abc(abstract base class) module.
-**Rule**
+* **Rule**
 * we can not create objects of an abstract class (abstract class ka hum object nahi bna sakte hai).
 * It is not neccessary to declare all methods abstract in a abstract class.
 * Abstract class can have abstract method and concreate method.

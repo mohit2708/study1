@@ -3,7 +3,9 @@
 | :---: | ------------------------------------------------------------------------------------------------------------------ |
 |       | [What is a View?](#what-is-a-view)                                                                                 |
 |       | [Types of Views?](#types-of-views)                                                                                 |
+|       | [Advantages of CBV (Class-Based Views)?](#advantages-of-cbv-class-based-views)                                     |
 |       | [How to view all items in a Model using Django QuerySet?](#how-to-view-all-items-in-a-model-using-django-queryset) |
+|       | [What is Mixin?](#what-is-mixin)                                                                                   |
 
 ### **What is a View?**
 * A View in Django is a Python function or class that receives an HTTP request, processes the required application logic, interacts with models if needed, and returns an HTTP response to the client.
@@ -295,3 +297,184 @@ user.save()
 ```python
 Employee.objects.filter(id=1).delete()
 ```
+
+### 🎯 **What is QuerySet?**
+* QuerySet is a collection of database queries in Django. It represents a set of records retrieved from the database and allows filtering, ordering, and manipulating data using ORM without writing SQL queries directly.
+* QuerySet Django ka object collection hota hai jo database se data fetch karne ke liye use hota hai.
+* QuerySet = Database query ka result (0, 1 ya multiple records).
+
+#### Example
+```python
+# models.py
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    salary = models.IntegerField()
+
+
+# Fetch all record
+employees = Employee.objects.all()
+
+# Filter Records
+employees = Employee.objects.filter(salary__gt=50000)
+
+# Get Single record
+employee = Employee.objects.get(id=1)
+
+
+Employee.objects.all()          # sab records
+Employee.objects.filter()       # condition
+Employee.objects.exclude()      # condition ko exclude
+Employee.objects.order_by()     # sorting
+Employee.objects.values()       # dict output
+Employee.objects.count()        # total count
+Employee.objects.first()        # first record
+Employee.objects.last()         # last record
+```
+
+### **How do you handle empty querysets/lists in templates?**
+```python
+<ul>
+{% for employee in employees %}
+    <li>{{ employee.name }}</li>
+{% empty %}
+    <li>No employees found.</li>
+{% endfor %}
+</ul>
+
+# OR
+{% if employees %}
+    {% for employee in employees %}
+        {{ employee.name }}
+    {% endfor %}
+{% else %}
+    No employees found.
+{% endif %}
+```
+
+
+### **What is select_related()?**
+* select_related() is **used to optimize database queries** for **ForeignKey** and **OneToOneField relationships**. It performs an SQL JOIN and fetches related objects in a single query, reducing the number of database hits and improving performance.
+* Hondi:- **select_related()** Django ORM ka optimization method hai jo **ForeignKey** aur **OneToOneField relationships** ko ek hi SQL query me fetch karta hai.
+
+#### Example
+```python
+# models.py
+
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
+
+# IN view file
+employees = Employee.objects.select_related('department')
+
+for emp in employees:
+    print(emp.name, emp.department.name)
+```
+
+### **What is prefetch_related()?**
+* **prefetch_related()** is used to optimize queries for **ManyToMany and reverse ForeignKey relationships**. It executes separate queries for related objects and joins them in Python, reducing database hits and improving performance.
+* prefetch_related() Django ORM ka **optimization** method hai jo **ManyToMany aur Reverse ForeignKey relationships** ko efficiently fetch karta hai.
+
+```python
+# Model.py 
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    books = models.ManyToManyField(Book)
+
+# In view
+authors = Author.objects.prefetch_related('books')
+
+for author in authors:
+    for book in author.books.all():
+        print(book.title)
+```
+
+### **select_related() vs prefetch_related()**
+| Feature    | select_related()     | prefetch_related()     |
+| ---------- | -------------------- | ---------------------- |
+| Relation   | ForeignKey, OneToOne | ManyToMany, Reverse FK |
+| Query Type | SQL JOIN             | Separate Queries       |
+| Queries    | Usually 1            | Usually 2 or more      |
+| Processing | Database             | Python                 |
+
+### What is Reverse ForeignKey?
+* When a foreign key in one model points to another model, accessing objects of the first model from the second model is called a reverse foreign key.
+* **HINDI:-** Jab ek model me ForeignKey doosre model ko point karta hai, to doosre model se first model ke objects ko access karna Reverse ForeignKey kehlata hai.
+
+```python
+# Model.py
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    department = models.ForeignKey(
+        Department,
+        on_delete=models.CASCADE
+    )
+```
+
+* Ye Reverse ForeignKey hai.
+* Django automatically employee_set deta hai:
+```python
+department.employee_set.all()
+```
+
+### What is Q Object?
+* Q Object in Django is used to **build complex database queries** by combining conditions with logical operators such as AND, OR, and NOT.
+* **HINDI:-** Django में Q Object का use हम complex database queries बनाने के लिए करते हैं, खासकर जब हमें OR (|), AND (&), NOT (~) conditions लगानी हों।
+
+#### Example of Q Object
+1. OR Condition Example
+```python
+# यानी Mohit या Rahul में से कोई भी employee आएगा।
+
+from django.db.models import Q
+
+Employee.objects.filter(
+    Q(name="Mohit") | Q(name="Rahul")
+)
+```
+
+2. And condition
+```python
+#Department IT और salary 50,000 से ज्यादा हो।
+
+Employee.objects.filter(
+    Q(department="IT") & Q(salary__gt=50000)
+)
+```
+
+3. NOT condition
+**~** का use **NOT** के लिए होता है:
+```python
+Employee.objects.filter(
+    ~Q(department="HR")
+)
+```
+
+4. AND + OR together
+```python
+Employee.objects.filter(
+    Q(department="IT") | Q(department="HR"),
+    salary__gt=50000
+)
+```
+
+### Q Object क्यों use करते हैं?
+* Normal filter() में multiple conditions देने पर generally AND बनता है:
+```python
+Employee.objects.filter(
+    department="IT",
+    salary__gt=50000
+)
+```
+* लेकिन अगर हमें OR condition चाहिए: तो Q Object बहुत useful है।

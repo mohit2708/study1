@@ -1,4 +1,4 @@
-### **What is Redis?**
+### 🎯 **What is Redis?**
 * Redis (Remote Dictionary Server) ek in-memory data store hai jo data ko RAM me store karta hai, isliye bahut fast hota hai.
 * Redis ek **high-speed key-value database hai jo caching, session management, rate limiting, aur real-time applications me use hota hai**.
 * Redis is an in-memory **key-value data store** used for caching, session management, rate limiting, and message queues. Since data is stored in **RAM**, Redis provides extremely fast read and write operations compared to traditional databases.

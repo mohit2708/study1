@@ -140,3 +140,49 @@ mother class Constructor
 ```
 
 ### Diamond Problem?
+* The Diamond Problem occurs in multiple inheritance when a child class inherits from two classes that have the same parent class. It creates ambiguity about which parent method should be called. Python solves this using MRO (Method Resolution Order) and the C3 linearization algorithm.
+* जब एक class दो parent classes से inherit करती है, और दोनों parent classes एक ही common parent class से inherit करती हैं, तो inheritance structure diamond जैसा बन जाता है।
+```python
+        A
+       / \
+      B   C
+       \ /
+        D
+```
+
+#### Example of Diamond Problem
+```python
+class A:
+    def show(self):
+        print("A")
+
+
+class B(A):
+    pass
+
+
+class C(A):
+    pass
+
+
+class D(B, C):
+    pass
+
+
+obj = D()
+obj.show()
+
+
+# Explain
+1. D में show() है?
+❌ नहीं → B में जाओ
+
+2. B में show() है?
+❌ नहीं → pass का मतलब है B ने कोई नया show() नहीं बनाया → C में जाओ
+
+3. C में show() है?
+❌ नहीं → A में जाओ
+
+4. A में show() है?
+✅ हाँ!
+```

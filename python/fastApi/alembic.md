@@ -14,7 +14,7 @@
   - ✔ Avoid deleting DB ❌
 
 ### Why is Alembic used?
-1. **Version Control for Database:-** Just like Git tracks code changes, Alembic tracks database changes.
+#### 1. **Version Control for Database:-** Just like Git tracks code changes, Alembic tracks database changes.
 ```python
 versions/
     001_create_users.py
@@ -27,7 +27,7 @@ versions/
 alembic upgrade head
 ```
 * Other developers can apply the same changes without manually updating their databases.
-3. **Database Upgrade & Rollback**
+#### 3. **Database Upgrade & Rollback**
 ```python
 alembic upgrade head
 
@@ -65,6 +65,7 @@ from database.models import *
 target_metadata = Base.metadata
 config.set_main_option("sqlalchemy.url",SQLALCHEMY_DATABASE_URL)
 ```
+
 * **OR** alembi.ini file
 ```python
 # sqlalchemy.url = driver://user:pass@localhost/dbname

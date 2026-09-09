@@ -17,11 +17,6 @@
 |       | [Built-In Class Functions (getattr, setattr, delattr, hasattr) In Python?](#built-in-class-functions-getattr-setattr-delattr-hasattr-in-python) |
 |       | [What is class meta?](#what-is-class-meta)                                                                                                      |
 |       | ------------------------------------------------------------------------------------------------                                                |
-|       | ------------------------------------------------------------------------------------------------                                                |
-|       | [What is Encapsulation?](#ques-what-is-encapsulation)                                                                                           |
-|       | ------------------------------------------------------------------------------------------------                                                |
-|       | [What is Polymorphism?](#ques--what-is-polymorphism)                                                                                            |
-|       | ------------------------------------------------------------------------------------------------                                                |
 |       | [What is a constructor](#ques-what-is-a-constructor-in-python)                                                                                  |
 |       | [Types of Constructors (Default, Non-parametrized, Parameterized)](#types-of-constructors-default-non-parametrized-parameterized)               |
 |       | [Constructor With Default Values?](#ques-constructor-with-default-values)                                                                       |

@@ -1,6 +1,5 @@
 |  No.  | even or odd program                                                              |
 | :---: | -------------------------------------------------------------------------------- |
-|   1   | [Print Hello World](#ques-print-hello-world)                                     |
 |   2   | [Swap Two variables](#swap-two-variables)                                        |
 |   3   | [Even or odd:- check number](#ques-program-to-check-if-a-number-is-even-or-odd)  |
 |   4   | [Even or odd:- without any condition?](#check-even-or-odd-without-any-condition) |
@@ -13,14 +12,6 @@
 |       | [Armstrong number or not](#ques-check-number-is-an-armstrong-number-or-not)      |
 
 
-<div style="page-break-before: always;"></div>
-
-### Ques. Print Hello World?
-```python
-print('Hello World!!!')
-
-Output:- Hello World!!!
-```
 <div style="page-break-before: always;"></div>
 
 ### Swap Two variables

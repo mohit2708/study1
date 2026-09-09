@@ -18,9 +18,7 @@ class Employee(Company):
 
 # Creating object of child class
 emp = Employee()
-emp.info()
-
-Output:- Jessa works at Google
+emp.info() # Output:- Jessa works at Google
 ```
 
 

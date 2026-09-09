@@ -32,7 +32,7 @@ class PaymentCalculator:
 print(PaymentCalculator.total_amount(1000)) # Output:- 
 ```
 
-### Why used static class?
+### Why used static method?
 - Hum static method isliye banate hain jab function class se logically related ho, lekin usse object ya class ke data ki zarurat na ho.
 - Logic ko ek jagah organize karne ke liye
 - Jab kuch functions same kaam se related hote hain, to unhe ek class ke andar rakh dete hain.

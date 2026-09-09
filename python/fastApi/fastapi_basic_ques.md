@@ -88,7 +88,7 @@ def home():
 ### 🎯**Starlette**
 * Starlette is a lightweight **ASGI web framework and toolkit** for building asynchronous web applications in Python.
 * FastAPI Starlette ke upar built hai.
-* Hindi:- Starlette ek lightweight ASGI web framework hai, jiske upar FastAPI bana hua hai.
+* **Hindi:-** Starlette ek lightweight ASGI web framework hai, jiske upar FastAPI bana hua hai.
 * It uses Starlette internally for features such as:
   * Routing
   * Request handling

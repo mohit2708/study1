@@ -224,7 +224,7 @@ python manage.py shell
 #### 2. __init__.py 
 * An empty file that tells Python that the current directory should be considered as a Python package
 
-2. settings.py
+#### 2. settings.py
 * Contains the **configuration/settings** of your Django project.
 * It contains things like:
   * Database configuration

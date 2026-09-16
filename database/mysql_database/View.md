@@ -21,7 +21,7 @@
 * Data abstraction provide karti hai.
 * Multiple tables ko ek virtual table ki tarah dikhaya ja sakta hai.
 
-### **Create view**
+#### **Create view**
 ```sql
 Create view view_name As
 Select column1, column2
@@ -51,17 +51,17 @@ DROP VIEW view_name
 DROP VIEW IF EXISTS view_name;
 ```
 
-#### Can we insert data into a View?
+### Can we insert data into a View?
 * Haan, lekin sirf simple views me.
 
-#### Can we create a View on another View?
+### Can we create a View on another View?
 * haa
 ```sql
 CREATE VIEW view2 AS
 SELECT * FROM view1;
 ```
 
-#### Why are Views used in real projects?
+### Why are Views used in real projects?
 * Users ko sirf required columns dikhaye ja sakte hain bina original table ka access diye.
 * Security, code reusability, complex query simplification, aur data abstraction ke liye Views use ki jaati hain. 
 

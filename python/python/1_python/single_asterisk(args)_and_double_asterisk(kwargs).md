@@ -1,8 +1,11 @@
-### **Ques. What do * (single asterisk) and ** (double asterisk)?**
-### **Ques. What do * args and ** kwargs?**
+### **What do * (single asterisk) and ** (double asterisk)?**
+### **What do *args and **kwargs?**
 
 #### Single Asterisk
 #### *args (Non-Keyword Arguments)
+### **Arbitrary Positional Arguments**
+* Arbitrary arguments allow a function to accept **any number of positional arguments**.
+* We use ***args** when **we don't know in advance how many arguments will be passed** to the function.
 * *args allows you to pass a variable number of non-keyword arguments to a function.
 * args is treated as a **tuple** containing all the extra arguments that were passed.
 * If we do not know how many arguments will be passed to your function, add a * before the parameter name in the function definition. This way the function will receive a **tuple** of arguments, and can access the items accordingly.
@@ -11,9 +14,7 @@
 # Example 1
 def print_colors(*args):
     print(args)
-print_colors('red','blue','green','yellow')
-
-Output:- ('red', 'blue', 'green', 'yellow')
+print_colors('red','blue','green','yellow') # Output:- ('red', 'blue', 'green', 'yellow')
 
 # Example 2
 def myFun(*argv):
@@ -46,10 +47,11 @@ Argument *argv : GeeksforGeeks
 ```
 <div style="page-break-before: always;"></div>
 
-#### **kwargs(Keyword Arguments)
+#### **kwargs(Keyword Arguments)**
+#### **Arbitrary Keyword Arguments**
 * kwargs allows you to pass a variable number of keyword arguments (arguments that have a **key-value pair**) to a function.
 * kwargs is treated as a **dictionary** containing all the extra keyword arguments that were passed.
-* If you do not know how many keyword arguments that will be passed to your function, add two asterisk: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly.
+* **If we do not know how many keyword arguments that will be passed** to your function, add two asterisk: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly.
 
 ```python
 # Example 1

@@ -1,4 +1,4 @@
-### Find the Duplicate list and Unique list
+### **Find the Duplicate list and Unique list?**
 - Using a for Loop
 ```python
 mylist = [1, 2, 2, 3, 4, 4, 5]

@@ -1,4 +1,4 @@
-### **Ques. Difference between method and function?**
+### **Difference between method and function?**
 #### Function
 * A function is a block of code that performs a specific task and can be called independently from anywhere in your program.
 * It is defined using the **def** keyword.

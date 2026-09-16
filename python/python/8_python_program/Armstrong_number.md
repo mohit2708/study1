@@ -1,4 +1,4 @@
-### **Ques. Check number is an Armstrong number or not?**
+### **Check number is an Armstrong number or not?**
 * 153 = (1 * 1 * 1) + (5 * 5 * 5) + (3 * 3 * 3) = 153
 * 1634 = (1 * 1 * 1 * 1) + (6 * 6 * 6 * 6) + (3 * 3 * 3 * 3) + (4 * 4 * 4 * 4) = 1634
 ```python

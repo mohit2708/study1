@@ -115,3 +115,79 @@ WHERE id IN (
     ) AS temp
 );
 ```
+
+### How do you find duplicate invoices?
+* Invoice table mein jo invoice records duplicate hain, unhe find karna.
+```sql
++-------------+----------+--------+
+| invoice_no  | customer | amount |
++-------------+----------+--------+
+| INV001      | AMIT     | 5000   |
+| INV002      | ROHIT    | 7000   |
+| INV001      | AMIT     | 5000   |
+| INV003      | NEHA     | 9000   |
+| INV002      | ROHIT    | 7000   |
++-------------+----------+--------+
+
+--sql
+SELECT invoice_no, COUNT(*) AS duplicate_count
+FROM invoices
+GROUP BY invoice_no
+HAVING COUNT(*) > 1;
+
++-------------+----------------+
+| invoice_no  | duplicate_count|
++-------------+----------------+
+| INV001      |              2 |
+| INV002      |              2 |
++-------------+----------------+
+```
+
+### Find customers having more than 5 invoices?
+```sql
+SELECT customer_id, COUNT(*) AS invoice_count
+FROM invoices
+GROUP BY customer_id
+HAVING COUNT(*) > 5;
+
++-------------+----------------+
+| customer_id | invoice_count  |
++-------------+----------------+
+| 101         | 8              |
+| 102         | 3              |
+| 103         | 6              |
+| 104         | 5              |
++-------------+----------------+
+
+-- Result
++-------------+---------------+
+| customer_id | invoice_count |
++-------------+---------------+
+| 101         |             8 |
+| 103         |             6 |
++-------------+---------------+
+```
+
+### Find the total invoice amount customer-wise?
+* Har customer ne jitne invoices generate kiye hain, un sabka total amount find karo.
+```sql
+SELECT customer_id, SUM(invoice_amount) AS total_invoice_amount
+FROM invoices
+GROUP BY customer_id;
+
+-- Customer 101:
+    -- INV001 → 5000
+    -- INV002 → 4000
+    -- INV003 → 6000
+    -- Total → 15000
+
+-- Output:-
++-------------+---------------------+
+| customer_id | total_invoice_amount|
++-------------+---------------------+
+| 101         |              15000  |
+| 102         |               9000  |
+| 103         |              22000  |
++-------------+---------------------+
+
+```

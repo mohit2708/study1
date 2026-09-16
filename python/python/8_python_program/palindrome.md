@@ -1,9 +1,9 @@
-|  No.  | Palindrome                                                                          |
+|  No.  | Palindrome Program                                                                 |
 | :---: | ---------------------------------------------------------------------------------- |
 |   1   | [To Check if a String is a Palindrome](#ques-to-check-if-a-string-is-a-palindrome) |
 |   2   | [To Check if a Number is a Palindrome](#ques-to-check-if-a-number-is-a-palindrome) |
 
-### **Ques. To Check if a String is a Palindrome**
+### **To Check if a String is a Palindrome**
 ```python
 def isPalindrome(string):
     rev = string[::-1]
@@ -33,7 +33,7 @@ else:
 Output:- Yes
 ```
 
-### **Ques. To Check if a Number is a Palindrome**
+### **To Check if a Number is a Palindrome**
 ```python
 num = int(input("Enter a number:"))
 temp = num

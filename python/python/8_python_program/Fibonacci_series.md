@@ -1,4 +1,4 @@
-### **Ques. Find Fibonacci series up to n**
+### **Find Fibonacci series up to n**
 ```python
 def fibonacci(n):
     first = 0

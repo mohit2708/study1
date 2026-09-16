@@ -14,6 +14,7 @@
 <div style="page-break-before: always;"></div>
 
 ### **Ques. What is Numpy?**
+* NumPy is an open-source Python library used for working with large multi-dimensional arrays and performing fast mathematical and numerical computations.
 * NumPy is short for "**Numerical Python**".
 * NumPy is a Python library. it is used for working with arrays.
 * NumPy was created in **2005** by **Travis Oliphant**.
@@ -35,98 +36,79 @@
 C:\Users\Your Name> pip install numpy
 ```
 
-### **Ques. Checking NumPy Version?**
+### **Checking NumPy Version?**
 ```python
 import numpy as np
-print(np.__version__)
-
-Output:- 1.16.3
+print(np.__version__) # Output:- 1.16.3
 ```
 
-### **Creating Arrays**
-* Once NumPy is installed, import it in your applications by adding the import keyword:
-```python
-import numpy
-arr = numpy.array([1, 2, 3, 4, 5])
-print(arr)  # Output:- [1 2 3 4 5]
 
-# Create an **alias** with the as keyword while importing:
-import numpy as np
-arr = np.array([1, 2, 3, 4, 5])
-
-print(arr)          # Output:- [1 2 3 4 5]
-print(type(arr))    # Output:- <class 'numpy.ndarray'>
-
-# 0-D Arrays
-import numpy as np
-arr = np.array(42)
-print(arr)  # Output:- 42
-
-# 1-D Arrays
-import numpy as np
-arr = np.array([1, 2, 3, 4, 5])
-print(arr)  # Output:- [1 2 3 4 5]
-```
 <div style="page-break-before: always;"></div>
 
-```python
-# 2-D Arrays
-import numpy as np
-arr = np.array([[1, 2, 3], [4, 5, 6]])
-print(arr)  # Output:- [[1 2 3][4 5 6]]
-
-# 3-D arrays
-import numpy as np
-arr = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
-print(arr)      # Output:- [[[1 2 3][4 5 6]] [[1 2 3] [4 5 6]]]
-```
 <div style="page-break-before: always;"></div>
 
+### **Why do we use NumPy?**
+* Faster than Python lists
+* Less memory usage
+* Supports multi-dimensional arrays
+* Provides mathematical and statistical functions
+* Used in Data Science, Machine Learning, AI, and Scientific Computing
 
-# Access Array/Array Slicing
-### **How do I access or Slicing elements in a NumPy array?**
-* Slicing in python means taking elements from one given index to another given index.
-* We pass slice instead of index like this: **[start:end]**.
-* We can also define the step, like this: **[start : end : step]**.
-* If we don't pass start its considered 0
-* If we don't pass end its considered length of array in that dimension
-* If we don't pass step its considered 1
+
+### **What are the advantages of NumPy?**
+1. High Performance
+   1. NumPy operations are much faster than Python lists because they are implemented in C.
+   2. Supports vectorized operations.
+2. Less Memory Usage
+   1. NumPy arrays consume less memory compared to Python lists.
+3. Multi-Dimensional Arrays
+   1. Supports 1D, 2D, 3D, and N-dimensional arrays.
+4. Easy Mathematical Operations
+   1. Perform operations on entire arrays without loops.
 ```python
 import numpy as np
 
-arr = np.array([1, 2, 3, 4, 5, 6, 7])
+arr = np.array([1, 2, 3, 4])
 
-print(arr[0])           # output:- 1
-print(arr[1])           # output:- 2
-print(arr[2] + arr[3])  # Output:- 4+3=7
-
-print(arr[1:5])     # Output:- [2 3 4 5]
-print(arr[4:])      # Output:- [5 6 7]
-print(arr[:4])      # Output:- [1 2 3 4]
-print(arr[-3:-1])   # Output:- [5 6]
-print(arr[1:5:2])   # Output:- [2 4]
-print(arr[::2])     # Output:- [1 3 5 7]
-
-# -----Slicing 2-D Arrays------
-import numpy as np
-
-arr = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
-
-print(arr[0, 1])    # Output:- 2
-print(arr[1, 4])    # Output:- 10
-print(arr[1, -1])   # Output:- 10   Negative index
-
-print(arr[1, 1:4])      # Output:- [7 8 9]
-print(arr[0:2, 2])      # Output:- [3 8]
-print(arr[0:2, 1:4])    # Output:- [[2 3 4][7 8 9]]
-
-# -----Access 3-D Arrays-----
-import numpy as np
-arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
-print(arr[0, 1, 2])     # Output:- 6
+print(arr * 2)
+# [2 4 6 8]
 ```
+5. Broadcasting
+   1. Allows operations between arrays of different shapes.
+6. Rich Mathematical Functions
+   1. Provides functions like:
+```python
+np.sum()
+np.mean()
+np.max()
+np.min()
+np.sqrt()
+np.log()
+```
+7. Linear Algebra Support
+   1. Matrix multiplication, inverse, transpose, eigenvalues, etc.
+8. Random Number Generation
+   1. Useful in Machine Learning and Data Science.
+```python
+np.random.rand(3)
+```
+9. Integration with Other Libraries
+   1.  Works seamlessly with:
+       1.  Pandas
+       2.  Matplotlib
+       3.  SciPy
+       4.  Scikit-learn
+       5.  TensorFlow
+       6.  PyTorch
+10. Foundation of Data Science & ML
+    1.  Most Data Science and Machine Learning libraries are built on top of NumPy.
+
+
 <div style="page-break-before: always;"></div>
 
+
+### **What is an ndarray?**
+* An ndarray is NumPy's **multi-dimensional array object** that **stores** elements of the **same data type** in a contiguous block of memory, making operations fast and memory-efficient.
 
 ### **NumPy Data Types**
 * **strings -** used to represent text data, the text is given under quote marks. **e.g. "ABCD"**
@@ -220,6 +202,107 @@ print("3-D Array of Ones:\n", ones_3d)
 
 
 ### Ques. Why is NumPy Faster Than Lists?
+* NumPy is faster because it uses **homogeneous data types**, **contiguous memory storage**, **vectorized operations**, and **optimized C implementations**, whereas Python lists store references to objects and rely on slower Python loops.
+
+#### Reasons
+1. **Homogeneous Data Type**
+```python
+lst = [1, "Hello", 3.14]
+A list can store different data types, so Python must keep extra information about each element.
+```
+```python
+arr = np.array([1, 2, 3, 4])
+All elements are of the same type, making access and computation faster.
+```
+
+2. **Contiguous Memory Allocation**
+```python
+NumPy stores elements in a continuous block of memory:
+
+NumPy Array
++----+----+----+----+
+| 10 | 20 | 30 | 40 |
++----+----+----+----+
+```
+```python
+Python lists store references (addresses) to objects:
+
+List
++----+----+----+----+
+| *  | *  | *  | *  |
++----+----+----+----+
+  |    |    |    |
+  v    v    v    v
+ 10   20   30   40
+
+Because NumPy data is stored together, the CPU cache works more efficiently.
+```
+
+3. **Vectorized Operations**
+```python
+# Python List
+
+result = []
+for x in lst:
+    result.append(x * 2)
+```
+```python
+# NumPy
+result = arr * 2
+#NumPy performs the operation on the entire array at once without an explicit Python loop.
+```
+
+4. Implemented in C
+* Most NumPy operations are written in highly optimized C code, which runs much faster than Python code.
+
+
+
+### **Difference between List and NumPy Array?**
+| Feature                 | Python List                    | NumPy Array (`ndarray`)             |
+| ----------------------- | ------------------------------ | ----------------------------------- |
+| Data Type               | Can store different data types | Stores same data type (homogeneous) |
+| Speed                   | Slower                         | Faster                              |
+| Memory Usage            | More memory                    | Less memory                         |
+| Mathematical Operations | Limited                        | Supports vectorized operations      |
+| Dimensions              | Supports nested lists          | Supports multi-dimensional arrays   |
+| Size                    | Dynamic                        | Fixed after creation                |
+| Purpose                 | General-purpose data storage   | Numerical and scientific computing  |
+
+* NumPy arrays use less memory because they store elements in a contiguous memory block and all elements have the same data type.
+
+#### Example
+* Data Types
+```python
+# In List
+# Different data types are allowed.
+lst = [10, "Mohit", 3.14, True] 
+
+# In NumPy Array
+import numpy as np
+arr = np.array([10, 20, 30, 40])
+```
+
+* Mathematical Operations
+```python
+# List
+lst = [1, 2, 3]
+print(lst * 2) # Output:- [1, 2, 3, 1, 2, 3]
+
+# NumPy Array
+arr = np.array([1, 2, 3])
+print(arr * 2) # Output:- [2 4 6]
+```
+
+* Multi-Dimensional Data
+```python
+lst = [[1, 2, 3],
+       [4, 5, 6]]
+
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+```
+
+
 
 
 

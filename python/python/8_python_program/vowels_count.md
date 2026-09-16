@@ -1,4 +1,4 @@
-### **Ques. Count the number of vowels in a string?**
+### **Count the number of vowels in a string?**
 ```python
 string = input("Enter a string: ")
 # string = string.lower()
@@ -70,7 +70,7 @@ print(vowel_counts)
 # Output: {'o': 2, 'a': 1, 'i': 2, 'u': 1}
 ```
 
-### Ques. To identify if the Character is vowel or consonant?
+### To identify if the Character is vowel or consonant?
 ```python
 def vowel_or_consonant(string):
     vowel = 'aeiouAEIOU'

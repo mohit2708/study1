@@ -98,6 +98,6 @@ This is a docstring for my_function
 with indentation.
 ```
 
-### 🎯**Ques. Difference between Python comments and docstrings?**
+### 🎯**Difference between Python comments and docstrings?**
 * **Comments:** Comments in Python start with a hash mark (#) and are intended to explain the code to developers. They are **ignored** by the Python interpreter.
 * **Docstrings:** Docstrings provide a description of the function, method, class, or module. Unlike comments, they are **not ignored** by the interpreter and can be accessed at runtime using the .__doc__ attribute.

@@ -1,4 +1,4 @@
-### **Math Module**
+### **what is Math Module**
 * Python has a built-in module that you can use for mathematical tasks.
 
 ### Math Methods
@@ -14,8 +14,8 @@ result = math.sqrt(25)  # Calculates the square root of 25
 print(result)  # Output: 5.0
 ```
 
-### **Ques. floor() and ceil() Functions?**
-### math.floor() Method
+### **floor() and ceil() Functions?**
+#### math.floor() Method
 * The math.floor() method rounds a number DOWN to the nearest integer, if necessary, and returns the result.
 ```python
 #Import math library
@@ -30,7 +30,7 @@ print(math.floor(22.6))         # 22
 print(math.floor(10.0))         # 10
 ```
 
-### math.ceil() Method
+#### math.ceil() Method
 * The math.ceil() method rounds a number UP to the nearest integer, if necessary, and returns the result.
 ```python
 #Import math library

@@ -1,4 +1,4 @@
-### What is a function?
+### **What is a function?**
 - A function is a reusable block of code that performs a specific task.
 - Instead of writing the same code again and again, you define it once and call it whenever needed.
 
@@ -72,3 +72,19 @@ greet("Mohit")
 - Makes debugging easier
 - Supports teamwork
 
+### Difference between arguments and parameters?
+* **Parameter:** A variable declared in a function definition that receives a value.
+* **Argument:** The actual value supplied to a function when it is called.
+
+```python
+def greet(name, age):   # name and age are parameters
+    print(f"Name: {name}, Age: {age}")
+
+greet("Mohit", 30)      # "Mohit" and 30 are arguments
+```
+
+| Parameter                                                    | Argument                                                            |
+| ------------------------------------------------------------ | ------------------------------------------------------------------- |
+| Parameters are variables defined in the function definition. | Arguments are actual values passed to the function when calling it. |
+| They act as placeholders.                                    | They provide real data to the function.                             |
+| Defined inside `def`.                                        | Passed during function call.                                        |

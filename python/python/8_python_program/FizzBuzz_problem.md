@@ -1,4 +1,5 @@
-### **Ques. Solve the classic FizzBuzz problem: Print numbers from 1 to 100, but for multiples of 3 print "Fizz," for multiples of 5 print "Buzz," and for multiples of both 3 and 5, print "FizzBuzz."**
+### Solve the classic FizzBuzz problem
+* numbers from 1 to 100, but for multiples of 3 print "Fizz," for multiples of 5 print "Buzz," and for multiples of both 3 and 5, print "FizzBuzz."
 ```python
 for i in range(1, 101):
     if i % 3 == 0 and i % 5 == 0:

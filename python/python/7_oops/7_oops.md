@@ -1,41 +1,21 @@
 <!-- 🧰 🧱 🪵 🧪 🧯 📜 🔎 🧹 💣 🛑 ❌ 👉 👈 🧠 ✅ 📌 🔧 🧪 🔍 -->
 
-|  No.  | [Python Oops Interview Questions](./7_oops/1_oops.md)                                                                                           |
-| :---: | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-|       | [Object-Oriented Programming (OOPS)?](#object-oriented-programming-oops)                                                                        |
-|       | [What is __init_ _ Method?](#ques-what-is-init-method)                                                                                         |
-|       | [What is the use of self in Python?](#ques-what-is-the-use-of-self-in-python)                                                                   |
-|       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python)                                                  |
-|       | [What is __str_ _ and __repr_ _?](#ques-what-is-str-and-repr)                                                                                   |
-|       | [What is Concrete Method?](#ques-what-is-concrete-method)                                                                                       |
-|       | [Difference between method and function?](#ques-difference-between-method-and-function)                                                         |
-|       | ------------------------------------------------------------------------------------------------                                                |
-|       | [What is Class?](#class)                                                                                                                        |
-|       | [Python get Class Variables/attributes](#python-get-class-variablesattributes)                                                                  |
-|       | [Set/Change values for class variables](#setchange-values-for-class-variables)                                                                  |
-|       | [Delete class variables](#delete-class-variables)                                                                                               |
-|       | [Built-In Class Functions (getattr, setattr, delattr, hasattr) In Python?](#built-in-class-functions-getattr-setattr-delattr-hasattr-in-python) |
-|       | [What is class meta?](#what-is-class-meta)                                                                                                      |
-|       | ------------------------------------------------------------------------------------------------                                                |
-|       | [What is a constructor](#ques-what-is-a-constructor-in-python)                                                                                  |
-|       | [Types of Constructors (Default, Non-parametrized, Parameterized)](#types-of-constructors-default-non-parametrized-parameterized)               |
-|       | [Constructor With Default Values?](#ques-constructor-with-default-values)                                                                       |
-|       | [Constructor Overloading](#ques-constructor-overloading)                                                                                        |
-|       | ------------------------------------------------------------------------------------------------                                                |
-|       | [private attributes and method?](#private-attributes-and-method)                                                                                |
-|       | [What is the super() Function](#ques-what-is-the-super-function)                                                                                |
-|       | [What is Abstract Class?](#ques-what-is-abstract-class)                                                                                         |
-|       | [When use abstratc class?](#ques-when-use-abstratc-class)                                                                                       |
-|       | [How to Create an Abstract Method](#how-to-create-an-abstract-method)                                                                           |
-|       | [Built-In Class Attributes?](#built-in-class-attributes)                                                                                        |
-|       | [What is Method Overloading?](#ques-what-is-method-overloading)                                                                                 |
-|       | [What is Method Overriding?](#ques-what-is-method-overriding)                                                                                   |
-|       | [What is Method?](#ques-what-is-method)                                                                                                         |
+|  No.  | [Python Oops Interview Questions](./7_oops/1_oops.md)                                            |
+| :---: | ------------------------------------------------------------------------------------------------ |
+|       | [Object-Oriented Programming (OOPS)?](#object-oriented-programming-oops)                         |
+|       | [What is the use of self in Python?](#ques-what-is-the-use-of-self-in-python)                    |
+|       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python)   |
+|       | [What is __str_ _ and __repr_ _?](#ques-what-is-str-and-repr)                                    |
+|       | ------------------------------------------------------------------------------------------------ |
+|       | [What is class meta?](#what-is-class-meta)                                                       |
+|       | ------------------------------------------------------------------------------------------------ |
+|       | [private attributes and method?](#private-attributes-and-method)                                 |
+|       | [Built-In Class Attributes?](#built-in-class-attributes)                                         |
 
 
 <div style="page-break-before: always;"></div>
 
-# Oops
+
 ### **Object-Oriented Programming (OOPS)**
 * Object-oriented programming (OOP) is a programming style that organizes code around objects, rather than functions and logic.
 * Main Concepts of Object-Oriented Programming (OOPs) 

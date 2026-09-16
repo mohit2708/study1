@@ -21,19 +21,6 @@
 
 <div style="page-break-before: always;"></div>
 
-|  No.  |                                          |
-| :---: | ---------------------------------------- |
-|       | [What is MINUS?](#what-is-minus)         |
-|       | [What is EXCEPT?](#what-is-except)       |
-|       | [What is Intersect?](#what-is-intersect) |
-
-
-
-<div style="page-break-before: always;"></div>
-
-### 🎯**What is MySQL?**
-- MySQL is an open-source relational **database management system** (RDBMS) that uses SQL to store, manage, and retrieve data.
-- It's commonly used for managing data in web applications and is known for its performance and ease of use.
 
 [🔝 Back to Top](#back-to-top)
 
@@ -200,9 +187,12 @@ CREATE TABLE users (
 <div style="page-break-before: always;"></div>
 
 ### **Difference between Delete, Truncate & Drop?**
-* DELETE removes selected rows and supports WHERE clause. TRUNCATE removes all rows from a table, keeps the structure, and is faster than DELETE. DROP removes the entire table including its structure, indexes, and data from the database. DELETE is DML, whereas TRUNCATE and DROP are DDL commands.
+* DELETE removes selected rows and supports WHERE clause.
+* TRUNCATE removes all rows from a table, keeps the structure, and is faster than DELETE. 
+* DROP removes the entire table including its structure, indexes, and data from the database. 
+* DELETE is DML, whereas TRUNCATE and DROP are DDL commands.
 
-* **DELETE**
+#### **DELETE**
   * Used to remove specific rows from a table.
   * Supports WHERE clause.
   * Row-by-row deletion happens.
@@ -213,7 +203,7 @@ CREATE TABLE users (
 DELETE FROM employees WHERE id = 10;
 ```
 
-* TRUNCATE
+#### TRUNCATE
   * Removes all records from a table.
   * Does not support WHERE.
   * Faster than DELETE because it doesn't scan rows one by one.
@@ -224,7 +214,7 @@ DELETE FROM employees WHERE id = 10;
 TRUNCATE TABLE employees;
 ```
 
-* DROP
+#### DROP
   * Deletes the entire table permanently.
   * Removes data, structure, indexes, constraints, and permissions.
   * Table no longer exists after execution.
@@ -291,15 +281,6 @@ GROUP BY department
 HAVING AVG(salary) > 50000;
 ```
 
-#### Where VS Having
-| WHERE                                                            | HAVING                                |
-| ---------------------------------------------------------------- | ------------------------------------- |
-| Filters rows                                                     | Filters groups                        |
-| Used before `GROUP BY`                                           | Used after `GROUP BY`                 |
-| Cannot normally use aggregate conditions like `COUNT()`, `AVG()` | Used with aggregate functions         |
-| Example: `WHERE salary > 50000`                                  | Example: `HAVING AVG(salary) > 50000` |
-
-
 #### Combining WHERE and HAVING:
 ```sql
 SELECT department, COUNT(*) AS total FROM employees
@@ -330,6 +311,7 @@ HAVING COUNT(*) > 2;    -- Filters groups after GROUP BY
 <div style="page-break-before: always;"></div>
 
 [🔝 Back to Top](#back-to-top)
+
 ### **Aliases**
 * AS is a keyword in SQL that allows you to rename a column or table using an alias.
 * Aliases are used to give a table, or a column in a table, a temporary name.
@@ -397,3 +379,40 @@ SELECT
     END AS salary_category
 FROM employees;
 ```
+
+
+### What is SELECT?
+* SELECT is a **DQL (Data Query Language)** command used to retrieve/fetch data from a table.
+* The SELECT statement is used to retrieve data from one or more tables in a database.
+```sql
+SELECT column_name
+FROM table_name;
+```
+
+#### Fetch Specific Columns
+```sql
+SELECT emp_name, salary
+FROM employees;
+```
+
+#### Fetch All Columns
+```sql
+SELECT *
+FROM employees;
+```
+
+#### With Condition
+```sql
+SELECT *
+FROM employees
+WHERE salary > 50000;
+```
+
+### Difference between SELECT * and SELECT column_name?
+| SELECT *            | SELECT column_name            |
+| ------------------- | ----------------------------- |
+| Fetches all columns | Fetches only required columns |
+| More data transfer  | Less data transfer            |
+| Generally slower    | Generally faster              |
+
+

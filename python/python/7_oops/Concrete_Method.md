@@ -1,5 +1,5 @@
-### **Ques. What is Concrete Method?**
-- A concrete method is a method that is completely implemented in a class and can be called directly by creating an object of that class.
+### **What is Concrete Method?**
+- A concrete method is a method that is **completely implemented in a class** and can be called directly by creating an object of that class.
 * A concreate method is a method whose action is defined in the abstract class itself.
 - Example:- 
 ```python
@@ -52,9 +52,9 @@ obj = Father('mohit','saxena')
 obj.show_data() # Output:- mohit
 ```
 
-### Concrete Method inside Abstract Class?
-
-
 ### Concrete Method vs Abstract Method
 - Abstract Method ❌ (No implementation)
 - Concrete Method ✅ (Has implementation)
+
+
+

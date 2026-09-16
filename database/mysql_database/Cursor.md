@@ -1,9 +1,19 @@
 ### **What is Cursor?**
+* A Cursor in SQL is a database object that allows you to **process the result of a query one row at a time.**
 * When a SELECT statement is executed, the database(ORACLE/SQL SERVER/MYSQL) allocates a memory area to hold the result set, which is managed internally using a cursor.
 * A cursor is a pointer to this context area. PL/SQL controls the context area through a Cursor.
 * A Cursor can hold more than one row, but can process only one row at a time. The set of rows the cursor hold is called the active set.
 * A cursor is a temporary work area created in the system memory when a SQL statement is executed. A cursor contains information on a select statement and the rows of data accessed by it.
 * This temporary work area is used to store the data retrieved from the database and manipulate this data.
+* 
+* Normally SQL query ek saath multiple rows return karti hai:
+```sql
+SELECT id, name FROM employees;
+
+-- Agar 100 employees hain, to 100 rows milengi.
+```
+* Cursor ka use tab hota hai **jab humein in rows ko one-by-one process karna ho.**
+
 
 ```sql
 DELIMITER //

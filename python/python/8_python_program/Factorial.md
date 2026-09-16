@@ -1,4 +1,4 @@
-### **Ques. Find the Factorial of a Number?**
+### **Find the Factorial of a Number?**
 * factorial of 6 is 6*5*4*3*2*1 which is 720.
 ```python
 num = int(input("Enter a number: "))

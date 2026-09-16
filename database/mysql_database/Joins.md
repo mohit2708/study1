@@ -194,6 +194,7 @@ ON Customers.ID = Orders.CustomerID;
 <div style="page-break-before: always;"></div>
 
 #### Outer join
+* outer join or full outer join ek hi baat hai.
 * Returns all rows from both tables, Matching and non-matching rows.
 * NULL values where no match exists
 ```sql
@@ -269,6 +270,7 @@ CROSS JOIN Colors;
 <div style="page-break-before: always;"></div>
 
 #### Full Join/FULL OUTER JOIN
+* outer join or full outer join ek hi baat hai.
 * A FULL JOIN (also called a FULL OUTER JOIN) returns all rows when there is a match in either left (table1) or right (table2) table. It returns all records from both tables, and the result set will have NULL values for columns where there is no match.
 ##### Key Points:
 * Rows from both tables are included even if there is no match.

@@ -1,9 +1,10 @@
-### 🎯**What is ACID property/SQL TRANSACTIONS?**
+### 🎯**What is ACID property?**
+### SQL TRANSACTIONS?
 * A transaction in SQL is a **sequence** of one or more SQL operations that are executed as a single unit. 
 * The goal of a transaction is to ensure that either all operations succeed or none of them do, maintaining the consistency of the database. Think of it like: "Do everything, or do nothing."
 * (Transaction एक तरह का ब्लॉक है जिसमें कई SQL statements (जैसे INSERT, UPDATE, DELETE) एक साथ execute होते हैं। इसका मतलब है: या तो सारे काम पूरे होंगे, या कोई भी नहीं होगा।)
 
-#### **ACID Properties**
+#### **Types of ACID Properties**
 - The ACID properties are four key principles that ensure database transactions are processed reliably and maintain data integrity.
 1. **A – Atomicity**
   - A transaction is treated as a single unit of work. 

@@ -1,4 +1,4 @@
-### **Ques. What is File Handling in Python?**
+### **What is File Handling**
 * Suppose you are working on a file saved on your personal computer. If you want to perform any operation on that file like opening it, updating it or any other operation on that, all that comes under File handling.
 * File handling in Python involves interacting with files on your computer to read data from them or write data to them. Python provides several built-in functions and methods for creating, opening, reading, writing, and closing files.
 * Types Of File in Python
@@ -287,4 +287,13 @@ except FileNotFoundError:
     print(f"{directory_name} does not exist.")
 except PermissionError:
     print(f"Permission denied to delete {directory_name}.")
+```
+
+
+### **How do you open and close a file in Python?**
+```python
+file = open("example.txt", "r")  # Opens the file in read mode
+content = file.read()  # Read the content of the file
+print(content)
+file.close()  # Close the file when done
 ```

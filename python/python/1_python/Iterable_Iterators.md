@@ -54,7 +54,7 @@ cherry
 ```
 <div style="page-break-before: always;"></div>
 
-### **Ques. Difference between Iterators and iterable?**
+### **Difference between Iterators and iterable?**
 * Every iterator is also an iterable, but not every iterable is an iterator.
 
 | Iterable                                                                  | Iterator                                                                                                                |
@@ -63,7 +63,7 @@ cherry
 | We can generate an iterator when we pass the object to the iter() method. | We use the __next__() method for iterating. This method helps iterators return the next item available from the object. |
 | Every iterator is basically iterable.                                     | Not every iterable is an iterator.                                                                                      |
 
-### **Ques. Difference between generator and iterators in python?**
+### **Difference between generator and iterators in python?**
 | Iterator                                                                                            | Generator                                                                                                                                       |
 | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Class is used to implement an iterator                                                              | Function is used to implement a generator.                                                                                                      |

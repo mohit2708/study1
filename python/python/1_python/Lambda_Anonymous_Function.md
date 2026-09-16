@@ -1,4 +1,4 @@
-### **Ques. What is Lambda/Anonymous Function?**
+### **What is Lambda/Anonymous Function?**
 * A lambda function is a small anonymous function(**anonymous function** is a function that is defined without a name).
 * While normal functions are defined using the **def** keyword in Python, anonymous functions are defined using the **lambda** keyword.
 * **Note** The anonymous function does not have a **return keyword**, the anonymous function will **automatically return** the result of the expression in the function once it is executed.

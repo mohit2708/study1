@@ -1,5 +1,5 @@
 ### **Ques. What is the super() Function?**
-* Super() method is used to access method and properties of the parant class.
+* Super() method is used to **access method and properties of the parant class**.
 * The **super** function returns a temporary object of the parent class that allows us to call a parent class method inside a child class method.
 * **Benefits** of using the super() function.
   * We are not required to remember or specify the parent class name to access its methods.

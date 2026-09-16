@@ -76,3 +76,36 @@ FROM employees GROUP BY department;
 | SALES      | 45000       |
 +------------+-------------+
 ```
+
+#### find the highest salary department-wise?
+```sql
+SELECT department, MAX(salary) AS highest_salary
+FROM employees GROUP BY department;
+
+IT     → 70,000
+HR     → 80,000
+Sales  → 40,000
+```
+
+### 🎯**Find employees who don't have a department?**
+```sql
++----------+------------+--------+
+| emp_name | department | salary |
++----------+------------+--------+
+| AMIT     | IT         | 50000  |
+| ROHIT    | HR         | 60000  |
+| NEHA     | IT         | 70000  |
+| PRIYA    | HR         | 80000  |
+| RAVI     | NULL       | 40000  |
++----------+------------+--------+
+
+-- Query
+SELECT * FROM employees WHERE department IS NULL;
+
+-- Output
++----------+------------+--------+
+| emp_name | department | salary |
++----------+------------+--------+
+| RAVI     | NULL       | 40000  |
++----------+------------+--------+
+```

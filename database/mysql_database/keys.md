@@ -11,6 +11,7 @@
 |       | [Foreign Key Add/ALTER?](#alter-foreign-key-to-existing-table)                                     |
 |       | [DROP Foreign Key?](#drop-a-foreign-key-from-the-table)                                            |
 |       | [Composite Key?](#ques-what-is-composite-key)                                                      |
+|       | [What is a Candidate Key?](#what-is-a-candidate-key)                                               |
 |       | [Difference between Primary Key & Foreign Key?](#ques-difference-between-primary-key--foreign-key) |
 <div style="page-break-before: always;"></div>
 
@@ -18,7 +19,8 @@
 * A PRIMARY KEY is a column or combination of columns that **uniquely identifies each record** in a database table.
 * A Primary Key column **cannot have Null values**.
 * A table can have only **one primary key** per table.
-* When **multiple fields** are used as a primary key, they are called a **composite key**.
+* Primary key support auto increment value.
+* When **two or more columns together** form a primary key, it is called a Composite Primary Key.
 
 ```sql
 -- Create Primary Key
@@ -72,7 +74,7 @@ ALTER TABLE table_name DROP PRIMARY KEY;
 
 
 
-### 🎯**Ques. What Is Unique Key?**
+### 🎯**What Is Unique Key?**
 * A Unique Key is a constraint that ensures all values in a column or a combination of columns are **unique across all records** in a table.
 * The Unique and Primary Key constraints both provide a guarantee for a column or set of columns.
 * A Primary Key consist automatically has a unique constraint define on it.
@@ -112,7 +114,7 @@ ALTER TABLE table_name DROP INDEX constraint_name;
 ```
 <div style="page-break-before: always;"></div>
 
-### 🎯**Ques. What Is Foreign Key?**
+### 🎯**What Is Foreign Key?**
 * A foreign key is a key used to link two tables together. This is something called a reference key.
 * A column or set of columns in a table that references the PRIMARY KEY of another table.
 * Foreign key is a column or a combination of columns whose values match a primary key in a different table.
@@ -186,11 +188,12 @@ ALTER TABLE Employee DROP FOREIGN KEY FK_dept_id;
 ```
 <div style="page-break-before: always;"></div>
 
+### Can a Foreign Key contain NULL values?
+* Yes, a Foreign Key can contain NULL values, unless the column is defined as NOT NULL.
 
 
-### **Ques. What is Composite Key?**
-* Composite key is **combination of two or more columns** that can **uniquely identify each row in the table**.
-* composite key is also a primary key, but the difference is that it is made by the combination of more than one column to identify the particular row in the table.
+### **What is Composite Key?**
+* A composite key **consists of two or more columns**. It can be used as a **primary key** or as a **unique key**, depending on the constraint.
 * A composite key cannot be null.
 ```sql
 CREATE TABLE student
@@ -227,6 +230,27 @@ CREATE TABLE Employees (
 * **Composite Unique Key:** Yes, in MySQL NULL values can be allowed depending on the constraint and database behaviour.
 
 <div style="page-break-before: always;"></div>
+
+### **What is a Candidate Key?**
+* A Candidate Key is a column or a combination of columns that can uniquely identify each record (row) in a table.
+* Key points:
+  * It must contain unique values.
+  * It cannot have NULL values.
+  * A table can have multiple candidate keys.
+  * One candidate key is selected as the Primary Key.
+  * The remaining candidate keys are called Alternate Keys.
+
+### Candidate Key vs Composite Key 
+* **Candidate Key** और **Composite Key** related concepts हैं, लेकिन दोनों exactly same नहीं हैं।
+* Candidate Key = जो भी minimal column(s) का combination किसी row को uniquely identify करे।
+* अगर Candidate Key में 2 या उससे ज्यादा columns हैं, तो उसे Composite Candidate Key कह सकते हैं।
+
+| Concept                 | Meaning                            |
+| ----------------------- | ---------------------------------- |
+| Candidate Key           | Unique identify करने वाली minimal key |
+| Composite Key           | 2 या अधिक columns से बनी key           |
+| Composite Candidate Key | 2+ columns की candidate key         |
+
 
 #### Ques. Difference between Primary Key & Unique Key?
 | Primary Key                                            | Unique Key                                                           |

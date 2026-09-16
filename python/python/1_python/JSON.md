@@ -1,4 +1,4 @@
-### **Ques. What is Python JSON?**
+### **What is Python JSON?**
 * JSON **JavaScript Object Notation** is a format for structuring data.
 * JSON is a lightweight data-interchange format that's easy for humans to read and write, and easy for machines to parse and generate.
 * It is mainly used for storing and transferring data between the browser and the server.

@@ -1,4 +1,4 @@
-### What is Exception Handling?
+### **What is Exception Handling?**
 * Exception handling is a mechanism in Python used to handle runtime errors gracefully so that the program does not terminate unexpectedly.
 * Hindi:- Exception Handling ka use Python program mein **runtime errors ko handle karne ke liye hota hai**, taaki error aane par program abruptly terminate na ho aur hum us situation ko properly handle kar saken.
 * Exception ek runtime error hoti hai jo program ke execution ke time occur hoti hai.

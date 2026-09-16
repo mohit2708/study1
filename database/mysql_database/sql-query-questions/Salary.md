@@ -139,7 +139,6 @@ WHERE salary = (
 <div style="page-break-before: always;"></div>
 
 ### 🎯**Find Top n Salaries**
-
 #### Find Top 4 Salaries
 * Using Limit
 ```sql

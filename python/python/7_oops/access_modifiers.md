@@ -44,7 +44,7 @@ my_object.greet()      # Output: Hello, my name is Mohit and I am 30 years old.
 
 #### **protected access modifier:-**
 * **protected Access Modifier:-** Accessible within the class and it's sub-classes.
-* adding a prefix _(single underscore) to a variable name makes it protected.
+* adding a prefix **_(single underscore)** to a variable name makes it protected.
 ```python
 #example1
 class MyClass:
@@ -76,7 +76,7 @@ objsubclass.access_protected() # Output:- My name is mohit and I am 30 years old
 
 
 #### **private access modifier:-**
-* Private attributes are denoted with a double underscore prefix (__) and are intended for internal use within a class, not to be accessed or modified directly from outside.
+* Private attributes are denoted with a double underscore prefix **(__)(double underscore)** and are intended for internal use within a class, not to be accessed or modified directly from outside.
 * Private attributes & method are meant to be **used only within the class** and are not accessibale from the outside the class.
 * agar humne double underscore se kisi ko private kar diya hai to use usi class ke function call kar payenge.
 * hum diractly hello function ko call nahi kar sakte hai kyuki hello function private hai agar hame karana hai to usi class mai dusra function banakar welcome banakar usme call karenge phir welcome function ko call karenge to call ho jayega.

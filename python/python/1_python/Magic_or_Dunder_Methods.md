@@ -1,4 +1,4 @@
-### **Ques. What is Magic Method Or Dunder Methods?**
+### **What is Magic Method Or Dunder Methods?**
 * Python Magic methods are the methods starting and ending with double underscores ‘__’. They are also called Dunder methods, Dunder here means “Double Under (Underscores)”.
 * Python में Magic Methods को ही आमतौर पर Dunder Methods या Special Methods कहा जाता है। ये methods ऐसे predefined method names हैं जिनके आगे और पीछे double underscore (__) होता है, जैसे __init__, __str__, __len__, __add__ आदि। Python इन्हें कुछ operations पर implicitly यानी automatically call करता है।
 * The dir() function can be used to see the number of magic methods inherited by a class.

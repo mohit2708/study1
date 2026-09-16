@@ -1,0 +1,44 @@
+|  No.  | Prime Number program                                                       |
+| :---: | -------------------------------------------------------------------------- |
+|   1   | [Prime Number:- Check Number?](#check-prime-number-or-not)                 |
+|   2   | [Prime Number:- Print Number?](#prime-number-print-between-lower-to-upper) |
+
+### **Check Prime Number Or Not?**
+```python
+num = int(input("Enter a number: "))
+if num > 1:
+   for i in range(2,num):
+       if (num % i) == 0:
+           print(num,"is not a prime number")
+           break
+   else:
+       print(num,"is a prime number")
+       
+else:
+   print(num,"is not a prime number")
+
+# Output:- 3 is a prime number
+```
+
+### **Prime Number Print between lower to upper**
+```python
+lower = int(input(" Please Enter the Minimum Value: "))
+upper = int(input(" Please Enter the Maximum Value: "))
+
+print("Prime numbers between", lower, "and", upper, "are:")
+
+for num in range(lower, upper + 1):
+   # all prime numbers are greater than 1
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
+
+Output:- 
+11
+13
+17
+19
+```

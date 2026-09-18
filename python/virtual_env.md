@@ -41,3 +41,10 @@ MyFirstApp\scripts\activate
 cd virtual-name\Scripts
 d:\mohit\virtual-name\Scripts> activate
 ```
+
+#### For activate in cmd, powershell and gitbash
+| Terminal   | Command                            |
+| ---------- | ---------------------------------- |
+| PowerShell | `.\virt_env\Scripts\Activate.ps1`  |
+| CMD        | `virt_env\Scripts\activate.bat`    |
+| Git Bash   | `source virt_env/Scripts/activate` |

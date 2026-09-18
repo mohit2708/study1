@@ -79,7 +79,7 @@ def get_products(category: Literal["mobile", "laptop", "tablet"]):
 <div style="page-break-before: always;"></div>
 
 #### **What is Query() in FastAPI?**
-* Query() is a FastAPI function used to validate and configure query parameters.
+* Query() is a FastAPI function **used to validate and configure query parameters**.
 * It allows you to add validation rules such as:
   * ge → Greater than or equal to
   * le → Less than or equal to

@@ -254,9 +254,6 @@ How do you cache views?
 
 7.  Deployment
 How do you deploy Django?
-What is WSGI?
-What is ASGI?
-Gunicorn vs Uvicorn?
 Nginx role?
 How do you serve static files?
 Difference between Development and Production?
@@ -271,7 +268,6 @@ What is Celery?
 
 What is Django Channels?
 What is WebSocket?
-What is ASGI?
 Very Important Interview Question
 
 Used for ForeignKey and OneToOne.
@@ -296,7 +292,6 @@ Difference between PUT and PATCH?
 What is Throttling?
 What is Pagination?
 What is Signals?
-What is WSGI and ASGI?
 How does Django prevent SQL Injection?
 Explain Django request lifecycle.
 

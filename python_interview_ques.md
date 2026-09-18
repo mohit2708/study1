@@ -364,11 +364,11 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 
 ### 🎯 Python OOPS
 1. [What is Object-Oriented Programming (OOPS)?](/python/python/7_oops/7_oops.md#oops)
-2. What is **break**, **continue** and **pass** in Python?
+2. [What is **break**, **continue** and **pass**?](/python/python/7_oops/7.8_pass_break_continue.md)
 3. ⭐ [Difference between **method** and **function**?](/python/python/7_oops/function_and_method.md)
 4. [What is Python Access Modifiers?](/python/python/7_oops/access_modifiers.md#python-access-modifiers)
    1. [Public Member](/python/python/7_oops/access_modifiers.md#public-access-modifier-)
-   2. Protected Member
+   2. [Protected Member](/python/python/7_oops/access_modifiers.md#protected-access-modifier-)
    3. Private Member
 5. [what is Name **Mangling** in Python?](/python/python/7_oops/access_modifiers.md#using-mangled-name)
 6. What is Method?
@@ -399,12 +399,15 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 5.  ⭐ [what is **self keyword**?](/python/python/7_oops/self_keyword.md#what-is-the-use-of-self-in-python)
 6.  [What is **__init__** Method?](/python/python/7_oops/init_method.md#what-is-init-method)
 7.  [Diff between **Class Variable** and **Instance Variable**?](/python/python/7_oops/7.1_class.md#difference-between-class-variable-and-instance-variable)
-8.  What is an Instance Method?
+8.  [What is an Instance Method?](/python/python/7_oops/7.1_class.md#what-is-instance-method)
 9.  [What is a Class Method?](/python/python/7_oops/7.1_class.md#what-is-a-class-method)
-10. What is **cls** keyword?
-11. [What is __slots__ in Python?](/python/python/7_oops/7.1_class.md#what-is-slots-in-python)
-12. [What is Concrete Method?](/python/python/7_oops/Concrete_Method.md#what-is-concrete-method)
-13. [What is difference betweenr repr() and str()?](/python/python/7_oops/7.1_class.md#what-is-difference-betweenr-repr-and-str)
+10. [Class Method vs Instance Method?](/python/python/7_oops/7.1_class.md#class-method-vs-instance-method)
+11. [What is **cls** keyword?](/python/python/7_oops/7.1_class.md#what-is-cls-in-python)
+12. [self vs cls](/python/python/7_oops/7.1_class.md#self-vs-cls)
+13. [What is __slots__ in Python?](/python/python/7_oops/7.1_class.md#what-is-slots-in-python)
+14. [What is Concrete Method?](/python/python/7_oops/Concrete_Method.md#what-is-concrete-method)
+15. [What is difference betweenr repr() and str()?](/python/python/7_oops/7.1_class.md#what-is-difference-betweenr-repr-and-str)
+16. [How is an empty class created in python?](/python/python/7_oops/7.1_class.md#how-is-an-empty-class-created-in-python)
 
 ### 🧠 **Objects in oops**
 1. [What is **Object**?](/python/python/7_oops/7.2_object.md#ques-what-is-object)
@@ -425,8 +428,8 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 ### 🧠 [**Inheritance**](/python/python/7_oops/7.5_inheritance.md)
 1. [What is Inheritance?](/python/python/7_oops/7.5_inheritance.md#ques-what-is-inheritance)
 2. Why do we use Inheritance?
-3. Types Of Inheritance?
-   1. Single Inheritance
+3. [Types Of Inheritance?](/python/python/7_oops/7.5_inheritance.md#types-of-inheritance)
+   1. [Single Inheritance](/python/python/7_oops/7.5_inheritance.md#single-inheritance)
    2. Multiple Inheritance
    3. Multi-Level Inheritance
    4. Hierarchical Inheritance
@@ -484,28 +487,8 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 
 ### 
 ```
-✅ init()
-✅ Instance Methods
-✅ Built-in Class Functions
-✅ Built-in Class Attributes
 
-➕ Add:
-
-What is an Instance Method?
-What is a Class Method?
-What is cls keyword?
-🧠 Encapsulation
-
-✅ What is Encapsulation?
-
-➕ Add:
-
-Public, Protected and Private Members?
 Getter and Setter Methods?
-🧠 Inheritance
-
-
-➕ Add:
 
 Why do we use Inheritance?
 How to call Parent Class Constructor?
@@ -518,11 +501,6 @@ Does Python support Method Overloading?
 Operator Overloading?
 Duck Typing?
 🧠 Abstraction
-
-✅ Abstract Class
-✅ Interface
-
-➕ Add:
 
 Why can't we create objects of Abstract Class?
 abc module?
@@ -555,14 +533,11 @@ Difference between Instance Method, Class Method and Static Method?
 Interview Favorite Question:
 
 Method Type	First Parameter
-Instance Method	self
-Class Method	cls
 Static Method	No self/cls
 
 ➕ Add:
 
 How does Python resolve methods in Multiple Inheritance?
-What is mro() method?
 
 ➕ Add:
 
@@ -575,13 +550,8 @@ Object Creation Process?
 Garbage Collection in Python?
 Reference Counting?
 ⭐ Most Asked Interview Questions
-Four Pillars of OOPS?
 Difference between Encapsulation and Abstraction?
-Difference between Class Variable and Instance Variable?
 Difference between Class Method and Static Method?
-What is Abstract Class?
-What is Interface?
-What is init()?
 ```
 
 <div style="page-break-before: always;"></div>
@@ -599,7 +569,6 @@ What is init()?
 |       | [Debug code?](./1_python/debug_code.md)                                                 |
 |       | [Exception Handling](./1_python/Exception_and_error_Handling.md#exception-handling)     |
 |       | [What is Python JSON?](./1_python/1.0_python.md#ques-what-is-python-json)               |
-|       | [floor() and ceil() Functions?](./1_python/1.0_python.md#ques-floor-and-ceil-functions) |
 
 
 <div style="page-break-before: always;"></div>
@@ -608,9 +577,6 @@ What is init()?
 ###
 |  No.  | Python Oops Interview Questions                                                                                                |
 | :---: | ------------------------------------------------------------------------------------------------------------------------------ |
-|       | [What is **break**, **continue** and **pass** in Python?](./1_python/7_oops.md#ques-what-is-break-continue-and-pass-in-python) |
-|       | [What is **__str_ _** and **__repr_ _**?](./1_python/7_oops.md#ques-what-is-str-and-repr)                                      |
-|       | [What is **Abstract** Method?](./1_python/7_oops.md#ques-what-is-abstract-method)                                              |
 |       | [Difference between **method** and **function**?](./1_python/7_oops.md#difference-between-method-and-function)                 |
 |       | [Accessing the attributes value different ways?](./1_python/7_oops.md#accessing-the-attributes-value-different-ways)           |
 |       | [Change the value of the attribute?](./1_python/7_oops.md#change-the-value-of-the-attribute)                                   |
@@ -619,9 +585,7 @@ What is init()?
 |       | [What is class meta?](#what-is-class-meta)                                                                                     |
 |       | ------------------------------------------------------------------------------------------------                               |
 |       | [private attributes and method?](#private-attributes-and-method)                                                               |
-|       | [What is Abstract Class?](#ques-what-is-abstract-class)                                                                        |
 |       | [When use abstratc class?](#ques-when-use-abstratc-class)                                                                      |
-|       | [How to Create an Abstract Method](#how-to-create-an-abstract-method)                                                          |
 |       | [Built-In Class Attributes?](#built-in-class-attributes)                                                                       |
 |       | [What is static method?](./7_oops/static_method.md#what-is-static-method)                                                      |
 
@@ -668,10 +632,9 @@ What is init()?
 3. How do you access parent members in the child class?
 4. Are access specifiers used in python?
 5. Is it possible to call parent class without its instance creation?
-6. How is an empty class created in python?
+6. 
 7. Differentiate between new and override modifiers.
 8. Why is finalize used?
-9. What is init method in python?
 10. How will you check if a class is a child of another class?
 11. 
 
@@ -955,9 +918,6 @@ print(list6)
 ```
 
 
-### f
-
-
 
 https://pynative.com/python-constructors/
 
@@ -976,87 +936,4 @@ AbstractBaseUser: Use this option if you want to start from scratch by creating 
 ### Django interview Questions
 https://books.agiliq.com/projects/django-orm-cookbook/en/latest/null_vs_blank.html
         
-<!-- 534 -->
-###
-<!-- 🧰 🧱 🪵 🧪 🧯 📜 🔎 🧹 💣 🛑 ❌ 👉 👈 🧠 ✅ 📌 🔧 🧪 🔍 ⭐ ✨ 🌟 💫 🌠
-📅 (Calendar)
-✏️ (Pencil)
-📝 (Memo)
-📌 (Pushpin)
-📖 (Open Book)
-📊 (Bar Chart)
-📈 (Chart Increasing)
-📉 (Chart Decreasing)
-🔔 (Bell)
-🎯 (Target)
-📚 (Books)
-🗂️ (File Folder)
-🖊️ (Pen)
-💡 (Light Bulb)
-🧭 (Compass)
-🔒 (Lock)
-🎨 (Palette)
-🛠️ (Hammer and Wrench)
-🗒️ (Spiral Notepad)
-📋 (Clipboard)
-🖍️ (Crayon)
-🔑 (Key)
-⚙️ (Gear)
-🌟 (Star)
-🧩 (Puzzle Piece)
-🎉 (Party Popper)
-🌈 (Rainbow)
-✨ (Sparkles)
-📺 (Television)
-🕰️ (Clock)
-🗺️ (World Map)
-💻 (Laptop)
-📡 (Satellite Antenna)
-🔮 (Crystal Ball)
-🧷 (Safety Pin)
-🥇 (1st Place Medal)
-🚀 (Rocket)
-🌍 (Earth Globe)
-🏷️ (Label)
-🎵 (Musical Note)
-🔋 (Battery)
-🧪 (Test Tube)
-🎮 (Video Game)
-📅 (Date)
-🧗‍♂️ (Climber)
-🏆 (Trophy)
-🚦 (Traffic Light)
-🏁 (Checkered Flag)
-🌐 (Globe with Meridians)
-🔍 (Magnifying Glass Tilted Right)
-🥂 (Clinking Glasses)
-🧘‍♀️ (Person in Lotus Position)
-🛡️ (Shield)
-🔔 (Bell)
-⚡ (High Voltage)
-🏠 (House)
-💼 (Briefcase)
-🧳 (Luggage)
-🖼️ (Framed Picture)
-🔗 (Link)
-📦 (Package)
-🌳 (Tree)
-🎈 (Balloon)
-👁️ (Eye)
-📞 (Telephone Receiver)
-🧭 (Compass)
-🌊 (Water Wave)
-🔥 (Fire)
-🚧 (Construction Sign)
-🧙‍♂️ (Wizard)
-🏖️ (Beach with Umbrella)
-🌌 (Milky Way)
-🧚‍♀️ (Fairy)
-🪐 (Ringed Planet)
-🗝️ (Old Key)
-📖 (Closed Book)
-🥳 (Party Face)
-🦄 (Unicorn)
--->
-
 ```

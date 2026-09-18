@@ -45,7 +45,7 @@ def get_post(user_id: int, post_id: int):
 ```
 <div style="page-break-before: always;"></div>
 
-### **How do you validate path parameters?**
+### 🎯**How do you validate path parameters?**
 * In FastAPI, path parameters can be validated using **Path()** with constraints such as **ge**, **gt**, **le**, and **lt**.
 ```python
 from fastapi import FastAPI, Path
@@ -59,7 +59,7 @@ def get_user(
     return {"user_id": user_id}
 ```
 
-### **What is Path()?**
+### 🎯**What is Path()?**
 * Path() is a FastAPI function used to validate and add metadata to path parameters.
 * It allows you to apply rules such as:
   * ge → Greater than or equal to

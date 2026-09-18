@@ -12,6 +12,7 @@
 
 # Project Setup
 ### 🎯**Create virtual environment**
+* [More info](/python/virtual_env.md)
 * create the folder and open the cmd
 ```python
 python -m venv virtual-name
@@ -28,14 +29,6 @@ d:\mohit\virtual-name\Scripts> activate
 (OR)
 source env_crud/Scripts/activate
 ```
-
-#### For activate
-| Terminal   | Command                            |
-| ---------- | ---------------------------------- |
-| PowerShell | `.\virt_env\Scripts\Activate.ps1`  |
-| CMD        | `virt_env\Scripts\activate.bat`    |
-| Git Bash   | `source virt_env/Scripts/activate` |
-
 
 ### 🎯**Install Fastapi**
 * we have install two packages/library **fastapi** and **uvicorn**

@@ -4,6 +4,7 @@
 * If a user sends more than 100 requests in 1 minute, the extra requests will be blocked.
 * **HINDI:-** Rate Limiting ka use API ko abuse hone se bachane ke liye kiya jata hai. Ye restrict karta hai ki ek user ya IP address ek certain time period me kitni requests kar sakta hai.
 
+### what is SlowApi?
 #### FastAPI me Rate Limiting kaise implement karte hain?
 * install library **slowapi**
 * **Limiter** object create karke

@@ -17,8 +17,6 @@ async def read_items(db: DatabaseConnection = Depends(get_db)):
 ```
 - In this example, the **get_db** function provides a database connection that is automatically injected into the read_items endpoint.
 
-
-
 ### what is Dependency Injection in FastAPI?
 * Dependency Injection is a design pattern where components receive their dependencies from external sources rather than creating them internally. FastAPI has a powerful dependency injection system.
 ```python

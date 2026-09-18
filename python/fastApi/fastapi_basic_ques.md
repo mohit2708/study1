@@ -258,3 +258,205 @@ app = FastAPI()
 def hello():
     return {"message": "Hello World"}
 ```
+
+### **Why is FastAPI faster than Django/Flask?**
+* FastAPI is faster than Django and Flask because it is built on **Starlette** and **runs on ASGI**, which supports asynchronous programming (async/await). This allows FastAPI to handle many concurrent requests efficiently without blocking the server.
+
+#### Main Reasons
+1. ASGI Support
+   1. FastAPI uses ASGI (Asynchronous Server Gateway Interface).
+   2. Django and Flask traditionally use WSGI (synchronous).
+2. Async/Await
+   1. FastAPI supports asynchronous code natively.
+   2. Useful for I/O operations like:
+      1. Database queries
+      2. External API calls
+      3. File operations
+3. Starlette Framework
+   1. FastAPI is built on Starlette, a lightweight and high-performance ASGI framework.
+4. Pydantic Validation
+   1. FastAPI uses Pydantic for fast data validation and serialization.
+5. Uvicorn Server
+   1. FastAPI commonly runs on Uvicorn, a high-performance ASGI server.
+
+### **What is OpenAPI?**
+* **OpenAPI is a standard specification used to describe and document REST APIs**. It defines the API's endpoints, HTTP methods, request parameters, request/response schemas, authentication, and status codes in a machine-readable format.
+* FastAPI automatically generates an OpenAPI schema for your API.
+  * Swagger UI → /docs
+  * ReDoc → /redoc
+* OpenAPI describes this API as:
+  * Method: GET
+  * Endpoint: /users/{id}
+  * Parameter: id
+  * Type: integer
+  * Response: User data
+
+### What is async programming?
+* Asynchronous programming ek programming approach hai jisme program I/O operation ke complete hone ka wait karte time doosre tasks ko execute kar sakta hai, instead of blocking the whole execution.
+* Ek kaam wait kar raha hai, tab tak doosra kaam execute ho sakta hai.
+
+#### When to use Async?
+* Database calls
+* External API calls
+* Network requests
+* File I/O
+* WebSockets
+
+#### Example of Normal / synchronous example
+```python
+def get_data():
+    data = call_api()   # 3 seconds wait
+    return data
+
+def print_message():
+    print("Hello")
+
+# Calling
+data = get_data() # 3 seconds wait
+print_message()   # Hello
+
+#  Yahan program wait kar raha hai.
+```
+
+#### Example of Asynchronous/await
+* Lekin yahan ek important point hai: call_api() bhi asynchronous hona chahiye, for example:
+```python
+import asyncio
+
+async def call_api():
+    await asyncio.sleep(3)
+    return "API data"
+
+async def get_data():
+    data = await call_api()
+    return data
+
+async def print_message():
+    print("Hello")
+
+
+# Caling
+async def main():
+    await asyncio.gather(
+        get_data(),
+        print_message()
+    )
+
+asyncio.run(main())
+
+# Output:-
+Hello
+API data
+
+
+get_data()
+    ↓
+call_api()
+    ↓
+WAIT 3 seconds
+    ↓
+    ├──────────────→ print_message()
+    │                    ↓
+    │                  Hello
+    │
+    │       Event loop doosra task chala raha hai
+    │
+    ↓
+API response
+    ↓
+API data
+```
+
+### What is await?
+* await coroutine ko temporarily pause karta hai jab tak awaited operation complete nahi ho jata, aur is waiting time mein event loop doosre tasks chala sakta hai.
+* **HINDI:-** await ka use **asynchronous function ke andar** kisi asynchronous operation ke result ka wait karne ke liye hota hai.
+
+
+### Difference between Sync and Async Functions?
+| Feature     | Sync Function                  | Async Function                               |
+| ----------- | ------------------------------ | -------------------------------------------- |
+| Definition  | Executes line by line          | Can pause and resume execution               |
+| Keyword     | `def`                          | `async def`                                  |
+| Waiting     | Blocks execution while waiting | Doesn't block event loop while waiting       |
+| Concurrency | One task at a time             | Multiple tasks can progress during I/O waits |
+| Best for    | CPU-bound/simple operations    | I/O-bound operations                         |
+| FastAPI     | Runs in threadpool             | Runs on event loop                           |
+
+#### Synchronous Function
+```python
+def get_data():
+    data = call_api()   # wait 3 sec
+    return data
+
+def print_message():
+    print("Hello")
+
+get_data()
+print_message()
+
+# Flow
+get_data()
+    ↓
+wait 3 sec
+    ↓
+completed
+    ↓
+print_message()
+    ↓
+Hello
+
+# Output:-
+(wait 3 sec)
+
+Hello
+```
+
+#### When to use Sync?
+* Calculations
+* Data processing
+* Simple business logic
+
+#### Asynchronous Function
+```python
+import asyncio
+
+async def get_data():
+    await asyncio.sleep(3)
+    print("API Data")
+
+async def print_message():
+    print("Hello")
+
+# Calling
+asyncio.gather(
+    get_data(),
+    print_message()
+)
+
+# Flow
+get_data()
+    ↓
+waiting 3 sec
+    │
+    └── print_message()
+            ↓
+          Hello
+    │
+    ↓
+API Data
+
+# Output:-
+Hello
+API Data
+```
+
+### **What is an event loop?**
+* An event loop is the core mechanism of asynchronous programming that manages and schedules coroutines. When a coroutine reaches an await, the event loop suspends it and executes other ready tasks. Once the awaited operation completes, the event loop resumes the suspended coroutine.
+* The event loop is **responsible for running, pausing, and resuming asynchronous tasks**, allowing multiple I/O operations to be handled efficiently without blocking the thread.
+* Event Loop ek manager/scheduler hai jo asynchronous tasks ko manage karta hai aur jab koi task wait kar raha hota hai, tab doosre tasks ko run kar deta hai.
+* **Mostly sab kuch automatically hota hai.**
+* Event Loop kya karta hai?
+  * Async tasks ko register karta hai.
+  * await par task ko pause karta hai.
+  * Waiting ke dauran doosre tasks run karta hai.
+  * Operation complete hone par paused task ko resume karta hai.

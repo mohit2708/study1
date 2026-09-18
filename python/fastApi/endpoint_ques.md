@@ -37,3 +37,34 @@ def create_item():
 ### 🎯**PUT vs PATCH**
 * PUT → Entire resource ko update karta hai.
 * PATCH → Sirf specified fields ko update karta hai.
+
+
+### 🎯**What is a Request Body?**
+* A Request Body is the data sent by the client to the server in an HTTP request. It is commonly used with POST, PUT, and PATCH requests to send data such as user details, product information, etc.
+* **Hindi:-** Request Body woh data hota hai jo client server ko bhejta hai.
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class User(BaseModel):
+    name: str
+    email: str
+
+@app.post("/users")
+def create_user(user: User):
+    return user
+
+# request
+{
+    "name": "Mohit",
+    "email": "mohit@example.com"
+}
+
+# reponse
+{
+    "name": "Mohit",
+    "email": "mohit@example.com"
+}
+```

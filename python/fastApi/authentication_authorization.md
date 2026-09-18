@@ -1,0 +1,2 @@
+### Authentication vs Authorization?
+* Authentication verifies the identity of a user (who you are), while Authorization determines the permissions and resources that the authenticated user can access (what you can do).

@@ -1,3 +1,104 @@
+### **What is Date Time Function?**
+* Python me date aur time ko handle karne ke liye datetime module use kiya jata hai.
+```python
+import datetime
+```
+
+### Current Date and Time
+```python
+from datetime import datetime
+
+now = datetime.now()
+print(now)  # Output:- 2026-09-20 11:30:45.123456
+print("year", now.year)     # Output:- year 2024
+print("month", now.month)   # Output:- month 12
+print("day", now.day)       # Output:- day 25
+print("hour", now.hour)     # Output:- hour 10
+print("minutes", now.minute)# Output:- minutes 53
+print("second", now.second) # Output:- second 3
+```
+
+### Current Date
+```python
+from datetime import date
+
+today = date.today()
+print(today)    # Output:- 2026-09-20
+
+# OR
+import datetime
+current_date = datetime.date.today()
+print(current_date) # Output:- 2024-12-25
+```
+
+### Current Time
+```python
+from datetime import datetime
+
+current_time = datetime.now().time()
+print(current_time)
+```
+
+### Create a Specific Date
+```python
+from datetime import date
+
+d = date(2026, 9, 20)
+print(d)
+```
+
+### Create a Specific Date and Time
+```python
+from datetime import datetime
+
+dt = datetime(2026, 9, 20, 10, 30, 45)
+print(dt)
+```
+
+### Format Date (strftime)
+```python
+from datetime import datetime
+
+now = datetime.now()
+
+print(now.strftime("%d-%m-%Y")) # Output:- 20-09-2026
+```
+
+| Code | Meaning        |
+| ---- | -------------- |
+| `%Y` | Year (2026)    |
+| `%y` | Year (26)      |
+| `%m` | Month          |
+| `%d` | Day            |
+| `%H` | Hour (24-hour) |
+| `%M` | Minute         |
+| `%S` | Second         |
+| `%A` | Weekday Name   |
+| `%B` | Month Name     |
+
+
+### Convert String to Date (strptime)
+```python
+from datetime import datetime
+
+date_str = "20-09-2026"
+
+dt = datetime.strptime(date_str, "%d-%m-%Y")
+
+print(dt)
+```
+
+### Add Days to Date (timedelta)
+```python
+from datetime import datetime, timedelta
+
+today = datetime.now()
+
+future = today + timedelta(days=10)
+
+print(future)
+```
+
 ### Attributes of datetime Module
 ```python
 import datetime
@@ -6,42 +107,6 @@ print(dir(datetime))
 
 Output:-
 ['MAXYEAR', 'MINYEAR', 'UTC', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'date', 'datetime', 'datetime_CAPI', 'time', 'timedelta', 'timezone', 'tzinfo']
-```
-
-### Get Current Date and Time
-```python
-import datetime
-# get the current date and time
-now = datetime.datetime.now()
-print(now)                  # Output:- 2024-12-25 10:16:05.190706
-print("year", now.year)     # Output:- year 2024
-print("month", now.month)   # Output:- month 12
-print("day", now.day)       # Output:- day 25
-print("hour", now.hour)     # Output:- hour 10
-print("minutes", now.minute)# Output:- minutes 53
-print("second", now.second) # Output:- second 3
-
-(OR)
-from datetime import datetime
-
-# returns current date and time
-now = datetime.now()
-print("now = ", now)    # Output:- now =  2024-12-25 10:35:43.891754
-```
-
-### Get Current Date
-```python
-import datetime
-# get current date
-current_date = datetime.date.today()
-print(current_date) # Output:- 2024-12-25
-
-(OR)
-# Import date class from datetime module
-from datetime import date
-# Returns the current local date
-today = date.today()
-print("Today date is: ", today) # Output:- 2024-12-25
 ```
 
 ### Format change data and time
@@ -214,4 +279,22 @@ current_date = datetime.now() # Or a specific date like datetime(2025, 10, 27)
 
 age = relativedelta(current_date, date_of_birth)
 print(f"Age: {age.years} years, {age.months} months, {age.days} days")      # Output:- Age: 35 years, 5 months, 17 days
+```
+
+
+
+
+
+```python
+FastAPI Interview Questions
+What is the difference between date, time, datetime, and timedelta?
+What is datetime.now()?
+What is the difference between strftime() and strptime()?
+How do you calculate the difference between two dates?
+How do you add or subtract days from a date?
+What is timedelta?
+How do you get the current date and time in Python?
+How do you convert a string into a datetime object?
+How do you format a datetime object into a custom format?
+What is timezone-aware vs timezone-naive datetime?
 ```

@@ -118,8 +118,16 @@
 3. [How do you open and close a file in Python?](/python/python/1_python/File_Handling.md#how-do-you-open-and-close-a-file-in-python)
 
 
-### 🧠 **Date and Time**
-1. DataTime Function
+### 🧠 [**Date and Time**](/python/python/1_python/DataTime_Function.md)
+1. [What is Date Time Function?](/python/python/1_python/DataTime_Function.md#what-is-date-time-function)
+2. Current Date and Time
+3. Current Date
+4. Current Time
+5. Create a Specific Date
+6. Create a Specific Date and Time
+7. Format Date (strftime)
+8. Convert String to Date (strptime)
+9. Add Days to Date (timedelta)
 
 <div style="page-break-before: always;"></div>
 
@@ -180,30 +188,30 @@
    2. append method
    3. extend method
 10. [Remove List Item?](/python/python/2_list/Remove_List_Items.md)
-   1.  remove() method?
-   2.  pop() Method?
-   3.  del keyword?
-   4.  clear() method?
-   5.  ⭐ Difference between remove() and pop()?
+   1. remove() method?
+   2. pop() Method?
+   3. del keyword?
+   4. clear() method?
+   5. ⭐ Difference between remove() and pop()?
 11. [Sort list?](/python/python/2_list/Sort_Lists.md)
-    1.  thislist.sort() :- A, B, C, a, b, c
-    2.  thislist.sort(key = str.lower) :- a, b, c, A, B, C
-    3.  thislist.sort(reverse = True) :- c, b, a, C, B, A
-    4.  thislist.reverse() :- a, B, c, D, e
-    5.  ⭐ Difference between sort() and sorted()?
-    6.  ⭐ How to reverse a list? :- list1.reverse()
+    1. thislist.sort() :- A, B, C, a, b, c
+    2. thislist.sort(key = str.lower) :- a, b, c, A, B, C
+    3. thislist.sort(reverse = True) :- c, b, a, C, B, A
+    4. thislist.reverse() :- a, B, c, D, e
+    5. ⭐ Difference between sort() and sorted()?
+    6. ⭐ How to reverse a list? :- list1.reverse()
 12. [Loop List](/python/python/2_list/2.0_list.md#ques-loop-lists)
 13. ⭐ Flatten list?
 14. List Method?
-    1.  append() Method
-    2.  extend() Method
-    3.  insert() Method
-    4.  Copy() Method
-    5.  count() Method
-    6.  index() Method
-    7.  pop() Method
-    8.  remove() Method
-    9.  clear() Method
+    1. append() Method
+    2. extend() Method
+    3. insert() Method
+    4. Copy() Method
+    5. count() Method
+    6. index() Method
+    7. pop() Method
+    8. remove() Method
+    9. clear() Method
     10. reverse() Method
     11. sort() Method
 15. ⭐ [List vs Tuple](/python/python/2_list/2.0_list.md#difference-between-list-and-tuples-in-python)
@@ -440,7 +448,8 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 2. [Types of Constructors?](/python/python/7_oops/7.7_constructor.md#types-of-constructors)
 3. [Constructor Overloading?](/python/python/7_oops/7.7_constructor.md#constructor-overloading)
 4. [Constructor With Default Values?](/python/python/7_oops/7.7_constructor.md#constructor-with-default-values)
-5. [What is Destructors?](/python/python/7_oops/7.8_destructor.md#ques-what-is-destructors)
+5. [How to call Parent Class Constructor?](/python/python/7_oops/7.7_constructor.md#how-to-call-parent-class-constructor)
+6. [What is Destructors?](/python/python/7_oops/7.8_destructor.md#ques-what-is-destructors)
 
 ### 🧠 [**Abstract Class and interface**](/python/python/7_oops/abstract_class.md)
 1. [What is Abstract Class?](/python/python/7_oops/abstract_class.md#ques-what-is-abstract-class)
@@ -488,13 +497,8 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 ### 
 ```
 
-Getter and Setter Methods?
 
-Why do we use Inheritance?
-How to call Parent Class Constructor?
 Difference between Inheritance and Composition?
-🧠 Polymorphism
-
 ➕ Add:
 
 Does Python support Method Overloading?
@@ -521,9 +525,6 @@ len()
 eq()
 add()
 call()
-🧠 Class Methods & Static Methods
-
-✅ Static Method
 
 ➕ Add:
 
@@ -535,16 +536,10 @@ Interview Favorite Question:
 Method Type	First Parameter
 Static Method	No self/cls
 
-➕ Add:
-
 How does Python resolve methods in Multiple Inheritance?
-
-➕ Add:
 
 
 🧠 Object Lifecycle
-
-➕ Add:
 
 Object Creation Process?
 Garbage Collection in Python?
@@ -565,7 +560,6 @@ Difference between Class Method and Static Method?
 ```
 | No.📜  | [Python Interview Questions](./0.0_python_questions.md)                                 |
 | :---: | --------------------------------------------------------------------------------------- |
-|       | [Date Time Function?](./1_python/DataTime_Function.md#attributes-of-datetime-module)    |
 |       | [Debug code?](./1_python/debug_code.md)                                                 |
 |       | [Exception Handling](./1_python/Exception_and_error_Handling.md#exception-handling)     |
 |       | [What is Python JSON?](./1_python/1.0_python.md#ques-what-is-python-json)               |
@@ -577,7 +571,6 @@ Difference between Class Method and Static Method?
 ###
 |  No.  | Python Oops Interview Questions                                                                                                |
 | :---: | ------------------------------------------------------------------------------------------------------------------------------ |
-|       | [Difference between **method** and **function**?](./1_python/7_oops.md#difference-between-method-and-function)                 |
 |       | [Accessing the attributes value different ways?](./1_python/7_oops.md#accessing-the-attributes-value-different-ways)           |
 |       | [Change the value of the attribute?](./1_python/7_oops.md#change-the-value-of-the-attribute)                                   |
 |       | [What is Python **Enumeration**?](./1_python/7_oops.md#what-is-python-enumeration)                                             |
@@ -587,7 +580,6 @@ Difference between Class Method and Static Method?
 |       | [private attributes and method?](#private-attributes-and-method)                                                               |
 |       | [When use abstratc class?](#ques-when-use-abstratc-class)                                                                      |
 |       | [Built-In Class Attributes?](#built-in-class-attributes)                                                                       |
-|       | [What is static method?](./7_oops/static_method.md#what-is-static-method)                                                      |
 
 
 <!-- ### Oops
@@ -726,7 +718,6 @@ c. How can be file read in specific location?
 d. How do you remove a file from a folder?
 e. If user upload excel file check file format if it is valid or invalid.
 g. What is Garbage Collector?
-g. What is the difference between Static method and Class method?
 h. Private variable and how we can access that?
 j. Difference multilevel and multiple inheritance and drawback?
 a. How can we handle errors in python?
@@ -857,11 +848,6 @@ agar or karne hai to pip ki help sa karenge
 
 **[⬆ Back to Top](#table-of-contents)**
 
-
-### **Ques. What is Map, Filter, Reduce?**
-
-
-
 ### String to array:-
 ```python
 thislist = ["apple", "banana", "cherry"]
@@ -903,6 +889,7 @@ list4 = []
 for item in a:
     list4.append(item)
 print(list4)
+
 list5 = []
 [list5.append(item*5) for item in new_list if item not in list5]
 print(list5)

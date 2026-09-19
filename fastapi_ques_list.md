@@ -84,6 +84,28 @@
 16. How do you define relationships?
 
 
+### 🧠 [**Middleware Questions**](/python/fastApi/middleware.md)
+1. [What is middleware?](/python/fastApi/middleware.md#what-is-middleware)
+2. [Middleware ka use kahan hota hai?](/python/fastApi/middleware.md#middleware-ka-use-kahan-hota-hai)
+3. [How does Middleware work in FastAPI?](/python/fastApi/middleware.md#how-does-middleware-work-in-fastapi)
+4. [What is the purpose of call_next() in FastAPI?](/python/fastApi/middleware.md#what-is-the-purpose-of-call_next-in-fastapi)
+5. [Can multiple middlewares be used in FastAPI?](/python/fastApi/middleware.md#can-multiple-middlewares-be-used-in-fastapi)
+6. [What is the execution order of middlewares?](/python/fastApi/middleware.md#what-is-the-execution-order-of-middlewares)
+7. [What is CORS Middleware in FastAPI?](/python/fastApi/middleware.md#what-is-cors-middleware-in-fastapi)
+8. [Why is CORS required?](/python/fastApi/middleware.md#why-is-cors-required)
+9. =======================no==============================
+10. How does middleware work?
+11. How do you create custom middleware?
+12. What is GZip middleware?
+13. What is TrustedHost middleware?
+14. What is HTTPSRedirect middleware?
+15. How do you implement request logging?
+16. How do you track API execution time?
+17. Difference between Middleware and Dependency Injection?
+18. How do you add custom headers using Middleware?
+19. How do you calculate request processing time using Middleware?
+20. When would you use Middleware instead of a Dependency?
+
 ### 🧠 [**Sql Alchemy Questions**](/python/fastApi/sql_alchemy.md)
 1. [What is SqlAlchemy?](/python/fastApi/sql_alchemy.md#what-is-sqlalchemy)
 2. [Why use SQLAlchemy?](/python/fastApi/sql_alchemy.md#why-use-sqlalchemy)
@@ -191,7 +213,6 @@ How do you read headers in FastAPI?
 How do you read cookies in FastAPI?
 
 
-What is Alembic?
 How do database migrations work?
 How do you perform CRUD operations?
 Authentication & Authorization
@@ -211,17 +232,27 @@ What is RBAC?
 How do you implement role-based access control?
 How do you secure APIs?
 
-Middleware
-What is middleware?
-How does middleware work?
-How do you create custom middleware?
-What is CORS middleware?
-Why is CORS required?
-What is GZip middleware?
-What is TrustedHost middleware?
-What is HTTPSRedirect middleware?
-How do you implement request logging?
-How do you track API execution time?
+Authentication vs Authorization
+Password Hashing
+OAuth2
+JWT
+Access Token
+Refresh Token
+JWT Structure
+JWT Signature
+Bearer Token
+Role-Based Access Control (RBAC)
+Permissions
+Dependency-based authentication in FastAPI
+OAuth2PasswordBearer
+OAuth2PasswordRequestForm
+Security dependencies
+Token expiration
+Middleware vs Dependency for authentication
+CORS vs Authentication
+Session-based vs Token-based authentication
+API Security best practices
+
 
 Exception Handling
 What is HTTPException?
@@ -229,8 +260,6 @@ How do you raise custom exceptions?
 How do you create custom exception handlers?
 How do you handle validation errors?
 How do you return custom error responses?
-
-
 
 File Handling
 How do you upload files?

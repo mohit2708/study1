@@ -188,11 +188,11 @@
    2. append method
    3. extend method
 10. [Remove List Item?](/python/python/2_list/Remove_List_Items.md)
-   1. remove() method?
-   2. pop() Method?
-   3. del keyword?
-   4. clear() method?
-   5. ⭐ Difference between remove() and pop()?
+    1.  remove() method?
+    2.  pop() Method?
+    3.  del keyword?
+    4.  clear() method?
+    5.  ⭐ Difference between remove() and pop()?
 11. [Sort list?](/python/python/2_list/Sort_Lists.md)
     1. thislist.sort() :- A, B, C, a, b, c
     2. thislist.sort(key = str.lower) :- a, b, c, A, B, C

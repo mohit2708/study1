@@ -337,7 +337,7 @@ myproject/
 <div style="page-break-before: always;"></div>
 
 ### 🎯**Django Apps?**
-* A Django app is a small, independent module of a Django project that handles one specific functionality.
+* A Django app is a **small, independent module** of a Django project that handles one specific functionality.
 * A Django app is a reusable and modular component of a Django project that is responsible for a specific functionality, such as users, products, orders, or payments. A Django project can contain multiple apps.
 
 ```python

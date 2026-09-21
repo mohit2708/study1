@@ -147,42 +147,7 @@
   * **SET TRANSACTION:** Places a name on a transaction.
 
 
-### 🎯**Difference between CHAR vs VARCHAR**
-* Both of these data types are used for characters.
-* CHAR is a **fixed-length data type**, whereas VARCHAR is a **variable-length data type**. 
-* CHAR is suitable for **fixed-size values**, while VARCHAR is suitable for **values whose length can vary**.
-* char occupies all the space and if space is remaining, then it fill all the blank space with "space". But in case of varchar, It takes only the required length & release remaining.
-```sql
-Char -> 10      | R | A | M | space | space | sapce | space | space | space | space |
-Varchar -> 10   | R | A | M |   |   |   |   |   |   |   |
-| R | A | M |
-```
-* varchar is better than Char in term of space. 
-* char perform is better than varchar.
-* Char max 256 characters, varchar 65535 characters.
 
-```sql
--- CHAR Example
-CREATE TABLE users (
-    country_code CHAR(2)
-);
-
-INSERT INTO users (country_code)
-VALUES ('IN'), ('US'), ('UK');
-
--- Yahan CHAR(2) suitable hai kyunki har country code ki length fixed 2 characters hai.
-
---
--- varchar example
--- jaise name 
-CREATE TABLE users (
-    name VARCHAR(50)
-);
-```
-
-### **Difference between CharField and TextField?**
-* **CharField** is used for storing small strings and requires max_length, such as names, titles, and emails.
-* **TextField** is used for storing large amounts of text like descriptions, comments, and blog content, and it does not require max_length.
   
 <div style="page-break-before: always;"></div>
 
@@ -290,7 +255,7 @@ HAVING COUNT(*) > 2;    -- Filters groups after GROUP BY
 ```
 <div style="page-break-before: always;"></div>
 
-### What are constraints in MySQL?
+### **What are constraints in MySQL?**
 - Constraints are **rules applied to table columns** to ensure the accuracy, consistency, and integrity of data in a database.
 - Constraints are like rules on a form
   - “This field is required” → NOT NULL
@@ -307,10 +272,11 @@ HAVING COUNT(*) > 2;    -- Filters groups after GROUP BY
 | `CHECK`          | Ensures values meet a condition                                 |
 | `DEFAULT`        | Assigns a default value if none is provided                     |
 | `AUTO_INCREMENT` | Automatically generates sequential numbers                      |
-| CREATE INDEX     | Used to create and retrieve data from the database very quickly |
+| `CREATE INDEX`    | Used to create and retrieve data from the database very quickly |
 <div style="page-break-before: always;"></div>
 
 [🔝 Back to Top](#back-to-top)
+
 
 ### **Aliases**
 * AS is a keyword in SQL that allows you to rename a column or table using an alias.
@@ -416,3 +382,22 @@ WHERE salary > 50000;
 | Generally slower    | Generally faster              |
 
 
+### What are execution plans?
+* Execution Plan tells us how the database will execute a SQL query and what operations it will perform.
+* Execution Plan database ka roadmap hota hai jo batata hai ki database engine kisi SQL query ko execute kaise karega.
+* Database ko decide karna hota hai:
+  * Table ko full scan kare?
+  * department par available index use kare?
+  * Kitni rows expected hain?
+  * Data ko kis order mein access kare?
+  * Agar JOIN hai, to kaunsa JOIN method use kare?
+* Ye decisions Execution Plan mein dikhte hain.
+
+### MySQL mein Execution Plan kaise dekhein?
+* [EXPLAIN use karte hain:](../mysql_database/Condition_Operators_and_Clauses.md#explain)
+```sql
+EXPLAIN
+SELECT *
+FROM employees
+WHERE department = 'IT';
+```

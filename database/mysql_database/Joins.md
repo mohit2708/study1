@@ -235,7 +235,7 @@ FULL OUTER JOIN departments ON employees.department_id = departments.department_
 <div style="page-break-before: always;"></div>
 
 
-#### CROSS Join
+### CROSS Join
 * The CROSS JOIN keyword returns all records from both tables (table1 and table2).
 * If you have a Products table with 2 products and a Colors table with 2 colors, a CROSS JOIN would return a result set with 6 combinations (3 * 2):
 ```sql
@@ -267,6 +267,29 @@ CROSS JOIN Colors;
 | Cap         | Blue  |
 
 ```
+
+#### When would you use CROSS JOIN?
+* It's useful when you intentionally need every possible combination.
+1. Product × Size combinations
+```sql
+-- example
+Products:  Shirt, Jeans
+Sizes:     S, M, L
+
+CROSS JOIN generates:
+
+Shirt  - S
+Shirt  - M
+Shirt  - L
+Jeans  - S
+Jeans  - M
+Jeans  - L
+```
+2. Generate all possible test scenarios
+3. Create combinations of dates and categories
+4. Create schedules/time slots
+5. Generate combinations for reports or analysis
+
 <div style="page-break-before: always;"></div>
 
 #### Full Join/FULL OUTER JOIN

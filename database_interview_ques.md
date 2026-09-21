@@ -27,17 +27,20 @@
 7. [What is MySQL Engine?](/database/mysql_database/1_mysql.md#what-is-storage-engine-in-mysql)
 8. What are databases and tables?
 9. What are rows and columns?
-10. What are MySQL data types?
-11. What is NULL?
-12. ⭐ [Difference between CHAR and VARCHAR?](/database/mysql_database/2_sql_questions.md#difference-between-char-vs-varchar)
-13. Difference between INT and BIGINT?
-14. What is AUTO_INCREMENT?
-15. ⭐ [Difference between WHERE and HAVING clauses?](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-where-and-having-clauses)
-16. [Wildcard Characters/Like Query?](/database/mysql_database/Wildcard_Characters_Like%20Query.md)
-17. [What is LIKE?](/database/mysql_database/Wildcard_Characters_Like%20Query.md)
-18. [What is SELECT?](/database/mysql_database/2_sql_questions.md#what-is-select)
-19. [What is DISTINCT?](/database/mysql_database/Condition_Operators_and_Clauses.md#what-is-distinct)
-20. ⭐ [Difference between DELETE, TRUNCATE, and DROP?](/database/mysql_database/2_sql_questions.md#difference-between-delete-truncate--drop)
+10. What is NULL?
+11. [What are the different data types in MySQL?](/database/mysql_database/data_types.md#what-are-the-different-data-types-in-mysql)
+12. ⭐ [Difference between CHAR and VARCHAR?](/database/mysql_database/data_types.md#difference-between-char-vs-varchar)
+13. [Difference between CharField and TextField?](/database/mysql_database/data_types.md#difference-between-charfield-and-textfield)
+14. Difference between INT and BIGINT?
+15. What is AUTO_INCREMENT?
+16. ⭐ [Difference between WHERE and HAVING clauses?](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-where-and-having-clauses)
+17. [Wildcard Characters/Like Query?](/database/mysql_database/Wildcard_Characters_Like%20Query.md)
+18. [What is LIKE?](/database/mysql_database/Wildcard_Characters_Like%20Query.md)
+19. [What is SELECT?](/database/mysql_database/2_sql_questions.md#what-is-select)
+20. [What is DISTINCT?](/database/mysql_database/Condition_Operators_and_Clauses.md#what-is-distinct)
+21. ⭐ [Difference between DELETE, TRUNCATE, and DROP?](/database/mysql_database/2_sql_questions.md#difference-between-delete-truncate--drop)
+22. [What are Constraints in SQL?](/database/mysql_database/2_sql_questions.md#what-are-constraints-in-mysql)
+23. [What are execution plans?](/database/mysql_database/2_sql_questions.md#what-are-execution-plans)
 
 ### 🧠 Comments
 1. [sql comments?](/database/mysql_database/Comments.md#sql-comments)
@@ -50,12 +53,22 @@
 5. [IN Operator](/database/mysql_database/Condition_Operators_and_Clauses.md#in-operator)
 6. [NOT IN Operator](/database/mysql_database/Condition_Operators_and_Clauses.md#not-in-operator)
 7. [Difference between IN and BETWEEN](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-in-and-between)
-8. [GROUP BY](/database/mysql_database/Condition_Operators_and_Clauses.md#group-by)
-9. [Having](/database/mysql_database/Condition_Operators_and_Clauses.md#having)
-10. [What is LIMIT?](/database/mysql_database/Condition_Operators_and_Clauses.md#limit)
-11. [Limit with offset?](/database/mysql_database/Condition_Operators_and_Clauses.md#limit-with-offset)
-12. [Difference between GROUP BY and ORDER BY?](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-group-by-and-order-by)
-13. ⭐ [Difference between GROUP BY and HAVING?](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-group-by-and-having)
+8. [What is CASE statement?](/database/mysql_database/Condition_Operators_and_Clauses.md#case)
+9. [GROUP BY](/database/mysql_database/Condition_Operators_and_Clauses.md#group-by)
+10. [Having](/database/mysql_database/Condition_Operators_and_Clauses.md#having)
+11. [What is LIMIT?](/database/mysql_database/Condition_Operators_and_Clauses.md#limit)
+12. [Limit with offset?](/database/mysql_database/Condition_Operators_and_Clauses.md#limit-with-offset)
+13. [Difference between GROUP BY and ORDER BY?](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-group-by-and-order-by)
+14. ⭐ [Difference between GROUP BY and HAVING?](/database/mysql_database/Condition_Operators_and_Clauses.md#difference-between-group-by-and-having)
+15. [IF()](/database/mysql_database/Condition_Operators_and_Clauses.md#if)
+16. NO=====
+17. [IFNULL](#ifnull)                                                                                             |
+18. [NULLIF](#nullif)                                                                                             |
+19. [IS NULL and IS NOT NULL](#is-null-and-is-not-null)                                                           |
+20. [Round()](#round)
+21. [WHERE](#where)                                                                                               |
+22. [what is Aliases?](#aliases)                                                                                  |
+23. [Optimizing SQL Queries for Faster Performance?](#ques-optimizing-sql-queries-for-faster-performance)         |
 
 ### 🔒Transactions
 1. [What is a Transaction?](/database/mysql_database/ACID_property_SQL_TRANSACTIONS.md#sql-transactions)
@@ -68,6 +81,17 @@
 8. Difference between COMMIT and ROLLBACK?
 9. What causes deadlocks?
 10. How do you handle deadlocks?
+
+### 🧠 [Locks](/database/mysql_database/Locking.md)
+1. [What is Locking?](/database/mysql_database/Locking.md#what-is-locking)
+2. [What is Shared Lock?](/database/mysql_database/Locking.md#1-shared-lock-read-lock)
+3. [What is Exclusive Lock?](/database/mysql_database/Locking.md#2-exclusive-lock-write-lock)
+4. [Difference between Row-Level and Table-Level Lock?](/database/mysql_database/Locking.md#row-level-vs-table-level-locking)
+5. [What is Deadlock?](/database/mysql_database/Locking.md#what-is-dead-lock)
+6. [How does MySQL resolve deadlocks?](/database/mysql_database/Locking.md#how-to-preventresolve-deadlocks)
+7. [What is Optimistic Locking?](/database/mysql_database/Locking.md#why-use-optimistic-locking)
+8. [What is Pessimistic Locking?](/database/mysql_database/Locking.md#what-is-pessimistic-locking)
+
 
 ### 🧠 [**User Management**](/database/mysql_database/User_Management.md)
 1. Create Databse user?
@@ -82,8 +106,8 @@
 
 
 ### 🧠 [**Aggregate function**](/database/mysql_database/Aggregate_function.md)
-1. What is Aggregate function?
-   1. SUM() function
+1. [What is Aggregate function?](/database/mysql_database/Aggregate_function.md#-what-is-aggregate-function)
+   1. SUM()
    2. AVG
    3. MAX
    4. MIN
@@ -91,8 +115,6 @@
 2. [COUNT() vs COUNT(*) in MySQL?](/database/mysql_database/Aggregate_function.md#-count-vs-count-in-mysql)
 3. Can aggregate functions be used without GROUP BY?
 4. How does COUNT handle NULL values?
-
-Find department-wise employee count.
 
 
 ### 🧠 [**Mysql Keys Questions**](/database/mysql_database/keys.md)
@@ -120,14 +142,15 @@ Find department-wise employee count.
 5. [Left JOIN/LEFT OUTER JOIN]
 6. [Right JOIN]
 7. [Outer join](/database/mysql_database/Joins.md#outer-join)
-8. [CROSS Join](/database/mysql_database/Joins.md#cross-join)
+8. [What is a cross join and when would you use it?](/database/mysql_database/Joins.md#cross-join)
 9. [Full Join/FULL OUTER JOIN]
 10. Difference between INNER JOIN and OUTER JOIN?
 11. Difference between LEFT JOIN and RIGHT JOIN?
+12. Difference between INNER JOIN and LEFT JOIN?
 
 ### 🧠 [**Mysql Normalization Questions**](/database/mysql_database/normalization_denormalization.md)
-1. What is Normalization?
-2. Why do we need Normalization?
+1. [What is Normalization?](/database/mysql_database/normalization_denormalization.md#what-is-normalization)
+2. [Why do we need Normalization?](/database/mysql_database/normalization_denormalization.md#why-do-we-need-normalization)
 3. Advantages and disadvantages of Normalization?
 4. What is 1NF?
 5. What is 2NF?
@@ -181,23 +204,28 @@ Advantages of Views?
 13. How do indexes improve performance?
 14. Can indexes slow down performance?
 15. How to check indexes on a table?
+16. Difference between a clustered index and a non-clustered index?
+
+1. [What is CTE (Common Table Expression)?](/database/mysql_database/cte.md#what-is-cte-common-table-expression-in-mysql)
+2. [what is With()?](/database/mysql_database/cte.md#with)
 
 ### 🧠 **Mysql Logical Questions**
 1. [value count:- Email](/database/mysql_database/sql-query-questions/find_duplicate_value.md#count-email-number)
 2. [Duplicate values in a Table?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#how-to-find-duplicate-values-in-a-table)
-3. [remove Duplicate values](/database/mysql_database/sql-query-questions/find_duplicate_value.md#duplicate-value-remove)
-4. [Replace a column value:- M to F & F to M]
-5. [Find records present in one table but not another?](/database/mysql_database/sql-query-questions/table_query.md#find-records-present-in-one-table-but-not-another)
-6. [How do you find duplicate invoices?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#how-do-you-find-duplicate-invoices)
-7. [Find customers having more than 5 invoices?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#find-customers-having-more-than-5-invoices)
-8. [find the total invoice amount customer-wise?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#find-the-total-invoice-amount-customer-wise)
-9. [Find the Current date?](/database/mysql_database/sql-query-questions/date_time_sql_ques.md#current-date)
-10. [find monthly transaction counts?](/database/mysql_database/sql-query-questions/other_logic_ques.md#find-monthly-transaction-counts)
-11. [find records created in the last 30 days?](/database/mysql_database/sql-query-questions/date_time_sql_ques.md#find-records-created-in-the-last-30-days)
-12. [find records between two dates?](/database/mysql_database/sql-query-questions/date_time_sql_ques.md#find-records-between-two-dates)
-13. Find NULL values?
-14. How do you replace NULL values?
-15. How do you update records based on another table?
+3. [Find records without duplicates?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#find-records-without-duplicates)
+4. [remove Duplicate values](/database/mysql_database/sql-query-questions/find_duplicate_value.md#duplicate-value-remove)
+5. [Replace a column value:- M to F & F to M]
+6. [Find records present in one table but not another?](/database/mysql_database/sql-query-questions/table_query.md#find-records-present-in-one-table-but-not-another)
+7. [How do you find duplicate invoices?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#how-do-you-find-duplicate-invoices)
+8. [Find customers having more than 5 invoices?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#find-customers-having-more-than-5-invoices)
+9. [find the total invoice amount customer-wise?](/database/mysql_database/sql-query-questions/find_duplicate_value.md#find-the-total-invoice-amount-customer-wise)
+10. [Find the Current date?](/database/mysql_database/sql-query-questions/date_time_sql_ques.md#current-date)
+11. [find monthly transaction counts?](/database/mysql_database/sql-query-questions/other_logic_ques.md#find-monthly-transaction-counts)
+12. [find records created in the last 30 days?](/database/mysql_database/sql-query-questions/date_time_sql_ques.md#find-records-created-in-the-last-30-days)
+13. [find records between two dates?](/database/mysql_database/sql-query-questions/date_time_sql_ques.md#find-records-between-two-dates)
+14. Find NULL values?
+15. How do you replace NULL values?
+16. How do you update records based on another table?
 <div style="page-break-before: always;"></div>
 
 #### 🧠 **Mysql Salary logical Questions**
@@ -214,30 +242,20 @@ Advantages of Views?
 5. 
 ⭐
 
-
-### 
-📚 MySQL Interview Questions (Topic-Wise)
-What is a Super Key?
-🔍 3. SELECT Queries
-Difference between IN and EXISTS?
-What is CASE statement?
-
-🏆 6. SQL Query-Based Questions
 Find employees earning more than average salary.
 Find the highest salary in each department.
 Find departments having more than 5 employees.
-Find records without duplicates.
+Find department-wise employee count.
+
+### 
+What is a Super Key?
 
 
-### 🧠 [Locks](/database/mysql_database/Locking.md)
-1. [What is Locking?](/database/mysql_database/Locking.md#what-is-locking)
-2. [What is Shared Lock?](/database/mysql_database/Locking.md#1-shared-lock-read-lock)
-3. [What is Exclusive Lock?](/database/mysql_database/Locking.md#2-exclusive-lock-write-lock)
-4. [Difference between Row-Level and Table-Level Lock?](/database/mysql_database/Locking.md#row-level-vs-table-level-locking)
-5. [What is Deadlock?](/database/mysql_database/Locking.md#what-is-dead-lock)
-6. [How does MySQL resolve deadlocks?](/database/mysql_database/Locking.md#how-to-preventresolve-deadlocks)
-7. [What is Optimistic Locking?](/database/mysql_database/Locking.md#why-use-optimistic-locking)
-8. [What is Pessimistic Locking?](/database/mysql_database/Locking.md#what-is-pessimistic-locking)
+### Difference between IN and EXISTS?
+* IN checks whether a value exists in a list returned by a subquery, whereas EXISTS checks whether the subquery returns at least one matching row. For large datasets and correlated subqueries, EXISTS is often preferred because it can stop searching after finding the first match.
+
+
+
 
 ### 🧠 [Cursor](/database/mysql_database/Cursor.md)
 1. [What is a Cursor?](/database/mysql_database/Cursor.md#what-is-cursor)
@@ -255,18 +273,33 @@ Find records without duplicates.
 5. [Diff between Trigger and Stored Procedure?](/database/mysql_database/trigger.md#difference-between-trigger-and-stored-procedure)
 
 ### 🧠 [Stored Procedures](/database/mysql_database/stored_procedure.md)
-1. What is a Stored Procedure?
+1. [What is a Stored Procedure?](/database/mysql_database/stored_procedure.md#ques-what-is-stored-procedure)
 2. Advantages of Stored Procedure?
 3. How do you create a Procedure?
+
+
+### 🧠 [Subquery ques](/database/mysql_database/subquery.md)
+1. [What is a Subquery?](/database/mysql_database/subquery.md#what-is-a-subquery)
+2. [What is a Nested Query?](/database/mysql_database/subquery.md#what-is-a-subquery)
+3. [Types of Subquery?](/database/mysql_database/subquery.md#types-of-subqueries)
+   1. [Single-row?](/database/mysql_database/subquery.md#1-single-row-subquery)
+   2. [Multi-row Subquery?](/database/mysql_database/subquery.md#2-multiple-row-subquery)
+   3. [What is a Correlated Subquery?](/database/mysql_database/subquery.md#3-correlated-subquery)
+4. [Scalar Subquery?](/database/mysql_database/subquery.md#what-is-a-scalar-subquery)
+
+
+1. [What is Partitioning?](/database/mysql_database/partitioning.md)
+2. [What is Replication?](/database/mysql_database/replication.md#what-is-replication-in-mysql)
+
+
 
 🚀 12. Performance Optimization
 How do you optimize SQL queries?
 How do you identify slow queries?
 What is Query Cache?
 What is Partitioning?
-What are execution plans?
+
 How do indexes affect performance?
-What is Denormalization?
 How do you optimize JOINs?
 What is a covering index?
 
@@ -276,12 +309,7 @@ Difference between Procedure and Function?
 Can a Function return multiple values?
 What are IN, OUT, and INOUT parameters?
 
-What is a Subquery?
-What is a Correlated Subquery?
-What is a Nested Query?
-EXISTS vs IN?
-Scalar Subquery?
-Single-row vs Multi-row Subquery?
+
 🏢 16. Database Design
 What is ER Diagram?
 What is Cardinality?
@@ -290,17 +318,13 @@ One-to-Many Relationship?
 Many-to-Many Relationship?
 What is Referential Integrity?
 How do you design a scalable database?
+
 🔥 17. MySQL Advanced Questions
-What is Partitioning?
-What is Replication?
 Master-Slave Replication?
 What is Sharding?
 What is a Temporary Table?
-What is CTE (Common Table Expression)?
-What is an Execution Plan?
 
 ⭐ 18. MySQL Scenario-Based Questions
-How would you find duplicate records in a table?
 How would you improve a slow query?
 A query is taking 10 seconds. How will you debug it?
 How would you handle millions of records?
@@ -308,7 +332,7 @@ How would you design a banking transaction system?
 How would you prevent duplicate entries?
 How would you optimize a JOIN query?
 How would you archive old data?
-How would you handle deadlocks?
+
 How would you design an e-commerce database?
 🎯 Most Important Interview Topics (Must Prepare)
 
@@ -342,22 +366,8 @@ How would you design an e-commerce database?
 
 |  No.  | [SQL Comments?](#sql-comments)                                                                                |
 | :---: | ------------------------------------------------------------------------------------------------------------- |
-|       | [SQL Operators and Clauses](#sql-operators-and-clauses)                                                       |
-|       | [IF()](#if)                                                                                                   |
-|       | [IFNULL](#ifnull)                                                                                             |
-|       | [NULLIF](#nullif)                                                                                             |
-|       | [IS NULL and IS NOT NULL](#is-null-and-is-not-null)                                                           |
-|       | [Round()](#round)                                                                                             |
-|       | [Case](#case)                                                                                                 |
-|       | [With()](#with)                                                                                               |
-|       | [WHERE](#where)                                                                                               |
-|       | [what is Aliases?](#aliases)                                                                                  |
-|       | [Optimizing SQL Queries for Faster Performance?](#ques-optimizing-sql-queries-for-faster-performance)         |
-|       | ------------------------------                                                                                |
 
-|  No.  | interview_Questions_answers                                       |
-| :---: | ----------------------------------------------------------------- |
-|       | [What are Constraints in SQL?](#ques-what-are-constraints-in-sql) |
+|       | ------------------------------                                                                                |
 
 
 |  No.  | [Sql Query questions](#sql-query-questions)                                                                                                |
@@ -380,68 +390,31 @@ https://www.w3resource.com/sql-exercises/joins-hr/sql-joins-hr-exercise-11.php
 
 
   ==================
-
-What are the different data types in MySQL?
-
-Discuss common data types like INT, VARCHAR, TEXT, DATE, and others.
-
-What is normalization? What are the different normal forms in a database?
-
-What are the different types of joins in MySQL?
-
-
 Discuss their roles in ensuring data integrity.
-
 What is a NULL value in MySQL?
-
 Explain how MySQL handles NULL and its use cases.
-
-What is a subquery?
-
 Explain types of subqueries like scalar, correlated, and non-correlated.
-
 Describe their use and advantages.
-
 Explain how views work and their use cases.
-
 What are temporary tables in MySQL?
-
 Discuss when to use temporary tables and their lifetime.
 
 Intermediate MySQL Interview Questions:
-
-Explain the difference between INNER JOIN and LEFT JOIN.
-
 What is a composite index?
-
-Explain indexing on multiple columns.
-
 How would you optimize a slow-performing query in MySQL?
-
 Discuss query optimization techniques like indexing, query rewriting, and EXPLAIN.
-
 What is a full-text index?
-
 Discuss how it is used for full-text searches in MySQL.
-
 What is an auto-increment column?
-
 Explain how auto-incrementing primary keys work.
-
 Discuss how transactions work and how you can commit or roll back a transaction.
-
 What is the difference between a clustered index and a non-clustered index?
-
 How can you handle errors in MySQL?
-
 Discuss using TRY...CATCH (in MySQL 5.7 or above) or error handling techniques.
 
-What is a cross join and when would you use it?
 
-Discuss how it helps analyze query execution plans.
 
 What are the different types of locks in MySQL?
-
 Explain table-level locks, row-level locks, and the difference between them.
 
 Advanced MySQL Interview Questions:
@@ -472,7 +445,7 @@ How does MySQL handle concurrency and isolation levels?
 
 Discuss isolation levels like READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, and SERIALIZABLE.
 
-What is a deadlock in MySQL, and how do you resolve it?
+
 
 Explain the InnoDB and MyISAM storage engines.
 
@@ -490,12 +463,13 @@ What is a Foreign Key constraint and how does it help in maintaining data integr
 
 Scenario-Based or Problem-Solving Questions:
 
-Given a table with 100+ million rows, how would you optimize its performance?
-
-How would you structure a database to handle millions of daily transactions efficiently?
-
 How would you recover a MySQL database that has crashed?
 
-You are faced with a slow query that uses a JOIN operation on a large table. How would you optimize it?
-
 How do you handle large BLOBs (Binary Large Objects) in MySQL?
+
+
+
+### [Scenario Based MySql Ques](/database/mysql_database/scenario_based_mysql_ques.md)
+1. You are faced with a slow query that uses a JOIN operation on a large table. How would you optimize it?
+2. Given a table with 100+ million rows, how would you optimize its performance?
+3. How would you structure a database to handle millions of daily transactions efficiently?

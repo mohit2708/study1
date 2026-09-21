@@ -13,7 +13,6 @@
   * Reduced network traffic
   * Easy maintenance
 
-
 * Stored procedure is a function which cantains a collection of sql quries, the procedure can take inputs, process them and send back output.
 * Stored procedure is a database object which is used to perform some specific task.
 * Stored procedure is called explicitly.
@@ -22,10 +21,10 @@
 management system as a group, so it can be reused and shered by multipal program.
 * Advantage: Stored Procedures are precompiled and stored in the database. This enables the Database to execute the queries much faster. Since many queries can be included in a stored procedure, round trip time to execute multiple queries from source code to
 Database and back is avoided.
-* A procedure is a group of SQL statement that you can call by name.
+* A procedure is a **group of SQL statement** that you can call by name.
 * Store procedures is a database object which is used to perform some specific task.
 
-__Advantage__
+#### Advantage Stored procedure?
 * Store procedure is reducing the complexity of code in code behind.
 * Store procedures have repeatedly having data. It helps to reuse the code.
 * It store in precompiled format so execution of speed is much faster than SQL statement.

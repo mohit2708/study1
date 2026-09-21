@@ -59,8 +59,6 @@ SELECT COUNT(DISTINCT department)
 FROM employees;
 ```
 
-
-
 ### 🎯**EXPLAIN**
 * EXPLAIN is used to view the query execution plan and understand how MySQL will execute a query, helping identify performance issues and optimize queries.
 * EXPLAIN is used to analyze how MySQL executes a query. It shows the execution plan, such as which tables are accessed, which indexes are used, the join order, and the estimated number of rows scanned.
@@ -108,6 +106,22 @@ EXPLAIN output
                            ↓
                     const / range / ALL
 ```
+
+### EXPLAIN vs EXPLAIN ANALYZE
+* **EXPLAIN:-** Database likely execution plan batata hai.
+```sql
+EXPLAIN SELECT * FROM employees;
+```
+* **EXPLAIN ANALYZE:-** MySQL query ko actually execute karke actual execution statistics bhi provide karta hai.
+```sql
+EXPLAIN ANALYZE
+SELECT *
+FROM employees
+WHERE department = 'IT';
+
+-- Isse estimated aur actual behavior ko compare karne mein help milti hai.
+```
+
 
 ### 🎯**What is ORDER BY?**
 * ORDER BY clause is used to **sort the result** set based on one or more columns in ascending (ASC) or descending (DESC) order.
@@ -432,42 +446,64 @@ SELECT ROUND(123.4567, -1); -- Returns 120 (rounds to the nearest 10)
 SELECT ROUND(salary, 2) AS rounded_salary FROM employees;
 ```
 
-#### **Case**
-* CASE statements are used to create different outputs (usually in the SELECT statement). It is SQL’s way of handling if-then logic.
+### 🎯**Case**
+* CASE statement is used to implement conditional logic in SQL, similar to IF-ELSE in programming languages. It evaluates conditions and returns different values based on which condition is true. It can be used in SELECT, UPDATE, ORDER BY, and other SQL statements.
+* CASE MySQL ka conditional expression hai, jo SQL ke andar IF-ELSE ki tarah kaam karta hai.
+* Iska use query me conditions lagane aur uske basis par different values return karne ke liye hota hai.
+* IF() → simple condition ke liye.
+* CASE → multiple conditions ke liye.
+* CASE ANSI SQL standard hai, isliye zyada preferred hai.
 ```sql
-SELECT column_name,
-  CASE
-    WHEN condition THEN 'Result_1'
-    WHEN condition THEN 'Result_2'
-    ELSE 'Result_3'
-  END
-FROM table_name;
+-- syntex
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN condition3 THEN result3
+    ELSE result
+END
 ```
 
 
-#### **With**
-* WITH clause lets you store the result of a query in a temporary table using an alias. You can also define multiple temporary tables using a comma and with one instance of the WITH keyword.
-* The WITH clause is also known as common table expression (CTE) and subquery factoring.
 ```sql
-WITH temporary_name AS (
-   SELECT *
-   FROM table_name)
-SELECT *
-FROM temporary_name
-WHERE column_name operator value;
+-- example
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 30000  |
+| 2  | 60000  |
+| 3  | 90000  |
++----+--------+
+
+--query 1
+SELECT id, salary,
+    CASE
+        WHEN salary < 50000 THEN 'Low'
+        WHEN salary < 80000 THEN 'Medium'
+        ELSE 'High'
+    END AS salary_category
+FROM employees;
+
+-- output:-
++----+--------+-----------------+
+| id | salary | salary_category |
++----+--------+-----------------+
+| 1  | 30000  | Low             |
+| 2  | 60000  | Medium          |
+| 3  | 90000  | High            |
++----+--------+-----------------+
+
+-- Update Example
+UPDATE employees
+SET bonus =
+    CASE
+        WHEN salary >= 80000 THEN 10000
+        WHEN salary >= 50000 THEN 5000
+        ELSE 2000
+    END;
 ```
 
-### **IS NULL and IS NOT NULL**
-* IS NULL and IS NOT NULL are operators used with the WHERE clause to test for empty values.
-```sql
-SELECT column_name(s)
-FROM table_name
-WHERE column_name IS NULL;
-```
-
-
-
-### **IF()**
+### Case vs if()
+#### IF()
 ```sql
 SELECT IF(200>350,'YES','NO'); -- Output:- NO
 SELECT IF(251 = 251,' Correct','Wrong');  -- Output:- Correct
@@ -486,7 +522,23 @@ SELECT IF(STRCMP('Rinky Ponting','Yuvraj Singh')=0, 'Correct', 'Wrong');
 ```
 
 
+#### case()
+```sql
+SELECT
+CASE
+    WHEN salary > 50000 THEN 'High'
+    ELSE 'Low'
+END;
+```
 
+
+### **IS NULL and IS NOT NULL**
+* IS NULL and IS NOT NULL are operators used with the WHERE clause to test for empty values.
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IS NULL;
+```
 
 #### **Group By**
 * Group by statement is used to group the rows that have the same value. 

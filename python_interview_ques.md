@@ -261,7 +261,6 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 
 |       | [Swap elements in String list?](./2_list/2.10_List_questions.md#swap-elements-in-string-list)                                                           |
 |       | [find the single number(unique-element) of the list?](#ques-find-the-single-numberunique-element-of-the-list)                                           |
-|       | [find the even number from the list?](#ques-find-the-even-number-from-the-list)                                                                         |
 |       | [Print duplicate list, Find Even Or Odd Number?](#ques-print-duplicate-list-find-even-or-odd-number)                                                    |
 |       | [Find the duplicate element from list?](#find-the-duplicate-element-from-list)                                                                          |
 |       | [Remove duplicate item from list using List comprehension?](./2_list/list_logical_ques/Remove_the_negative_index_from_the_list.md)                      |
@@ -621,10 +620,8 @@ Difference between Class Method and Static Method?
 20. What are negative indexes and why are they used?
   
 ### Python OOPS Interview Questions
-3. How do you access parent members in the child class?
 4. Are access specifiers used in python?
 5. Is it possible to call parent class without its instance creation?
-6. 
 7. Differentiate between new and override modifiers.
 8. Why is finalize used?
 10. How will you check if a class is a child of another class?

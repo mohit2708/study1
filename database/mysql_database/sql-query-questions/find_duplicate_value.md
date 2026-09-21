@@ -89,6 +89,43 @@ WHERE email IN (
 
 <div style="page-break-before: always;"></div>
 
+### 🎯**Find records without duplicates?**
+```sql
++----+--------+
+| id | name   |
++----+--------+
+| 1  | Mohit  |
+| 2  | Rahul  |
+| 3  | Mohit  |
+| 4  | Amit   |
+| 5  | Amit   |
+| 6  | Neha   |
++----+--------+
+
+-- Query
+SELECT name FROM employees
+GROUP BY name HAVING COUNT(*) = 1;
+
+--  result
++--------+
+| name   |
++--------+
+| Rahul  |
+| Neha   |
++--------+
+
+
+-- using sub query
+SELECT *
+FROM employees
+WHERE name IN (
+    SELECT name
+    FROM employees
+    GROUP BY name
+    HAVING COUNT(*) = 1
+);
+```
+
 
 ### 🎯**Duplicate value remove**
 * Using Join

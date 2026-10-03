@@ -120,8 +120,6 @@ python manage.py showmigration app_name
 python manage.py sqlmigrate app_name migration_name
 ```
 
-
-
 ### 🎯**What is the Meta Class?**
 * The Meta class is an **inner class inside a Django model** that is used to **provide metadata (extra configuration) about the model**.
 * It does not create database fields. Instead, it controls how Django behaves with the model.
@@ -224,12 +222,31 @@ Employee.objects.get(id=1)
 Employee.objects.filter(name="Mohit")
 ```
 
-2. Create
+#### 2. Create USer
 ```python
 Employee.objects.create(
     name="Mohit",
     email="mohit@gmail.com"
 )
+
+# OR
+employee = Employee(
+    name="Mohit",
+    email="mohit@gmail.com"
+)
+
+employee.save()
+```
+
+* Django User Create
+```python
+User.objects.create_user(
+    username="mohit",
+    email="mohit@gmail.com",
+    password="123456"
+)
+
+# Yahan create_user() important hai because Django password ko hash karke store karta hai.
 ```
 
 3. Read
@@ -250,6 +267,13 @@ emp.save()
 emp = Employee.objects.get(id=1)
 emp.delete()
 ```
+
+### **create() vs create_user()?**
+| Method                       | Use                                                             |
+| ---------------------------- | --------------------------------------------------------------- |
+| `Employee.objects.create()`  | Kisi bhi Django model ka record create karna                    |
+| `User.objects.create_user()` | Django **User** create karna, especially authentication ke liye |
+* Yahan create_user() important hai because Django password ko hash karke store karta hai.
 
 ### 🎯**What is indexes in Django?**
 * Django mein database index add karne ke liye mainly Meta class ke andar indexes option use karte hain.
@@ -451,4 +475,31 @@ class Employee(models.Model):
         Department,
         on_delete=models.CASCADE
     )
+```
+
+
+### What is Connection Pooling in django?
+* Connection Pooling ka matlab hai ki database connections ko baar-baar create aur close karne ki jagah unhe ek pool (group) me rakhna aur reuse karna.
+
+#### Without Connection Pooling
+  * Har baar new connection create hota hai
+  * Slow performance
+  * Database par extra load
+```python
+conn = connect()
+# query execute
+conn.close()
+```
+
+#### With Connection Pooling
+* Faster performance
+* Less database load
+* Better scalability
+* Limited number of connections maintain hote hain
+```python
+conn = pool.get_connection()
+# query execute
+pool.return_connection(conn)
+
+# Connection close nahi hota, sirf pool me wapas chala jata hai.
 ```

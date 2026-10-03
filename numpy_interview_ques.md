@@ -10,7 +10,7 @@
 9. [Difference between List and NumPy Array?](/python/python_lib/numpy.md#difference-between-list-and-numpy-array)
 10. [Why is NumPy faster than Python lists?](/python/python_lib/numpy.md#ques-why-is-numpy-faster-than-lists)
 11. [How do you **create a NumPy array**?](/python/python_lib/numpy/create_NumPy_array.md#how-do-you-create-a-numpy-array)
-12. What is **scalar array**?
+12. [What is **scalar array**?]()
 What is the difference between array(), zeros(), ones(), and empty()?
 What is the shape of an array?
 What is the size of an array?

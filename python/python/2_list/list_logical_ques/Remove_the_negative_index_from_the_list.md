@@ -11,8 +11,7 @@ print(posNum)
 res_lst = [item for item in lstnum if item >= 0] 
 print('list after removing negative values =',res_lst)
 
-Output:-
-[27, 1000, 0, 56]
+# Output:- [27, 1000, 0, 56]
 ```
 
 ### **Ques. Remove negative values from a list with the filter function?**

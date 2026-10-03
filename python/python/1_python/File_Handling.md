@@ -37,8 +37,8 @@
 | t     | Opens the file in text mode (default)                                                                                                                                                                                                      |
 
 ### Opening a File in Python
-* This function takes two arguments. First is the filename along with its complete path, and the other is access mode. This function returns a file object.
-* To perform any file operation, the first step is to open the file. Python's built-in open() function is used to open files in various modes, such as reading, writing, and appending. The syntax for opening a file in Python is −
+* This function **takes two arguments**. First is the filename along with its complete path, and the other is access mode. This function returns a file object.
+* To perform any file operation, the first step is to open the file. Python's built-in **open() function** is used to open files in various modes, such as reading, writing, and appending. The syntax for opening a file in Python is −
 ```python
 file = open("filename", "mode")
 ```
@@ -62,13 +62,18 @@ print(file1.read())
 
 
 ### How to read file in python?
+### How can be file read in specific location?
 * Open a File on the Server:- The **open()** function returns a file object, which has a **read() method** for reading the content of the file.
+* A: We use the open() function in read mode ("r").
+
+1. Read the entire file
 ```python
 file = open("file_name.txt", "r")  # Opens the file in read mode
 content = file.read()  # Read the content of the file
 print(content)
 file.close()  # Close the file when done
 ```
+
 * By default the read() method returns the whole text, but you can also specify how many characters you want to return.
 ```python
 f = open("demofile.txt", "r")
@@ -76,6 +81,7 @@ print(f.read(5))
 
 Output:- Hello
 ```
+
 
 * The **readline() function** helps you read a **single** line from the file.
 ```python
@@ -108,66 +114,16 @@ print(f.readline())
 file.close()
 ```
 
-#### How to Write a File in Python
-* We're creating it using the **w** mode. Once we open the new file, it's obviously empty. We're then going to write content into it.
-* Write - will overwrite any existing content and Create a new file if it does not exist.
-```python
-file_obj = open("writing.txt", "w")
-```
-
-* **a** Append - will append to the end of the file
-```python
-file = open("writing.txt", "a")
-file.write("This way, I will preserve the existing contents in the file")
-print(file.read())
-file.close()
-```
-
-#### Ques. How do you remove a file from a folder in python?
-????p
-
-
-#### Ques. Program to Delete all files with a specific extension?
-```python
-import os 
-from os import listdir
-my_path = 'C:\Python Pool\Test\'
-for file_name in listdir(my_path):
-    if file_name.endswith('.txt'):
-        os.remove(my_path + file_name)
-```
-
-### What is the Python “with” statement designed for?
-
-
-
-### Creates a file
-```python
-# Using open() with Write Mode ('w'):- This method creates a new file or truncates an existing file.
-with open('example.txt', 'w') as file:
-    file.write("This is a new file created in write mode.")
-
-# Using open() with Append Mode ('a'):- This method creates a new file if it doesn't exist and appends content to it if it does.
-with open('example.txt', 'a') as file:
-    file.write("\nThis line is added to the existing file.")
-
-# Using open() with Exclusive Creation Mode ('x')
-try:
-    with open('example.txt', 'x') as file:
-        file.write("This file is created using exclusive mode.")
-except FileExistsError:
-    print("File already exists.")
-```
-
 ### Read files
+* using read() method
 ```python
-# using read() method
 f = open("example.txt", "r")
 print(f.read())
 f.close()
+```
 
-
-# Using the with statement
+* Using the with statement
+```python
 with open("demofile.txt") as f:
   print(f.read())
 
@@ -208,8 +164,80 @@ with open('example.txt', 'r') as file:
     lines = file.readlines()
     for line in lines:
         print(line.strip())
-
 ```
+
+* Read one line
+```python
+with open("data.txt", "r") as file:
+    line = file.readline()
+    print(line)
+```
+
+* Read all lines into a list
+```python
+with open("data.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)
+
+# Output:- ['Mohit\n', 'Python\n', 'FastAPI\n']
+```
+
+* 5. Read line by line (Best for large files)
+```python
+with open("data.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+```
+
+
+#### How to Write a File in Python
+* We're creating it using the **w** mode. Once we open the new file, it's obviously empty. We're then going to write content into it.
+* Write - will overwrite any existing content and Create a new file if it does not exist.
+```python
+file_obj = open("writing.txt", "w")
+```
+
+* **a** Append - will append to the end of the file
+```python
+file = open("writing.txt", "a")
+file.write("This way, I will preserve the existing contents in the file")
+print(file.read())
+file.close()
+```
+
+#### Ques. Program to Delete all files with a specific extension?
+```python
+import os 
+from os import listdir
+my_path = 'C:\Python Pool\Test\'
+for file_name in listdir(my_path):
+    if file_name.endswith('.txt'):
+        os.remove(my_path + file_name)
+```
+
+### What is the Python “with” statement designed for?
+
+
+
+### Creates a file
+```python
+# Using open() with Write Mode ('w'):- This method creates a new file or truncates an existing file.
+with open('example.txt', 'w') as file:
+    file.write("This is a new file created in write mode.")
+
+# Using open() with Append Mode ('a'):- This method creates a new file if it doesn't exist and appends content to it if it does.
+with open('example.txt', 'a') as file:
+    file.write("\nThis line is added to the existing file.")
+
+# Using open() with Exclusive Creation Mode ('x')
+try:
+    with open('example.txt', 'x') as file:
+        file.write("This file is created using exclusive mode.")
+except FileExistsError:
+    print("File already exists.")
+```
+
+
 
 ### write a file
 ```python
@@ -234,7 +262,14 @@ with open('example.txt', 'w') as file:
     file.writelines(lines)
 ```
 
-### Delete file
+
+### How do you remove a file in Python?
+* We can delete a file using **os.remove()** or **Path.unlink()**.
+```python
+import os
+os.remove("file.txt")
+```
+
 ```python
 # os.remove() function
 import os
@@ -289,6 +324,33 @@ except PermissionError:
     print(f"Permission denied to delete {directory_name}.")
 ```
 
+### How do you remove a file from a folder?
+* In Python, you can remove (delete) a file using the **os.remove() function**.
+```python
+import os
+
+file_path = r"D:\mohit\files\test.txt"
+
+if os.path.exists(file_path):
+    os.remove(file_path)    # delete file from a folder
+    print("File deleted")
+else:
+    print("File not found")
+
+
+# Using pathlib
+from pathlib import Path
+
+file = Path("test.txt")
+
+if file.exists():
+    file.unlink()
+    print("File deleted")
+```
+
+### How do you remove a Folder?
+* **os.remove()** deletes files only. 
+* To delete a folder, use **os.rmdir() (empty folder)** or **shutil.rmtree() (non-empty folder)**.
 
 ### **How do you open and close a file in Python?**
 ```python
@@ -296,4 +358,51 @@ file = open("example.txt", "r")  # Opens the file in read mode
 content = file.read()  # Read the content of the file
 print(content)
 file.close()  # Close the file when done
+```
+
+### If user upload excel file check file format if it is valid or invalid?
+* "I validate uploaded Excel files by checking the extension, MIME type, and attempting to parse the file using openpyxl or pandas to ensure it's a genuine Excel file and not corrupted."
+
+1. Example 1: Check Extension
+```python
+import os
+
+file_name = "employees.xlsx"
+
+valid_extensions = [".xlsx", ".xls"]
+
+ext = os.path.splitext(file_name)[1].lower()
+
+if ext in valid_extensions:
+    print("Valid Excel file")
+else:
+    print("Invalid file format")
+```
+
+2. Example 2: Verify the File Can Be Opened
+```python
+from openpyxl import load_workbook
+
+try:
+    workbook = load_workbook("employees.xlsx")
+    print("Valid Excel file")
+except Exception:
+    print("Invalid or corrupted Excel file")
+
+```
+
+3. FastAPI Example
+```python
+from fastapi import UploadFile
+
+ALLOWED_TYPES = [
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "application/vnd.ms-excel"
+]
+
+async def validate_excel(file: UploadFile):
+    if file.content_type not in ALLOWED_TYPES:
+        return False
+
+    return True
 ```

@@ -47,3 +47,34 @@ if num == reverse:
 else:
   print("Not Palindrome")
 ```
+
+### **To Check if a List is a Palindrome**
+* A palindrome list is a list that reads the same from left to right and right to left.
+* [1, 2, 3, 2, 1]  # Palindrome
+* [1, 2, 3, 4, 5]  # Not Palindrome
+```python
+# Simple approach using slicing
+def is_palindrome(lst):
+    return lst == lst[::-1]
+
+numbers = [1, 2, 3, 2, 1]
+
+if is_palindrome(numbers):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+# ==Without using slicing:
+def is_palindrome(lst):
+    left = 0
+    right = len(lst) - 1
+
+    while left < right:
+        if lst[left] != lst[right]:
+            return False
+
+        left += 1
+        right -= 1
+
+    return True
+```

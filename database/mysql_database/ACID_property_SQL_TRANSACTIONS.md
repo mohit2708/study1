@@ -7,14 +7,14 @@
 #### **Types of ACID Properties**
 - The ACID properties are four key principles that ensure database transactions are processed reliably and maintain data integrity.
 1. **A – Atomicity**
-  - A transaction is treated as a single unit of work. 
-  - Either all operations are completed, or none of them are.
+  - A transaction is treated as a single unit of work.
+  - **Either all operations are completed, or none of them are.**
   - Example: During a bank transfer, if money is deducted from one account but cannot be added to the other, the entire transaction is rolled back.
-    - Ya to transaction ka sara kaam hoga, ya kuch bhi nahi hoga.
+    - **Ya to transaction ka sara kaam hoga, ya kuch bhi nahi hoga.**
     - All Operations Success OR All Operations Fail
 2. **C – Consistency**
   - A transaction brings the database from one valid state to another.
-  - It ensures that all database rules, constraints, and relationships remain valid.
+  - **It ensures that all database rules, constraints, and relationships remain valid.**
   - Example: An account balance should never violate defined constraints after a transaction.
     - Database transaction ke baad bhi saare rules follow hone chahiye.
     - Database invalid state me nahi jana chahiye.

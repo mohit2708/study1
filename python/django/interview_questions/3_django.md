@@ -29,20 +29,32 @@
 * Django follows the **MVT** (Model View Template) pattern which is based on the Model View Template architecture. and provides many built-in features like authentication, database management, security, and an admin panel.
 * It was orginally created By **Adrian Holovaty** and **simon willison**.
 
-#### 🎯 **How to install Django?**
+### 🎯 **How to install Django?**
 ```python
 pip install django
+# OR
+python -m pip install django
 ```
 
-#### How to check django latest version?
+### 🎯**How to Uninstall Django?**
+```python
+# Uninstall Django
+pip uninstall django
+```
+
+### How to check django latest version?
 ```python
 python -m django --version
+
+# You can also try to import Django and use the get_version() method as follows:
+import django
+print(django.get_version())
 ```
 
-#### **latest version of Django?**
+### **latest version of Django?**
 * The latest version of Django is Django 6.1.
 
-#### How to check installed packages?
+### How to check installed packages?
 ```python
 pip freeze
 ```
@@ -366,6 +378,9 @@ products/
 ```
 
 ### 🎯**Project vs App**
+* in simple words Project is the entire Django application and an app is a module inside the project that deals with one specific use case. For eg, payment system(app) in the eCommerce app(Project)
+* A project, is a collection of these apps.
+
 | Django Project                            | Django App                                |
 | ----------------------------------------- | ----------------------------------------- |
 | Complete website/application              | One specific functionality                |

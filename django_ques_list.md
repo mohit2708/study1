@@ -16,13 +16,13 @@
 ### 🧠 [**Django Basic Questions**](/python/django/interview_questions/3_django.md)
 1. [What is **Django**?](/python/django/interview_questions/3_django.md#-what-is-django)
 2. ⭐ [How to install Django?](/python/django/interview_questions/django_project_setup.md#2-django-install-karo)
-3. ⭐ How to check django latest version?
-4. How to check installed packages?
-5. Django:- Latest version
+3. ⭐ [How to check django latest version?](/python/django/interview_questions/3_django.md#how-to-check-django-latest-version)
+4. [How to Uninstall Django?](/python/django/interview_questions/3_django.md#how-to-uninstall-django)
+5. [How to check installed packages?](/python/django/interview_questions/3_django.md#how-to-check-installed-packages)
 6. Why is Django Used/Key Features?
 7. Django Architecture (MVT)
 8. ⭐ [What is MTV architecture?](/python/django/interview_questions/3_django.md#what-is-mtv-architecture)
-9. ⭐ [Create a Django Project?](/python/django/interview_questions/3_django.md#create-a-django-project)
+9.  ⭐ [Create a Django Project?](/python/django/interview_questions/3_django.md#create-a-django-project)
 10. [Django Project Structure](/python/django/interview_questions/3_django.md#django-project-structure)
     1.  [what is manage.py?](/python/django/interview_questions/3_django.md#1-managepy)
     2.  [What are Django settings?](/python/django/interview_questions/3_django.md#2-settingspy)
@@ -57,13 +57,17 @@
 15. [What is Redis?](/database/Redis/Redis.md#-what-is-redis)
 16. [Difference between CharField and TextField?](/python/django/interview_questions/models_migration.md#difference-between-charfield-and-textfield)
 17. [What is ForeignKey?](/python/django/interview_questions/models_migration.md#what-is-foreignkey)
-18. What is OneToOneField? -no
-19. What is ManyToManyField? -no
-20. What is on_delete? -no
-21. What is __str__() method? -no
-22. What is a custom model manager? -no 
+18. [What is Connection Pooling in Django?](/python/django/interview_questions/models_migration.md#what-is-connection-pooling-in-django)
+19. [What is AbstractUser?](/python/django/interview_questions/abstractUser.md#what-is-abstractuser-in-django)
+20. [What is AbstractBaseUser?](/python/django/interview_questions/abstractUser.md#what-is-abstractbaseuser-in-django)
+21. [AbstractUser vs AbstractBaseUser](/python/django/interview_questions/abstractUser.md#abstractuser-vs-abstractbaseuser)
+22. What is OneToOneField? -no
+23. What is ManyToManyField? -no
+24. What is on_delete? -no
+25. What is __str__() method? -no
+26. What is a custom model manager? -no 
 
-
+What is User model?
 
 ### 🧠 [**Django Views Questions**](/python/django/interview_questions/view.md)
 1. [What is a View?](/python/django/interview_questions/view.md#what-is-a-view)
@@ -80,10 +84,12 @@
 10. What is CreateView?
 11. What is UpdateView?
 12. What is DeleteView?
-13. What is Mixin?
+13. [What is Mixin?](/python/django/interview_questions/view.md#what-is-mixin)
 14. ⭐ [What is QuerySet?](/python/django/interview_questions/view.md#-what-is-queryset)
      1. ⭐ [Difference between **get()** and **filter()** in Django?](/python/django/interview_questions/view.md#difference-between-get-and-filter-in-django)
      2. [How do you handle empty querysets/lists in templates?](/python/django/interview_questions/view.md#how-do-you-handle-empty-querysetslists-in-templates)
+     3. [What is {% empty %} in a for loop?](/python/django/interview_questions/view.md#what-is--empty--in-a-for-loop)
+     4. [How do you create a user?]()
 15. How to view **all items** in a Model using Django QuerySet?
 16. How to **Filter Items** in Django QuerySet?
 17. How to **get a particular item** in Django?
@@ -129,7 +135,7 @@
 19. How do you use if-else conditions in templates?
 20. How do you use for loops in Django templates?
 18.
-1.  What is {% empty %} in a for loop?
+1.  
 2.  How do you generate URLs in Django templates?
 3.  What is the {% url %} tag?
 4.  How do you add CSS and JavaScript files to a Django template?
@@ -163,26 +169,20 @@
 5. [What is CSRF protection?](/python/django/interview_questions/Security.md#-what-is-csrf-cross-site-request-forgery)
 6. Why use {% csrf_token %}?
 
-Example:
 
-<form method="post">
-{% csrf_token %}
-</form>
+1. [What is Django Authentication System?](/python/django/interview_questions/authentication.md#how-to-use-for-authentication-in-django)
+2. [What is authenticate() in Django?](/python/django/interview_questions/authentication.md#what-is-authenticate-in-pythondjango)
 
 
-7. Authentication & Authorization
-Authentication vs Authorization?
-What is Django Authentication System?
-How do you create a user?
-What is authenticate()?
-What is login()?
-What is logout()?
-What is User model?
+1. [Authentication & Authorization](/software_engineering/Authentication_vs_Authorization.md#authentication-vs-authorization)
+2. [What is login()?](/software_engineering/Authentication_vs_Authorization.md#what-is-login)
+3. [What is logout()?](/software_engineering/Authentication_vs_Authorization.md#what-is-logout)
+
+
+
 What are Permissions?
 What are Groups?
 How do you create a Custom User Model?
-What is AbstractUser?
-What is AbstractBaseUser?
 What is login_required?
 Frequently Asked
 

@@ -1,8 +1,6 @@
 
 |  No.  | Questions                                                                                                                        |
 | :---: | -------------------------------------------------------------------------------------------------------------------------------- |
-|       | [Find the Length of a List?](#find-the-length-of-a-list)                                                                         |
-|       | [Swap Two Elements in a List?](#swap-two-elements-in-a-list)                                                                     |
 |       | [Interchange first and last elements in a list?](#interchange-first-and-last-elements-in-a-list)                                 |
 |       | [find the single number(unique-element) of the list?](#find-the-single-numberunique-element-of-the-list)                         |
 |       | [find the even number from the list?](#ques-find-the-even-number-from-the-list)                                                  |
@@ -10,7 +8,6 @@
 |       | [even values from a list using list comprehension?](#ques-even-values-from-a-list-using-list-comprehension)                      |
 |       | [Find the duplicate element from list?](#find-the-duplicate-element-from-list)                                                   |
 |       | [Remove duplicate item from list using List comprehension?](#ques-remove-duplicate-item-from-list-using-list-comprehension)      |
-|       | [Convert a list into string?](#ques-convert-a-list-into-string)                                                                  |
 |       | [Write a program to print a list in reverse order?](#ques-write-a-program-to-print-a-list-in-reverse-order)                      |
 |       | [find the max, min number from the list user input?](#ques-find-the-max-min-number-from-the-list-user-input)                     |
 |       | [find the sum of list elements?](#ques-find-the-sum-of-list-elements)                                                            |
@@ -28,136 +25,6 @@
 |       | [How would you convert a list to an array?](#ques-how-would-you-convert-a-list-to-an-array)                                      |
 
 
-
-### **Find the Length of a List?**
-* Using **len() Function** or **length_hint** function
-```python
-# Using lentgh function
-li = [10, 20, 30]
-n = len(li)
-print("The length of list is: ", n)
-Output:- The length of list is:  3
-
-# Using length_hint Function
-from operator import length_hint
-test_list = [1, 4, 5, 7, 8]
-list_len_hint = length_hint(test_list)
-print("Length of list using length_hint() is : " + str(list_len_hint))
-Output:- Length of list using length_hint() is : 5
-
-# using for loop
-test_list = [1, 4, 5, 7, 8]
-counter = 0
-for i in test_list:
-	counter = counter + 1
-print("Length of list using naive method is : " + str(counter))
-Output:- Length of list using naive method is : 5
-```
-
-### **Swap Two Elements in a List?**
-* using **comma** assignment
-```python
-def swapPositions(list, pos1, pos2):
-     
-    list[pos1], list[pos2] = list[pos2], list[pos1]
-    return list
- 
-# Driver function
-List = [23, 65, 19, 90]
-pos1, pos2  = 1, 3
- 
-print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
-```
-
-* Using **temp** variable
-```python
-def swapPositions(lis, pos1, pos2):
-    temp=lis[pos1]
-    lis[pos1]=lis[pos2]
-    lis[pos2]=temp
-    return lis
-# Driver function
-List = [23, 65, 19, 90]
-pos1, pos2 = 1, 3
- 
-print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
-```
-
-* Using **enumerate**
-```python
-def swapPositions(lis, pos1, pos2):
-    for i, x in enumerate(lis):
-        if i == pos1:
-            elem1 = x
-        if i == pos2:
-            elem2 = x
-    lis[pos1] = elem2
-    lis[pos2] = elem1
-    return lis
- 
-List = [23, 65, 19, 90]
-pos1, pos2 = 1, 3
-print(swapPositions(List, pos1-1, pos2-1))  # Output:- [19, 65, 23, 90]
-```
-
-### **Interchange first and last elements in a list?**
-- Without temp varibale
-```python
-list = [12, 35, 9, 56, 24]
-list[0] = list[-1]
-list[-1] = list[0]
-print(list) # Output:- [24, 35, 9, 56, 24]
-```
-
-- With temp variable
-```python
-list = [12, 35, 9, 56, 24]
-length = len(list)
-temp = list[0]
-list[0] = list[length - 1]
-list[length - 1] = temp
-print(list) # Output:- [24, 35, 9, 56, 12]
-```
-
-- Using comma function
-```python
-def swapList(newList):
-    newList[0], newList[-1] = newList[-1], newList[0]
-    return newList
-    
-# Driver code
-newList = [12, 35, 9, 56, 24]
-print(swapList(newList))    # Output:- [24, 35, 9, 56, 12]
-```
-
-
-- Using * operand.
-```python
-list = [1, 2, 3, 4]
-
-a, *b, c = list
-
-print(a)
-print(b)
-print(c)
-
-Output:-
-1
-[2, 3]
-4
-```
-
-
-- Using * operand 2 approch.
-```python
-def swapList(list):
-    start, *middle, end = list
-    list = [end, *middle, start]
-    return list
-
-newList = [12, 35, 9, 56, 24]
-print(swapList(newList))    # Output:- [24, 35, 9, 56, 12]
-```
 
 ### **find the single number(unique element) of the list?**
 ```python
@@ -216,28 +83,7 @@ print(odd)      # Output:- [9, 7, 3, 1]
 print(duplicate)
 ```
 
-### Find the duplicate element from list?
-```python
-list = [9,3,6,4,7,3,1,4]
-duplicate = []
-for i in list:
-    if list.count(i) > 1 and i not in duplicate:
-        duplicate.append(i)
-   
-print(duplicate)    # Output:- [3,4]
-```
 
-```python
-l=[1,2,3,4,5,2,3,4,7,9,5]
-l1=[]
-for i in l:
-    if i not in l1:
-        l1.append(i)
-    else:
-        print(i,end=' ')
-
-Output:- 2 3 4 5
-```
 
 ### Ques. even values from a list using list comprehension?
 ```python
@@ -269,15 +115,7 @@ print ("unique elements list  : " ,unique_lst)
 ```
 
 
-### Ques. Convert a list into string?
-```python
-list = ['my','name','is','Mohit','Saxena']
-listtostring = ' '.join(list)
-print('list after shuffling =',listtostring)
 
-Output:-
-list after shuffling = my name is Mohit Saxena
-```
 
 
 ### Ques. find the max, min number from the list user input?
@@ -365,7 +203,7 @@ print(multiplied)
 Output:- [2, 4, 6, 8, 10]
 ```
 
-### Ques. **Convert a list into a tuple?**
+### **Convert a list into a tuple?**
 * Using **tuple()** builtin function 
 ```python
 list = [1,2,3,4]
@@ -618,4 +456,77 @@ print('The list is:', lst)
 Output:-
 Enter string: my name is mohit saxena
 The list is: ['my', 'name', 'is', 'mohit', 'saxena']
+```
+
+### 🎯**Find the missing number in the array?**
+### 🎯**Find the missing number in the list?**
+```python
+# Using Set by loop
+arr = [1, 2, 4, 5]
+
+n = 5
+# OR:- n = len(arr) + 1  => Lekin ye tab fail ho sakta hai jab last number hi missing ho:
+
+for i in range(1, n + 1):
+    if i not in arr:
+        print("Missing Number:", i)
+
+# Output:- Missing Number: 3
+
+#===================================#
+#  Using Sum Formula
+arr = [1, 2, 4, 5]
+
+n = 5  # total numbers should be 1 to 5
+
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(arr)
+
+missing = expected_sum - actual_sum
+
+print("Missing Number:", missing) # Output:- Missing Number: 3
+
+#===================================#
+# Method 3: Using XOR (Interview Favorite)
+arr = [1, 2, 4, 5]
+
+n = 5
+
+xor1 = 0
+for i in range(1, n + 1):
+    xor1 ^= i
+
+xor2 = 0
+for num in arr:
+    xor2 ^= num
+
+missing = xor1 ^ xor2
+
+print("Missing Number:", missing)
+```
+
+### 🎯**Find the missing multipal number in the list?**
+```python
+arr = [1, 2, 4, 5, 7]
+
+n = max(arr)
+
+for i in range(1, n + 1):
+    if i not in arr:
+        print("Missing Number:", i)
+
+# Output:-
+Missing Number: 3
+Missing Number: 6
+
+#==================
+# Better (Set use karke)
+
+arr = [1, 2, 4, 5, 7]
+
+s = set(arr)
+
+for i in range(1, max(arr) + 1):
+    if i not in s:
+        print("Missing Number:", i)
 ```

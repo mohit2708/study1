@@ -133,3 +133,98 @@ user = db.query(User).filter(User.id == 1).first()
 * Code more maintainable/readable
 * Relationships handle karna easier
 * Database operations abstract ho jaate hain
+
+
+### **What is Connection Pooling in fast api?**
+* Asked in TCS
+* Connection Pooling is a technique where a pool of pre-created database connections is maintained and reused by multiple requests instead of creating a new connection for every request.
+* It improves application performance, reduces connection overhead, and helps manage database resources efficiently.
+```python
+# Jab aap engine create karte ho:
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_size=10,
+    max_overflow=20
+)
+# To SQLAlchemy automatically connection pooling provide karta hai.
+```
+
+#### Important Parameters
+| Parameter    | Meaning                           |
+| ------------ | --------------------------------- |
+| pool_size    | Pool me kitne connections rahenge |
+| max_overflow | Extra temporary connections       |
+| pool_timeout | Connection wait time              |
+| pool_recycle | Connection refresh time           |
+
+
+#### How to use pooling
+```python
+# 1. MySQL Connector Python
+import mysql.connector
+from mysql.connector.pooling import MySQLConnectionPool
+
+# 2. SQLAlchemy (FastAPI me common)
+pip install sqlalchemy
+
+#
+from sqlalchemy import create_engine
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_size=10,
+    max_overflow=20
+)
+
+3. PostgreSQL
+pip install psycopg2-binary
+```
+
+### pool connection ke liye packeage install karna padta hai kya?
+* SQLAlchemy provides connection pooling by default. We can configure it using parameters like pool_size, max_overflow, pool_timeout, and pool_recycle. No separate connection pooling package is required when using SQLAlchemy.
+* Ye depend karta hai ki aap kaunsa database aur library use kar rahe ho.
+1. MySQL Connector Python
+```python
+# Install Package
+pip install mysql-connector-python  # MySQLConnectionPool isi package ke andar aata hai, alag se install nahi karna padta.
+
+
+import mysql.connector
+from mysql.connector.pooling import MySQLConnectionPool
+```
+
+2. SQLAlchemy (FastAPI me common)
+* SQLAlchemy me connection pooling built-in hoti hai.
+```python
+# Install PAckage
+pip install sqlalchemy
+
+
+# 
+from sqlalchemy import create_engine
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_size=10,
+    max_overflow=20
+)
+```
+
+3. PostgreSQL
+```python
+# Install packagge
+pip install psycopg2-binary
+
+pip install asyncpg # Ya async ke liye:
+#* Connection pooling support available hoti hai, lekin implementation library par depend karti hai.
+```
+
+* Aapke FastAPI project me agar aap:
+```python
+engine = create_engine(...)
+```
+* use kar rahe ho, to **SQLAlchemy already connection pool manage karta hai**.
+
+#### pool size 10 ka kya mtb
+* pool_size=10 ka matlab hai ki SQLAlchemy maximum 10 database connections ko pool me ready rakh sakta hai aur unhe reuse karega.

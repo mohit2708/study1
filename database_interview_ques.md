@@ -470,6 +470,8 @@ How do you handle large BLOBs (Binary Large Objects) in MySQL?
 
 
 ### [Scenario Based MySql Ques](/database/mysql_database/scenario_based_mysql_ques.md)
-1. You are faced with a slow query that uses a JOIN operation on a large table. How would you optimize it?
-2. Given a table with 100+ million rows, how would you optimize its performance?
-3. How would you structure a database to handle millions of daily transactions efficiently?
+1. [How do you optimize a SQL query?](/database/mysql_database/scenario_based_mysql_ques.md#how-do-you-optimize-a-sql-query)
+2. How do you know a query is slow?
+3. You are faced with a slow query that uses a JOIN operation on a large table. How would you optimize it?
+4. Given a table with 100+ million rows, how would you optimize its performance?
+5. How would you structure a database to handle millions of daily transactions efficiently?

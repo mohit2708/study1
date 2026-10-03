@@ -37,6 +37,13 @@ myproject/
 ```python
 python manage.py runserver  # http://127.0.0.1:8000/
 
+#change a port number
+python manage.py runserver:8484
+
+# change the server ip and port
+python manage.py runserver0.0.0.0:8484
+
+
 # Django ka default page open ho jayega.
 ```
 <div style="page-break-before: always;"></div>

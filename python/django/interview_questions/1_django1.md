@@ -141,49 +141,10 @@ class Employee(models.Model):
 ### **Ques. Name some companies that make use of Django?**
 Some of the companies that make use of Django are Instagram, DISCUS, Mozilla Firefox, YouTube, Pinterest, Reddit, etc.
 
-#### Ques. What are the features of Django?
+#### What are the features of Django?
 * SEO Optimized
 * Extremely fast
 
-
-### **Ques. How to install Django and Uninstall Django?**
-```python
-# Install Django
-pip install django
-python -m pip install django
-
-# Uninstall Django
-pip uninstall django
-```
-
-### **Ques. How do you check for the version of Django installed on your system?**
-```python
-# you can open the command prompt and enter the following command:
-python -m django –-version
-
-# You can also try to import Django and use the get_version() method as follows:
-import django
-print(django.get_version())
-```
-
-### **Ques. Check all the version of install modules?**
-```python
-pip freeze
-```
-
-### **Ques. What is the difference between a project and an app in Django?**
-* in simple words Project is the entire Django application and an app is a module inside the project that deals with one specific use case. For eg, payment system(app) in the eCommerce app(Project)
-* A project, is a collection of these apps.
-
-
-### **Ques. How to create Project and App?**
-```python
-# Create the Project
-django-admin startproject projectName
-
-# Create the app
-python manage.py startapp app_name
-```
 
 ### **Project Directery**
 ```python
@@ -208,18 +169,6 @@ app
   models.py
   tests,py
   views.py
-```
-
-### **Ques. How to Run Server?**
-```python
-# run a project
-python manage.py runserver
-
-#change a port number
-python manage.py runserver:8484
-
-# change the server ip and port
-python manage.py runserver0.0.0.0:8484
 ```
 
 
@@ -417,9 +366,6 @@ The Sessions framework in Django is used to store arbitrary information about th
 
 1.  What is a middleware in Django?
 A middleware is a layer in Django’s Request/Response processing pipeline. Each middleware is responsible for performing some specific functions on the request and/or response, such as caching, gzipping, etc.
-
-1.  What is a QuerySet in Django?
-A QuerySet in Django is basically a collection of objects from our database. QuerySets are used by the Django ORM. When we use our models to get a single record or a group of records from the database, they are returned as QuerySets.
 
 1.  What is Django REST Framework?
 Django REST Framework (DRF) is a Django app and a framework that lets us create RESTful APIs rapidly. DRF is especially useful if we have an existing Django web application and we wish to quickly generate an API for it.

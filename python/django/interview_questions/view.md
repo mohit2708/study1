@@ -299,19 +299,20 @@ Employee.objects.filter(id=1).delete()
 ```
 
 ### 🎯 **What is QuerySet?**
-* QuerySet is a collection of database queries in Django. It represents a set of records retrieved from the database and allows filtering, ordering, and manipulating data using ORM without writing SQL queries directly.
+* QuerySet is a **collection of database queries** in Django. It represents a set of records retrieved from the database and allows filtering, ordering, and manipulating data using ORM without writing SQL queries directly.
 * QuerySet Django ka object collection hota hai jo database se data fetch karne ke liye use hota hai.
 * QuerySet = Database query ka result (0, 1 ya multiple records).
 
-#### Example
+### Example Of QuerySet?
 ```python
 # models.py
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
     salary = models.IntegerField()
+```
 
-
+```python
 # Fetch all record
 employees = Employee.objects.all()
 
@@ -333,6 +334,8 @@ Employee.objects.last()         # last record
 ```
 
 ### **How do you handle empty querysets/lists in templates?**
+### **What is {% empty %} in a for loop?**
+* {% empty %} is used inside a {% for %} loop to handle the case when the list/queryset has no data.
 ```python
 <ul>
 {% for employee in employees %}

@@ -1,4 +1,3 @@
-
 ### SOLID Principles
 * SOLID object-oriented programming ke 5 important design principles hain. Inka purpose code ko clean, maintainable, scalable aur loosely coupled banana hai.
   * **S — Single Responsibility:** A class should have only one responsibility.

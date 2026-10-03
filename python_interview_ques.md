@@ -116,6 +116,11 @@
 1. [What is File Handling?](/python/python/1_python/File_Handling.md#what-is-file-handling)
 2. [What is with?](/python/python/1_python/with.md#what-is-with)
 3. [How do you open and close a file in Python?](/python/python/1_python/File_Handling.md#how-do-you-open-and-close-a-file-in-python)
+4. [How do you remove a file in Python?](/python/python/1_python/File_Handling.md#how-do-you-remove-a-file-in-python)
+5. [How do you remove a file from a folder?](/python/python/1_python/File_Handling.md#how-do-you-remove-a-file-from-a-folder)
+6. [How do you remove a folder?](/python/python/1_python/File_Handling.md#how-do-you-remove-a-folder)
+7. [How can be file read in specific location?](/python/python/1_python/File_Handling.md#how-can-be-file-read-in-specific-location)
+8. [If user upload excel file check file format if it is valid or invalid.](/python/python/1_python/File_Handling.md#if-user-upload-excel-file-check-file-format-if-it-is-valid-or-invalid)
 
 
 ### 🧠 [**Date and Time**](/python/python/1_python/DataTime_Function.md)
@@ -131,26 +136,40 @@
 
 <div style="page-break-before: always;"></div>
 
-### 🧠 **Python String Questions**
-1. [Python Strings](/python/python/6_string/6.0_string.md#python-strings)  
-2. [find the length/Count number of characters in a string](/python/python/6_string/length_string.md)
-3. [String Concatenation](/python/python/6_string/Concatenation_string.md)
-4. Assign String to a Variable
-5. Multiline Strings
-6. Check String
-7. Slicing Strings
-8. Strings Method OR Change/Modify String
-9. What is an f-string and how do you use it
-10. Format Strings
-11. Strings Method
-12. capitalize(), count, Upper, Lower, title, replace, strip, lstrip, rstrip split, join, startswith, endswith
+### 🧠 [**Python String Questions**](/python/python/6_string/)
+1. [Python Strings](/python/python/6_string/6.0_string.md#python-strings)
+2. [length](/python/python/6_string/6.1_length_string.md#find-the-lengthcount-number-of-characters-in-a-string)
+3. [find the length/Count number of characters in a string](/python/python/6_string/length_string.md)
+4. [String Concatenation](/python/python/6_string/Concatenation_string.md)
+5. Assign String to a Variable
+6. Multiline Strings
+7. Check String
+8. Slicing Strings
+9. Strings Method OR Change/Modify String
+10. What is an f-string and how do you use it
+11. Format Strings
+12. Strings Method
+    1.  capitalize()
+    2.  count, 
+    3.  Upper
+    4.  Lower
+    5.  title
+    6.  replace
+    7.  strip
+    8.  lstrip
+    9.  rstrip
+    10. split
+    11. join
+    12. startswith
+    13. endswith
 13. isalpha, isdigit, isalnum
 14. When would you use rfind()
 15. d
 16. Escape Characters
 17. How would you confirm that 2 strings have the same identity
 18. 
-19. |
+19. [What is re Module in Python?](/python/python/6_string/6.0_string.md#what-is-re-module-in-python)
+20. [What is Regular Expression?](/python/python/6_string/6.0_string.md#what-is-re-module-in-python)
 ```
 
 |  No.  | Logical string Questions                                                                                                 |
@@ -159,7 +178,6 @@
 |       | [Extract numbers from string](./1_python/6.0_string.md#ques-Extract-numbers-from-string)                                 |
 |       | [Reversed the String](./1_python/6.0_string.md#ques-Reversed-the-String)                                                 |
 |       | [Reversed word in string?](./1_python/6.0_string.md#reversed-word-in-string)                                             |
-|       | [Check for Palindrome](./1_python/6.0_string.md#check-for-palindrome)                                                    |
 |       | [Remove vowels from a string](./1_python/6.0_string.md#ques-remove-vowels-from-a-string)                                 |
 |       | [Find repeated characters in a string python](./1_python/6.0_string.md#ques-Find-repeated-characters-in-a-string-python) |
 |       | [program to count the frequency of each character](./1_python/6.0_string.md#ques-count-the-frequency-of-each-character)  |
@@ -216,29 +234,36 @@
     11. sort() Method
 15. ⭐ [List vs Tuple](/python/python/2_list/2.0_list.md#difference-between-list-and-tuples-in-python)
 16. [What is the difference between an array and a list?](/python/python/2_list/2.0_list.md#what-is-the-difference-between-an-array-and-a-list)
-17. ⭐ Mutable vs Immutable Objects
+17. ⭐ [Mutable vs Immutable Objects](/python/python/2_list/2.0_list.md#mutable-vs-inmutable)
 18. [What is Map, Filter, Reduce?](/python/python/2_list/2.0_list.md#what-is-map-filter-reduce)
 <div style="page-break-before: always;"></div>
 
 
 
 ### 🧠 [**Python List Logical Questions**](/python/python/2_list/list_logical_ques)
-1. How to find Length/count of the list?
-2. [**find duplicate elements** in a list?](/python/python/2_list/list_logical_ques/list_logical_ques.md#find-the-duplicate-element-from-list)
-3. How to **remove duplicates** from a list?
-4. Find **Maximum** and **Minimum** Element?
-5. Find Second Largest Element?
-6. Common Coding Questions on Lists
+1. [How to find Length/count of the list?](/python/python/2_list/list_logical_ques/1_length_list.md)
+2. [Swap Two Elements in a List?](/python/python/2_list/list_logical_ques/2_Swap_Two_Elements.md)
+3. [Interchange first and last elements in a list?](/python/python/2_list/list_logical_ques/3_Interchange_elements.md)
+4. [**find duplicate elements** in a list?](/python/python/2_list/list_logical_ques/duplicate_unique_element.md#find-the-duplicate-element-from-list)
+5. ⭐ [Find the **Duplicate** list and **Unique** list?](/python/python/2_list/list_logical_ques/duplicate_unique_element.md#find-the-duplicate-list-and-unique-list)
+6. How to **remove duplicates** from a list?
+7. Find **Maximum** and **Minimum** Element?
+8. Find Second Largest Element?
+9. Common Coding Questions on Lists
 
-
-
-
+10. ⭐ [Find **Largest Element** in an Array/list?](/python/python/8_python_program/List/Largest_Element.md#find-largest-element-in-an-arraylist)
+11. [Find sum of array/list?](/python/python/8_python_program/List/sum_list.md#find-sum-of-arraylist)
+12. [add one digit?](/python/python/8_python_program/List/add_one_digit.md#add-one-digit)
+13. [convert list to dictionary?](/python/python/8_python_program/List/convert_list_to_dictionary.md)
+14. [convert a list to string?](/python/python/8_python_program/List/convert_list_to_string.md#convert-a-list-to-string)
+15. [Find the missing number in the array?](/python/python/2_list/list_logical_ques/list_logical_ques.md#find-the-missing-number-in-the-array)
+16. [Find the missing multipal number in the list?](/python/python/2_list/list_logical_ques/list_logical_ques.md#find-the-missing-multipal-number-in-the-list)
 
 ```
 Reverse a list without built-in functions.
 Find largest/smallest element.
 Rotate a list.
-Check if a list is palindrome.
+
 Find intersection of two lists.
 Find common elements in two lists.
 Move all zeros to the end.
@@ -246,8 +271,6 @@ Find frequency of each element.
 Split a list into chunks.
 Sort a list without using sort().
 ⭐ Most Frequently Asked in Interviews
-Remove Duplicates
-Reverse List
 Nested List
 Time Complexity of List Operations
 
@@ -255,12 +278,8 @@ Length hint function?](./2_list/list_logical_ques/Interchange_first_and_last_ele
 
 Finding length of list using loop?](./2_list/2.10_List_questions.md#find-the-length-of-a-list)                                                         |
 
-Interchange first and last elements in a list?](./2_list/2.10_List_questions.md#interchange-first-and-last-elements-in-a-list)                         |
 
-Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-in-a-list)                                                             |
 
-|       | [Swap elements in String list?](./2_list/2.10_List_questions.md#swap-elements-in-string-list)                                                           |
-|       | [find the single number(unique-element) of the list?](#ques-find-the-single-numberunique-element-of-the-list)                                           |
 |       | [Print duplicate list, Find Even Or Odd Number?](#ques-print-duplicate-list-find-even-or-odd-number)                                                    |
 |       | [Find the duplicate element from list?](#find-the-duplicate-element-from-list)                                                                          |
 |       | [Remove duplicate item from list using List comprehension?](./2_list/list_logical_ques/Remove_the_negative_index_from_the_list.md)                      |
@@ -300,10 +319,13 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 15. [Packing and Unpacking](/python/python/3_tuple/3.12_packing_and_unpacking.md#packing-and-unpacking-tuples)
 16. Tuple Methods
 17. ⭐ Differance between List and Tuple?
+18. 
 <div style="page-break-before: always;"></div>
 
+### 🧠 [**Python Tuple Logical Questions**]
+1. [Convert a list into a tuple?](/python/python/2_list/list_logical_ques/list_logical_ques.md#convert-a-list-into-a-tuple)
 
-|       | [Convert a list into a tuple?](./3_tuple/3.9_tuple_questions.md#ques-convert-a-list-into-a-tuple)                                         |
+
 |       | [How to Sort List Of Tuples By The First Element?](./3_tuple/3.9_tuple_questions.md#ques-how-to-sort-list-of-tuples-by-the-first-element) |
 |       | [How to Sort List Of Tuples By The Second Element?](./3_tuple/3.9_tuple_questions.md#ques-how-to-sort-list-of-tuples-by-second-element)   |
 
@@ -409,12 +431,14 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 8.  [What is an Instance Method?](/python/python/7_oops/7.1_class.md#what-is-instance-method)
 9.  [What is a Class Method?](/python/python/7_oops/7.1_class.md#what-is-a-class-method)
 10. [Class Method vs Instance Method?](/python/python/7_oops/7.1_class.md#class-method-vs-instance-method)
-11. [What is **cls** keyword?](/python/python/7_oops/7.1_class.md#what-is-cls-in-python)
-12. [self vs cls](/python/python/7_oops/7.1_class.md#self-vs-cls)
-13. [What is __slots__ in Python?](/python/python/7_oops/7.1_class.md#what-is-slots-in-python)
-14. [What is Concrete Method?](/python/python/7_oops/Concrete_Method.md#what-is-concrete-method)
-15. [What is difference betweenr repr() and str()?](/python/python/7_oops/7.1_class.md#what-is-difference-betweenr-repr-and-str)
-16. [How is an empty class created in python?](/python/python/7_oops/7.1_class.md#how-is-an-empty-class-created-in-python)
+11. Difference between Instance Method, Class Method and Static Method?
+12. Difference between Class Method and Static Method?
+13. [What is **cls** keyword?](/python/python/7_oops/7.1_class.md#what-is-cls-in-python)
+14. [self vs cls](/python/python/7_oops/7.1_class.md#self-vs-cls)
+15. [What is __slots__ in Python?](/python/python/7_oops/7.1_class.md#what-is-slots-in-python)
+16. [What is Concrete Method?](/python/python/7_oops/Concrete_Method.md#what-is-concrete-method)
+17. [What is difference betweenr repr() and str()?](/python/python/7_oops/7.1_class.md#what-is-difference-betweenr-repr-and-str)
+18. [How is an empty class created in python?](/python/python/7_oops/7.1_class.md#how-is-an-empty-class-created-in-python)
 
 ### 🧠 **Objects in oops**
 1. [What is **Object**?](/python/python/7_oops/7.2_object.md#ques-what-is-object)
@@ -475,23 +499,39 @@ Swap Two Elements in a List?](./2_list/2.10_List_questions.md#swap-two-elements-
 14. ⭐ [Find **Fibonacci** series up to n](/python/python/8_python_program/Fibonacci_series.md#find-fibonacci-series-up-to-n)
 15. ⭐ [String is a **Palindrome**?](/python/python/8_python_program/palindrome.md#to-check-if-a-string-is-a-palindrome)
 16. ⭐ [Number is a **Palindrome**?](/python/python/8_python_program/palindrome.md#to-check-if-a-number-is-a-palindrome)
-17. [list Sorting using **bubble sort**?](/python/python/8_python_program/sorting.md#list-sorting-using-bubble-sort)
-18. [**FizzBuzz** problem?](/python/python/8_python_program/FizzBuzz_problem.md#solve-the-classic-fizzbuzz-problem)
+17. [Check if a list is palindrome.](/python/python/8_python_program/palindrome.md#to-check-if-a-list-is-a-palindrome)
+18. [list Sorting using **bubble sort**?](/python/python/8_python_program/sorting.md#list-sorting-using-bubble-sort)
+19. [**FizzBuzz** problem?](/python/python/8_python_program/FizzBuzz_problem.md#solve-the-classic-fizzbuzz-problem)
 
-### List Programs
-1. ⭐ [Find **Largest Element** in an Array/list?](/python/python/8_python_program/List/Largest_Element.md#find-largest-element-in-an-arraylist)
-2. ⭐ [Find the Duplicate list and Unique list?](/python/python/8_python_program/List/remove_duplicates_elements.md)
-3. [Find sum of array/list?](/python/python/8_python_program/List/sum_list.md#find-sum-of-arraylist)
-4. [add one digit?](/python/python/8_python_program/List/add_one_digit.md#add-one-digit)
-5. [convert list to dictionary?](/python/python/8_python_program/List/convert_list_to_dictionary.md)
-6. [convert a list to string?](/python/python/8_python_program/List/convert_list_to_string.md#convert-a-list-to-string)
+
 
 ### String Programs
 1. [Find the first latter of the Word?](/python/python/8_python_program/find_first_latter_of_every_word.md#find-the-first-latter-of-the-word)
 2. [Find the **vowels** in a string?](/python/python/8_python_program/vowels_count.md#count-the-number-of-vowels-in-a-string)
 
 
+1. [What is Symmetric Encryption?](/python/python/1_python/security.md#what-is-symmetric-encryption)
+2. [What is Asymmetric Encryption?](/python/python/1_python/security.md#what-is-asymmetric-encryption)
 
+
+
+3. [What is Object Interning in Python?](/python/python/1_python/memory.md#example-of-object-interning)
+4. [What is a Memory Leak in Python?](/python/python/1_python/memory.md#what-is-a-memory-leak-in-python)
+
+1. [What is a test case in Python?](/python/python/1_python/test_case.md#what-is-a-test-case-in-python)
+2. [What is Unit Testing?](/python/python/1_python/test_case.md#what-is-unit-testing)
+3. [unittest Module Example?]
+4. [pytest Example]
+5. [What is assert?]
+6. [What is setUp() and tearDown()?]
+7. [What is Integration Testing?]
+8. [Unit vs Integration Testing]
+9. [What is Mock API?]
+10. [Example using unittest.mock]
+11. [Mock vs Stub?]
+12. [Difference Between unittest and pytest](/python/python/1_python/test_case.md#difference-between-unittest-and-pytest)
+13. [What is code coverage?]
+14. [How do you test FastAPI endpoints using TestClient?]
 
 ### 
 ```
@@ -527,8 +567,7 @@ call()
 
 ➕ Add:
 
-What is @classmethod?
-Difference between Instance Method, Class Method and Static Method?
+
 
 Interview Favorite Question:
 
@@ -545,7 +584,7 @@ Garbage Collection in Python?
 Reference Counting?
 ⭐ Most Asked Interview Questions
 Difference between Encapsulation and Abstraction?
-Difference between Class Method and Static Method?
+
 ```
 
 <div style="page-break-before: always;"></div>
@@ -589,32 +628,15 @@ Difference between Class Method and Static Method?
         1.  Method overloading/ Duck Typing/ Compile time polymorphism (Static)
         2.  Method Overriding/ Runtime time polymorphism (Dynamic) -->
 
-### Python Programs Questions
-
-|  No.  | Python array Programs Questions                                                                     |
-| :---: | --------------------------------------------------------------------------------------------------- |
-|       | [Find the missing number in the array?](./7_python_program.md#find-the-missing-number-in-the-array) |
-
-|  No.  | Math Module                                                       |
-| :---: | ----------------------------------------------------------------- |
-
-
-
-|  No.  | [Questions](../0.0_python_questions.md)                                   |
-| :---: | ------------------------------------------------------------------------- |
-|       | [DataTime Function](#datatime-function)                                   |
-|       | [What is File Handling in Python?](#ques-what-is-file-handling-in-python) |
-
 
 ### Python Interview Questions
 4.  Explain how can you make a Python Script executable on Unix?
-5.  What are Python namespaces? Why are they used?
+
 6.  What is Scope Resolution in Python?
 9.  How do you copy an object in Python?
 12. What is PYTHONPATH in Python?
 13. What is the use of help() and dir() functions?
 16. How are arguments passed by value or by reference in python?
-17. What are iterators in Python?
 18. Explain how to delete a file in Python?
 19. Explain split() and join() functions in Python?
 20. What are negative indexes and why are they used?
@@ -626,7 +648,6 @@ Difference between Class Method and Static Method?
 8. Why is finalize used?
 10. How will you check if a class is a child of another class?
 11. 
-
 
 ### Python Libraries Interview Questions
 1. Ques:-What is the Python “with” statement designed for?
@@ -668,7 +689,7 @@ print(collections.Counter("hello"))
 
 # Use of “get()” function
 
-
+5.  What are Python namespaces? Why are they used?
 ### What are Python namespaces?
 A namespace in python refers to the name which is assigned to each object in python. The objects are variables and functions. As each object is created, its name along with space(the address of the outer function in which the object is), gets created. The namespaces are maintained in python like a dictionary where the key is the namespace and value is the address of the object. There 4 types of namespace in python-
 
@@ -710,10 +731,7 @@ s. Write a custom insert() function for list eg. def custom_insert (list, index,
 bb. Can we pass list or tuple as a key in dictionary?
 ee. What is property decorator?
 ii. What is lazy evaluation in python?
-b. Static file contains which type of file normally?
-c. How can be file read in specific location?
-d. How do you remove a file from a folder?
-e. If user upload excel file check file format if it is valid or invalid.
+
 g. What is Garbage Collector?
 h. Private variable and how we can access that?
 j. Difference multilevel and multiple inheritance and drawback?
@@ -749,7 +767,6 @@ What are async functions in Python? How do they relate to asynchronous programmi
 
 Problem-Solving:
 
-Write a function to check if a given string is a palindrome.
 Implement a binary search algorithm.
 Given a list of numbers, write a function to find the two numbers that add up to a specific target sum.
 Implement a basic LRU (Least Recently Used) cache.

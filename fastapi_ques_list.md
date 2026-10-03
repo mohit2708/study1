@@ -82,6 +82,7 @@
 14. What is lazy loading?
 15. What is eager loading?
 16. How do you define relationships?
+17. [What is Connection Pooling in fastapi?](/python/fastApi/model_migrations.md#what-is-connection-pooling-in-fast-api)
 
 
 ### 🧠 [**Middleware Questions**](/python/fastApi/middleware.md)
@@ -180,9 +181,9 @@ Async SQLAlchemy vs Sync SQLAlchemy?
 
 1. [What is Celery?](/python/python/1_python/celery.md#what-is-celery)
 2. [Why use Celery?](/python/python/1_python/celery.md#celery-kab-use-karte-hain)
-3. What are BackgroundTasks?
+3. [What are BackgroundTasks?](/python/fastApi/background_Tasks.md#what-are-backgroundtasks)
+4. How do you send emails in the background?
 When should BackgroundTasks be used?
-How do you send emails in the background?
 How do you execute long-running tasks?
 BackgroundTasks vs Celery?
 

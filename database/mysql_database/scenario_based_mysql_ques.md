@@ -1,3 +1,24 @@
+### How do you optimize a SQL query?
+* SQL Query Optimization ka matlab hai query ko is tarah likhna ki wo kam time, kam CPU, aur kam memory use kare.
+1. Uses Index
+2. Avoid SELECT *
+3. Use WHERE Clause
+   1. Kam rows scan hongi.
+4. Avoid Functions on Indexed Columns
+5. Use EXISTS Instead of IN (Large Data)
+6. Use Proper JOIN Conditions
+7. Limit Records
+8. Use Execution Plan
+
+### How do you know a query is slow?
+* Using Explain
+* Isse pata chalta hai:
+  * Kaunsa index use hua
+  * Kitni rows scan hui
+  * Full Table Scan hua ya nahi
+  * Query cost kitni hai
+
+
 ### **scenarioYou are faced with a slow query that uses a JOIN operation on a large table. How would you optimize it?**
 * First, I use EXPLAIN to identify bottlenecks. Then I ensure proper indexes exist on JOIN and WHERE columns, avoid SELECT *, filter data as early as possible, and use composite indexes where appropriate. For very large datasets, I may consider partitioning, query rewriting, or summary tables.
 ```sql

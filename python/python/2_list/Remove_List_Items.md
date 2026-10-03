@@ -23,11 +23,11 @@ thislist = ["apple", "banana", "cherry"]
 thislist.pop(1)
 print(thislist)     # Output:- ['apple', 'cherry']
 
-# Wrong index
+# Wrong index:- Output:- Error
 thislist.pop(7)
 print(thislist)     # Output:- Error
 
-# Without index
+# Without index:- it removes the last item
 thislist.pop()
 print(thislist)     # Output:- ['apple', 'banana']
 ```
